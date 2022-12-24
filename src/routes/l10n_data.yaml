@@ -1,0 +1,395 @@
+langname:
+  en: English
+  zhs: 简体中文
+  zht: 繁體中文
+
+langcode:
+  en: en-US
+  zhs: zh-CN
+  zht: zh-TW
+
+username:
+  en: Username
+  zhs: 用户名
+  zht: 用戶名
+password:
+  en: Password
+  zhs: 密码
+  zht: 密碼
+
+home:
+  en: Home
+  zhs: 主页
+  zht: 主頁
+
+user-portal:
+  en: User portal
+  zhs: 账户管理
+  zht: 賬戶管理
+
+policies:
+  en: Policies
+  zhs: 条款
+  zht: 條款
+
+login:
+  en: Log in
+  zhs: 登录
+  zht: 登錄
+email_required:
+  en: Giftcard recipient email field is required
+  zhs: 请填写收礼品卡的邮件
+  zht: 請填寫收禮品卡的郵件
+sender_required:
+  en: Giftcard sender field is required
+  zhs: 请填写礼品卡赠送人
+  zht: 請填寫禮品卡贈送人
+geph:
+  en: Geph
+  zhs: 迷雾通
+  zht: 迷霧通
+
+
+hero:
+  en: Blast through censorship.
+  zhs: 冲破网络封锁
+  zht: 衝破網絡封鎖
+sub_hero:
+  en: >-
+    Geph connects you with the censorship-free Internet, even when nothing else
+    works.
+  zhs: 其它软件都失灵时，用迷雾通连接自由的网络！
+  zht: 其它軟件都失靈時，用迷霧通連接自由的網絡！
+footer:
+  en: Client Portal
+  zhs: 用户中心
+  zht: 用户中心
+
+robust-zk-privacy:
+  en: Robust zero-knowledge privacy
+  zhs: 强大的隐私保护
+  zht: 強大的隱私保護
+
+robust-zk-privacy-blurb:
+  en: We don't log you — because we can't. We use zero-knowledge authentication so that we can never associate your browsing activity with your identity.
+  zhs: 我们从不记录您的浏览信息，因为我们无法记录。我们用零知识认证，以确保我们永远无法将您的浏览活动与您的身份联系起来。
+  zht: 我們從不記錄您的信息 — 因為我們也無法這麼做。我們使用零知識認證，以確保我們永遠無法將您的瀏覽活動與您的身份聯繫起來。
+
+resilient-anti-censorship:
+  en: Resilient anti-censorship
+  zhs: 不怕封锁
+  zht: 不怕封鎖
+
+resilient-anti-censorship-blurb:
+  en: Geph is on the cutting edge of censorship circumvention research. We have overcome numerous targeted attacks by China's Great Firewall, the world's most sophisticated national internet filter.
+  zhs: 迷雾通一直处于审查规避研究的最前沿。我们不怕封锁机制的针对——迷雾通已经成功抵御了多次来自中国的防火长城（GFW）发起的封锁。
+  zht: 迷霧通一直處於審查規避研究的最前沿。我們不怕封鎖機制的針對——迷霧通已經成功抵禦了多次來自中國的防火長城（GFW）發起的封鎖。
+
+accessible-to-all:
+  en: Accessible to all
+  zhs: 简单易用
+  zht: 簡單易用
+
+accessible-to-all-blurb:
+  en: We believe that internet freedom and privacy is a basic right. So we offer entirely free medium-speed browsing for everyone. Greatly enhanced speed can be purchased for just €5/month.
+  zhs: 我们认为互联网自由和隐私是一项基本权利。因此，我们为每个人提供完全免费的中速浏览。仅5欧元/月即可购买大大提高的速度。
+  zht: 我們認為互聯網自由和隱私是一項基本權利。因此，我們為每個人提供完全免費的中速瀏覽。僅5歐元/月即可購買大大提高的速度。
+
+transparent-and-accountable:
+  en: Transparent and accountable
+  zhs: 透明负责
+  zht: 透明負責
+
+transparent-and-accountable-blurb:
+  en: Geph's entire software stack is open source and available on GitHub. Our managing organization is registered in Estonia, an EU jurisdiction with strong privacy laws.
+  zhs: 迷雾通的整个软件架构都是开源的，可以在GitHub上获得。我们在拥有强大隐私保护的欧盟国家爱沙尼亚注册。
+  zht: 迷霧通的整個軟件架構都是開源的，可以在GitHub上獲得。我們在擁有強大隱私保護的歐盟國家愛沙尼亞註冊。
+
+download:
+  en: Download
+  zhs: 下载
+  zht: 下載
+
+community:
+  en: Community
+  zhs: 社区
+  zht: 社區
+
+forum:
+  en: Discourse forum
+  zhs: Discourse 论坛
+  zht: Discourse 論壇
+
+
+incorrect-login:
+  en: Incorrect username or password
+  zhs: 用户名或密码错误
+  zht: 用戶名或密碼錯誤
+
+loading:
+  en: Loading...
+  zhs: 加载中...
+  zht: 加載中...
+
+account-overview:
+  en: Account overview
+  zhs: 帐户概览
+  zht: 帳戶概覽
+
+internal-server-error:
+  en: Internal server error
+  zhs: 内部服务器错误
+  zht: 內部伺服器錯誤
+
+unknown-error:
+  en: Unknown error
+  zhs: 未知错误
+  zht: 未知錯誤
+
+remaining-days:
+  en: "Remaining days:"
+  zhs: "剩余天数："
+  zht: "剩餘天數："
+
+buy-plus:
+  en: Buy Plus
+  zhs: 购买 Plus
+  zht: 購買 Plus
+
+redeem-giftcard:
+  en: Redeem giftcard
+  zhs: 兑换礼品卡
+  zht: 兌換禮品卡
+
+bad-request:
+  en: Bad request
+  zhs: 错误请求
+  zht: 錯誤請求
+
+duplicate-payments:
+  en: Duplicate payments
+  zhs: 重复付款
+  zht: 重複付款
+
+who-is-the-plus-for:
+  en: Who is the Plus for?
+  zhs: 给谁买 Plus？
+  zht: 給誰買 Plus？
+
+myself:
+  en: Myself
+  zhs: 我自己
+  zht: 我自己
+
+someone-else:
+  en: Someone else
+  zhs: 其他人
+  zht: 其他人
+
+sender:
+  en: Sender
+  zhs: 发送者
+  zht: 發送者
+
+sender-invalid-blurb:
+  en: Sender is required
+  zhs: 必须要有发送者
+  zht: 必須要有發送者
+
+recipient-email:
+  en: Recipient email
+  zhs: 收件者的电子邮件
+  zht: 收件者的電子郵件
+
+recipient-invalid-blurb:
+  en: You must specify someone to receive the gift card
+  zhs: 您必须指定某人来收取礼品卡
+  zht: 您必須指定某人來收取禮品卡
+
+choose-a-plan-length:
+  en: Choose a plan length
+  zhs: 订阅时长
+  zht: 訂閱時長
+
+got-a-promo-code:
+  en: Got a promo code?
+  zhs: 优惠码
+  zht: 優惠碼
+
+promo-code:
+  en: Promo code
+  zhs: 优惠码
+  zht: 優惠碼
+
+choose-a-payment-method:
+  en: Choose a payment method
+  zhs: 付款方式
+  zht: 付款方式
+
+bank-card:
+  en: Bank card
+  zhs: 银行卡
+  zht: 銀行卡
+
+alipay:
+  en: Alipay
+  zhs: 支付宝
+  zht: 支付寶
+
+wxpay:
+  en: WeChat Pay
+  zhs: 微信支付
+  zht: 微信支付
+
+total:
+  en: "Total:"
+  zhs: 总计：
+  zht: 總計：
+
+pay:
+  en: Check out
+  zhs: 结账
+  zht: 結賬
+
+1-month:
+  en: 1 month (30 days)
+  zhs: 1 个月（30 天）
+  zht: 1 個月（30 天）
+
+3-months:
+  en: 3 months (90 days)
+  zhs: 3 个月（90 天）
+  zht: 3 個月（90 天）
+
+1-year:
+  en: 1 year (365 days)
+  zhs: 1 年（365 天）
+  zht: 1 年（365 天）
+
+custom:
+  en: Custom (days)
+  zhs: 自定义（天）
+  zht: 自定義（天）
+
+crypto: 
+  en: Cryptocurrency
+  zhs: 加密货币
+  zht: 加密貨幣
+
+crypto-payment: 
+  en: Cryptocurrency payment
+  zhs: 加密货币支付
+  zht: 加密貨幣支付
+
+choose-a-currency:
+  en: Choose a currency
+  zhs: 请选择货币
+  zht: 請選擇貨幣
+
+btc:
+  en: Bitcoin
+  zhs: 比特币
+  zht: 比特幣
+
+eth:
+  en: Ethereum
+  zhs: 以太坊
+  zht: 以太坊
+
+xmr:
+  en: Monero
+  zhs: 门罗币
+  zht: 門羅幣
+
+usdttrc20:
+  en: USDT
+  zhs: USDT
+  zht: USDT
+
+usdterc20:
+  en: USDT
+  zhs: USDT
+  zht: USDT
+
+usdt:
+  en: USDT
+  zhs: USDT
+  zht: USDT
+
+usdc:
+  en: USDC
+  zhs: USDC
+  zht: USDC
+
+usdcsol:
+  en: USDC
+  zhs: USDC 
+  zht: USDC 
+
+usdctrc20:
+  en: USDC
+  zhs: USDC
+  zht: USDC
+
+doge:
+  en: Dogecoin
+  zhs: 狗狗币
+  zht: 狗狗幣
+
+giftcard-id:
+  en: Giftcard ID
+  zhs: 礼品卡号
+  zht: 禮品卡號
+
+redeem:
+  en: Redeem
+  zhs: 兑换
+  zht: 兌換
+
+incorrect-giftcard:
+  en: No such giftcard
+  zhs: 无此礼品卡
+  zht: 無此禮品卡
+
+giftcard-days:
+  en: "Days in giftcard: "
+  zhs: "礼品卡有效天数："
+  zht: "禮品卡有效天數："
+
+giftcard-applied:
+  en: Giftcard applied
+  zhs: 礼品卡已应用
+  zht: 禮品卡已應用
+
+please-send-funds:
+  en: "Send cryptocurrency to the following address"
+
+amount:
+  en: Amount
+
+to-this-address:
+  en: To this address
+
+waiting:
+  en: Awaiting deposit
+
+confirming:
+  en: Confirming
+
+exchanging:
+  en: Exchanging
+
+finished:
+  en: Finished
+
+failed:
+  en: Failed
+
+refunded:
+  en: Refunded
+
+verifying:
+  en: Verifying
+
+return-to-portal:
+  en: Return to user portal
