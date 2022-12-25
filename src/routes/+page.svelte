@@ -1,0 +1,1 @@
+// automatically redirects to english
