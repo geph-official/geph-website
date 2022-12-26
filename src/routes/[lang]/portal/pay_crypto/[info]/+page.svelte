@@ -21,7 +21,7 @@
 				status = resp.data;
 			}
 		} catch (e) {
-			alert(e);
+			console.error(e);
 		}
 	};
 	const refresher = setInterval(refresh, 1000);
