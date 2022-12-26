@@ -43,6 +43,7 @@
 		"svelte-cryptoicon": "^0.16.1",
 		"svelte-material-icons": "^2.0.4",
 		"svelte-preprocess": "^5.0.0",
+		"terser": "^5.16.1",
 		"vite-plugin-yaml": "^1.0.5",
 		"yaml": "^2.2.0"
 	}
