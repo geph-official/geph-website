@@ -5,9 +5,7 @@ import legacy from '@vitejs/plugin-legacy'
 
 /** @type {import('vite').UserConfig} */
 const config = {
-	plugins: [ViteYaml(), sveltekit(), legacy({
-		targets: ['defaults', 'IE 11'],
-	  })]
+	plugins: [ViteYaml(), sveltekit()]
 };
 
 export default config;
