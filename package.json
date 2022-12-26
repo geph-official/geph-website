@@ -33,6 +33,7 @@
 	"type": "module",
 	"dependencies": {
 		"@types/debounce": "^1.2.1",
+		"@vitejs/plugin-legacy": "^3.0.1",
 		"axios": "^1.2.1",
 		"bootstrap": "5.2.3",
 		"cryptocurrency-icons": "^0.18.1",
