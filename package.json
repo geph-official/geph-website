@@ -28,12 +28,14 @@
 		"svelte-check": "^2.9.2",
 		"tslib": "^2.4.1",
 		"typescript": "^4.9.3",
-		"vite": "^4.0.0"
+		"vite": "^4.0.0",
+		"terser": "^5.16.1",
+		"vite-plugin-yaml": "^1.0.5",
+		"@vitejs/plugin-legacy": "^3.0.1"
 	},
 	"type": "module",
 	"dependencies": {
 		"@types/debounce": "^1.2.1",
-		"@vitejs/plugin-legacy": "^3.0.1",
 		"axios": "^1.2.1",
 		"bootstrap": "5.2.3",
 		"cryptocurrency-icons": "^0.18.1",
@@ -43,8 +45,6 @@
 		"svelte-cryptoicon": "^0.16.1",
 		"svelte-material-icons": "^2.0.4",
 		"svelte-preprocess": "^5.0.0",
-		"terser": "^5.16.1",
-		"vite-plugin-yaml": "^1.0.5",
 		"yaml": "^2.2.0"
 	}
 }
