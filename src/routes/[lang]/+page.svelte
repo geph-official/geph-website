@@ -1,13 +1,16 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { download } from '../../download_links';
 	import { xlink_attr } from 'svelte/internal';
 	import { localize } from '../l10n';
 	import Navbar from './Navbar.svelte';
 	import Footer from './Footer.svelte';
 
 	const lang = $page.params['lang'];
+
+	export let data: any;
 </script>
+
+<title>{localize(lang, 'geph')}</title>
 
 <div lang={localize(lang, 'langcode')}>
 	<Navbar />
@@ -22,7 +25,7 @@
 				<div class="blurb">
 					<h3>🔒 {localize(lang, 'robust-zk-privacy')}</h3>
 					<p>
-						{localize(lang, 'robust-zk-privacy-blurb')}
+						{@html localize(lang, 'robust-zk-privacy-blurb')}
 					</p>
 				</div>
 			</div>
@@ -30,7 +33,7 @@
 				<div class="blurb">
 					<h3>🏛️ {localize(lang, 'resilient-anti-censorship')}</h3>
 					<p>
-						{localize(lang, 'resilient-anti-censorship-blurb')}
+						{@html localize(lang, 'resilient-anti-censorship-blurb')}
 					</p>
 				</div>
 			</div>
@@ -40,7 +43,7 @@
 				<div class="blurb">
 					<h3>😊 {localize(lang, 'accessible-to-all')}</h3>
 					<p>
-						{localize(lang, 'accessible-to-all-blurb')}
+						{@html localize(lang, 'accessible-to-all-blurb')}
 					</p>
 				</div>
 			</div>
@@ -48,7 +51,7 @@
 				<div class="blurb">
 					<h3>🔍 {localize(lang, 'transparent-and-accountable')}</h3>
 					<p>
-						{localize(lang, 'transparent-and-accountable-blurb')}
+						{@html localize(lang, 'transparent-and-accountable-blurb')}
 					</p>
 				</div>
 			</div>
@@ -62,7 +65,7 @@
 			</div>
 			<div class="row mt-4">
 				<div class="col-lg col-6">
-					<a class="download-box" href={download.windows}>
+					<a class="download-box" href={data.download.windows}>
 						<div class="download-box-icon">
 							<img src="/windows.png" alt="windows logo" />
 						</div>
@@ -73,7 +76,7 @@
 					</a>
 				</div>
 				<div class="col-lg col-6">
-					<a class="download-box" href={download.mac}>
+					<a class="download-box" href={data.download.mac}>
 						<div class="download-box-icon">
 							<img src="/macos.png" alt="mac logo" />
 						</div>
@@ -84,7 +87,7 @@
 					</a>
 				</div>
 				<div class="col-lg col-6">
-					<a class="download-box" href={download.linux}>
+					<a class="download-box" href={data.download.linux}>
 						<div class="download-box-icon">
 							<img src="/linux.png" alt="linux logo" />
 						</div>
@@ -95,7 +98,7 @@
 					</a>
 				</div>
 				<div class="col-lg col-6">
-					<a class="download-box" href={download.android_apk}>
+					<a class="download-box" href={data.download.android_apk}>
 						<div class="download-box-icon">
 							<img src="/android.png" alt="android logo" />
 						</div>
@@ -107,7 +110,7 @@
 				</div>
 
 				<div class="col-lg col-6">
-					<a class="download-box" href={download.android_gplay}>
+					<a class="download-box" href={data.download.android_gplay}>
 						<div class="download-box-icon">
 							<img src="/googleplay.png" alt="play logo" />
 						</div>

@@ -35,6 +35,8 @@
 	};
 </script>
 
+<title>{l('choose-a-currency')}</title>
+
 <Navbar />
 <div class="container mt-5 pt-3" in:fade>
 	<div class="row">
@@ -47,7 +49,7 @@
 			<div class="buttons">
 				{#each tokens as token}
 					<button
-						class="btn btn-outline-dark me-2"
+						class="btn btn-outline-dark me-2 btn-lg"
 						on:click={() => {
 							selectToken(token.name);
 						}}

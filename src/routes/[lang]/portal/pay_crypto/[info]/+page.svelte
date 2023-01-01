@@ -21,7 +21,7 @@
 				status = resp.data;
 			}
 		} catch (e) {
-			alert(e);
+			console.error(e);
 		}
 	};
 	const refresher = setInterval(refresh, 1000);
@@ -29,8 +29,10 @@
 	onDestroy(() => clearInterval(refresher));
 </script>
 
+<title>{l('send-crypto')}</title>
+
 <Navbar />
-<div class="container mt-5 pt-5">
+<div class="container mt-lg-5 pt-5">
 	<div class="row">
 		<div class="col">
 			<h2>{l('please-send-funds')}</h2>
@@ -73,7 +75,7 @@
 							style="width: 2rem; height: 2rem;"
 							role="status"
 						>
-							<span class="visually-hidden">Loading...</span>
+							<span class="visually-hidden">{l('loading')}</span>
 						</div>
 						<span class="med-text ms-3">{l(status)}...</span>
 					</div>

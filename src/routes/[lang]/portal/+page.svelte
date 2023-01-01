@@ -1,6 +1,7 @@
 <script lang="ts">
 	import AccountCircle from 'svelte-material-icons/AccountCircle.svelte';
 	import CalendarRange from 'svelte-material-icons/CalendarRange.svelte';
+	import Heart from 'svelte-material-icons/Heart.svelte';
 	import axios from 'axios';
 	import { fade } from 'svelte/transition';
 	import { page } from '$app/stores';
@@ -61,6 +62,8 @@
 	<script src="https://js.stripe.com/v3/"></script>
 </svelte:head>
 
+<title>{localize(lang, 'user-portal')}</title>
+
 <div lang={localize(lang, 'langcode')}>
 	<Navbar />
 	{#await get_user_info()}
@@ -72,35 +75,58 @@
 		<div class="container mt-5 pt-3" in:fade>
 			<div class="row">
 				<div class="col">
-					<h2>{localize(lang, 'account-overview')}</h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col">
-					<div class="icon-badge">
-						<div class="icon"><AccountCircle width="26" height="22" /></div>
-						{user_info['username']}
-					</div>
-					<div class="icon-badge">
-						<div class="icon" style="color: #007bbb">
-							<CalendarRange width="26" height="22" />
+					<div class="row">
+						<div class="col">
+							<h2>{localize(lang, 'account-overview')}</h2>
 						</div>
-						<div>
-							{new Date(user_info['expires']).toLocaleDateString(localize(lang, 'langcode'), {
-								year: 'numeric',
-								month: 'short',
-								day: 'numeric'
-							})}<br />
-							<small>
-								{localize(lang, 'remaining-days')}
-								<span class="remaining-days">
-									{Math.max(
-										0,
-										(new Date(user_info['expires']).getTime() - new Date().getTime()) /
-											(24 * 60 * 60 * 1000)
-									).toFixed(0)}
-								</span>
-							</small>
+					</div>
+					<div class="row">
+						<div class="col">
+							<div class="icon-badge">
+								<div class="icon"><AccountCircle width="26" height="22" /></div>
+								{user_info['username']}
+							</div>
+							{#if user_info['plan'] === 'plus'}
+								<div class="icon-badge">
+									<div class="icon" style="color: #007bbb">
+										<CalendarRange width="26" height="22" />
+									</div>
+									<div>
+										{new Date(user_info['expires']).toLocaleDateString(localize(lang, 'langcode'), {
+											year: 'numeric',
+											month: 'short',
+											day: 'numeric'
+										})}<br />
+										<small>
+											{localize(lang, 'remaining-days')}
+											<span class="remaining-days">
+												{Math.max(
+													0,
+													(new Date(user_info['expires']).getTime() - new Date().getTime()) /
+														(24 * 60 * 60 * 1000)
+												).toFixed(0)}
+											</span>
+										</small>
+									</div>
+								</div>
+							{:else}
+								<div class="icon-badge">
+									<div class="icon" style="color: #e80606">
+										<Heart width="26" height="22" />
+									</div>
+									<div>Free</div>
+								</div>
+							{/if}
+						</div>
+					</div>
+				</div>
+				<div class="col-lg" />
+				<div class="col">
+					<div class="card m-3 m-lg-0">
+						<img src="/click_refresh.png" class="card-img-top" alt="" />
+						<div class="card-body">
+							<h5 class="card-title">{localize(lang, 'missing-days')}</h5>
+							<p>{localize(lang, 'click-refresh')}</p>
 						</div>
 					</div>
 				</div>
