@@ -76,6 +76,13 @@
 		}
 	};
 
+	const onPromoChange = (e: any) => {
+		if (e.target.value) {
+			promo = e.target.value.toUpperCase().trim();
+			e.target.value = days;
+		}
+	};
+
 	$: l = (s: string) => localize(lang, s);
 
 	$: senderValid = sender.length > 0;
@@ -192,7 +199,8 @@
 						type="promo"
 						class="form-control small-form-control"
 						id="promo"
-						bind:value={promo}
+						on:change={onPromoChange}
+						value={promo}
 						placeholder={l('promo-code')}
 					/>
 				</div>
