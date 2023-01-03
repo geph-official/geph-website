@@ -17,12 +17,13 @@
 
 	const selectToken = async (token: string) => {
 		spinning = true;
+		let item = JSON.parse(sessionStorage.getItem('item') as string);
 		try {
 			const resp = await axios.post(BINDER_ADDR + '/new-crypto', {
 				sessid: sessionStorage.getItem('sessid'),
 				promo: sessionStorage.getItem('promo'),
 				days: +(sessionStorage.getItem('days') as any),
-				item: sessionStorage.getItem('item'),
+				item,
 				token
 			});
 

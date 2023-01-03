@@ -109,7 +109,7 @@ export function cryptoBackend(): PaymentBackend {
         pay: async (days: number, promo: string, item: Item) => {
             sessionStorage.setItem("days", days.toString());
             sessionStorage.setItem("promo", promo);
-            sessionStorage.setItem("item", item.toString());
+            sessionStorage.setItem("item", JSON.stringify(item));
 
             goto("./portal/pay_crypto");
         }
