@@ -16,7 +16,7 @@ export function translateError(e: string, lang: string): string {
 
 
 export type Item = "Plus" | {
-    "Giftcard": { recipient_email: string, sender: string }
+    "Giftcard": { recipient_email: string, sender: string, number: number }
 }
 
 export interface PaymentBackend {

@@ -27,6 +27,7 @@
 	let item: 'plus' | 'giftcard' = 'plus';
 	let recipientEmail = '';
 	let sender = '';
+	let giftcards_number = 1;
 	let payMethod: string = 'bank-card';
 
 	const toQueryString = (params: any) => {
@@ -36,10 +37,17 @@
 			.join('&');
 	};
 
-	const makeItem = (item: 'plus' | 'giftcard', email: string, sender: string) => {
+	const makeItem = (
+		item: 'plus' | 'giftcard',
+		email: string,
+		sender: string,
+		giftcards_number: number
+	) => {
 		var enum_item: Item = 'Plus';
 		if (item == 'giftcard') {
-			enum_item = { Giftcard: { recipient_email: email, sender: sender } };
+			enum_item = {
+				Giftcard: { recipient_email: email, sender: sender, number: giftcards_number }
+			};
 		}
 		return enum_item;
 	};
@@ -65,14 +73,21 @@
 	}, 100);
 	$: recalcCost({
 		promo: item === 'giftcard' ? '' : promo,
-		days: days,
+		days: item === 'giftcard' ? days * giftcards_number : days,
 		method: payMethod
 	});
 
 	const onDaysChange = (e: any) => {
 		if (e.target.value) {
-			days = Math.min(10000, Math.max(7, e.target.value));
+			days = Math.floor(Math.min(10000, Math.max(7, e.target.value)));
 			e.target.value = days;
+		}
+	};
+
+	const onGiftcardsNumberChange = (e: any) => {
+		if (e.target.value) {
+			giftcards_number = Math.floor(Math.max(1, e.target.value));
+			e.target.value = giftcards_number;
 		}
 	};
 
@@ -142,11 +157,28 @@
 				{/if}
 			</div>
 		</div>
+
+		<div class="row mt-5">
+			<div class="col">
+				<h2>{l('how-many-giftcards')}</h2>
+				<input
+					type="number"
+					class="form-control small-form-control"
+					id="giftcards_number"
+					value={giftcards_number}
+					on:change={onGiftcardsNumberChange}
+				/>
+			</div>
+		</div>
 	{/if}
 
 	<div class="row mt-5">
 		<div class="col">
-			<h2>{l('choose-a-plan-length')}</h2>
+			{#if item !== 'giftcard'}
+				<h2>{l('choose-a-plan-length')}</h2>
+			{:else}
+				<h2>{l('how-many-days-in-each-giftcard')}</h2>
+			{/if}
 			<div class="buttons">
 				<button
 					class="btn btn-outline-dark me-2"
@@ -174,20 +206,40 @@
 					}}
 				>
 					{l('1-year')}
+					<span class="badge rounded-pill bg-success">{l('10-off')}</span>
+				</button>
+				<button
+					class="btn btn-outline-dark me-2"
+					class:selected={days === 730}
+					on:click={() => {
+						days = 730;
+					}}
+				>
+					{l('2-year')}
+					<span class="badge rounded-pill bg-success">{l('15-off')}</span>
+				</button>
+			</div>
+			<div class="buttons">
+				<button
+					class="btn btn-outline-dark me-2"
+					class:selected={days === 1095}
+					on:click={() => {
+						days = 1095;
+					}}
+				>
+					{l('3-year')}
+					<span class="badge rounded-pill bg-success">{l('17.5-off')}</span>
 				</button>
 				<input
 					type="number"
 					class="form-control small-form-control"
 					id="length"
-					value={days == 30 || days == 90 || days == 365 ? '' : days}
+					value={days == 30 || days == 90 || days == 365 || days == 730 || days == 1095 ? '' : days}
 					on:change={onDaysChange}
 					placeholder={l('custom')}
 				/>
 			</div>
 		</div>
-	</div>
-	<div class="row">
-		<div class="col" />
 	</div>
 
 	{#if item !== 'giftcard'}
@@ -245,6 +297,16 @@
 			</div>
 		</div>
 
+		{#if item == 'giftcard'}
+			<div class="row">
+				<div class="col">
+					<h3>
+						{l('giftcard-promotion')}
+					</h3>
+				</div>
+			</div>
+		{/if}
+
 		<div class="row mt-3">
 			<div class="col">
 				<button
@@ -264,7 +326,7 @@
 								}
 							}
 							try {
-								let ready_item = makeItem(item, recipientEmail, sender);
+								let ready_item = makeItem(item, recipientEmail, sender, giftcards_number);
 								await paymentBackends.get(payMethod)?.pay(days, promo, ready_item);
 							} catch (e) {
 								alert(translateError(String(e), lang));
@@ -314,6 +376,12 @@
 		letter-spacing: -0.02rem;
 		font-weight: 550;
 		opacity: 0.8;
+	}
+
+	h3 {
+		font-size: 1rem;
+		font-weight: 400;
+		opacity: 0.7;
 	}
 
 	.small-form-control {
