@@ -60,11 +60,10 @@
 
 <svelte:head>
 	<script src="https://js.stripe.com/v3/"></script>
+	<title>{localize(lang, 'user-portal')}</title>
 </svelte:head>
 
-<title>{localize(lang, 'user-portal')}</title>
-
-<div lang={localize(lang, 'langcode')}>
+<div lang={localize(lang, 'langcode')} dir="auto">
 	<Navbar />
 	{#await get_user_info()}
 		<div class="loading-wrapper">

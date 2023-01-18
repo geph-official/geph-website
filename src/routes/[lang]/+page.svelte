@@ -10,9 +10,11 @@
 	export let data: any;
 </script>
 
-<title>{localize(lang, 'geph')}</title>
+<svelte:head>
+	<title>{localize(lang, 'geph')}</title>
+</svelte:head>
 
-<div lang={localize(lang, 'langcode')}>
+<div lang={localize(lang, 'langcode')} dir="auto">
 	<Navbar />
 	<div class="container hero my-5 py-5 pb-4">
 		<h1>🚀 {localize(lang, 'hero')}</h1>
@@ -174,14 +176,14 @@
 	}
 
 	.navbar-brand img {
-		margin-right: 0.3rem;
+		margin-inline-end: 0.3rem;
 	}
 
 	.hero {
 		/* background-color: rgba(0, 0, 0, 0.05); */
 		/* border-radius: 0.5rem; */
 
-		padding-left: 2rem;
+		padding-inline-start: 2rem;
 	}
 
 	.hero h1 {
@@ -240,7 +242,7 @@
 	}
 
 	.download-box-icon {
-		margin-right: 1rem;
+		margin-inline-end: 1rem;
 	}
 
 	.dl-desc {

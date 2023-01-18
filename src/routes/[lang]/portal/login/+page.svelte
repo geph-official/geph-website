@@ -14,9 +14,11 @@
 	let password = '';
 </script>
 
-<title>{localize(lang, 'login')}</title>
+<svelte:head>
+	<title>{localize(lang, 'login')}</title>
+</svelte:head>
 
-<div lang={localize(lang, 'langcode')}>
+<div lang={localize(lang, 'langcode')} dir="auto">
 	<Navbar />
 	<div class="container mt-lg-5 pt-5">
 		<div class="row mb-3">
