@@ -16,7 +16,7 @@ export function translateError(e: string, lang: string): string {
 
 
 export type Item = "Plus" | {
-    "Giftcard": { recipient_email: string, sender: string }
+    "Giftcard": { recipient_email: string, sender: string, number: number }
 }
 
 export interface PaymentBackend {
@@ -109,7 +109,7 @@ export function cryptoBackend(): PaymentBackend {
         pay: async (days: number, promo: string, item: Item) => {
             sessionStorage.setItem("days", days.toString());
             sessionStorage.setItem("promo", promo);
-            sessionStorage.setItem("item", item.toString());
+            sessionStorage.setItem("item", JSON.stringify(item));
 
             goto("./portal/pay_crypto");
         }

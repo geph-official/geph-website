@@ -266,13 +266,48 @@ pay:
 
 1-year:
   en: 1 year (365 days)
-  zhs: 1 年（365 天）
-  zht: 1 年（365 天）
+  zhs: 1年（365 天）
+  zht: 1年（365 天）
+
+2-year:
+  en: 2 years (730 days)
+  zhs: 2年（730 天）
+  zht: 2年（730 天）
+
+3-year:
+  en: 3 years (1095 days)
+  zhs: 3年（1095 天）
+  zht: 3年（1095 天）
 
 custom:
   en: Custom (days)
   zhs: 自定义（天）
   zht: 自定義（天）
+
+10-off: 
+  en: 10% OFF
+  zhs: 9折
+  zht: 9折
+
+15-off: 
+  en: 15% OFF
+  zhs: 8.5折
+  zht: 8.5折
+
+17.5-off: 
+  en: 17.5% OFF
+  zhs: 8.25折
+  zht: 8.25折
+
+how-many-giftcards:
+  en: How many giftcards?
+  zhs: 买多少张礼品卡？
+  zht: 買多少張禮品卡？
+
+how-many-days-in-each-giftcard:
+  en: How many days for each giftcard?
+  zhs: 每张礼品卡充值多少天？
+  zht: 每張禮品卡充值多少天？
 
 crypto: 
   en: Cryptocurrency
@@ -359,11 +394,15 @@ giftcard-days:
   zhs: "礼品卡有效天数："
   zht: "禮品卡有效天數："
 
-
 giftcard-applied:
   en: Giftcard applied
   zhs: 礼品卡已应用
   zht: 禮品卡已應用
+
+giftcard-promotion:
+  en: Promotions can be applied while redeeming giftcards
+  zhs: 任何优惠码可在兑换礼品卡时使用
+  zht: 任何優惠碼可在兌換禮品卡時使用
 
 send-crypto:
   en: Send cryptocurrency
@@ -435,12 +474,12 @@ click-refresh:
   zhs: 如果在软件中没有看到新买的 Plus 时长，请点击第一页的刷新按钮。
   zht: 如果在軟件中沒有看到新購買的 Plus 時長，請點擊第一頁的刷新按鈕。
 
-banner:
-  en: "📅 Jan 1-7 : 🎁Take 11.2% off Plus with code <b>NEWYEAR</b>!🎁"
-  zhs: "📅 1月1-7: 🎁用优惠码 <b>NEWYEAR</b> 打 8.8 折！🎁"
-  zht: "📅 1月1-7: 🎁用優惠碼 <b>TESTTEST</b> 打 8.8 折！🎁"
-
 # banner:
-#   en: ""
-#   zhs: ""
-#   zht: ""
+#   en: "📅 Jan 1-7 : 🎁Take 12% off Plus with code <b>NEWYEAR</b>!🎁"
+#   zhs: "📅 1月1-7: 🎁用优惠码 <b>NEWYEAR</b> 打 8.8 折！🎁"
+#   zht: "📅 1月1-7: 🎁用優惠碼 <b>NEWYEAR</b> 打 8.8 折！🎁"
+
+banner:
+  en: '💲Buy more save more: 1 year = 10% off, 2 years = 15% off, 3 years = 17.5% off, ...💲'
+  zhs: '💲多买多优惠：1年=9折，2年=8.5折，3年=8.25折，...💲'
+  zht: '💲多買多優惠：1年=9折，2年=8.5折，3年=8.25折，...💲'
