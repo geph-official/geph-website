@@ -10,14 +10,7 @@
 	import Footer from '../Footer.svelte';
 	import BuyPlus from './BuyPlus.svelte';
 	import RedeemGiftcard from './RedeemGiftcard.svelte';
-	const lang = (() => {
-		const lang = $page.params['lang'];
-		if (lang !== 'en' && lang !== 'zhs' && lang !== 'zht') {
-			return 'en';
-		} else {
-			return lang;
-		}
-	})();
+	const lang = $page.params['lang'];
 
 	const errL10n = {
 		400: { en: 'Bad request', zhs: '错误的请求', zht: '錯誤的請求' },
@@ -177,7 +170,7 @@
 	}
 
 	.loading-wrapper div {
-		margin-right: 1rem;
+		margin-inline-end: 1rem;
 	}
 
 	.icon-badge {
@@ -189,11 +182,11 @@
 	}
 
 	.icon-badge {
-		padding-right: 1rem;
+		padding-inline-end: 1rem;
 	}
 
 	.icon {
-		padding-right: 0.5rem;
+		padding-inline-end: 0.5rem;
 	}
 
 	.remaining-days {
@@ -207,7 +200,7 @@
 		padding: 1rem;
 		padding-top: 2rem;
 		padding-bottom: 3rem;
-		margin-left: 0.1rem;
-		margin-right: 0.1rem;
+		margin-inline-start: 0.1rem;
+		margin-inline-end: 0.1rem;
 	}
 </style>

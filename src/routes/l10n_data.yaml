@@ -76,7 +76,7 @@ sub_hero:
     works.
   zhs: 其它软件都失灵时，用迷雾通连接自由的网络！
   zht: 其它軟件都失靈時，用迷霧通連接自由的網絡！
-  fa:  شما را به اینترنت بدون سانسور متصل می کند، حتی وقتی هیچ چیز دیگری کار نمی‌کندGeph
+  fa:  Geph شما را به اینترنت بدون سانسور متصل می کند، حتی وقتی هیچ چیز دیگری کار نمی‌کند
   
 footer:
   en: Client Portal
@@ -106,7 +106,7 @@ resilient-anti-censorship-blurb:
   en: Geph is on the cutting edge of censorship circumvention research. We have overcome numerous targeted attacks by China's Great Firewall, the world's most sophisticated national internet filter.
   zhs: 迷雾通一直在反封锁研究的最前沿。在过去的三年中，我们多次遭到GFW的针对攻击，并且屡战屡胜。迷雾通更是目前市面上唯一提供<a href="https://github.com/geph-official/geph4-client/wiki/Service-SLA-(%E5%B0%81%E4%B8%80%E5%A4%A9%E8%B3%A0%E4%B8%80%E5%A4%A9%E6%94%BF%E7%AD%96)">封几天赔几天</a>的翻墙软件。
   zht: 迷霧通一直在反封鎖研究的最前沿。在過去的三年中，我們多次遭到GFW的針對攻擊，並且屢戰屢勝。迷霧通更是目前市面上唯一提供<a href="https://github.com/geph-official/geph4-client/wiki/Service-SLA-(%E5%B0%81%E4%B8%80%E5%A4%A9%E8%B3%A0%E4%B8%80%E5%A4%A9%E6%94%BF%E7%AD%96)">封幾天賠幾天</a>的翻牆軟件。
-  fa: گِف از جدیدترین تکنولوژی های دور زدن سانسور استفاده می‌کند. ما از چندین حمله هدفمند از سمت فایروال قدرتمند چین، پیچیده‌ترین فیلتر اینترنت ملی جهان، سربلند بیرون آمده‌ایم.
+  fa: Geph از جدیدترین تکنولوژی های دور زدن سانسور استفاده می‌کند. ما از چندین حمله هدفمند از سمت فایروال قدرتمند چین، پیچیده‌ترین فیلتر اینترنت ملی جهان، سربلند بیرون آمده‌ایم.
 
 accessible-to-all:
   en: Accessible to all
@@ -130,7 +130,7 @@ transparent-and-accountable-blurb:
   en: Geph's entire software stack is open source and available on <a href="https://github.com/geph-official/">GitHub</a>. Our managing organization is registered in Estonia, an EU jurisdiction with strong privacy laws.
   zhs: 迷雾通的整个软件架构全部是开源的，可以在 <a href="https://github.com/geph-official/">GitHub</a> 上浏览。迷雾通公司注册在爱沙尼亚，受欧盟严格的隐私法保护。
   zht: 迷霧通的整個軟件架構全部是開源的，可以在 <a href="https://github.com/geph-official/">GitHub</a> 上瀏覽。迷霧通公司註冊在愛沙尼亞，受歐盟嚴格的隱私法保護。
-  fa: متن باز است و از طریق Gephتمام پشته نرم‌افزاری  <a href="https://github.com/geph-official/">گیت‌هاب</a> قابل دسترسی است.
+  fa: متن باز است و از طریق Geph تمام پشته نرم‌افزاری  <a href="https://github.com/geph-official/">گیت‌هاب</a> قابل دسترسی است.
 download:
   en: Download
   zhs: 下载
@@ -310,37 +310,37 @@ pay:
   en: 1 month (30 days)
   zhs: 1 个月（30 天）
   zht: 1 個月（30 天）
-  fa: (یک ماه (30 روز
+  fa: یک ماه (30 روز)
 
 3-months:
   en: 3 months (90 days)
   zhs: 3 个月（90 天）
   zht: 3 個月（90 天）
-  fa: (سه ماه (90 روز
+  fa: سه ماه (90 روز)
 
 1-year:
   en: 1 year (365 days)
   zhs: 1年（365 天）
   zht: 1年（365 天）
-  fa: (یک سال (365 روز
+  fa: یک سال (365 روز)
 
 2-year:
   en: 2 years (730 days)
   zhs: 2年（730 天）
   zht: 2年（730 天）
-  fa: (دو سال (730 روز
+  fa: دو سال (730 روز)
 
 3-year:
   en: 3 years (1095 days)
   zhs: 3年（1095 天）
   zht: 3年（1095 天）
-  fa: (سه سال (1095 روز
+  fa: سه سال (1095 روز)
 
 custom:
   en: Custom (days)
   zhs: 自定义（天）
   zht: 自定義（天）
-  fa: (دلخواه (تعداد روز ها
+  fa: دلخواه (تعداد روز ها)
 
 10-off: 
   en: 10% OFF

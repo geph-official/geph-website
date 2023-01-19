@@ -36,38 +36,42 @@
 	};
 </script>
 
-<title>{l('choose-a-currency')}</title>
+<svelte:head>
+	<title>{l('choose-a-currency')}</title>
+</svelte:head>
 
-<Navbar />
-<div class="container mt-5 pt-3" in:fade>
-	<div class="row">
-		<div class="col">
-			<h2>{l('choose-a-currency')}</h2>
+<div lang={localize(lang, 'langcode')} dir="auto">
+	<Navbar />
+	<div class="container mt-5 pt-3" in:fade>
+		<div class="row">
+			<div class="col">
+				<h2>{l('choose-a-currency')}</h2>
+			</div>
 		</div>
-	</div>
-	<div class="row mt-5">
-		<div class="col">
-			<div class="buttons">
-				{#each tokens as token}
-					<button
-						class="btn btn-outline-dark me-2 btn-lg"
-						on:click={() => {
-							selectToken(token.name);
-						}}
-						disabled={spinning}
-					>
-						<img src={token.icon} alt="" />
-						{l(token.name)}
-						{#if token.badge}
-							<span class="badge bg-secondary">{token.badge}</span>
-						{/if}
-					</button>
-				{/each}
+		<div class="row mt-5">
+			<div class="col">
+				<div class="buttons">
+					{#each tokens as token}
+						<button
+							class="btn btn-outline-dark me-2 btn-lg"
+							on:click={() => {
+								selectToken(token.name);
+							}}
+							disabled={spinning}
+						>
+							<img src={token.icon} alt="" />
+							{l(token.name)}
+							{#if token.badge}
+								<span class="badge bg-secondary">{token.badge}</span>
+							{/if}
+						</button>
+					{/each}
+				</div>
 			</div>
 		</div>
 	</div>
+	<Footer />
 </div>
-<Footer />
 
 <style>
 	.btn {
@@ -83,7 +87,7 @@
 	}
 
 	.btn .badge {
-		margin-left: 0.4rem;
+		margin-inline-start: 0.4rem;
 	}
 
 	.buttons {
