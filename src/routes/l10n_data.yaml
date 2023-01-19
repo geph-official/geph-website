@@ -130,7 +130,7 @@ transparent-and-accountable-blurb:
   en: Geph's entire software stack is open source and available on <a href="https://github.com/geph-official/">GitHub</a>. Our managing organization is registered in Estonia, an EU jurisdiction with strong privacy laws.
   zhs: 迷雾通的整个软件架构全部是开源的，可以在 <a href="https://github.com/geph-official/">GitHub</a> 上浏览。迷雾通公司注册在爱沙尼亚，受欧盟严格的隐私法保护。
   zht: 迷霧通的整個軟件架構全部是開源的，可以在 <a href="https://github.com/geph-official/">GitHub</a> 上瀏覽。迷霧通公司註冊在愛沙尼亞，受歐盟嚴格的隱私法保護。
-  fa: متن باز است و از طریق Geph تمام پشته نرم‌افزاری  <a href="https://github.com/geph-official/">گیت‌هاب</a> قابل دسترسی است.
+  fa: تمام پشته نرم افزاری Geph متن باز است و از طریق گیت‌هاب قابل دسترسی است.
 download:
   en: Download
   zhs: 下载
