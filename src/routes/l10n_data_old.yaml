@@ -2,73 +2,60 @@ langname:
   en: English
   zhs: 简体中文
   zht: 繁體中文
-  fa: فارسی
 
 langcode:
   en: en-US
   zhs: zh-CN
   zht: zh-TW
-  fa: fa-IR
 
 username:
   en: Username
   zhs: 用户名
   zht: 用戶名
-  fa: نام کاربری
-
 password:
   en: Password
   zhs: 密码
   zht: 密碼
-  fa: کلمه عبور
 
 home:
   en: Home
   zhs: 主页
   zht: 主頁
-  fa: خانه
 
 user-portal:
   en: User portal
   zhs: 账户管理
   zht: 賬戶管理
-  fa: ورودی کاربران
 
 policies:
   en: Policies
   zhs: 条款
   zht: 條款
-  fa: سیاست ها
 
 login:
   en: Log in
   zhs: 登录
   zht: 登錄
-  fa: ورود
 
 email_required:
   en: Giftcard recipient email field is required
   zhs: 请填写收礼品卡的邮件
   zht: 請填寫收禮品卡的郵件
-  fa: فیلد ایمیل گیرنده گیفت کارت باید پر شود
 
 sender_required:
   en: Giftcard sender field is required
   zhs: 请填写礼品卡赠送人
   zht: 請填寫禮品卡贈送人
-  fa: فیلد فرستنده گیفت کارت باید پر شود
 
 geph:
   en: Geph
   zhs: 迷雾通
   zht: 迷霧通
-  fa: Geph
 
 hero:
   en: Blast through censorship.
   zhs: 冲破网络封锁
   zht: 衝破網絡封鎖
-  fa: فیلترینگ را منفجر کنید
 
 sub_hero:
   en: >-
@@ -76,502 +63,423 @@ sub_hero:
     works.
   zhs: 其它软件都失灵时，用迷雾通连接自由的网络！
   zht: 其它軟件都失靈時，用迷霧通連接自由的網絡！
-  fa:  Geph شما را به اینترنت بدون سانسور متصل می کند، حتی وقتی هیچ چیز دیگری کار نمی‌کند
   
 footer:
   en: Client Portal
   zhs: 用户中心
   zht: 用户中心
-  fa: ورودی مشتری
 
 robust-zk-privacy:
   en: Robust zero-knowledge privacy
   zhs: 隐私至上
   zht: 隱私至上
-  fa: حریم خصوصی قدرت مند بدون دانش اطلاعات کاربر
 
 robust-zk-privacy-blurb:
   en: We don't log you — because we can't. We use <a href="https://github.com/geph-official/geph4-libs/tree/master/mizaru">zero-knowledge authentication</a> so that we can never associate your browsing activity with your identity.
   zhs: 我们无法记录您的浏览信息，因为我们使用先进的密码学开发了 <a href="https://github.com/geph-official/geph4-libs/tree/master/mizaru">Mizaru 零知识认证协议</a>。这确保我们永远无法将您的浏览活动与您的身份联系起来。
   zht: 我們無法記錄您的瀏覽信息，因為我們使用先進的密碼學開發了 <a href="https://github.com/geph-official/geph4-libs/tree/master/mizaru">Mizaru 零知識認證協議</a>。這確保我們永遠無法將您的瀏覽活動與您的身份聯繫起來。
-  fa: ما اعمال شما را ثبت نمی‌کنیم چرا که نمی‌توانیم. ما از <a href="https://github.com/geph-official/geph4-libs/tree/master/mizaru">شناسایی بدون دانش</a> استفاده می‌کنیم تا هیچوقت نتوانیم اعمال اینترنتی شما را با هویت شما تطبیق دهیم.
 
 resilient-anti-censorship:
   en: Resilient anti-censorship
   zhs: 不怕封锁
   zht: 不怕封鎖
-  fa: تکنولوژی ضد-سانسور مقاوم
 
 resilient-anti-censorship-blurb:
   en: Geph is on the cutting edge of censorship circumvention research. We have overcome numerous targeted attacks by China's Great Firewall, the world's most sophisticated national internet filter.
   zhs: 迷雾通一直在反封锁研究的最前沿。在过去的三年中，我们多次遭到GFW的针对攻击，并且屡战屡胜。迷雾通更是目前市面上唯一提供<a href="https://github.com/geph-official/geph4-client/wiki/Service-SLA-(%E5%B0%81%E4%B8%80%E5%A4%A9%E8%B3%A0%E4%B8%80%E5%A4%A9%E6%94%BF%E7%AD%96)">封几天赔几天</a>的翻墙软件。
   zht: 迷霧通一直在反封鎖研究的最前沿。在過去的三年中，我們多次遭到GFW的針對攻擊，並且屢戰屢勝。迷霧通更是目前市面上唯一提供<a href="https://github.com/geph-official/geph4-client/wiki/Service-SLA-(%E5%B0%81%E4%B8%80%E5%A4%A9%E8%B3%A0%E4%B8%80%E5%A4%A9%E6%94%BF%E7%AD%96)">封幾天賠幾天</a>的翻牆軟件。
-  fa: Geph از جدیدترین تکنولوژی های دور زدن سانسور استفاده می‌کند. ما از چندین حمله هدفمند از سمت فایروال قدرتمند چین، پیچیده‌ترین فیلتر اینترنت ملی جهان، سربلند بیرون آمده‌ایم.
-
 accessible-to-all:
   en: Accessible to all
   zhs: 人人可用
   zht: 人人可用
-  fa: در دسترس برای همه
 
 accessible-to-all-blurb:
   en: We believe that everyone has the right to internet freedom and privacy. So we offer entirely free medium-speed browsing for everyone. Greatly enhanced speed can be purchased for just €5/month.
   zhs: 我们坚信互联网隐私和信息自由是人的基本权利。因此，我们为所有用户提供完全免费的中速浏览。超快速度的付费Plus账号仅需€5/月。
   zht: 我們堅信互聯網隱私和信息自由是人的基本權利。因此，我們為所有用戶提供完全免費的中速瀏覽。超快速度的付費Plus賬號僅需€5/月。
-  fa: ما اعتقاد داریم که همه حق دسترسی به اینترنت آزاد و امن را دارند. برای همین ما قابلیت مرور اینترنت با سرعت متوسط را بدون هیچ هزینه ای ارائه می‌دهیم. سرعت بسیار بالاتر تنها با 5€ در ماه قابل خریداری است.
 
 transparent-and-accountable:
   en: Transparent and accountable
   zhs: 透明负责
   zht: 透明負責
-  fa: شفاف و مسئولیت‌پذیر
 
 transparent-and-accountable-blurb:
   en: Geph's entire software stack is open source and available on <a href="https://github.com/geph-official/">GitHub</a>. Our managing organization is registered in Estonia, an EU jurisdiction with strong privacy laws.
   zhs: 迷雾通的整个软件架构全部是开源的，可以在 <a href="https://github.com/geph-official/">GitHub</a> 上浏览。迷雾通公司注册在爱沙尼亚，受欧盟严格的隐私法保护。
   zht: 迷霧通的整個軟件架構全部是開源的，可以在 <a href="https://github.com/geph-official/">GitHub</a> 上瀏覽。迷霧通公司註冊在愛沙尼亞，受歐盟嚴格的隱私法保護。
-  fa: تمام پشته نرم افزاری Geph متن باز است و از طریق گیت‌هاب قابل دسترسی است.
+
 download:
   en: Download
   zhs: 下载
   zht: 下載
-  fa: دانلود
-
 
 community:
   en: Community
   zhs: 社区
   zht: 社區
-  fa:  انجمن
 
 forum:
   en: Discourse forum
   zhs: Discourse 论坛
   zht: Discourse 論壇
-  fa:	تالار گفتمان
+
 
 incorrect-login:
   en: Incorrect username or password
   zhs: 用户名或密码错误
   zht: 用戶名或密碼錯誤
-  fa: نام کاربری یا کلمه عبور اشتباه است
 
 loading:
   en: Loading...
   zhs: 加载中...
   zht: 加載中...
-  fa: بارگذاری... 
 
 account-overview:
   en: Account overview
   zhs: 帐户概览
   zht: 帳戶概覽
-  fa: پنل کاربری
 
 internal-server-error:
   en: Internal server error
   zhs: 内部服务器错误
   zht: 內部伺服器錯誤
-  fa: خطای داخلی سرور
 
 unknown-error:
   en: Unknown error
   zhs: 未知错误
   zht: 未知錯誤
-  fa: خطای ناشناخته
 
 remaining-days:
   en: "Remaining days:"
   zhs: "剩余天数："
   zht: "剩餘天數："
-  fa: ": روزهای باقی مانده"
 
 buy-plus:
   en: Buy Plus
   zhs: 购买 Plus
   zht: 購買 Plus
-  fa: خرید پلاس
 
 redeem-giftcard:
   en: Redeem giftcard
   zhs: 兑换礼品卡
   zht: 兌換禮品卡
-  fa: استفاده از گیفت کارت
 
 bad-request:
   en: Bad request
   zhs: 错误请求
   zht: 錯誤請求
-  fa: درخواست نادرست
 
 duplicate-payments:
   en: Duplicate payments
   zhs: 重复付款
   zht: 重複付款
-  fa:  پرداخت های تکراری  
 
 who-is-the-plus-for:
   en: Who is the Plus for?
   zhs: 给谁买 Plus？
   zht: 給誰買 Plus？
-  fa: اشتراک پلاس برای چه کسی است؟
 
 myself:
   en: Myself
   zhs: 我自己
   zht: 我自己
-  fa: خودم
 
 someone-else:
   en: Someone else
   zhs: 其他人
   zht: 其他人
-  fa: کسی دیگر
 
 sender:
   en: Sender
   zhs: 发送者
   zht: 發送者
-  fa: فرستنده
 
 sender-invalid-blurb:
   en: Sender is required
   zhs: 必须要有发送者
   zht: 必須要有發送者
-  fa: فرستنده مورد‌نیاز است
 
 recipient-email:
   en: Recipient email
   zhs: 收件者的电子邮件
   zht: 收件者的電子郵件
-  fa: ایمیل گیرنده
 
 recipient-invalid-blurb:
   en: You must specify someone to receive the gift card
   zhs: 您必须指定某人来收取礼品卡
   zht: 您必須指定某人來收取禮品卡
-  fa: شما باید شخصی را برای دریافت گیفت کارت مشخص کنید
 
 choose-a-plan-length:
   en: Choose a plan length
   zhs: 订阅时长
   zht: 訂閱時長
-  fa: مدت زمان اشتراک را انتخاب کنید
 
 got-a-promo-code:
   en: Got a promo code?
   zhs: 优惠码
   zht: 優惠碼
-  fa: کد تخفیف دارید؟
 
 promo-code:
   en: Promo code
   zhs: 优惠码
   zht: 優惠碼
-  fa: کد تخفیف
 
 choose-a-payment-method:
   en: Choose a payment method
   zhs: 付款方式
   zht: 付款方式
-  fa: یک روش پرداخت انتخاب کنید
 
 bank-card:
   en: Bank card
   zhs: 银行卡
   zht: 銀行卡
-  fa: کارت بانکی
 
 alipay:
   en: Alipay
   zhs: 支付宝
   zht: 支付寶
-  fa: Alipay
 
 wxpay:
   en: WeChat Pay
   zhs: 微信支付
   zht: 微信支付
-  fa: WeChat Pay
 
 total:
   en: "Total:"
   zhs: 总计：
   zht: 總計：
-  fa: "هزینه کل:"
 
 pay:
   en: Check out
   zhs: 结账
   zht: 結賬
-  fa: پرداخت
 
 1-month:
   en: 1 month (30 days)
   zhs: 1 个月（30 天）
   zht: 1 個月（30 天）
-  fa: یک ماه (30 روز)
 
 3-months:
   en: 3 months (90 days)
   zhs: 3 个月（90 天）
   zht: 3 個月（90 天）
-  fa: سه ماه (90 روز)
 
 1-year:
   en: 1 year (365 days)
   zhs: 1年（365 天）
   zht: 1年（365 天）
-  fa: یک سال (365 روز)
 
 2-year:
   en: 2 years (730 days)
   zhs: 2年（730 天）
   zht: 2年（730 天）
-  fa: دو سال (730 روز)
 
 3-year:
   en: 3 years (1095 days)
   zhs: 3年（1095 天）
   zht: 3年（1095 天）
-  fa: سه سال (1095 روز)
 
 custom:
   en: Custom (days)
   zhs: 自定义（天）
   zht: 自定義（天）
-  fa: دلخواه (تعداد روز ها)
 
 10-off: 
   en: 10% OFF
   zhs: 9折
   zht: 9折
-  fa:  تخفیف 10%
 
 15-off: 
   en: 15% OFF
   zhs: 8.5折
   zht: 8.5折
-  fa:  تخفیف 15%
 
 17.5-off: 
   en: 17.5% OFF
   zhs: 8.25折
   zht: 8.25折
-  fa:  تخفیف 17.5%
 
 how-many-giftcards:
   en: How many giftcards?
   zhs: 买多少张礼品卡？
   zht: 買多少張禮品卡？
-  fa: چه تعداد گیفت‌کارت؟
 
 how-many-days-in-each-giftcard:
   en: How many days for each giftcard?
   zhs: 每张礼品卡充值多少天？
   zht: 每張禮品卡充值多少天？
-  fa: چند روز برای هر گیفت‌کارت؟
 
 crypto: 
   en: Cryptocurrency
   zhs: 加密货币
   zht: 加密貨幣
-  fa: ارز دیجیتال
 
 crypto-payment: 
   en: Cryptocurrency payment
   zhs: 加密货币支付
   zht: 加密貨幣支付
-  fa: پرداخت با ارز دیجیتال
 
 choose-a-currency:
   en: Choose a currency
   zhs: 请选择货币
   zht: 請選擇貨幣
-  fa: یک ارز را انتخاب کنید
 
 btc:
   en: Bitcoin
   zhs: 比特币
   zht: 比特幣
-  fa: Bitcoin
 
 eth:
   en: Ethereum
   zhs: 以太坊
   zht: 以太坊
-  fa: Ethereum
 
 xmr:
   en: Monero
   zhs: 门罗币
   zht: 門羅幣
-  fa: Monero
 
 usdttrc20:
   en: USDT
   zhs: USDT
   zht: USDT
-  fa: USDT
 
 usdterc20:
   en: USDT
   zhs: USDT
   zht: USDT
-  fa: USDT
 
 usdt:
   en: USDT
   zhs: USDT
   zht: USDT
-  fa: USDT
 
 usdc:
   en: USDC
   zhs: USDC
   zht: USDC
-  fa: USDC
 
 usdcsol:
   en: USDC
   zhs: USDC 
   zht: USDC 
-  fa: USDC
 
 usdctrc20:
   en: USDC
   zhs: USDC
   zht: USDC
-  fa: USDC
 
 doge:
   en: Dogecoin
   zhs: 狗狗币
   zht: 狗狗幣
-  fa: Dogecoin
 
 giftcard-id:
   en: Giftcard ID
   zhs: 礼品卡号
   zht: 禮品卡號
-  fa: کد گیفت کارت
 
 redeem:
   en: Redeem
   zhs: 兑换
   zht: 兌換
-  fa: استفاده
 
 incorrect-giftcard:
   en: No such giftcard
   zhs: 无此礼品卡
   zht: 無此禮品卡
-  fa: کارت هدیه‌ای یافت نشد
 
 giftcard-days:
   en: "Days in giftcard: "
   zhs: "礼品卡有效天数："
   zht: "禮品卡有效天數："
-  fa: "روزها در کارت هدیه: "
 
 giftcard-applied:
   en: Giftcard applied
   zhs: 礼品卡已应用
   zht: 禮品卡已應用
-  fa: کارت هدیه ثبت شد
 
 giftcard-promotion:
   en: Promotions can be applied while redeeming giftcards
   zhs: 任何优惠码可在兑换礼品卡时使用
   zht: 任何優惠碼可在兌換禮品卡時使用
-  fa: تخفیف ها زمان اعمال گیفت کارت می‌توانند استفاده شوند
 
 send-crypto:
   en: Send cryptocurrency
   zhs: 发送加密货币
   zht: 發送加密貨幣
-  fa: ارسال ارز دیجیتال
 
 please-send-funds:
   en: "Send cryptocurrency to the following address"
   zhs: "请将加密货币发送至以下地址"
   zht: "請將加密貨幣發送至以下地址"
-  fa: "ارز دیجیتال را به آدرس زیر بفرستید"
 
 amount:
   en: Amount
   zhs: 数量
   zht: 數量
-  fa: مقدار
 
 to-this-address:
   en: To this address
   zhs: 到这个地址
   zht: 到這個地址
-  fa: به این آدرس
 
 waiting:
   en: Awaiting deposit
   zhs: 等待存款
   zht: 等待存款
-  fa: منتظر واریز
 
 confirming:
   en: Confirming
   zhs: 确认中
   zht: 確認中
-  fa: در حال تأیید 
 
 exchanging:
   en: Exchanging
   zhs: 交换中
   zht: 交換中
-  fa: در حال مبادله
 
 finished:
   en: Finished
   zhs: 已完成
   zht: 已完成
-  fa: اتمام
 
 failed:
   en: Failed
   zhs: 失败
   zht: 失敗
-  fa: نا‌موفق
 
 refunded:
   en: Refunded
   zhs: 已退款
   zht: 已退款
-  fa: بازگشت شد
 
 verifying:
   en: Verifying
   zhs: 验证中
   zht: 驗證中
-  fa: در حال تایید
 
 return-to-portal:
   en: Return to user portal
   zhs: 返回账户管理
   zht: 返回賬戶管理
-  fa: بازگشت به ورودی کاربران
 
 missing-days:
   en: Missing days in the app?
   zhs: 软件中没有延长 Plus？
   zht: 軟件中沒有延長 Plus？
-  fa: روز های خریداری شده در برنامه نمایش داده نمی‌شود؟ 
 
 click-refresh:
   en: If you don't see newly purchased Plus in the app, click the refresh button on the first page!
   zhs: 如果在软件中没有看到新买的 Plus 时长，请点击第一页的刷新按钮。
   zht: 如果在軟件中沒有看到新購買的 Plus 時長，請點擊第一頁的刷新按鈕。
-  fa: اگر اشتراک پلاس تازه خریداری شده خود را در برنامه نمی‌بینید، روی دکمه تازه‌سازی در صفحه اول کلیک کنید!
+
+# banner:
+#   en: "📅 Jan 1-7 : 🎁Take 12% off Plus with code <b>NEWYEAR</b>!🎁"
+#   zhs: "📅 1月1-7: 🎁用优惠码 <b>NEWYEAR</b> 打 8.8 折！🎁"
+#   zht: "📅 1月1-7: 🎁用優惠碼 <b>NEWYEAR</b> 打 8.8 折！🎁"
 
 banner:
   en: '💲Buy more save more: 1 year = 10% off, 2 years = 15% off, 3 years = 17.5% off, ...💲'
   zhs: '💲多买多优惠：1年=9折，2年=8.5折，3年=8.25折，...💲'
   zht: '💲多買多優惠：1年=9折，2年=8.5折，3年=8.25折，...💲'
-  fa: '💲بیشتر بخر، بیشتر صرفه جویی کن: یک سال = 10% تخفیف، دو سال = 15% تخفیف، سه سال = 17.5% تخفیف،… 💲'

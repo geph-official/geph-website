@@ -29,63 +29,67 @@
 	onDestroy(() => clearInterval(refresher));
 </script>
 
-<title>{l('send-crypto')}</title>
+<svelte:head>
+	<title>{l('send-crypto')}</title>
+</svelte:head>
 
-<Navbar />
-<div class="container mt-lg-5 pt-5">
-	<div class="row">
-		<div class="col">
-			<h2>{l('please-send-funds')}</h2>
+<div lang={localize(lang, 'langcode')} dir="auto">
+	<Navbar />
+	<div class="container mt-lg-5 pt-5">
+		<div class="row">
+			<div class="col">
+				<h2>{l('please-send-funds')}</h2>
+			</div>
 		</div>
-	</div>
-	<div class="row">
-		<div class="col-lg">
-			<div class="deposit-info">
-				<div class="deposit-left">
-					<span>{l('amount')}</span><br />
-					<span class="big-text"
-						>{paymentInfo.amount}
-						<span class="ticker">{paymentInfo.ticker.toUpperCase()}</span></span
-					><br />
-					<br />
-					<span>{l('to-this-address')}</span><br />
-					<span class="big-text">{paymentInfo.payin_address}</span>
-				</div>
-				<div class="deposit-right">
-					{#await QRCode.toDataURL(paymentInfo.payin_address) then qrcode}
-						<img src={qrcode} alt="" height="200" />
-					{/await}
+		<div class="row">
+			<div class="col-lg">
+				<div class="deposit-info">
+					<div class="deposit-left">
+						<span>{l('amount')}</span><br />
+						<span class="big-text"
+							>{paymentInfo.amount}
+							<span class="ticker">{paymentInfo.ticker.toUpperCase()}</span></span
+						><br />
+						<br />
+						<span>{l('to-this-address')}</span><br />
+						<span class="big-text">{paymentInfo.payin_address}</span>
+					</div>
+					<div class="deposit-right">
+						{#await QRCode.toDataURL(paymentInfo.payin_address) then qrcode}
+							<img src={qrcode} alt="" height="200" />
+						{/await}
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="row mt-4">
-		<div class="col-lg">
-			{#if status}
-				{#if status == 'refunded' || status == 'failed'}
-					<div class="med-text alert alert-danger">{l(status)}!</div>
-				{:else if status == 'finished'}
-					<div class="med-text alert alert-success">
-						{l(status)}! <a href="../">{l('return-to-portal')}</a>
-					</div>
-				{:else}
-					<div class="spinner">
-						<div
-							class="spinner-border text-primary"
-							style="width: 2rem; height: 2rem;"
-							role="status"
-						>
-							<span class="visually-hidden">{l('loading')}</span>
+		<div class="row mt-4">
+			<div class="col-lg">
+				{#if status}
+					{#if status == 'refunded' || status == 'failed'}
+						<div class="med-text alert alert-danger">{l(status)}!</div>
+					{:else if status == 'finished'}
+						<div class="med-text alert alert-success">
+							{l(status)}! <a href="../">{l('return-to-portal')}</a>
 						</div>
-						<span class="med-text ms-3">{l(status)}...</span>
-					</div>
+					{:else}
+						<div class="spinner">
+							<div
+								class="spinner-border text-primary"
+								style="width: 2rem; height: 2rem;"
+								role="status"
+							>
+								<span class="visually-hidden">{l('loading')}</span>
+							</div>
+							<span class="med-text ms-3">{l(status)}...</span>
+						</div>
+					{/if}
 				{/if}
-			{/if}
+			</div>
+			<div class="col-lg" />
 		</div>
-		<div class="col-lg" />
 	</div>
+	<Footer />
 </div>
-<Footer />
 
 <style>
 	h2 {
