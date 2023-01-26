@@ -38,6 +38,7 @@
 		"cryptocurrency-icons": "^0.18.1",
 		"debounce": "^1.2.1",
 		"detect-nearest-browser-locale": "^19.0.0",
+		"detect-nearest-locale": "^1.0.1",
 		"qrcode": "^1.5.1",
 		"svelte-cryptoicon": "^0.16.1",
 		"svelte-material-icons": "^2.0.4",
