@@ -1,3 +1,6 @@
+
+export const prerender = false;
+
 import { redirect } from '@sveltejs/kit';
 import type { RequestEvent } from './[lang]/$types';
 import detectNearestLocale from "detect-nearest-locale"
