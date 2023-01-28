@@ -29,7 +29,7 @@ home:
   fa: خانه
 
 user-portal:
-  en: User portal
+  en: User Portal
   zhs: 账户管理
   zht: 賬戶管理
   fa: ورودی کاربران
@@ -65,7 +65,7 @@ geph:
   fa: Geph
 
 hero:
-  en: Blast through censorship!
+  en: Blast Through Censorship!
   zhs: 冲破网络封锁
   zht: 衝破網絡封鎖
   fa: از فیلترینگ با قدرت عبور کنید!
@@ -85,7 +85,7 @@ footer:
   fa: ورودی مشتری
 
 robust-zk-privacy:
-  en: Robust zero-knowledge privacy
+  en: Robust Zero-Knowledge Privacy
   zhs: 隐私至上
   zht: 隱私至上
   fa: حریم خصوصی قدرت مند بدون دانش اطلاعات کاربر
@@ -97,7 +97,7 @@ robust-zk-privacy-blurb:
   fa: ما اعمال شما را ثبت نمی‌کنیم چرا که نمی‌توانیم. ما از <a href="https://github.com/geph-official/geph4-libs/tree/master/mizaru">شناسایی بدون دانش</a> استفاده می‌کنیم تا هیچوقت نتوانیم اعمال اینترنتی شما را با هویت شما تطبیق دهیم.
 
 resilient-anti-censorship:
-  en: Resilient anti-censorship
+  en: Resilient Anti-Censorship
   zhs: 不怕封锁
   zht: 不怕封鎖
   fa: تکنولوژی ضد-سانسور مقاوم
@@ -109,7 +109,7 @@ resilient-anti-censorship-blurb:
   fa: Geph از جدیدترین تکنولوژی های دور زدن سانسور استفاده می‌کند. ما از چندین حمله هدفمند از سمت فایروال قدرتمند چین، پیچیده‌ترین فیلتر اینترنت ملی جهان، سربلند بیرون آمده‌ایم.
 
 accessible-to-all:
-  en: Accessible to all
+  en: Accessible to All
   zhs: 人人可用
   zht: 人人可用
   fa: در دسترس برای همه
@@ -121,7 +121,7 @@ accessible-to-all-blurb:
   fa: ما اعتقاد داریم که همه حق دسترسی به اینترنت آزاد و امن را دارند. برای همین ما قابلیت مرور اینترنت با سرعت متوسط را بدون هیچ هزینه ای ارائه می‌دهیم. سرعت بسیار بالاتر تنها با 5€ در ماه قابل خریداری است.
 
 transparent-and-accountable:
-  en: Transparent and accountable
+  en: Transparent and Accountable
   zhs: 透明负责
   zht: 透明負責
   fa: شفاف و مسئولیت‌پذیر
@@ -145,7 +145,7 @@ community:
   fa:  انجمن
 
 forum:
-  en: Discourse forum
+  en: Discourse Forum
   zhs: Discourse 论坛
   zht: Discourse 論壇
   fa:	تالار گفتمان
@@ -163,19 +163,19 @@ loading:
   fa: بارگذاری... 
 
 account-overview:
-  en: Account overview
+  en: Account Overview
   zhs: 帐户概览
   zht: 帳戶概覽
   fa: پنل کاربری
 
 internal-server-error:
-  en: Internal server error
+  en: Internal Server Error
   zhs: 内部服务器错误
   zht: 內部伺服器錯誤
   fa: خطای داخلی سرور
 
 unknown-error:
-  en: Unknown error
+  en: Unknown Error
   zhs: 未知错误
   zht: 未知錯誤
   fa: خطای ناشناخته
@@ -193,25 +193,25 @@ buy-plus:
   fa: خرید پلاس
 
 redeem-giftcard:
-  en: Redeem giftcard
+  en: Redeem Giftcard
   zhs: 兑换礼品卡
   zht: 兌換禮品卡
   fa: استفاده از گیفت کارت
 
 bad-request:
-  en: Bad request
+  en: Bad Request
   zhs: 错误请求
   zht: 錯誤請求
   fa: درخواست نادرست
 
 duplicate-payments:
-  en: Duplicate payments
+  en: Duplicate Payments
   zhs: 重复付款
   zht: 重複付款
   fa:  پرداخت های تکراری  
 
 who-is-the-plus-for:
-  en: Who is the Plus for?
+  en: Who is Plus for?
   zhs: 给谁买 Plus？
   zht: 給誰買 Plus？
   fa: اشتراک پلاس برای چه کسی است؟
@@ -223,7 +223,7 @@ myself:
   fa: خودم
 
 someone-else:
-  en: Someone else
+  en: Someone Else
   zhs: 其他人
   zht: 其他人
   fa: کسی دیگر
@@ -241,7 +241,7 @@ sender-invalid-blurb:
   fa: فرستنده مورد‌نیاز است
 
 recipient-email:
-  en: Recipient email
+  en: Recipient Email
   zhs: 收件者的电子邮件
   zht: 收件者的電子郵件
   fa: ایمیل گیرنده
@@ -265,7 +265,7 @@ got-a-promo-code:
   fa: کد تخفیف دارید؟
 
 promo-code:
-  en: Promo code
+  en: Promo Code
   zhs: 优惠码
   zht: 優惠碼
   fa: کد تخفیف
@@ -277,7 +277,7 @@ choose-a-payment-method:
   fa: یک روش پرداخت انتخاب کنید
 
 bank-card:
-  en: Bank card
+  en: Bank Card
   zhs: 银行卡
   zht: 銀行卡
   fa: کارت بانکی
@@ -301,7 +301,7 @@ total:
   fa: "هزینه کل:"
 
 pay:
-  en: Check out
+  en: Check Out
   zhs: 结账
   zht: 結賬
   fa: پرداخت
@@ -379,13 +379,13 @@ crypto:
   fa: ارز دیجیتال
 
 crypto-payment: 
-  en: Cryptocurrency payment
+  en: Cryptocurrency Payment
   zhs: 加密货币支付
   zht: 加密貨幣支付
   fa: پرداخت با ارز دیجیتال
 
 choose-a-currency:
-  en: Choose a currency
+  en: Choose a Currency
   zhs: 请选择货币
   zht: 請選擇貨幣
   fa: یک ارز را انتخاب کنید
@@ -463,7 +463,7 @@ redeem:
   fa: استفاده
 
 incorrect-giftcard:
-  en: No such giftcard
+  en: No Such Giftcard
   zhs: 无此礼品卡
   zht: 無此禮品卡
   fa: کارت هدیه‌ای یافت نشد
@@ -475,7 +475,7 @@ giftcard-days:
   fa: "روزها در کارت هدیه: "
 
 giftcard-applied:
-  en: Giftcard applied
+  en: Giftcard Applied
   zhs: 礼品卡已应用
   zht: 禮品卡已應用
   fa: کارت هدیه ثبت شد
@@ -487,16 +487,16 @@ giftcard-promotion:
   fa: تخفیف ها زمان اعمال گیفت کارت می‌توانند استفاده شوند
 
 send-crypto:
-  en: Send cryptocurrency
+  en: Send Cryptocurrency
   zhs: 发送加密货币
   zht: 發送加密貨幣
   fa: ارسال ارز دیجیتال
 
 please-send-funds:
-  en: "Send cryptocurrency to the following address"
+  en: "Send The Cryptocurrency Amount Shown to the Following Address"
   zhs: "请将加密货币发送至以下地址"
   zht: "請將加密貨幣發送至以下地址"
-  fa: "ارز دیجیتال را به آدرس زیر بفرستید"
+  fa: "مقدار ارز دیجیتال نمایش داده شده را به آدرس زیر بفرستید"
 
 amount:
   en: Amount
@@ -505,13 +505,13 @@ amount:
   fa: مقدار
 
 to-this-address:
-  en: To this address
+  en: To This Address
   zhs: 到这个地址
   zht: 到這個地址
   fa: به این آدرس
 
 waiting:
-  en: Awaiting deposit
+  en: Awaiting Deposit
   zhs: 等待存款
   zht: 等待存款
   fa: منتظر واریز
