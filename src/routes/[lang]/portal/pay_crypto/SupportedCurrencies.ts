@@ -13,7 +13,7 @@ const btc: Token = {
 const eth: Token = {
     name: 'eth',
     icon: "https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.16.1/svg/color/eth.svg",
-    badge: "Mainnet",
+    badge: "Mainnet ⚠️NOT BSC⚠️",
 }
 
 const xmr: Token = {
