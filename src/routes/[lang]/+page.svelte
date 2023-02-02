@@ -106,7 +106,7 @@
 						</div>
 						<div class="dl-desc">
 							<div>Android</div>
-							<small>8.0+ (APK)</small>
+							<small>5.0+ (APK)</small>
 						</div>
 					</a>
 				</div>
@@ -118,7 +118,7 @@
 						</div>
 						<div class="dl-desc">
 							<div>Android</div>
-							<small>8.0+ (Play)</small>
+							<small>5.0+ (Play)</small>
 						</div>
 					</a>
 				</div>
