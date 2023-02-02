@@ -14,20 +14,24 @@
 	import { localize } from '../../l10n';
 	import { BINDER_ADDR } from '../../../routes/helpers';
 
+	export const variant: 'all' | 'reseller' = 'reseller';
+
 	const lang = $page.params['lang'];
 
 	const paymentBackends: Map<string, PaymentBackend> = new Map();
 	paymentBackends.set('bank-card', stripeBackend());
 	paymentBackends.set('crypto', cryptoBackend());
-	paymentBackends.set('alipay', alipayBackend());
-	paymentBackends.set('wxpay', wxpayBackend());
+	if (variant !== 'reseller') {
+		paymentBackends.set('alipay', alipayBackend());
+		paymentBackends.set('wxpay', wxpayBackend());
+	}
 
 	let days = 30;
 	let promo = '';
-	let item: 'plus' | 'giftcard' = 'plus';
+	let item: 'plus' | 'giftcard' = variant === 'reseller' ? 'giftcard' : 'plus';
 	let recipientEmail = '';
-	let sender = '';
-	let giftcards_number = 1;
+	let sender = variant === 'reseller' ? 'Reseller' : '';
+	let giftcards_number = variant === 'reseller' ? 100 : 1;
 	let payMethod: string = 'bank-card';
 
 	const toQueryString = (params: any) => {
@@ -86,7 +90,7 @@
 
 	const onGiftcardsNumberChange = (e: any) => {
 		if (e.target.value) {
-			giftcards_number = Math.floor(Math.max(1, e.target.value));
+			giftcards_number = Math.floor(Math.max(variant == 'reseller' ? 100 : 1, e.target.value));
 			e.target.value = giftcards_number;
 		}
 	};
@@ -107,42 +111,46 @@
 </script>
 
 <div class="container-fluid mt-3">
-	<div class="row">
-		<div class="col">
-			<h2>{l('who-is-the-plus-for')}</h2>
-			<div class="d-flex">
-				<button
-					class="btn btn-outline-dark me-2"
-					on:click={() => {
-						item = 'plus';
-					}}
-					class:selected={item === 'plus'}>{l('myself')}</button
-				>
-				<button
-					class="btn btn-outline-dark"
-					class:selected={item === 'giftcard'}
-					on:click={() => {
-						item = 'giftcard';
-					}}>{l('someone-else')}</button
-				>
+	{#if variant !== 'reseller'}
+		<div class="row">
+			<div class="col">
+				<h2>{l('who-is-the-plus-for')}</h2>
+				<div class="d-flex">
+					<button
+						class="btn btn-outline-dark me-2"
+						on:click={() => {
+							item = 'plus';
+						}}
+						class:selected={item === 'plus'}>{l('myself')}</button
+					>
+					<button
+						class="btn btn-outline-dark"
+						class:selected={item === 'giftcard'}
+						on:click={() => {
+							item = 'giftcard';
+						}}>{l('someone-else')}</button
+					>
+				</div>
 			</div>
 		</div>
-	</div>
+	{/if}
 	{#if item == 'giftcard'}
 		<div class="row mt-3">
-			<div class="col-lg">
-				<input
-					type="text"
-					class="form-control"
-					id="sender"
-					bind:value={sender}
-					placeholder={l('sender')}
-					class:invalid={!senderValid}
-				/>
-				{#if !senderValid}
-					<small class="invalid-blurb">{l('sender-invalid-blurb')}</small>
-				{/if}
-			</div>
+			{#if variant !== 'reseller'}
+				<div class="col-lg">
+					<input
+						type="text"
+						class="form-control"
+						id="sender"
+						bind:value={sender}
+						placeholder={l('sender')}
+						class:invalid={!senderValid}
+					/>
+					{#if !senderValid}
+						<small class="invalid-blurb">{l('sender-invalid-blurb')}</small>
+					{/if}
+				</div>
+			{/if}
 			<div class="col-lg">
 				<input
 					type="email"
@@ -206,7 +214,9 @@
 					}}
 				>
 					{l('1-year')}
-					<span class="badge rounded-pill bg-success">{l('10-off')}</span>
+					{#if variant !== 'reseller'}
+						<span class="badge rounded-pill bg-success">{l('10-off')}</span>
+					{/if}
 				</button>
 				<button
 					class="btn btn-outline-dark me-2"
@@ -216,7 +226,9 @@
 					}}
 				>
 					{l('2-year')}
-					<span class="badge rounded-pill bg-success">{l('15-off')}</span>
+					{#if variant !== 'reseller'}
+						<span class="badge rounded-pill bg-success">{l('15-off')}</span>
+					{/if}
 				</button>
 			</div>
 			<div class="buttons">
@@ -228,7 +240,9 @@
 					}}
 				>
 					{l('3-year')}
-					<span class="badge rounded-pill bg-success">{l('17.5-off')}</span>
+					{#if variant !== 'reseller'}
+						<span class="badge rounded-pill bg-success">{l('17.5-off')}</span>
+					{/if}
 				</button>
 				<input
 					type="number"
