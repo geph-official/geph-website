@@ -93,7 +93,7 @@
 			giftcards_number = Math.floor(Math.max(variant == 'reseller' ? 100 : 1, e.target.value));
 			e.target.value = giftcards_number;
 		}
-	};
+	}; 
 
 	const onPromoChange = (e: any) => {
 		if (e.target.value) {
