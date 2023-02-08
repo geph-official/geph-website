@@ -83,7 +83,7 @@
 
 	const onDaysChange = (e: any) => {
 		if (e.target.value) {
-			days = Math.floor(Math.min(10000, Math.max(7, e.target.value)));
+			days = Math.floor(Math.min(10000, Math.max(variant == 'reseller' ? 1 : 7, e.target.value)));
 			e.target.value = days;
 		}
 	};
