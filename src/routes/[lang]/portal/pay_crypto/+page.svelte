@@ -20,7 +20,7 @@
 		let item = JSON.parse(sessionStorage.getItem('item') as string);
 		try {
 			const resp = await axios.post(BINDER_ADDR + '/new-crypto', {
-				sessid: sessionStorage.getItem('sessid'),
+				sessid: sessionStorage.getItem('sessid') || 'RESELLER',
 				promo: sessionStorage.getItem('promo'),
 				days: +(sessionStorage.getItem('days') as any),
 				item,

@@ -33,11 +33,10 @@ export function stripeBackend(): PaymentBackend {
         icons: ["/visa.jpg", "/mastercard.svg"],
         markup: 0,
         pay: async (days: number, promo: string, item: Item) => {
-            console.log(sessionStorage.getItem("sessid"));
             const resp = await axios.post(
                 BINDER_ADDR + "/v2/stripe",
                 {
-                    sessid: sessionStorage.getItem("sessid"),
+                    sessid: sessionStorage.getItem("sessid") || "RESELLER",
                     promo,
                     days,
                     item,
@@ -66,7 +65,7 @@ export function alipayBackend(): PaymentBackend {
             const resp = await axios.post(
                 BINDER_ADDR + "/v2/aliwechat",
                 {
-                    sessid: sessionStorage.getItem("sessid"),
+                    sessid: sessionStorage.getItem("sessid") || "RESELLER",
                     promo,
                     days,
                     method: 'alipay',
@@ -88,7 +87,7 @@ export function wxpayBackend(): PaymentBackend {
             const resp = await axios.post(
                 BINDER_ADDR + "/v2/aliwechat",
                 {
-                    sessid: sessionStorage.getItem("sessid"),
+                    sessid: sessionStorage.getItem("sessid") || "RESELLER",
                     promo,
                     days,
                     method: 'wxpay',
