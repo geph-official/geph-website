@@ -14,7 +14,7 @@
 	import { localize } from '../../l10n';
 	import { BINDER_ADDR } from '../../../routes/helpers';
 
-	export const variant: 'all' | 'reseller' = 'reseller';
+	export let variant: 'all' | 'reseller';
 
 	const lang = $page.params['lang'];
 
@@ -93,7 +93,7 @@
 			giftcards_number = Math.floor(Math.max(variant == 'reseller' ? 100 : 1, e.target.value));
 			e.target.value = giftcards_number;
 		}
-	}; 
+	};
 
 	const onPromoChange = (e: any) => {
 		if (e.target.value) {

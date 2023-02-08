@@ -103,8 +103,8 @@ export function wxpayBackend(): PaymentBackend {
 export function cryptoBackend(): PaymentBackend {
     return {
         name: 'crypto',
-        icons: ["/bitcoin.png"],
-        markup: 0,
+        icons: ["/bitcoin.png"], 
+        markup: 0, 
         pay: async (days: number, promo: string, item: Item) => {
             sessionStorage.setItem("days", days.toString());
             sessionStorage.setItem("promo", promo);
