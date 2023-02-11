@@ -76,7 +76,7 @@
 		}
 	}, 100);
 	$: recalcCost({
-		promo: item === 'giftcard' ? '' : promo,
+		promo: item === 'giftcard' && variant != 'reseller' ? '' : promo,
 		days: item === 'giftcard' ? days * giftcards_number : days,
 		method: payMethod
 	});
@@ -296,6 +296,18 @@
 					</button>
 				{/each}
 			</div>
+			{#if variant == 'reseller'}
+				<div class="buttons">
+					<input
+						type="promo"
+						class="form-control small-form-control"
+						id="promo"
+						on:change={onPromoChange}
+						value={promo}
+						placeholder="Reseller code"
+					/>
+				</div>
+			{/if}
 		</div>
 
 		<div class="row mt-5">
