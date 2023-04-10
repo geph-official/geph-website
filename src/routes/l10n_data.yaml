@@ -288,6 +288,12 @@ alipay:
   zht: 支付寶
   fa: Alipay
 
+paypal:
+  en: Paypal
+  zhs: Paypal
+  zht: Paypal
+  fa: Paypal
+
 wxpay:
   en: WeChat Pay
   zhs: 微信支付
