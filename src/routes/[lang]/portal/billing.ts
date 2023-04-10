@@ -100,6 +100,30 @@ export function wxpayBackend(): PaymentBackend {
     }
 }
 
+export function paypalBackend(): PaymentBackend {
+    return {
+        name: 'paypal',
+        icons: ['/paypal.svg'],
+        markup: 0,
+        pay: async (days: number, promo: string, item: Item) => {
+            const resp = await axios.post(
+                BINDER_ADDR + '/v2/paypal',
+                {
+                    sessid: sessionStorage.getItem('sessid') || 'RESELLER',
+                    promo,
+                    days,
+                    item,
+                },
+                { responseType: 'text' }
+            );
+            let orderId = resp.data;
+            console.log(orderId);
+            const approvalUrl = `https://www.paypal.com/checkoutnow?token=${orderId}`;
+            window.location.href = approvalUrl;
+        },
+    };
+}
+
 export function cryptoBackend(): PaymentBackend {
     return {
         name: 'crypto',
