@@ -21,8 +21,8 @@
 
 	const paymentBackends: Map<string, PaymentBackend> = new Map();
 	paymentBackends.set('bank-card', stripeBackend());
+	paymentBackends.set('paypal', paypalBackend());
 	paymentBackends.set('crypto', cryptoBackend());
-	// paymentBackends.set('paypal', paypalBackend());
 	if (variant !== 'reseller') {
 		paymentBackends.set('alipay', alipayBackend());
 		paymentBackends.set('wxpay', wxpayBackend());
