@@ -116,10 +116,8 @@ export function paypalBackend(): PaymentBackend {
                 },
                 { responseType: 'text' }
             );
-            let orderId = resp.data;
-            console.log(orderId);
-            const approvalUrl = `https://www.paypal.com/checkoutnow?token=${orderId}`;
-            window.location.href = approvalUrl;
+            let orderUrl = resp.data;
+            window.location.href = orderUrl;
         },
     };
 }
