@@ -60,7 +60,7 @@ export function alipayBackend(): PaymentBackend {
     return {
         name: 'alipay',
         icons: ["/alipay.svg"],
-        markup: 10,
+        markup: 15,
         pay: async (days: number, promo: string, item: Item) => {
             const resp = await axios.post(
                 BINDER_ADDR + "/v2/aliwechat",
@@ -82,7 +82,7 @@ export function wxpayBackend(): PaymentBackend {
     return {
         name: 'wxpay',
         icons: ["/wxpay.png"],
-        markup: 10,
+        markup: 15,
         pay: async (days: number, promo: string, item: Item) => {
             const resp = await axios.post(
                 BINDER_ADDR + "/v2/aliwechat",
@@ -103,7 +103,7 @@ export function wxpayBackend(): PaymentBackend {
 export function paypalBackend(): PaymentBackend {
     return {
         name: 'paypal',
-        icons: ['/paypal.svg'],
+        icons: ['/paypal.svg', "/unionpay.svg"],
         markup: 0,
         pay: async (days: number, promo: string, item: Item) => {
             const resp = await axios.post(

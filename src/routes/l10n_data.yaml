@@ -289,10 +289,10 @@ alipay:
   fa: Alipay
 
 paypal:
-  en: Paypal
-  zhs: Paypal
-  zht: Paypal
-  fa: Paypal
+  en: PayPal
+  zhs: PayPal / 银联
+  zht: PayPal 
+  fa: PayPal
 
 wxpay:
   en: WeChat Pay
