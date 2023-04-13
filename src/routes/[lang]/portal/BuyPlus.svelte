@@ -335,7 +335,7 @@
 			</div>
 		{/if}
 
-		{#if payMethod == 'alipay' || payMethod == 'wechat'}
+		{#if payMethod == 'alipay' || payMethod == 'wxpay'}
 			<div class="row">
 				<div class="col">
 					<div class="aliwechat-warning">{@html l('bad-aliwechat')}</div>
