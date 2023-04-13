@@ -581,3 +581,10 @@ banner:
   zhs: '💲多买多优惠：1年=9折，2年=8.5折，3年=8.25折，...💲'
   zht: '💲多買多優惠：1年=9折，2年=8.5折，3年=8.25折，...💲'
   fa: '💲بیشتر بخر، بیشتر صرفه جویی کن: یک سال = 10% تخفیف، دو سال = 15% تخفیف، سه سال = 17.5% تخفیف،… 💲'
+
+
+bad-aliwechat:
+  en: Alipay and WeChat Pay payments are not always reliable, and it costs us a lot to support them. <b>PayPal</b> has no added fee and is compatible with most Chinese bank cards.
+  zhs: ⚠️ 支付宝、微信支付的提供商并不稳定，而且有高额手续费。<br><br><b>PayPal</b> 不需要任何额外费用，并且兼容大部分中国银行卡。请尽量使用 PayPal！
+  zht: ⚠️ 支付寶、微信支付的提供商並不穩定，而且收費很高。<br><br> <b>PayPal</b> 則不需要額外費用，且能兼容大多數的中國銀行卡。請盡量使用 PayPal！
+  fa: پرداخت از طریق آلی پی و وی چت پی دائماً قابلِ اطمینان نیست و برای ما هزینه‌بر است. <b>پیپال</b> هیچ هزینه اضافی دریافت نمی‌کند و با بیشتر کارت‌های بانکی چینی سازگار است. به شدت توصیه می‌شود! 

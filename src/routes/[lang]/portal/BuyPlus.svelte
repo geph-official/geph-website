@@ -335,6 +335,14 @@
 			</div>
 		{/if}
 
+		{#if payMethod == 'alipay' || payMethod == 'wechat'}
+			<div class="row">
+				<div class="col">
+					<div class="aliwechat-warning">{@html l('bad-aliwechat')}</div>
+				</div>
+			</div>
+		{/if}
+
 		<div class="row mt-3">
 			<div class="col">
 				<button
@@ -419,6 +427,14 @@
 
 	.btn img {
 		height: 1.2rem;
+	}
+
+	.aliwechat-warning {
+		border: 1px solid red;
+
+		padding: 1rem;
+		margin-top: 2rem;
+		margin-bottom: 1rem;
 	}
 
 	.buttons {
