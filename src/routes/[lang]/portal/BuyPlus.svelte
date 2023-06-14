@@ -23,10 +23,10 @@
 	paymentBackends.set('bank-card', stripeBackend());
 	paymentBackends.set('paypal', paypalBackend());
 	paymentBackends.set('crypto', cryptoBackend());
-	if (variant !== 'reseller') {
-		paymentBackends.set('alipay', alipayBackend());
-		paymentBackends.set('wxpay', wxpayBackend());
-	}
+	// if (variant !== 'reseller') {
+	// 	paymentBackends.set('alipay', alipayBackend());
+	// 	paymentBackends.set('wxpay', wxpayBackend());
+	// }
 
 	let days = 30;
 	let promo = '';
