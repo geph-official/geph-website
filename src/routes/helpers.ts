@@ -2,8 +2,8 @@ import axios from 'axios';
 import { localize } from './l10n';
 import { goto } from '$app/navigation';
 
-export const BINDER_ADDR = 'https://central.geph.io:28081';
-// export const BINDER_ADDR = 'http://localhost:28080';
+// export const BINDER_ADDR = 'https://central.geph.io:28081';
+export const BINDER_ADDR = 'http://localhost:28081';
 
 export function translateError(e: string, lang: string): string {
     console.log('login page error: ' + e);
