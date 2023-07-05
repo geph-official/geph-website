@@ -5,6 +5,7 @@
 	import {
 		alipayBackend,
 		cryptoBackend,
+		paypalBackend,
 		stripeBackend,
 		translateError,
 		wxpayBackend,
@@ -14,12 +15,13 @@
 	import { localize } from '../../l10n';
 	import { BINDER_ADDR } from '../../../routes/helpers';
 
-	export const variant: 'all' | 'reseller' = 'reseller';
+	export let variant: 'all' | 'reseller';
 
 	const lang = $page.params['lang'];
 
 	const paymentBackends: Map<string, PaymentBackend> = new Map();
 	paymentBackends.set('bank-card', stripeBackend());
+	paymentBackends.set('paypal', paypalBackend());
 	paymentBackends.set('crypto', cryptoBackend());
 	if (variant !== 'reseller') {
 		paymentBackends.set('alipay', alipayBackend());
@@ -31,7 +33,7 @@
 	let item: 'plus' | 'giftcard' = variant === 'reseller' ? 'giftcard' : 'plus';
 	let recipientEmail = '';
 	let sender = variant === 'reseller' ? 'Reseller' : '';
-	let giftcards_number = variant === 'reseller' ? 100 : 1;
+	let giftcards_number = variant === 'reseller' ? 50 : 1;
 	let payMethod: string = 'bank-card';
 
 	const toQueryString = (params: any) => {
@@ -76,24 +78,24 @@
 		}
 	}, 100);
 	$: recalcCost({
-		promo: item === 'giftcard' ? '' : promo,
+		promo: item === 'giftcard' && variant != 'reseller' ? '' : promo,
 		days: item === 'giftcard' ? days * giftcards_number : days,
 		method: payMethod
 	});
 
 	const onDaysChange = (e: any) => {
 		if (e.target.value) {
-			days = Math.floor(Math.min(10000, Math.max(7, e.target.value)));
+			days = Math.floor(Math.min(10000, Math.max(variant == 'reseller' ? 1 : 14, e.target.value)));
 			e.target.value = days;
 		}
 	};
 
 	const onGiftcardsNumberChange = (e: any) => {
 		if (e.target.value) {
-			giftcards_number = Math.floor(Math.max(variant == 'reseller' ? 100 : 1, e.target.value));
+			giftcards_number = Math.floor(Math.max(variant == 'reseller' ? 50 : 1, e.target.value));
 			e.target.value = giftcards_number;
 		}
-	}; 
+	};
 
 	const onPromoChange = (e: any) => {
 		if (e.target.value) {
@@ -296,6 +298,18 @@
 					</button>
 				{/each}
 			</div>
+			{#if variant == 'reseller'}
+				<div class="buttons">
+					<input
+						type="promo"
+						class="form-control small-form-control"
+						id="promo"
+						on:change={onPromoChange}
+						value={promo}
+						placeholder="Reseller code"
+					/>
+				</div>
+			{/if}
 		</div>
 
 		<div class="row mt-5">
@@ -317,6 +331,14 @@
 					<h3>
 						{l('giftcard-promotion')}
 					</h3>
+				</div>
+			</div>
+		{/if}
+
+		{#if payMethod == 'alipay' || payMethod == 'wxpay'}
+			<div class="row">
+				<div class="col">
+					<div class="aliwechat-warning">{@html l('bad-aliwechat')}</div>
 				</div>
 			</div>
 		{/if}
@@ -405,6 +427,14 @@
 
 	.btn img {
 		height: 1.2rem;
+	}
+
+	.aliwechat-warning {
+		border: 1px solid red;
+
+		padding: 1rem;
+		margin-top: 2rem;
+		margin-bottom: 1rem;
 	}
 
 	.buttons {

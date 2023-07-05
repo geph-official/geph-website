@@ -149,7 +149,7 @@
 			<div class="row mt-3 box">
 				<div class="col">
 					{#if activeTab === 'buy-plus'}
-						<BuyPlus />
+						<BuyPlus variant="all" />
 					{:else if activeTab === 'redeem-giftcard'}
 						<RedeemGiftcard />
 					{/if}

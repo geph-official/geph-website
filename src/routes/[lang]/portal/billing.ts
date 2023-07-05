@@ -60,7 +60,7 @@ export function alipayBackend(): PaymentBackend {
     return {
         name: 'alipay',
         icons: ["/alipay.svg"],
-        markup: 10,
+        markup: 15,
         pay: async (days: number, promo: string, item: Item) => {
             const resp = await axios.post(
                 BINDER_ADDR + "/v2/aliwechat",
@@ -82,7 +82,7 @@ export function wxpayBackend(): PaymentBackend {
     return {
         name: 'wxpay',
         icons: ["/wxpay.png"],
-        markup: 10,
+        markup: 15,
         pay: async (days: number, promo: string, item: Item) => {
             const resp = await axios.post(
                 BINDER_ADDR + "/v2/aliwechat",
@@ -100,11 +100,35 @@ export function wxpayBackend(): PaymentBackend {
     }
 }
 
+export function paypalBackend(): PaymentBackend {
+    return {
+        name: 'paypal',
+        icons: ['/paypal.svg', "/unionpay.svg"],
+        markup: 0,
+        pay: async (days: number, promo: string, item: Item) => {
+            const resp = await axios.post(
+                BINDER_ADDR + '/v2/paypal',
+                {
+                    sessid: sessionStorage.getItem('sessid') || 'RESELLER',
+                    promo,
+                    days,
+                    item,
+                },
+                { responseType: 'text' }
+            );
+            let orderId = resp.data;
+            console.log(orderId);
+            const approvalUrl = `https://www.paypal.com/checkoutnow?token=${orderId}`;
+            window.location.href = approvalUrl;
+        },
+    };
+}
+
 export function cryptoBackend(): PaymentBackend {
     return {
         name: 'crypto',
-        icons: ["/bitcoin.png"],
-        markup: 0,
+        icons: ["/bitcoin.png"], 
+        markup: 0, 
         pay: async (days: number, promo: string, item: Item) => {
             sessionStorage.setItem("days", days.toString());
             sessionStorage.setItem("promo", promo);
