@@ -27,7 +27,8 @@ export interface PaymentBackend {
 }
 
 export function stripeBackend(): PaymentBackend {
-    const STRIPEKEY = "pk_live_Wk781YzANKGuLBl2NzFkRu5n00YdYjObFY";
+    // const STRIPEKEY = "pk_live_Wk781YzANKGuLBl2NzFkRu5n00YdYjObFY";
+    const STRIPEKEY = "pk_test_O6w7losqr4Z0LrJvvhotXgBO00kog9HPMC";
     return {
         name: 'bank-card',
         icons: ["/visa.jpg", "/mastercard.svg"],
@@ -127,8 +128,8 @@ export function paypalBackend(): PaymentBackend {
 export function cryptoBackend(): PaymentBackend {
     return {
         name: 'crypto',
-        icons: ["/bitcoin.png"], 
-        markup: 0, 
+        icons: ["/bitcoin.png"],
+        markup: 0,
         pay: async (days: number, promo: string, item: Item) => {
             sessionStorage.setItem("days", days.toString());
             sessionStorage.setItem("promo", promo);
