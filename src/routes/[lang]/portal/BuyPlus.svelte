@@ -14,6 +14,8 @@
 	import type { Item } from './billing';
 	import { localize } from '../../l10n';
 	import { BINDER_ADDR } from '../../../routes/helpers';
+	import CheckBoxMarked from 'svelte-material-icons/CheckboxMarked.svelte';
+	import CheckBoxBlankOutline from 'svelte-material-icons/CheckboxBlankOutline.svelte';
 
 	export let variant: 'all' | 'reseller';
 
@@ -108,6 +110,9 @@
 
 	$: senderValid = sender.length > 0;
 	$: recipientValid = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/.test(recipientEmail);
+
+	let shouldSubscribe = false;
+	$: toggleShouldSubscribe = () => (shouldSubscribe = !shouldSubscribe);
 
 	let checkingOut = false;
 </script>
@@ -298,6 +303,15 @@
 					</button>
 				{/each}
 			</div>
+
+			<div class="subscribe-checkbox" on:click={toggleShouldSubscribe}>
+				{#if shouldSubscribe}
+					<CheckBoxMarked width="25" height="25" />
+				{:else}
+					<CheckBoxBlankOutline width="25" height="25" />
+				{/if}
+				<span>Subscribe</span>
+			</div>
 			{#if variant == 'reseller'}
 				<div class="buttons">
 					<input
@@ -464,5 +478,14 @@
 			height: 3rem;
 			align-items: center;
 		}
+	}
+
+	.subscribe-checkbox {
+		display: flex;
+		align-items: center;
+	}
+
+	.subscribe-checkbox span {
+		margin-left: 10px;
 	}
 </style>

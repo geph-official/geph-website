@@ -1,6 +1,7 @@
 <script lang="ts">
 	import AccountCircle from 'svelte-material-icons/AccountCircle.svelte';
 	import CalendarRange from 'svelte-material-icons/CalendarRange.svelte';
+	import AccountCreditCard from 'svelte-material-icons/AccountCreditCard.svelte';
 	import Heart from 'svelte-material-icons/Heart.svelte';
 	import axios from 'axios';
 	import { fade } from 'svelte/transition';
@@ -10,6 +11,7 @@
 	import Footer from '../Footer.svelte';
 	import BuyPlus from './BuyPlus.svelte';
 	import RedeemGiftcard from './RedeemGiftcard.svelte';
+	import { BINDER_ADDR } from '../../../routes/helpers';
 	const lang = $page.params['lang'];
 
 	const errL10n = {
@@ -34,15 +36,31 @@
 			window.location.replace('./portal/login');
 		}
 		try {
-			let resp = await axios.post('https://web-backend.geph.io/userinfo', {
+			let resp = await axios.post(BINDER_ADDR + '/userinfo', {
 				sessid: sessionStorage.getItem('sessid')
 			});
+			console.log('USER INFO: ', resp);
 			console.log(resp.status);
 			if (resp.status >= 400) {
 				throw resp.status;
 			} else {
 				return resp.data;
 			}
+		} catch (e) {
+			alert(translateError(String(e), lang));
+		}
+	}
+
+	async function cancel_subscription() {
+		console.log('cancelling subscription!');
+		if (!sessionStorage.getItem('sessid')) {
+			window.location.replace('./portal/login');
+		}
+		try {
+			let success = await axios.post(BINDER_ADDR + '/v2/cancel_stripe_recurring', {
+				sessid: sessionStorage.getItem('sessid')
+			});
+			console.log('success response: ', success);
 		} catch (e) {
 			alert(translateError(String(e), lang));
 		}
@@ -101,12 +119,17 @@
 										</small>
 									</div>
 								</div>
-								<div>i am in plus??</div>
-								<div class="subscription">
-									{#if user_info['is_recurring'] === true}
-										<div>I am recurring</div>
-									{/if}
-								</div>
+								{#if user_info['is_recurring'] === true}
+									<div class="subscription">
+										<div class="icon-badge">
+											<div class="icon"><AccountCreditCard width="26" height="22" /></div>
+											<div class="">Plus Subscriber</div>
+										</div>
+										<button class="btn btn-outline-dark me-2" on:click={() => cancel_subscription()}
+											>Cancel Subscription</button
+										>
+									</div>
+								{/if}
 							{:else}
 								<div class="icon-badge">
 									<div class="icon" style="color: #e80606">
@@ -208,5 +231,8 @@
 		padding-bottom: 3rem;
 		margin-inline-start: 0.1rem;
 		margin-inline-end: 0.1rem;
+	}
+
+	.subscription {
 	}
 </style>
