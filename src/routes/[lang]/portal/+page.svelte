@@ -101,6 +101,12 @@
 										</small>
 									</div>
 								</div>
+								<div>i am in plus??</div>
+								<div class="subscription">
+									{#if user_info['is_recurring'] === true}
+										<div>I am recurring</div>
+									{/if}
+								</div>
 							{:else}
 								<div class="icon-badge">
 									<div class="icon" style="color: #e80606">
