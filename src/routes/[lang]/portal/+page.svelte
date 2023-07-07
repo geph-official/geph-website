@@ -67,6 +67,14 @@
 	}
 
 	let activeTab: 'buy-plus' | 'redeem-giftcard' = 'buy-plus';
+
+	let showCancellationModal = false;
+	$: toggleCancellationModal = () => (showCancellationModal = !showCancellationModal);
+	$: confirmCancellation = async () => {
+		await cancel_subscription();
+		toggleCancellationModal();
+		location.reload();
+	};
 </script>
 
 <svelte:head>
@@ -125,9 +133,18 @@
 											<div class="icon"><AccountCreditCard width="26" height="22" /></div>
 											<div class="">Plus Subscriber</div>
 										</div>
-										<button class="btn btn-outline-dark me-2" on:click={() => cancel_subscription()}
+										<button class="btn btn-outline-dark me-2" on:click={toggleCancellationModal}
 											>Cancel Subscription</button
 										>
+										{#if showCancellationModal}
+											<div class="cancel-modal-background" transition:fade>
+												<div class="cancel-modal">
+													<p>Are you sure you want to cancel your subscription?</p>
+													<button on:click={confirmCancellation}>Yes</button>
+													<button on:click={toggleCancellationModal}>No</button>
+												</div>
+											</div>
+										{/if}
 									</div>
 								{/if}
 							{:else}
@@ -178,7 +195,7 @@
 			<div class="row mt-3 box">
 				<div class="col">
 					{#if activeTab === 'buy-plus'}
-						<BuyPlus variant="all" />
+						<BuyPlus is_recurring={user_info['is_recurring']} variant="all" />
 					{:else if activeTab === 'redeem-giftcard'}
 						<RedeemGiftcard />
 					{/if}
@@ -233,6 +250,21 @@
 		margin-inline-end: 0.1rem;
 	}
 
-	.subscription {
+	.cancel-modal {
+		background-color: white;
+		padding: 1em;
+		border-radius: 8px;
+	}
+
+	.cancel-modal-background {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.5);
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 </style>
