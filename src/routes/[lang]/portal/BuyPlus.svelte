@@ -126,20 +126,18 @@
 			<div class="col">
 				<h2>{to_local('who-is-the-plus-for')}</h2>
 				<div class="d-flex">
-					<div title={is_recurring ? 'You are already subscribed to Plus!' : ''}>
-						<button
-							class="btn btn-outline-dark me-2 {is_recurring ? 'disabled-button' : ''}"
-							on:click={() => {
-								if (!is_recurring) {
-									item = 'plus';
-								}
-							}}
-							class:selected={item === 'plus'}
-							disabled={is_recurring}
-						>
-							{to_local('myself')}
-						</button>
-					</div>
+					<button
+						class="btn btn-outline-dark me-2"
+						on:click={() => {
+							if (is_recurring) {
+								alert(to_local('already-subscribed'));
+							}
+							item = 'plus';
+						}}
+						class:selected={item === 'plus'}
+					>
+						{to_local('myself')}
+					</button>
 
 					<button
 						class="btn btn-outline-dark"
@@ -317,14 +315,14 @@
 				{/each}
 			</div>
 
-			{#if payMethod === 'bank-card'}
+			{#if payMethod === 'bank-card' && item == 'plus'}
 				<div class="subscribe-checkbox" on:click={toggleShouldSubscribe}>
 					{#if shouldSubscribe}
 						<CheckBoxMarked width="25" height="25" />
 					{:else}
 						<CheckBoxBlankOutline width="25" height="25" />
 					{/if}
-					<span>Subscribe</span>
+					<span>{to_local('subscribe')}</span>
 				</div>
 			{/if}
 
@@ -503,10 +501,5 @@
 
 	.subscribe-checkbox span {
 		margin-left: 10px;
-	}
-
-	.disabled-myself-button {
-		color: grey;
-		cursor: not-allowed;
 	}
 </style>

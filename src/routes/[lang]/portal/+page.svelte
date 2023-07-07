@@ -131,17 +131,17 @@
 									<div class="subscription">
 										<div class="icon-badge">
 											<div class="icon"><AccountCreditCard width="26" height="22" /></div>
-											<div class="">Plus Subscriber</div>
+											<div class="">{localize(lang, 'plus-subscriber')}</div>
 										</div>
-										<button class="btn btn-outline-dark me-2" on:click={toggleCancellationModal}
-											>Cancel Subscription</button
-										>
+										<button class="btn btn-outline-dark me-2" on:click={toggleCancellationModal}>
+											{localize(lang, 'cancel-subscription')}
+										</button>
 										{#if showCancellationModal}
 											<div class="cancel-modal-background" transition:fade>
 												<div class="cancel-modal">
-													<p>Are you sure you want to cancel your subscription?</p>
-													<button on:click={confirmCancellation}>Yes</button>
-													<button on:click={toggleCancellationModal}>No</button>
+													<p>{localize(lang, "are-you-sure")}</p>
+													<button on:click={confirmCancellation}>{localize(lang, 'yes')}</button>
+													<button on:click={toggleCancellationModal}>{localize(lang, 'no')}</button>
 												</div>
 											</div>
 										{/if}
