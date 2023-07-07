@@ -590,10 +590,10 @@ bad-aliwechat:
   fa: پرداخت از طریق آلی پی و وی چت پی دائماً قابلِ اطمینان نیست و برای ما هزینه‌بر است. <b>پیپال</b> هیچ هزینه اضافی دریافت نمی‌کند و با بیشتر کارت‌های بانکی چینی سازگار است. به شدت توصیه می‌شود! 
 
 already-subscribed:
-  en: You are already subscribed to Plus!
-  zhs: 您已经订阅了 Plus！
-  zht: 您已經訂閱了 Plus！
-  fa: شما قبلاً مشترک پلاس شده اید!
+  en: You are already subscribed to Plus! You should cancel your subscription before buying another one.
+  zhs: 您已经订阅了 Plus！ 您应该在购买另一份之前取消订阅。
+  zht: 您已經訂閱了 Plus！ 您應該在購買另一份之前取消訂閱。
+  fa: شما قبلاً مشترک پلاس شده اید! قبل از خرید اشتراک دیگر باید اشتراک خود را لغو کنید.
 
 subscribe:
   en: Subscribe
