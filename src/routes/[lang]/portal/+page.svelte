@@ -51,7 +51,7 @@
 		}
 	}
 
-	async function cancel_subscription() {
+	async function cancel_autorenew() {
 		console.log('cancelling subscription!');
 		if (!sessionStorage.getItem('sessid')) {
 			window.location.replace('./portal/login');
@@ -71,7 +71,7 @@
 	let showCancellationModal = false;
 	$: toggleCancellationModal = () => (showCancellationModal = !showCancellationModal);
 	$: confirmCancellation = async () => {
-		await cancel_subscription();
+		await cancel_autorenew();
 		toggleCancellationModal();
 		location.reload();
 	};

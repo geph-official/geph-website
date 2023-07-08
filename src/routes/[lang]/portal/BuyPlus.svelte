@@ -194,7 +194,7 @@
 		</div>
 	{/if}
 
-	{#if item == 'giftcard'}
+	{#if !is_recurring || item == 'giftcard'}
 		<div class="row mt-5">
 			<div class="col">
 				{#if item !== 'giftcard'}
