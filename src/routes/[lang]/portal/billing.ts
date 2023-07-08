@@ -27,8 +27,8 @@ export interface PaymentBackend {
 }
 
 export function stripeBackend(): PaymentBackend {
-  // const STRIPEKEY = "pk_live_Wk781YzANKGuLBl2NzFkRu5n00YdYjObFY";
-  const STRIPEKEY = "pk_test_O6w7losqr4Z0LrJvvhotXgBO00kog9HPMC";
+  const STRIPEKEY = "pk_live_Wk781YzANKGuLBl2NzFkRu5n00YdYjObFY";
+  // const STRIPEKEY = "pk_test_O6w7losqr4Z0LrJvvhotXgBO00kog9HPMC";
   return {
     name: 'bank-card',
     icons: ["/visa.jpg", "/mastercard.svg"],
