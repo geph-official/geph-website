@@ -33,8 +33,7 @@
 
 	let days = 30;
 	let promo = '';
-	let item: 'plus' | 'giftcard' =
-		variant === 'reseller' || is_recurring === true ? 'giftcard' : 'plus';
+	let item: 'plus' | 'giftcard' = variant === 'reseller' ? 'giftcard' : 'plus';
 
 	let recipientEmail = '';
 	let sender = variant === 'reseller' ? 'Reseller' : '';
@@ -114,8 +113,8 @@
 	$: senderValid = sender.length > 0;
 	$: recipientValid = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/.test(recipientEmail);
 
-	let shouldAutorenew = false;
-	$: toggleShouldAutorenew = () => (shouldAutorenew = !shouldAutorenew);
+	let autorenew = false;
+	$: toggleAutorenew = () => (autorenew = !autorenew);
 
 	let checkingOut = false;
 </script>
@@ -195,7 +194,7 @@
 		</div>
 	{/if}
 
-	{#if !is_recurring || item == 'giftcard'}
+	{#if item == 'giftcard'}
 		<div class="row mt-5">
 			<div class="col">
 				{#if item !== 'giftcard'}
@@ -316,8 +315,8 @@
 				</div>
 
 				{#if payMethod === 'bank-card' && item == 'plus'}
-					<div class="autorenew-checkbox" on:click={toggleShouldAutorenew}>
-						{#if shouldAutorenew}
+					<div class="autorenew-checkbox" on:click={toggleAutorenew}>
+						{#if autorenew}
 							<CheckBoxMarked width="25" height="25" />
 						{:else}
 							<CheckBoxBlankOutline width="25" height="25" />
@@ -394,9 +393,7 @@
 								}
 								try {
 									let ready_item = makeItem(item, recipientEmail, sender, giftcards_number);
-									await paymentBackends
-										.get(payMethod)
-										?.pay(days, promo, ready_item, shouldAutorenew);
+									await paymentBackends.get(payMethod)?.pay(days, promo, ready_item, autorenew);
 								} catch (e) {
 									alert(translateError(String(e), lang));
 								}
