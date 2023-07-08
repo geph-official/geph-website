@@ -2,7 +2,7 @@ import axios from 'axios';
 import { localize } from './l10n';
 import { goto } from '$app/navigation';
 
-export const BINDER_ADDR = 'https://web-backend.geph.io';
+export const BINDER_ADDR = 'https://staging.web-backend.geph.io';
 // export const BINDER_ADDR = 'http://localhost:28080';
 
 export function translateError(e: string, lang: string): string {

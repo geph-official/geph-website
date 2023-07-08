@@ -1,6 +1,7 @@
 <script lang="ts">
 	import AccountCircle from 'svelte-material-icons/AccountCircle.svelte';
 	import CalendarRange from 'svelte-material-icons/CalendarRange.svelte';
+	import AccountCreditCard from 'svelte-material-icons/AccountCreditCard.svelte';
 	import Heart from 'svelte-material-icons/Heart.svelte';
 	import axios from 'axios';
 	import { fade } from 'svelte/transition';
@@ -10,6 +11,7 @@
 	import Footer from '../Footer.svelte';
 	import BuyPlus from './BuyPlus.svelte';
 	import RedeemGiftcard from './RedeemGiftcard.svelte';
+	import { BINDER_ADDR } from '../../../routes/helpers';
 	const lang = $page.params['lang'];
 
 	const errL10n = {
@@ -34,9 +36,10 @@
 			window.location.replace('./portal/login');
 		}
 		try {
-			let resp = await axios.post('https://web-backend.geph.io/userinfo', {
+			let resp = await axios.post(BINDER_ADDR + '/userinfo', {
 				sessid: sessionStorage.getItem('sessid')
 			});
+			console.log('USER INFO: ', resp);
 			console.log(resp.status);
 			if (resp.status >= 400) {
 				throw resp.status;
@@ -48,7 +51,30 @@
 		}
 	}
 
+	async function cancel_autorenew() {
+		console.log('cancelling subscription!');
+		if (!sessionStorage.getItem('sessid')) {
+			window.location.replace('./portal/login');
+		}
+		try {
+			let success = await axios.post(BINDER_ADDR + '/v2/cancel_stripe_recurring', {
+				sessid: sessionStorage.getItem('sessid')
+			});
+			console.log('success response: ', success);
+		} catch (e) {
+			alert(translateError(String(e), lang));
+		}
+	}
+
 	let activeTab: 'buy-plus' | 'redeem-giftcard' = 'buy-plus';
+
+	let showCancellationModal = false;
+	$: toggleCancellationModal = () => (showCancellationModal = !showCancellationModal);
+	$: confirmCancellation = async () => {
+		await cancel_autorenew();
+		toggleCancellationModal();
+		location.reload();
+	};
 </script>
 
 <svelte:head>
@@ -99,8 +125,26 @@
 												).toFixed(0)}
 											</span>
 										</small>
+										{#if user_info['is_recurring'] === true}
+											<br />
+											<span class="auto-renewing">
+												{localize(lang, 'auto-renewing')}
+												<a href="javascript:void(0);" on:click={toggleCancellationModal}>
+													{localize(lang, 'cancel')}
+												</a>
+											</span>
+										{/if}
 									</div>
 								</div>
+								{#if showCancellationModal}
+									<div class="cancel-modal-background" transition:fade>
+										<div class="cancel-modal">
+											<p>{localize(lang, 'are-you-sure')}</p>
+											<button on:click={confirmCancellation}>{localize(lang, 'yes')}</button>
+											<button on:click={toggleCancellationModal}>{localize(lang, 'no')}</button>
+										</div>
+									</div>
+								{/if}
 							{:else}
 								<div class="icon-badge">
 									<div class="icon" style="color: #e80606">
@@ -149,7 +193,7 @@
 			<div class="row mt-3 box">
 				<div class="col">
 					{#if activeTab === 'buy-plus'}
-						<BuyPlus variant="all" />
+						<BuyPlus is_recurring={user_info['is_recurring']} variant="all" />
 					{:else if activeTab === 'redeem-giftcard'}
 						<RedeemGiftcard />
 					{/if}
@@ -194,6 +238,13 @@
 		opacity: 0.8;
 	}
 
+	.auto-renewing {
+		font-size: x-small;
+		font-weight: 600;
+		opacity: 0.8;
+		color: green;
+	}
+
 	.box {
 		border: 1px solid #ccc;
 		border-radius: 0.5rem;
@@ -202,5 +253,23 @@
 		padding-bottom: 3rem;
 		margin-inline-start: 0.1rem;
 		margin-inline-end: 0.1rem;
+	}
+
+	.cancel-modal {
+		background-color: white;
+		padding: 1em;
+		border-radius: 8px;
+	}
+
+	.cancel-modal-background {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.5);
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 </style>

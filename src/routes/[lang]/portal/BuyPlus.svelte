@@ -14,7 +14,10 @@
 	import type { Item } from './billing';
 	import { localize } from '../../l10n';
 	import { BINDER_ADDR } from '../../../routes/helpers';
+	import CheckBoxMarked from 'svelte-material-icons/CheckboxMarked.svelte';
+	import CheckBoxBlankOutline from 'svelte-material-icons/CheckboxBlankOutline.svelte';
 
+	export let is_recurring: boolean;
 	export let variant: 'all' | 'reseller';
 
 	const lang = $page.params['lang'];
@@ -31,6 +34,7 @@
 	let days = 30;
 	let promo = '';
 	let item: 'plus' | 'giftcard' = variant === 'reseller' ? 'giftcard' : 'plus';
+
 	let recipientEmail = '';
 	let sender = variant === 'reseller' ? 'Reseller' : '';
 	let giftcards_number = variant === 'reseller' ? 50 : 1;
@@ -104,10 +108,13 @@
 		}
 	};
 
-	$: l = (s: string) => localize(lang, s);
+	$: to_local = (s: string) => localize(lang, s);
 
 	$: senderValid = sender.length > 0;
 	$: recipientValid = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/.test(recipientEmail);
+
+	let autorenew = false;
+	$: toggleAutorenew = () => (autorenew = !autorenew);
 
 	let checkingOut = false;
 </script>
@@ -116,22 +123,27 @@
 	{#if variant !== 'reseller'}
 		<div class="row">
 			<div class="col">
-				<h2>{l('who-is-the-plus-for')}</h2>
+				<h2>{to_local('who-is-the-plus-for')}</h2>
 				<div class="d-flex">
 					<button
 						class="btn btn-outline-dark me-2"
 						on:click={() => {
 							item = 'plus';
 						}}
-						class:selected={item === 'plus'}>{l('myself')}</button
+						class:selected={item === 'plus'}
 					>
+						{to_local('myself')}
+					</button>
+
 					<button
 						class="btn btn-outline-dark"
 						class:selected={item === 'giftcard'}
 						on:click={() => {
 							item = 'giftcard';
-						}}>{l('someone-else')}</button
+						}}
 					>
+						{to_local('someone-else')}
+					</button>
 				</div>
 			</div>
 		</div>
@@ -145,11 +157,11 @@
 						class="form-control"
 						id="sender"
 						bind:value={sender}
-						placeholder={l('sender')}
+						placeholder={to_local('sender')}
 						class:invalid={!senderValid}
 					/>
 					{#if !senderValid}
-						<small class="invalid-blurb">{l('sender-invalid-blurb')}</small>
+						<small class="invalid-blurb">{to_local('sender-invalid-blurb')}</small>
 					{/if}
 				</div>
 			{/if}
@@ -159,18 +171,18 @@
 					class="form-control"
 					id="giftcard-email"
 					bind:value={recipientEmail}
-					placeholder={l('recipient-email')}
+					placeholder={to_local('recipient-email')}
 					class:invalid={!recipientValid}
 				/>
 				{#if !recipientValid}
-					<small class="invalid-blurb">{l('recipient-invalid-blurb')}</small>
+					<small class="invalid-blurb">{to_local('recipient-invalid-blurb')}</small>
 				{/if}
 			</div>
 		</div>
 
 		<div class="row mt-5">
 			<div class="col">
-				<h2>{l('how-many-giftcards')}</h2>
+				<h2>{to_local('how-many-giftcards')}</h2>
 				<input
 					type="number"
 					class="form-control small-form-control"
@@ -182,205 +194,228 @@
 		</div>
 	{/if}
 
-	<div class="row mt-5">
-		<div class="col">
-			{#if item !== 'giftcard'}
-				<h2>{l('choose-a-plan-length')}</h2>
-			{:else}
-				<h2>{l('how-many-days-in-each-giftcard')}</h2>
-			{/if}
-			<div class="buttons">
-				<button
-					class="btn btn-outline-dark me-2"
-					class:selected={days == 30}
-					on:click={() => {
-						days = 30;
-					}}
-				>
-					{l('1-month')}
-				</button>
-				<button
-					class="btn btn-outline-dark me-2"
-					class:selected={days === 90}
-					on:click={() => {
-						days = 90;
-					}}
-				>
-					{l('3-months')}
-				</button>
-				<button
-					class="btn btn-outline-dark me-2"
-					class:selected={days === 365}
-					on:click={() => {
-						days = 365;
-					}}
-				>
-					{l('1-year')}
-					{#if variant !== 'reseller'}
-						<span class="badge rounded-pill bg-success">{l('10-off')}</span>
-					{/if}
-				</button>
-				<button
-					class="btn btn-outline-dark me-2"
-					class:selected={days === 730}
-					on:click={() => {
-						days = 730;
-					}}
-				>
-					{l('2-year')}
-					{#if variant !== 'reseller'}
-						<span class="badge rounded-pill bg-success">{l('15-off')}</span>
-					{/if}
-				</button>
-			</div>
-			<div class="buttons">
-				<button
-					class="btn btn-outline-dark me-2"
-					class:selected={days === 1095}
-					on:click={() => {
-						days = 1095;
-					}}
-				>
-					{l('3-year')}
-					{#if variant !== 'reseller'}
-						<span class="badge rounded-pill bg-success">{l('17.5-off')}</span>
-					{/if}
-				</button>
-				<input
-					type="number"
-					class="form-control small-form-control"
-					id="length"
-					value={days == 30 || days == 90 || days == 365 || days == 730 || days == 1095 ? '' : days}
-					on:change={onDaysChange}
-					placeholder={l('custom')}
-				/>
-			</div>
-		</div>
-	</div>
-
-	{#if item !== 'giftcard'}
+	{#if !is_recurring || item == 'giftcard'}
 		<div class="row mt-5">
 			<div class="col">
-				<h2>{l('got-a-promo-code')}</h2>
+				{#if item !== 'giftcard'}
+					<h2>{to_local('choose-a-plan-length')}</h2>
+				{:else}
+					<h2>{to_local('how-many-days-in-each-giftcard')}</h2>
+				{/if}
 				<div class="buttons">
-					<input
-						type="promo"
-						class="form-control small-form-control"
-						id="promo"
-						on:change={onPromoChange}
-						value={promo}
-						placeholder={l('promo-code')}
-					/>
-				</div>
-			</div>
-		</div>
-	{/if}
-
-	<div class="row mt-5">
-		<div class="col">
-			<h2>{l('choose-a-payment-method')}</h2>
-			<div class="buttons">
-				{#each [...paymentBackends] as [_, backend]}
 					<button
 						class="btn btn-outline-dark me-2"
-						class:selected={payMethod === backend.name}
+						class:selected={days == 30}
 						on:click={() => {
-							payMethod = backend.name;
+							days = 30;
 						}}
 					>
-						{#each backend.icons as icon}
-							<img src={icon} alt="" />
-						{/each}
-						{l(backend.name)}
-						{#if backend.markup > 0}
-							<span class="badge rounded-pill bg-danger">+{backend.markup}%</span>
+						{to_local('1-month')}
+					</button>
+					<button
+						class="btn btn-outline-dark me-2"
+						class:selected={days === 90}
+						on:click={() => {
+							days = 90;
+						}}
+					>
+						{to_local('3-months')}
+					</button>
+					<button
+						class="btn btn-outline-dark me-2"
+						class:selected={days === 365}
+						on:click={() => {
+							days = 365;
+						}}
+					>
+						{to_local('1-year')}
+						{#if variant !== 'reseller'}
+							<span class="badge rounded-pill bg-success">{to_local('10-off')}</span>
 						{/if}
 					</button>
-				{/each}
-			</div>
-			{#if variant == 'reseller'}
+					<button
+						class="btn btn-outline-dark me-2"
+						class:selected={days === 730}
+						on:click={() => {
+							days = 730;
+						}}
+					>
+						{to_local('2-year')}
+						{#if variant !== 'reseller'}
+							<span class="badge rounded-pill bg-success">{to_local('15-off')}</span>
+						{/if}
+					</button>
+				</div>
 				<div class="buttons">
+					<button
+						class="btn btn-outline-dark me-2"
+						class:selected={days === 1095}
+						on:click={() => {
+							days = 1095;
+						}}
+					>
+						{to_local('3-year')}
+						{#if variant !== 'reseller'}
+							<span class="badge rounded-pill bg-success">{to_local('17.5-off')}</span>
+						{/if}
+					</button>
 					<input
-						type="promo"
+						type="number"
 						class="form-control small-form-control"
-						id="promo"
-						on:change={onPromoChange}
-						value={promo}
-						placeholder="Reseller code"
+						id="length"
+						value={days == 30 || days == 90 || days == 365 || days == 730 || days == 1095
+							? ''
+							: days}
+						on:change={onDaysChange}
+						placeholder={to_local('custom')}
 					/>
 				</div>
-			{/if}
+			</div>
 		</div>
+
+		{#if item !== 'giftcard'}
+			<div class="row mt-5">
+				<div class="col">
+					<h2>{to_local('got-a-promo-code')}</h2>
+					<div class="buttons">
+						<input
+							type="promo"
+							class="form-control small-form-control"
+							id="promo"
+							on:change={onPromoChange}
+							value={promo}
+							placeholder={to_local('promo-code')}
+						/>
+					</div>
+				</div>
+			</div>
+		{/if}
 
 		<div class="row mt-5">
 			<div class="col">
-				<h2>
-					{l('total')}
-					{#if cost !== null}
-						{'€' + cost.toFixed(2)}
-					{:else}
-						<div class="spinner-grow spinner-grow-sm" />
-					{/if}
-				</h2>
-			</div>
-		</div>
+				<h2>{to_local('choose-a-payment-method')}</h2>
+				<div class="buttons">
+					{#each [...paymentBackends] as [_, backend]}
+						<button
+							class="btn btn-outline-dark me-2"
+							class:selected={payMethod === backend.name}
+							on:click={() => {
+								payMethod = backend.name;
+							}}
+						>
+							{#each backend.icons as icon}
+								<img src={icon} alt="" />
+							{/each}
+							{to_local(backend.name)}
+							{#if backend.markup > 0}
+								<span class="badge rounded-pill bg-danger">+{backend.markup}%</span>
+							{/if}
+						</button>
+					{/each}
+				</div>
 
-		{#if item == 'giftcard'}
-			<div class="row">
+				{#if payMethod === 'bank-card' && item == 'plus'}
+					<div class="autorenew-checkbox" on:click={toggleAutorenew}>
+						{#if autorenew}
+							<CheckBoxMarked width="25" height="25" />
+						{:else}
+							<CheckBoxBlankOutline width="25" height="25" />
+						{/if}
+						<span>{to_local('autorenew')}</span>
+						<span class="badge square-pill bg-warning"
+							>{to_local('experimental_feature_warning')}</span
+						>
+					</div>
+				{/if}
+
+				{#if variant == 'reseller'}
+					<div class="buttons">
+						<input
+							type="promo"
+							class="form-control small-form-control"
+							id="promo"
+							on:change={onPromoChange}
+							value={promo}
+							placeholder="Reseller code"
+						/>
+					</div>
+				{/if}
+			</div>
+
+			<div class="row mt-5">
 				<div class="col">
-					<h3>
-						{l('giftcard-promotion')}
-					</h3>
+					<h2>
+						{to_local('total')}
+						{#if cost !== null}
+							{'€' + cost.toFixed(2)}
+						{:else}
+							<div class="spinner-grow spinner-grow-sm" />
+						{/if}
+					</h2>
 				</div>
 			</div>
-		{/if}
 
-		{#if payMethod == 'alipay' || payMethod == 'wxpay'}
-			<div class="row">
-				<div class="col">
-					<div class="aliwechat-warning">{@html l('bad-aliwechat')}</div>
+			{#if item == 'giftcard'}
+				<div class="row">
+					<div class="col">
+						<h3>
+							{to_local('giftcard-promotion')}
+						</h3>
+					</div>
 				</div>
-			</div>
-		{/if}
+			{/if}
 
-		<div class="row mt-3">
-			<div class="col">
-				<button
-					class="btn btn-success btn-lg"
-					on:click={async () => {
-						checkingOut = true;
-						try {
-							console.log(item);
-							if (item === 'giftcard') {
-								if (recipientEmail == '') {
-									alert(localize(lang, 'email_required'));
-									return;
-								}
-								if (sender == '') {
-									alert(localize(lang, 'sender_required'));
-									return;
-								}
-							}
+			{#if payMethod == 'alipay' || payMethod == 'wxpay'}
+				<div class="row">
+					<div class="col">
+						<div class="aliwechat-warning">{@html to_local('bad-aliwechat')}</div>
+					</div>
+				</div>
+			{/if}
+
+			<div class="row mt-3">
+				<div class="col">
+					<button
+						class="btn btn-success btn-lg"
+						on:click={async () => {
+							checkingOut = true;
 							try {
-								let ready_item = makeItem(item, recipientEmail, sender, giftcards_number);
-								await paymentBackends.get(payMethod)?.pay(days, promo, ready_item);
-							} catch (e) {
-								alert(translateError(String(e), lang));
+								console.log(item);
+								if (item === 'giftcard') {
+									if (recipientEmail == '') {
+										alert(localize(lang, 'email_required'));
+										return;
+									}
+									if (sender == '') {
+										alert(localize(lang, 'sender_required'));
+										return;
+									}
+								}
+								try {
+									let ready_item = makeItem(item, recipientEmail, sender, giftcards_number);
+									await paymentBackends.get(payMethod)?.pay(days, promo, ready_item, autorenew);
+								} catch (e) {
+									alert(translateError(String(e), lang));
+								}
+							} finally {
+								console.log('checkout done');
+								checkingOut = false;
 							}
-						} finally {
-							console.log('checkout done');
-							checkingOut = false;
-						}
-					}}
-					disabled={checkingOut ||
-						cost == null ||
-						(item == 'giftcard' && (!senderValid || !recipientValid))}
-				>
-					{l('pay')}
-				</button>
+						}}
+						disabled={checkingOut ||
+							cost == null ||
+							(item == 'giftcard' && (!senderValid || !recipientValid))}
+					>
+						{to_local('pay')}
+					</button>
+				</div>
 			</div>
 		</div>
-	</div>
+	{:else}
+		<div>
+			<span><br />{localize(lang, 'already-autorenew')}</span>
+		</div>
+	{/if}
 </div>
 
 <style>
@@ -464,5 +499,14 @@
 			height: 3rem;
 			align-items: center;
 		}
+	}
+
+	.autorenew-checkbox {
+		display: flex;
+		align-items: center;
+	}
+
+	.autorenew-checkbox span {
+		margin-left: 10px;
 	}
 </style>
