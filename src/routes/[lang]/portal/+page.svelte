@@ -125,26 +125,24 @@
 												).toFixed(0)}
 											</span>
 										</small>
+										{#if user_info['is_recurring'] === true}
+											<br />
+											<span class="auto-renewing">
+												{localize(lang, 'auto-renewing')}
+												<a href="javascript:void(0);" on:click={toggleCancellationModal}>
+													{localize(lang, 'cancel')}
+												</a>
+											</span>
+										{/if}
 									</div>
 								</div>
-								{#if user_info['is_recurring'] === true}
-									<div class="subscription">
-										<div class="icon-badge">
-											<div class="icon"><AccountCreditCard width="26" height="22" /></div>
-											<div class="">{localize(lang, 'plus-subscriber')}</div>
+								{#if showCancellationModal}
+									<div class="cancel-modal-background" transition:fade>
+										<div class="cancel-modal">
+											<p>{localize(lang, 'are-you-sure')}</p>
+											<button on:click={confirmCancellation}>{localize(lang, 'yes')}</button>
+											<button on:click={toggleCancellationModal}>{localize(lang, 'no')}</button>
 										</div>
-										<button class="btn btn-outline-dark me-2" on:click={toggleCancellationModal}>
-											{localize(lang, 'cancel-subscription')}
-										</button>
-										{#if showCancellationModal}
-											<div class="cancel-modal-background" transition:fade>
-												<div class="cancel-modal">
-													<p>{localize(lang, "are-you-sure")}</p>
-													<button on:click={confirmCancellation}>{localize(lang, 'yes')}</button>
-													<button on:click={toggleCancellationModal}>{localize(lang, 'no')}</button>
-												</div>
-											</div>
-										{/if}
 									</div>
 								{/if}
 							{:else}
@@ -238,6 +236,13 @@
 	.remaining-days {
 		font-weight: 600;
 		opacity: 0.8;
+	}
+
+	.auto-renewing {
+		font-size: x-small;
+		font-weight: 600;
+		opacity: 0.8;
+		color: green;
 	}
 
 	.box {

@@ -114,8 +114,8 @@
 	$: senderValid = sender.length > 0;
 	$: recipientValid = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/.test(recipientEmail);
 
-	let shouldSubscribe = false;
-	$: toggleShouldSubscribe = () => (shouldSubscribe = !shouldSubscribe);
+	let shouldAutorenew = false;
+	$: toggleShouldAutorenew = () => (shouldAutorenew = !shouldAutorenew);
 
 	let checkingOut = false;
 </script>
@@ -264,14 +264,15 @@
 						type="number"
 						class="form-control small-form-control"
 						id="length"
-						value={days == 30 || days == 90 || days == 365 || days == 730 || days == 1095 ? '' : days}
+						value={days == 30 || days == 90 || days == 365 || days == 730 || days == 1095
+							? ''
+							: days}
 						on:change={onDaysChange}
 						placeholder={to_local('custom')}
 					/>
 				</div>
 			</div>
 		</div>
-		
 
 		{#if item !== 'giftcard'}
 			<div class="row mt-5">
@@ -315,13 +316,16 @@
 				</div>
 
 				{#if payMethod === 'bank-card' && item == 'plus'}
-					<div class="subscribe-checkbox" on:click={toggleShouldSubscribe}>
-						{#if shouldSubscribe}
+					<div class="autorenew-checkbox" on:click={toggleShouldAutorenew}>
+						{#if shouldAutorenew}
 							<CheckBoxMarked width="25" height="25" />
 						{:else}
 							<CheckBoxBlankOutline width="25" height="25" />
 						{/if}
-						<span>{to_local('subscribe')}</span>
+						<span>{to_local('autorenew')}</span>
+						<span class="badge square-pill bg-warning"
+							>{to_local('experimental_feature_warning')}</span
+						>
 					</div>
 				{/if}
 
@@ -390,7 +394,9 @@
 								}
 								try {
 									let ready_item = makeItem(item, recipientEmail, sender, giftcards_number);
-									await paymentBackends.get(payMethod)?.pay(days, promo, ready_item, shouldSubscribe);
+									await paymentBackends
+										.get(payMethod)
+										?.pay(days, promo, ready_item, shouldAutorenew);
 								} catch (e) {
 									alert(translateError(String(e), lang));
 								}
@@ -409,9 +415,9 @@
 			</div>
 		</div>
 	{:else}
-	<div>
-		<span><br />{localize(lang, 'already-subscribed')}</span>
-	</div>
+		<div>
+			<span><br />{localize(lang, 'already-autorenew')}</span>
+		</div>
 	{/if}
 </div>
 
@@ -498,12 +504,12 @@
 		}
 	}
 
-	.subscribe-checkbox {
+	.autorenew-checkbox {
 		display: flex;
 		align-items: center;
 	}
 
-	.subscribe-checkbox span {
+	.autorenew-checkbox span {
 		margin-left: 10px;
 	}
 </style>
