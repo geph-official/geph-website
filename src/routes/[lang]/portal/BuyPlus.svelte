@@ -113,7 +113,7 @@
 	$: senderValid = sender.length > 0;
 	$: recipientValid = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/.test(recipientEmail);
 
-	let autorenew = false;
+	let autorenew = item === 'plus';
 	$: toggleAutorenew = () => (autorenew = !autorenew);
 
 	let checkingOut = false;
@@ -322,9 +322,6 @@
 							<CheckBoxBlankOutline width="25" height="25" />
 						{/if}
 						<span>{to_local('autorenew')}</span>
-						<span class="badge square-pill bg-warning"
-							>{to_local('experimental_feature_warning')}</span
-						>
 					</div>
 				{/if}
 
