@@ -314,7 +314,7 @@
 					{/each}
 				</div>
 
-				{#if payMethod === 'bank-card' && item == 'plus'}
+				{#if (payMethod === 'bank-card' || payMethod === 'paypal') && item == 'plus'}
 					<div class="autorenew-checkbox" on:click={toggleAutorenew}>
 						{#if autorenew}
 							<CheckBoxMarked width="25" height="25" />
