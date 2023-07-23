@@ -39,7 +39,7 @@ export function stripePaypalBackend(): PaymentBackend {
   // const STRIPEKEY = "pk_test_O6w7losqr4Z0LrJvvhotXgBO00kog9HPMC";
   return {
     name,
-    icons: ["/visa.jpg", "/mastercard.svg"],
+    icons: name == 'paypal'?     ['/paypal.svg', "/unionpay.svg"] : ["/visa.jpg", "/mastercard.svg"],
     markup: 0,
     pay: async (days: number, promo: string, item: Item, is_subscription: boolean) => {
       const resp = await axios.post(
