@@ -26,11 +26,19 @@ export interface PaymentBackend {
   pay: (arg0: number, arg1: string, arg2: Item, is_subscription: boolean) => Promise<void>
 }
 
-export function stripeBackend(payment_methods: string[]): PaymentBackend {
+export function stripeCardBackend(): PaymentBackend {
+  return stripeBackendReal("bank-card", ["card"])
+}
+
+export function stripePaypalBackend(): PaymentBackend {
+  return stripeBackendReal("paypal", ["paypal"])
+}
+
+ function stripeBackendReal(name: string, payment_methods: string[]): PaymentBackend {
   const STRIPEKEY = "pk_live_Wk781YzANKGuLBl2NzFkRu5n00YdYjObFY";
   // const STRIPEKEY = "pk_test_O6w7losqr4Z0LrJvvhotXgBO00kog9HPMC";
   return {
-    name: 'bank-card',
+    name,
     icons: ["/visa.jpg", "/mastercard.svg"],
     markup: 0,
     pay: async (days: number, promo: string, item: Item, is_subscription: boolean) => {

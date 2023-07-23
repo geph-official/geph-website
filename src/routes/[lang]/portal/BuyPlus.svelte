@@ -5,8 +5,8 @@
 	import {
 		alipayBackend,
 		cryptoBackend,
-		paypalBackend,
-		stripeBackend,
+		stripeCardBackend,
+		stripePaypalBackend,
 		translateError,
 		wxpayBackend,
 		type PaymentBackend
@@ -23,8 +23,8 @@
 	const lang = $page.params['lang'];
 
 	const paymentBackends: Map<string, PaymentBackend> = new Map();
-	paymentBackends.set('bank-card', stripeBackend(['card']));
-	paymentBackends.set('paypal', stripeBackend(['paypal']));
+	paymentBackends.set('bank-card', stripeCardBackend());
+	paymentBackends.set('paypal', stripePaypalBackend());
 	paymentBackends.set('crypto', cryptoBackend());
 	if (variant !== 'reseller') {
 		paymentBackends.set('alipay', alipayBackend());
