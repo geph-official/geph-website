@@ -26,7 +26,7 @@ export interface PaymentBackend {
   pay: (arg0: number, arg1: string, arg2: Item, is_subscription: boolean) => Promise<void>
 }
 
-export function stripeBackend(): PaymentBackend {
+export function stripeBackend(payment_methods: string[]): PaymentBackend {
   const STRIPEKEY = "pk_live_Wk781YzANKGuLBl2NzFkRu5n00YdYjObFY";
   // const STRIPEKEY = "pk_test_O6w7losqr4Z0LrJvvhotXgBO00kog9HPMC";
   return {
@@ -41,7 +41,8 @@ export function stripeBackend(): PaymentBackend {
           promo,
           days,
           item,
-          is_subscription
+          is_subscription,
+          payment_methods
         },
         { responseType: "text" }
       );

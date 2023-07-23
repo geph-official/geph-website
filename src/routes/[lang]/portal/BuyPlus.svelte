@@ -23,8 +23,8 @@
 	const lang = $page.params['lang'];
 
 	const paymentBackends: Map<string, PaymentBackend> = new Map();
-	paymentBackends.set('bank-card', stripeBackend());
-	paymentBackends.set('paypal', paypalBackend());
+	paymentBackends.set('bank-card', stripeBackend(['card']));
+	paymentBackends.set('paypal', stripeBackend(['paypal']));
 	paymentBackends.set('crypto', cryptoBackend());
 	if (variant !== 'reseller') {
 		paymentBackends.set('alipay', alipayBackend());
