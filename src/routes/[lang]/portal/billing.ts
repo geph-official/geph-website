@@ -42,6 +42,7 @@ export function stripePaypalBackend(): PaymentBackend {
     icons: name == 'paypal'?     ['/paypal.svg', "/unionpay.svg"] : ["/visa.jpg", "/mastercard.svg"],
     markup: 0,
     pay: async (days: number, promo: string, item: Item, is_subscription: boolean) => {
+      is_subscription = name != 'paypal' && is_subscription;
       const resp = await axios.post(
         BINDER_ADDR + "/v2/stripe",
         {
