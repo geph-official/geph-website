@@ -278,14 +278,8 @@ choose-a-payment-method:
 
 bank-card:
   en: Bank card
-  zhs: 国际银行卡
-  zht: 中國銀行卡
-  fa: کارت بانکی
-
-china-bank-card:
-  en: Bank card (China)
-  zhs: 中国银行卡
-  zht: 中國銀行卡
+  zhs: 银行卡
+  zht: 銀行卡
   fa: کارت بانکی
 
 alipay:
@@ -296,7 +290,7 @@ alipay:
 
 paypal:
   en: PayPal
-  zhs: PayPal
+  zhs: PayPal / 银联
   zht: PayPal 
   fa: PayPal
 
@@ -590,9 +584,9 @@ banner:
 
 
 bad-aliwechat:
-  en: Alipay and WeChat Pay payments are not always reliable, and it costs us a lot to support them. <b>PayPal</b> and <b>Bank cards (China)</b> have no added fee and is compatible with most Chinese bank cards.
-  zhs: ⚠️ 支付宝、微信支付的提供商并不稳定，而且有高额手续费。<br><br><b>中国银行卡</b> 或 <b>PayPal</b> 选项不需要任何额外费用，并且兼容大部分中国银行卡。请尽量使用！
-  zht: ⚠️ 支付寶、微信支付的提供商並不穩定，而且收費很高。<br><br><b>中國銀行卡</b> 或 <b>PayPal</b> 則不需要額外費用，且能兼容大多數的中國銀行卡。請盡量使用！
+  en: Alipay and WeChat Pay payments are not always reliable, and it costs us a lot to support them. <b>PayPal</b> has no added fee and is compatible with most Chinese bank cards.
+  zhs: ⚠️ 支付宝、微信支付的提供商并不稳定，而且有高额手续费。<br><br><b>PayPal</b> 不需要任何额外费用，并且兼容大部分中国银行卡。请尽量使用 PayPal！
+  zht: ⚠️ 支付寶、微信支付的提供商並不穩定，而且收費很高。<br><br> <b>PayPal</b> 則不需要額外費用，且能兼容大多數的中國銀行卡。請盡量使用 PayPal！
   fa: پرداخت از طریق آلی پی و وی چت پی دائماً قابلِ اطمینان نیست و برای ما هزینه‌بر است. <b>پیپال</b> هیچ هزینه اضافی دریافت نمی‌کند و با بیشتر کارت‌های بانکی چینی سازگار است. به شدت توصیه می‌شود! 
 
 already-autorenew:

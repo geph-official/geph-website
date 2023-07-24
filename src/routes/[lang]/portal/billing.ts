@@ -27,23 +27,19 @@ export interface PaymentBackend {
 }
 
 export function stripeCardBackend(): PaymentBackend {
-  return stripeBackendReal("bank-card", ["card"], false)
-}
-
-export function stripeChinaCardBackend(): PaymentBackend {
-  return stripeBackendReal("china-bank-card", ["card"], true)
+  return stripeBackendReal("bank-card", ["card"])
 }
 
 export function stripePaypalBackend(): PaymentBackend {
-  return stripeBackendReal("paypal", ["paypal"], false)
+  return stripeBackendReal("paypal", ["paypal"])
 }
 
- function stripeBackendReal(name: string, payment_methods: string[], is_china: boolean): PaymentBackend {
+ function stripeBackendReal(name: string, payment_methods: string[]): PaymentBackend {
   const STRIPEKEY = "pk_live_Wk781YzANKGuLBl2NzFkRu5n00YdYjObFY";
   // const STRIPEKEY = "pk_test_O6w7losqr4Z0LrJvvhotXgBO00kog9HPMC";
   return {
     name,
-    icons: name == 'paypal'?     ['/paypal.svg'] : (is_china? ["/unionpay.svg"] : ["/visa.jpg", "/mastercard.svg"]),
+    icons: name == 'paypal'?     ['/paypal.svg', "/unionpay.svg"] : ["/visa.jpg", "/mastercard.svg"],
     markup: 0,
     pay: async (days: number, promo: string, item: Item, is_subscription: boolean) => {
       is_subscription = name != 'paypal' && is_subscription;
@@ -55,8 +51,7 @@ export function stripePaypalBackend(): PaymentBackend {
           days,
           item,
           is_subscription,
-          payment_methods,
-          is_china
+          payment_methods
         },
         { responseType: "text" }
       );

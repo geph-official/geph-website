@@ -6,7 +6,6 @@
 		alipayBackend,
 		cryptoBackend,
 		stripeCardBackend,
-		stripeChinaCardBackend,
 		stripePaypalBackend,
 		translateError,
 		wxpayBackend,
@@ -25,7 +24,6 @@
 
 	const paymentBackends: Map<string, PaymentBackend> = new Map();
 	paymentBackends.set('bank-card', stripeCardBackend());
-	paymentBackends.set('china-bank-card', stripeChinaCardBackend());
 	paymentBackends.set('paypal', stripePaypalBackend());
 	paymentBackends.set('crypto', cryptoBackend());
 	if (variant !== 'reseller') {
@@ -118,7 +116,7 @@
 	let autorenewChecked = item === 'plus';
 	$: toggleAutorenew = () => (autorenewChecked = !autorenewChecked);
 
-	$: autorenew = autorenewChecked && item === 'plus' && payMethod != 'paypal';
+	$: autorenew = autorenewChecked && item === 'plus' && payMethod == 'bank-card';
 
 	let checkingOut = false;
 </script>
@@ -318,7 +316,7 @@
 					{/each}
 				</div>
 
-				{#if (payMethod === 'bank-card' || payMethod === 'china-bank-card') && item == 'plus'}
+				{#if payMethod === 'bank-card' && item == 'plus'}
 					<div class="autorenew-checkbox" on:click={toggleAutorenew}>
 						{#if autorenewChecked}
 							<CheckBoxMarked width="25" height="25" />
@@ -505,7 +503,6 @@
 	.autorenew-checkbox {
 		display: flex;
 		align-items: center;
-		margin-top: 1rem;
 	}
 
 	.autorenew-checkbox span {
