@@ -117,7 +117,7 @@ export function paypalBackend(): PaymentBackend {
     name: 'paypal',
     icons: ['/paypal.svg', "/unionpay.svg"],
     markup: 0,
-    pay: async (days: number, promo: string, item: Item) => {
+    pay: async (days: number, promo: string, item: Item, is_subscription: boolean) => {
       const resp = await axios.post(
         BINDER_ADDR + '/v2/paypal',
         {
@@ -125,13 +125,21 @@ export function paypalBackend(): PaymentBackend {
           promo,
           days,
           item,
+          is_subscription
         },
         { responseType: 'text' }
       );
-      let orderId = resp.data;
-      console.log(orderId);
-      const approvalUrl = `https://www.paypal.com/checkoutnow?token=${orderId}`;
-      window.location.href = approvalUrl;
+
+      console.log(resp);
+      if (is_subscription) {
+        const approvalUrl = resp.data;
+        window.location.href = approvalUrl;
+      } else {
+        let orderId = resp.data;
+        console.log(orderId);
+        const approvalUrl = `https://www.paypal.com/checkoutnow?token=${orderId}`;
+        window.location.href = approvalUrl;
+      }
     },
   };
 }
