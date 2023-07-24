@@ -118,7 +118,7 @@
 	let autorenewChecked = item === 'plus';
 	$: toggleAutorenew = () => (autorenewChecked = !autorenewChecked);
 
-	$: autorenew = autorenewChecked && item === 'plus' && payMethod == 'bank-card';
+	$: autorenew = autorenewChecked && item === 'plus';
 
 	let checkingOut = false;
 </script>
@@ -318,7 +318,7 @@
 					{/each}
 				</div>
 
-				{#if payMethod === 'bank-card' && item == 'plus'}
+				{#if (payMethod === 'bank-card' || payMethod === 'paypal') && item == 'plus'}
 					<div class="autorenew-checkbox" on:click={toggleAutorenew}>
 						{#if autorenewChecked}
 							<CheckBoxMarked width="25" height="25" />
