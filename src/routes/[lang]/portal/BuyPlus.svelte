@@ -5,6 +5,7 @@
 	import {
 		alipayBackend,
 		cryptoBackend,
+		paypalBackend,
 		stripeCardBackend,
 		stripePaypalBackend,
 		translateError,
@@ -24,7 +25,8 @@
 
 	const paymentBackends: Map<string, PaymentBackend> = new Map();
 	paymentBackends.set('bank-card', stripeCardBackend());
-	paymentBackends.set('paypal', stripePaypalBackend());
+	// paymentBackends.set('paypal', stripePaypalBackend());
+	paymentBackends.set('paypal', paypalBackend());
 	paymentBackends.set('crypto', cryptoBackend());
 	if (variant !== 'reseller') {
 		paymentBackends.set('alipay', alipayBackend());
