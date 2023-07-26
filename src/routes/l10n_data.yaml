@@ -288,12 +288,6 @@ alipay:
   zht: 支付寶
   fa: Alipay
 
-paypal:
-  en: PayPal
-  zhs: PayPal / 银联
-  zht: PayPal 
-  fa: PayPal
-
 wxpay:
   en: WeChat Pay
   zhs: 微信支付
@@ -577,62 +571,7 @@ click-refresh:
   fa: اگر اشتراک پلاس تازه خریداری شده خود را در برنامه نمی‌بینید، روی دکمه تازه‌سازی در صفحه اول کلیک کنید!
 
 banner:
-  en: 'Read the announcement: <a href="https://community.geph.io/t/topic/11574">Geph 4.8 and our decentralization roadmap</a>'
-  zhs: '公告: <a href="https://community.geph.io/t/topic/11574">版本 4.8 以及迷雾通的去中心化愿景</a>'
-  zht: '公告: <a href="https://community.geph.io/t/topic/11574">版本 4.8 以及迷霧通的去中心化願景</a>'
-  fa: 'خواندن اطلاعیه: <a href="https://community.geph.io/t/topic/11574">نسخه 4.8 و برنامه ی ما برای خودمختار سازی</a>'
-
-
-bad-aliwechat:
-  en: Alipay and WeChat Pay payments are not always reliable, and it costs us a lot to support them. <b>PayPal</b> has no added fee and is compatible with most Chinese bank cards.
-  zhs: ⚠️ 支付宝、微信支付的提供商并不稳定，而且有高额手续费。<br><br><b>PayPal</b> 不需要任何额外费用，并且兼容大部分中国银行卡。请尽量使用 PayPal！
-  zht: ⚠️ 支付寶、微信支付的提供商並不穩定，而且收費很高。<br><br> <b>PayPal</b> 則不需要額外費用，且能兼容大多數的中國銀行卡。請盡量使用 PayPal！
-  fa: پرداخت از طریق آلی پی و وی چت پی دائماً قابلِ اطمینان نیست و برای ما هزینه‌بر است. <b>پیپال</b> هیچ هزینه اضافی دریافت نمی‌کند و با بیشتر کارت‌های بانکی چینی سازگار است. به شدت توصیه می‌شود! 
-
-already-autorenew:
-  en: You already have auto-renewing Plus! Cancel your auto-renewing program first if you need to purchase a new plan.
-  zhs: 您已经自动续订了 Plus！如需购买新的套餐，请您先取消自动续订。
-  zht: 您已經自動續訂了 Plus！如需購買新的套餐，請您先取消自動續訂。
-  fa: شما در حال حاضر Plus با تجدید خودکار دارید! اگر نیاز به خرید برنامه جدید دارید، برنامه تجدید خودکار خود را لغو کنید.
-
-autorenew:
-  en: Auto-renew
-  zhs: 自动续订
-  zht: 自動續訂
-  fa: تجدید خودکار
-
-auto-renewing:
-  en: Auto-renewing
-  zhs: 自动续订中
-  zht: 自動續訂中
-  fa: در حال تجدید خودکار
-
-cancel:
-  en: cancel
-  zhs: 取消
-  zht: 取消
-  fa: لغو
-
-experimental_feature_warning:
-  en: this is an experimental feature
-  zhs: 此功能目前处于实验阶段
-  zht: 此功能目前處於實驗階段
-  fa: این ویژگی در حال حاضر آزمایشی است
-
-are-you-sure:
-  en: Are you sure you want to cancel auto-renewing Plus?
-  zhs: 您确定要取消自动续订 Plus 吗？
-  zht: 您確定要取消自動續訂 Plus 嗎？
-  fa: آیا مطمئن هستید که می خواهید تجدید خودکار Plus را لغو کنید؟
-
-yes:
-  en: Yes
-  zhs: 是
-  zht: 是
-  fa: آره
-
-no:
-  en: No
-  zhs: 否
-  zht: 否
-  fa: نه
+  en: '💲Buy more save more: 1 year = 10% off, 2 years = 15% off, 3 years = 17.5% off, ...💲'
+  zhs: '💲多买多优惠：1年=9折，2年=8.5折，3年=8.25折，...💲'
+  zht: '💲多買多優惠：1年=9折，2年=8.5折，3年=8.25折，...💲'
+  fa: '💲بیشتر بخر، بیشتر صرفه جویی کن: یک سال = 10% تخفیف، دو سال = 15% تخفیف، سه سال = 17.5% تخفیف،… 💲'
