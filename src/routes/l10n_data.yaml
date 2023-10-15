@@ -571,10 +571,10 @@ missing-days:
   fa: روز های خریداری شده در برنامه نمایش داده نمی‌شود؟ 
 
 click-refresh:
-  en: If you don't see newly purchased Plus in the app, click the refresh button on the first page!
-  zhs: 如果在软件中没有看到新买的 Plus 时长，请点击第一页的刷新按钮。
-  zht: 如果在軟件中沒有看到新購買的 Plus 時長，請點擊第一頁的刷新按鈕。
-  fa: اگر اشتراک پلاس تازه خریداری شده خود را در برنامه نمی‌بینید، روی دکمه تازه‌سازی در صفحه اول کلیک کنید!
+  en: After purchasing Plus time, wait 10 minutes for it to show up in the app!
+  zhs: 购买Plus后，请耐心等待10分钟即可在应用中看到！
+  zht: 購買Plus後，請耐心等待10分鐘即可在應用程式中看到！
+  fa: پس از خرید پلاس تایم، 10 دقیقه صبر کنید تا در برنامه نمایش داده شود!
 
 banner:
   en: 'Read the announcement: <a href="https://community.geph.io/t/topic/11574">Geph 4.8 and our decentralization roadmap</a>'

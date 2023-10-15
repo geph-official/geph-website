@@ -173,7 +173,6 @@
 				<div class="col-lg" />
 				<div class="col">
 					<div class="card m-3 m-lg-0">
-						<img src="/click_refresh.png" class="card-img-top" alt="" />
 						<div class="card-body">
 							<h5 class="card-title">{localize(lang, 'missing-days')}</h5>
 							<p>{localize(lang, 'click-refresh')}</p>
