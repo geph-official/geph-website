@@ -576,12 +576,11 @@ click-refresh:
   zht: 購買Plus後，請耐心等待10分鐘即可在應用程式中看到！
   fa: پس از خرید اشتراک پلاس، 10 دقیقه صبر کنید تا در برنامه نمایش داده شود!
 
-banner:
-  en: 'Read the announcement: <a href="https://community.geph.io/t/topic/11574">Geph 4.8 and our decentralization roadmap</a>'
-  zhs: '公告: <a href="https://community.geph.io/t/topic/11574">版本 4.8 以及迷雾通的去中心化愿景</a>'
-  zht: '公告: <a href="https://community.geph.io/t/topic/11574">版本 4.8 以及迷霧通的去中心化願景</a>'
-  fa: 'خواندن اطلاعیه: <a href="https://community.geph.io/t/topic/11574">نسخه 4.8 و برنامه ی ما برای خودمختار سازی</a>'
-
+# banner:
+#   en: 
+#   zhs:  
+#   zht: 
+#   fa: 
 
 bad-aliwechat:
   en: Alipay and WeChat Pay payments are not always reliable, and it costs us a lot to support them. <b>PayPal</b> has no added fee and is compatible with most Chinese bank cards.
