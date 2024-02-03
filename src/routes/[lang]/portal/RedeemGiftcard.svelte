@@ -100,7 +100,7 @@
 	<div class="row mt-3">
 		<div class="col">
 			<button
-				class="btn btn-success "
+				class="btn btn-success"
 				on:click={() => {
 					redeemGiftcard(sessionStorage.getItem('sessid'), giftcard_id);
 				}}

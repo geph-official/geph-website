@@ -11,7 +11,7 @@
 	import Footer from '../Footer.svelte';
 	import BuyPlus from './BuyPlus.svelte';
 	import RedeemGiftcard from './RedeemGiftcard.svelte';
-	import { BINDER_ADDR } from '../../../routes/helpers';
+	import { BINDER_ADDR, call_rpc } from '../../../routes/helpers';
 	const lang = $page.params['lang'];
 
 	const errL10n = {
@@ -36,16 +36,9 @@
 			window.location.replace('./portal/login');
 		}
 		try {
-			let resp = await axios.post(BINDER_ADDR + '/userinfo', {
-				sessid: sessionStorage.getItem('sessid')
-			});
-			console.log('USER INFO: ', resp);
-			console.log(resp.status);
-			if (resp.status >= 400) {
-				throw resp.status;
-			} else {
-				return resp.data;
-			}
+			let user_info = await call_rpc('user_info', [sessionStorage.getItem('sessid')]);
+			console.log('USER INFO: ', user_info);
+			return user_info;
 		} catch (e) {
 			alert(translateError(String(e), lang));
 		}

@@ -13,7 +13,7 @@
 	} from './billing';
 	import type { Item } from './billing';
 	import { localize } from '../../l10n';
-	import { BINDER_ADDR } from '../../../routes/helpers';
+	import { BINDER_ADDR, call_rpc } from '../../../routes/helpers';
 	import CheckBoxMarked from 'svelte-material-icons/CheckboxMarked.svelte';
 	import CheckBoxBlankOutline from 'svelte-material-icons/CheckboxBlankOutline.svelte';
 
@@ -51,12 +51,12 @@
 		item: 'plus' | 'giftcard',
 		email: string,
 		sender: string,
-		giftcards_number: number
+		giftcard_id: number
 	) => {
 		var enum_item: Item = 'Plus';
 		if (item == 'giftcard') {
 			enum_item = {
-				Giftcard: { recipient_email: email, sender: sender, number: giftcards_number }
+				Giftcard: { recipient_email: email, sender: sender, count: giftcard_id }
 			};
 		}
 		return enum_item;
@@ -67,14 +67,12 @@
 		for (;;) {
 			try {
 				cost = null;
-				const response = await axios.get(
-					BINDER_ADDR + '/v2/calculate-price?' + toQueryString(obj),
-					{ responseType: 'text' }
-				);
-				cost = response.data / 100;
-				if (response.status >= 400) {
-					throw response.status;
-				}
+				const response = await call_rpc('calculate_price', [
+					obj['method'],
+					obj['promo'],
+					obj['days']
+				]);
+				cost = response / 100;
 				return;
 			} catch (e) {
 				alert(translateError(String(e), lang));

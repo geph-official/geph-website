@@ -1,5 +1,5 @@
 import axios from "axios";
-import { BINDER_ADDR } from "../../helpers";
+import { BINDER_ADDR, call_rpc } from "../../helpers";
 import { goto } from "$app/navigation";
 import { localize } from '../../l10n';
 
@@ -16,7 +16,7 @@ export function translateError(e: string, lang: string): string {
 
 
 export type Item = "Plus" | {
-  "Giftcard": { recipient_email: string, sender: string, number: number }
+  "Giftcard": { recipient_email: string, sender: string, count: number }
 }
 
 export interface PaymentBackend {
@@ -26,26 +26,24 @@ export interface PaymentBackend {
   pay: (arg0: number, arg1: string, arg2: Item, is_subscription: boolean) => Promise<void>
 }
 
-export function stripeBackend(): PaymentBackend {
+export function stripeCardBackend(): PaymentBackend {
+  return stripeBackendReal("bank-card", ["card"])
+}
+
+export function stripePaypalBackend(): PaymentBackend {
+  return stripeBackendReal("paypal", ["paypal"])
+}
+
+function stripeBackendReal(name: string, payment_methods: string[]): PaymentBackend {
   // const STRIPEKEY = "pk_live_Wk781YzANKGuLBl2NzFkRu5n00YdYjObFY";
   const STRIPEKEY = "pk_test_O6w7losqr4Z0LrJvvhotXgBO00kog9HPMC";
   return {
     name: 'bank-card',
     icons: ["/visa.jpg", "/mastercard.svg"],
     markup: 0,
-    pay: async (days: number, promo: string, item: Item, is_subscription: boolean) => {
-      const resp = await axios.post(
-        BINDER_ADDR + "/v2/stripe",
-        {
-          sessid: sessionStorage.getItem("sessid") || "RESELLER",
-          promo,
-          days,
-          item,
-          is_subscription
-        },
-        { responseType: "text" }
-      );
-      let sid = resp.data;
+    pay: async (days: number, promo: string, item: Item, is_recurring: boolean) => {
+      is_recurring = name != 'paypal' && is_recurring;
+      const sid = await call_rpc("start_stripe", [sessionStorage.getItem("sessid") || "RESELLER", { promo, days, item, is_recurring }])
       console.log(sid);
       const stripe = ((window as any)["Stripe"] as any)(STRIPEKEY);
       const { error } = await stripe.redirectToCheckout({
@@ -64,6 +62,7 @@ export function alipayBackend(): PaymentBackend {
     icons: ["/alipay.svg"],
     markup: 15,
     pay: async (days: number, promo: string, item: Item) => {
+      // let url = call_rpc("start_aliwechat", [sessionStorage.getItem("sessid") || "RESELLER", {}]) // todo
       const resp = await axios.post(
         BINDER_ADDR + "/v2/aliwechat",
         {
