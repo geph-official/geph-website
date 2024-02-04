@@ -50,24 +50,8 @@
 			window.location.replace('./portal/login');
 		}
 		try {
-			let user_info_resp = await axios.post(BINDER_ADDR + '/userinfo', {
-				sessid: sessionStorage.getItem('sessid')
-			});
-			let success;
-			if (user_info_resp.data.payment_method) {
-				if (user_info_resp.data.payment_method === 'paypal') {
-					success = await axios.post(BINDER_ADDR + '/v2/cancel_paypal_recurring', {
-						sessid: sessionStorage.getItem('sessid')
-					});
-				} else if (user_info_resp.data.payment_method === 'stripe') {
-					success = await axios.post(BINDER_ADDR + '/v2/cancel_stripe_recurring', {
-						sessid: sessionStorage.getItem('sessid')
-					});
-				} else {
-					console.error('OTHER payment method, NO-OP for now!');
-				}
-			}
-			console.log('success response: ', success);
+			let resp = await call_rpc('cancel_recurring', [sessionStorage.getItem('sessid')]);
+			console.log('success response: ', resp);
 		} catch (e) {
 			alert(translateError(String(e), lang));
 		}
