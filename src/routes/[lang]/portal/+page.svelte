@@ -111,28 +111,32 @@
 								<div class="icon"><AccountCircle width="26" height="22" /></div>
 								{user_info['username']}
 							</div>
-							{#if user_info['plan'] === 'plus'}
+							{#if user_info['plan']['type'] === 'plus'}
 								<div class="icon-badge">
 									<div class="icon" style="color: #007bbb">
 										<CalendarRange width="26" height="22" />
 									</div>
 									<div>
-										{new Date(user_info['expires']).toLocaleDateString(localize(lang, 'langcode'), {
-											year: 'numeric',
-											month: 'short',
-											day: 'numeric'
-										})}<br />
+										{new Date(user_info['plan']['expires']).toLocaleDateString(
+											localize(lang, 'langcode'),
+											{
+												year: 'numeric',
+												month: 'short',
+												day: 'numeric'
+											}
+										)}<br />
 										<small>
 											{localize(lang, 'remaining-days')}
 											<span class="remaining-days">
 												{Math.max(
 													0,
-													(new Date(user_info['expires']).getTime() - new Date().getTime()) /
+													(new Date(user_info['plan']['expires']).getTime() -
+														new Date().getTime()) /
 														(24 * 60 * 60 * 1000)
 												).toFixed(0)}
 											</span>
 										</small>
-										{#if user_info['is_recurring'] === true}
+										{#if user_info['plan']['is_recurring'] === true}
 											<br />
 											<span class="auto-renewing">
 												{localize(lang, 'auto-renewing')}
@@ -200,7 +204,7 @@
 			<div class="row mt-3 box">
 				<div class="col">
 					{#if activeTab === 'buy-plus'}
-						<BuyPlus is_recurring={user_info['is_recurring']} variant="all" />
+						<BuyPlus is_recurring={user_info['plan']['is_recurring']} variant="all" />
 					{:else if activeTab === 'redeem-giftcard'}
 						<RedeemGiftcard />
 					{/if}
