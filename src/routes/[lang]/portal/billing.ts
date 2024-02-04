@@ -60,20 +60,14 @@ export function alipayBackend(): PaymentBackend {
   return {
     name: 'alipay',
     icons: ["/alipay.svg"],
-    markup: 15,
+    markup: 9,
     pay: async (days: number, promo: string, item: Item) => {
-      // let url = call_rpc("start_aliwechat", [sessionStorage.getItem("sessid") || "RESELLER", {}]) // todo
-      const resp = await axios.post(
-        BINDER_ADDR + "/v2/aliwechat",
-        {
-          sessid: sessionStorage.getItem("sessid") || "RESELLER",
-          promo,
-          days,
-          method: 'alipay',
-          item,
-        },
-      );
-      let url = resp.data.pay_url;
+      let url = await call_rpc("start_aliwechat", [sessionStorage.getItem("sessid") || "RESELLER", {
+        promo,
+        days,
+        method: 'alipay',
+        item
+      }]);
       goto(url);
     }
   }
@@ -83,19 +77,14 @@ export function wxpayBackend(): PaymentBackend {
   return {
     name: 'wxpay',
     icons: ["/wxpay.png"],
-    markup: 15,
+    markup: 9,
     pay: async (days: number, promo: string, item: Item) => {
-      const resp = await axios.post(
-        BINDER_ADDR + "/v2/aliwechat",
-        {
-          sessid: sessionStorage.getItem("sessid") || "RESELLER",
-          promo,
-          days,
-          method: 'wxpay',
-          item,
-        },
-      );
-      let url = resp.data.pay_url;
+      let url = await call_rpc("start_aliwechat", [sessionStorage.getItem("sessid") || "RESELLER", {
+        promo,
+        days,
+        method: 'wxpay',
+        item
+      }]);
       goto(url);
     }
   }

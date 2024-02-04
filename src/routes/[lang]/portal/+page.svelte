@@ -52,6 +52,7 @@
 		try {
 			let resp = await call_rpc('cancel_recurring', [sessionStorage.getItem('sessid')]);
 			console.log('success response: ', resp);
+			window.location.replace('./portal/login');
 		} catch (e) {
 			alert(translateError(String(e), lang));
 		}
