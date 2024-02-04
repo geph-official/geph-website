@@ -6,7 +6,7 @@
 		alipayBackend,
 		cryptoBackend,
 		paypalBackend,
-		stripeBackend,
+		stripeCardBackend,
 		translateError,
 		wxpayBackend,
 		type PaymentBackend
@@ -23,7 +23,7 @@
 	const lang = $page.params['lang'];
 
 	const paymentBackends: Map<string, PaymentBackend> = new Map();
-	paymentBackends.set('bank-card', stripeBackend());
+	paymentBackends.set('bank-card', stripeCardBackend());
 	paymentBackends.set('paypal', paypalBackend());
 	paymentBackends.set('crypto', cryptoBackend());
 	if (variant !== 'reseller') {
@@ -47,16 +47,11 @@
 			.join('&');
 	};
 
-	const makeItem = (
-		item: 'plus' | 'giftcard',
-		email: string,
-		sender: string,
-		giftcard_id: number
-	) => {
+	const makeItem = (item: 'plus' | 'giftcard', email: string, sender: string, count: number) => {
 		var enum_item: Item = 'Plus';
 		if (item == 'giftcard') {
 			enum_item = {
-				Giftcard: { recipient_email: email, sender: sender, count: giftcard_id }
+				Giftcard: { recipient_email: email, sender: sender, count: count }
 			};
 		}
 		return enum_item;
