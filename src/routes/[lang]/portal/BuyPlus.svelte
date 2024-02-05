@@ -299,7 +299,7 @@
 							{/each}
 							{to_local(backend.name)}
 							{#if backend.markup > 0}
-								<span class="badge rounded-pill bg-danger">+{backend.markup}%</span>
+								<span class="badge rounded-pill bg-warning">+{backend.markup}%</span>
 							{/if}
 						</button>
 					{/each}
