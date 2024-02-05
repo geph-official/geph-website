@@ -5,7 +5,6 @@
 	import {
 		alipayBackend,
 		cryptoBackend,
-		paypalBackend,
 		stripeCardBackend,
 		translateError,
 		wxpayBackend,
@@ -24,7 +23,6 @@
 
 	const paymentBackends: Map<string, PaymentBackend> = new Map();
 	paymentBackends.set('bank-card', stripeCardBackend());
-	paymentBackends.set('paypal', paypalBackend());
 	paymentBackends.set('crypto', cryptoBackend());
 	if (variant !== 'reseller') {
 		paymentBackends.set('alipay', alipayBackend());
@@ -307,7 +305,7 @@
 					{/each}
 				</div>
 
-				{#if (payMethod === 'bank-card' || payMethod === 'paypal') && item == 'plus'}
+				{#if payMethod === 'bank-card' && item == 'plus'}
 					<div class="autorenew-checkbox" on:click={toggleAutorenew}>
 						{#if autorenew}
 							<CheckBoxMarked width="25" height="25" />
@@ -315,9 +313,6 @@
 							<CheckBoxBlankOutline width="25" height="25" />
 						{/if}
 						<span>{to_local('autorenew')}</span>
-						<span class="badge square-pill bg-warning"
-							>{to_local('experimental_feature_warning')}</span
-						>
 					</div>
 				{/if}
 
