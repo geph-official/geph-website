@@ -1,5 +1,5 @@
 import axios from "axios";
-import { BINDER_ADDR } from "../../helpers";
+import { BINDER_ADDR, call_rpc } from "../../helpers";
 import { goto } from "$app/navigation";
 import { localize } from '../../l10n';
 
@@ -16,7 +16,7 @@ export function translateError(e: string, lang: string): string {
 
 
 export type Item = "Plus" | {
-  "Giftcard": { recipient_email: string, sender: string, number: number }
+  "Giftcard": { recipient_email: string, sender: string, count: number }
 }
 
 export interface PaymentBackend {
@@ -34,28 +34,16 @@ export function stripePaypalBackend(): PaymentBackend {
   return stripeBackendReal("paypal", ["paypal"])
 }
 
- function stripeBackendReal(name: string, payment_methods: string[]): PaymentBackend {
+function stripeBackendReal(name: string, payment_methods: string[]): PaymentBackend {
   const STRIPEKEY = "pk_live_Wk781YzANKGuLBl2NzFkRu5n00YdYjObFY";
   // const STRIPEKEY = "pk_test_O6w7losqr4Z0LrJvvhotXgBO00kog9HPMC";
   return {
     name,
-    icons: name == 'paypal'?     ['/paypal.svg', "/unionpay.svg"] : ["/visa.jpg", "/mastercard.svg"],
+    icons: name == 'paypal' ? ['/paypal.svg', "/unionpay.svg"] : ["/visa.jpg", "/mastercard.svg"],
     markup: 0,
-    pay: async (days: number, promo: string, item: Item, is_subscription: boolean) => {
-      is_subscription = name != 'paypal' && is_subscription;
-      const resp = await axios.post(
-        BINDER_ADDR + "/v2/stripe",
-        {
-          sessid: sessionStorage.getItem("sessid") || "RESELLER",
-          promo,
-          days,
-          item,
-          is_subscription,
-          payment_methods
-        },
-        { responseType: "text" }
-      );
-      let sid = resp.data;
+    pay: async (days: number, promo: string, item: Item, is_recurring: boolean) => {
+      is_recurring = name != 'paypal' && is_recurring;
+      const sid = await call_rpc("start_stripe", [sessionStorage.getItem("sessid") || "RESELLER", { promo, days, item, is_recurring }])
       console.log(sid);
       const stripe = ((window as any)["Stripe"] as any)(STRIPEKEY);
       const { error } = await stripe.redirectToCheckout({
@@ -72,19 +60,14 @@ export function alipayBackend(): PaymentBackend {
   return {
     name: 'alipay',
     icons: ["/alipay.svg"],
-    markup: 15,
+    markup: 8,
     pay: async (days: number, promo: string, item: Item) => {
-      const resp = await axios.post(
-        BINDER_ADDR + "/v2/aliwechat",
-        {
-          sessid: sessionStorage.getItem("sessid") || "RESELLER",
-          promo,
-          days,
-          method: 'alipay',
-          item,
-        },
-      );
-      let url = resp.data.pay_url;
+      let url = await call_rpc("start_aliwechat", [sessionStorage.getItem("sessid") || "RESELLER", {
+        promo,
+        days,
+        method: 'alipay',
+        item
+      }]);
       goto(url);
     }
   }
@@ -94,54 +77,17 @@ export function wxpayBackend(): PaymentBackend {
   return {
     name: 'wxpay',
     icons: ["/wxpay.png"],
-    markup: 15,
+    markup: 8,
     pay: async (days: number, promo: string, item: Item) => {
-      const resp = await axios.post(
-        BINDER_ADDR + "/v2/aliwechat",
-        {
-          sessid: sessionStorage.getItem("sessid") || "RESELLER",
-          promo,
-          days,
-          method: 'wxpay',
-          item,
-        },
-      );
-      let url = resp.data.pay_url;
+      let url = await call_rpc("start_aliwechat", [sessionStorage.getItem("sessid") || "RESELLER", {
+        promo,
+        days,
+        method: 'wxpay',
+        item
+      }]);
       goto(url);
     }
   }
-}
-
-export function paypalBackend(): PaymentBackend {
-  return {
-    name: 'paypal',
-    icons: ['/paypal.svg', "/unionpay.svg"],
-    markup: 0,
-    pay: async (days: number, promo: string, item: Item, is_subscription: boolean) => {
-      const resp = await axios.post(
-        BINDER_ADDR + '/v2/paypal',
-        {
-          sessid: sessionStorage.getItem('sessid') || 'RESELLER',
-          promo,
-          days,
-          item,
-          is_subscription
-        },
-        { responseType: 'text' }
-      );
-
-      console.log(resp);
-      if (is_subscription) {
-        const approvalUrl = resp.data;
-        window.location.href = approvalUrl;
-      } else {
-        let orderId = resp.data;
-        console.log(orderId);
-        const approvalUrl = `https://www.paypal.com/checkoutnow?token=${orderId}`;
-        window.location.href = approvalUrl;
-      }
-    },
-  };
 }
 
 export function cryptoBackend(): PaymentBackend {

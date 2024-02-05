@@ -5,7 +5,6 @@
 	import {
 		alipayBackend,
 		cryptoBackend,
-		paypalBackend,
 		stripeCardBackend,
 		stripePaypalBackend,
 		translateError,
@@ -14,7 +13,7 @@
 	} from './billing';
 	import type { Item } from './billing';
 	import { localize } from '../../l10n';
-	import { BINDER_ADDR } from '../../../routes/helpers';
+	import { BINDER_ADDR, call_rpc } from '../../../routes/helpers';
 	import CheckBoxMarked from 'svelte-material-icons/CheckboxMarked.svelte';
 	import CheckBoxBlankOutline from 'svelte-material-icons/CheckboxBlankOutline.svelte';
 
@@ -25,8 +24,6 @@
 
 	const paymentBackends: Map<string, PaymentBackend> = new Map();
 	paymentBackends.set('bank-card', stripeCardBackend());
-	// paymentBackends.set('paypal', stripePaypalBackend());
-	paymentBackends.set('paypal', paypalBackend());
 	paymentBackends.set('crypto', cryptoBackend());
 	if (variant !== 'reseller') {
 		paymentBackends.set('alipay', alipayBackend());
@@ -49,16 +46,11 @@
 			.join('&');
 	};
 
-	const makeItem = (
-		item: 'plus' | 'giftcard',
-		email: string,
-		sender: string,
-		giftcards_number: number
-	) => {
+	const makeItem = (item: 'plus' | 'giftcard', email: string, sender: string, count: number) => {
 		var enum_item: Item = 'Plus';
 		if (item == 'giftcard') {
 			enum_item = {
-				Giftcard: { recipient_email: email, sender: sender, number: giftcards_number }
+				Giftcard: { recipient_email: email, sender: sender, count: count }
 			};
 		}
 		return enum_item;
@@ -69,14 +61,12 @@
 		for (;;) {
 			try {
 				cost = null;
-				const response = await axios.get(
-					BINDER_ADDR + '/v2/calculate-price?' + toQueryString(obj),
-					{ responseType: 'text' }
-				);
-				cost = response.data / 100;
-				if (response.status >= 400) {
-					throw response.status;
-				}
+				const response = await call_rpc('calculate_price', [
+					obj['method'],
+					obj['promo'],
+					obj['days']
+				]);
+				cost = response / 100;
 				return;
 			} catch (e) {
 				alert(translateError(String(e), lang));
@@ -89,9 +79,20 @@
 		method: payMethod
 	});
 
+	const change_days = () => {
+		days = Math.floor(
+			Math.min(10000, Math.max(variant == 'reseller' ? 1 : payMethod == 'crypto' ? 30 : 7, days))
+		);
+	};
+
 	const onDaysChange = (e: any) => {
 		if (e.target.value) {
-			days = Math.floor(Math.min(10000, Math.max(variant == 'reseller' ? 1 : 7, e.target.value)));
+			days = Math.floor(
+				Math.min(
+					10000,
+					Math.max(variant == 'reseller' ? 1 : payMethod == 'crypto' ? 30 : 7, e.target.value)
+				)
+			);
 			e.target.value = days;
 		}
 	};
@@ -305,6 +306,7 @@
 							class:selected={payMethod === backend.name}
 							on:click={() => {
 								payMethod = backend.name;
+								change_days();
 							}}
 						>
 							{#each backend.icons as icon}
@@ -312,13 +314,13 @@
 							{/each}
 							{to_local(backend.name)}
 							{#if backend.markup > 0}
-								<span class="badge rounded-pill bg-danger">+{backend.markup}%</span>
+								<span class="badge rounded-pill bg-warning">+{backend.markup}%</span>
 							{/if}
 						</button>
 					{/each}
 				</div>
 
-				{#if (payMethod === 'bank-card' || payMethod === 'paypal') && item == 'plus'}
+				{#if payMethod === 'bank-card' && item == 'plus'}
 					<div class="autorenew-checkbox" on:click={toggleAutorenew}>
 						{#if autorenewChecked}
 							<CheckBoxMarked width="25" height="25" />
@@ -366,13 +368,13 @@
 				</div>
 			{/if}
 
-			{#if payMethod == 'alipay' || payMethod == 'wxpay'}
+			<!-- {#if payMethod == 'alipay' || payMethod == 'wxpay'}
 				<div class="row">
 					<div class="col">
 						<div class="aliwechat-warning">{@html to_local('bad-aliwechat')}</div>
 					</div>
 				</div>
-			{/if}
+			{/if} -->
 
 			<div class="row mt-3">
 				<div class="col">

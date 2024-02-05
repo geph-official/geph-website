@@ -1,9 +1,13 @@
 import axios from 'axios';
 import { localize } from './l10n';
 import { goto } from '$app/navigation';
+import { browser } from '$app/environment';
 
-export const BINDER_ADDR = 'https://web-backend.geph.io';
-// export const BINDER_ADDR = 'http://localhost:28080';
+
+
+// export const BINDER_ADDR = 'http://localhost:28081';
+export const BINDER_ADDR = 'https://staging.web-backend.geph.io';
+// export const BINDER_ADDR = 'https://web-backend.geph.io';
 
 export function translateError(e: string, lang: string): string {
     console.log('login page error: ' + e);
@@ -16,23 +20,34 @@ export function translateError(e: string, lang: string): string {
     }
 }
 
+export async function call_rpc(method: string, params: any[]): Promise<any> {
+    let resp = await axios.post(BINDER_ADDR + '/rpc', {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": method,
+        "params": params
+    });
+
+    // Check if the response contains an error
+    if (resp.status >= 400) {
+        throw resp.status;
+    }
+    if (resp.data.error) {
+        // If there is an error, throw it
+        throw resp.data.error.message;
+    }
+    // If no error, return the result
+    return resp.data.result;
+}
+
 export async function handleLoginClick(lang: string, uname: string, pwd: string) {
     try {
-        let resp = await axios.post(BINDER_ADDR + '/v2/login', {
-            uname,
-            pwd,
-        });
+        let session_id = await call_rpc("login", [uname, pwd]);
+        console.log(session_id);
+        sessionStorage.setItem('sessid', session_id);
+        goto(`/${lang}/portal`);
 
-        console.log(resp.status);
-        if (resp.status < 400) {
-            let session_id = await resp.data;
-            console.log(session_id);
-            sessionStorage.setItem('sessid', session_id);
-            goto(`/${lang}/portal`);
-        } else {
-            process.browser && alert(translateError(resp.data, lang));
-        }
     } catch (e) {
-        process.browser && alert(translateError(String(e), lang));
+        browser && alert(translateError(String(e), lang));
     }
 }

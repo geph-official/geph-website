@@ -1,6 +1,6 @@
 <script lang="ts">
 	import axios from 'axios';
-	import { BINDER_ADDR } from '../../helpers';
+	import { BINDER_ADDR, call_rpc } from '../../helpers';
 	import { page } from '$app/stores';
 	import { localize } from '../../../routes/l10n';
 	import debounce from 'debounce';
@@ -19,18 +19,16 @@
 			return localize(lang, 'unknown-error') + ': ' + e;
 		}
 	}
-	let giftcard_id = '';
+	let gc_id = '';
 	let promo = '';
-	const redeemGiftcard = async (sessid: any, giftcard_id: string) => {
+	const redeemGiftcard = async (sessid: any, gc_id: string) => {
 		try {
-			let resp = await axios.post(BINDER_ADDR + '/spend-giftcard', {
-				sessid: sessid,
-				giftcard_id: giftcard_id,
-				promo
-			});
-			if (resp.status >= 400) {
-				throw resp.status;
-			}
+			let _ = await call_rpc('spend_giftcard', [
+				{
+					gc_id,
+					promo
+				}
+			]);
 			alert(l('giftcard-applied'));
 			window.location.reload();
 		} catch (e) {
@@ -45,22 +43,20 @@
 		giftcardError = '';
 		days = null;
 		try {
-			let resp = await axios.post(BINDER_ADDR + '/peek-giftcard', {
+			days = await call_rpc('peek_giftcard', [
 				sessid,
-				giftcard_id,
-				promo
-			});
-			if (resp.status >= 400) {
-				throw resp.status;
-			}
-			days = +resp.data;
+				{
+					gc_id: giftcard_id,
+					promo
+				}
+			]);
 		} catch (e) {
 			giftcardError = translateError(String(e), lang);
 			days = null;
 		}
 	}, 500);
 
-	$: peekGiftcard(sessionStorage.getItem('sessid'), giftcard_id, promo);
+	$: peekGiftcard(sessionStorage.getItem('sessid'), gc_id, promo);
 </script>
 
 <div class="container-fluid">
@@ -70,7 +66,7 @@
 			<input
 				type="text"
 				class="form-control mb-2"
-				bind:value={giftcard_id}
+				bind:value={gc_id}
 				placeholder={l('giftcard-id')}
 			/>
 			{#if giftcardError != ''}
@@ -100,9 +96,9 @@
 	<div class="row mt-3">
 		<div class="col">
 			<button
-				class="btn btn-success "
+				class="btn btn-success"
 				on:click={() => {
-					redeemGiftcard(sessionStorage.getItem('sessid'), giftcard_id);
+					redeemGiftcard(sessionStorage.getItem('sessid'), gc_id);
 				}}
 				disabled={days == null}
 			>

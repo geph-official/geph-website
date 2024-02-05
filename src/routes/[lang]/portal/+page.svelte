@@ -11,7 +11,7 @@
 	import Footer from '../Footer.svelte';
 	import BuyPlus from './BuyPlus.svelte';
 	import RedeemGiftcard from './RedeemGiftcard.svelte';
-	import { BINDER_ADDR } from '../../../routes/helpers';
+	import { BINDER_ADDR, call_rpc } from '../../../routes/helpers';
 	const lang = $page.params['lang'];
 
 	const errL10n = {
@@ -36,18 +36,12 @@
 			window.location.replace('./portal/login');
 		}
 		try {
-			let resp = await axios.post(BINDER_ADDR + '/userinfo', {
-				sessid: sessionStorage.getItem('sessid')
-			});
-			console.log('USER INFO: ', resp);
-			console.log(resp.status);
-			if (resp.status >= 400) {
-				throw resp.status;
-			} else {
-				return resp.data;
-			}
+			let user_info = await call_rpc('user_info', [sessionStorage.getItem('sessid')]);
+			console.log('USER INFO: ', user_info);
+			return user_info;
 		} catch (e) {
 			alert(translateError(String(e), lang));
+			window.location.replace('./portal/login');
 		}
 	}
 
@@ -57,24 +51,9 @@
 			window.location.replace('./portal/login');
 		}
 		try {
-			let user_info_resp = await axios.post(BINDER_ADDR + '/userinfo', {
-				sessid: sessionStorage.getItem('sessid')
-			});
-			let success;
-			if (user_info_resp.data.payment_method) {
-				if (user_info_resp.data.payment_method === 'paypal') {
-					success = await axios.post(BINDER_ADDR + '/v2/cancel_paypal_recurring', {
-						sessid: sessionStorage.getItem('sessid')
-					});
-				} else if (user_info_resp.data.payment_method === 'stripe') {
-					success = await axios.post(BINDER_ADDR + '/v2/cancel_stripe_recurring', {
-						sessid: sessionStorage.getItem('sessid')
-					});
-				} else {
-					console.error('OTHER payment method, NO-OP for now!');
-				}
-			}
-			console.log('success response: ', success);
+			let resp = await call_rpc('cancel_recurring', [sessionStorage.getItem('sessid')]);
+			console.log('success response: ', resp);
+			window.location.replace('./portal/login');
 		} catch (e) {
 			alert(translateError(String(e), lang));
 		}
@@ -118,28 +97,32 @@
 								<div class="icon"><AccountCircle width="26" height="22" /></div>
 								{user_info['username']}
 							</div>
-							{#if user_info['plan'] === 'plus'}
+							{#if user_info['plan']['type'] === 'plus'}
 								<div class="icon-badge">
 									<div class="icon" style="color: #007bbb">
 										<CalendarRange width="26" height="22" />
 									</div>
 									<div>
-										{new Date(user_info['expires']).toLocaleDateString(localize(lang, 'langcode'), {
-											year: 'numeric',
-											month: 'short',
-											day: 'numeric'
-										})}<br />
+										{new Date(user_info['plan']['expires']).toLocaleDateString(
+											localize(lang, 'langcode'),
+											{
+												year: 'numeric',
+												month: 'short',
+												day: 'numeric'
+											}
+										)}<br />
 										<small>
 											{localize(lang, 'remaining-days')}
 											<span class="remaining-days">
 												{Math.max(
 													0,
-													(new Date(user_info['expires']).getTime() - new Date().getTime()) /
+													(new Date(user_info['plan']['expires']).getTime() -
+														new Date().getTime()) /
 														(24 * 60 * 60 * 1000)
 												).toFixed(0)}
 											</span>
 										</small>
-										{#if user_info['is_recurring'] === true}
+										{#if user_info['plan']['is_recurring'] === true}
 											<br />
 											<span class="auto-renewing">
 												{localize(lang, 'auto-renewing')}
@@ -206,7 +189,7 @@
 			<div class="row mt-3 box">
 				<div class="col">
 					{#if activeTab === 'buy-plus'}
-						<BuyPlus is_recurring={user_info['is_recurring']} variant="all" />
+						<BuyPlus is_recurring={user_info['plan']['is_recurring']} variant="all" />
 					{:else if activeTab === 'redeem-giftcard'}
 						<RedeemGiftcard />
 					{/if}

@@ -4,17 +4,17 @@ export interface Token {
     badge: string | null,
 }
 
-const btc: Token = {
-    name: 'btc',
-    icon: "https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.16.1/svg/color/btc.svg",
-    badge: null,
-}
+// const btc: Token = {
+//     name: 'btc',
+//     icon: "https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.16.1/svg/color/btc.svg",
+//     badge: null,
+// }
 
-const eth: Token = {
-    name: 'eth',
-    icon: "https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.16.1/svg/color/eth.svg",
-    badge: "ETH ⚠️NOT BSC⚠️",
-}
+// const eth: Token = {
+//     name: 'eth',
+//     icon: "https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.16.1/svg/color/eth.svg",
+//     badge: "ETH ⚠️NOT BSC⚠️",
+// }
 
 const xmr: Token = {
     name: 'xmr',
@@ -28,35 +28,35 @@ const usdtTron: Token = {
     badge: 'TRON'
 }
 
-const usdtEthereum: Token = {
-    name: 'usdterc20',
-    icon: "https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.16.1/svg/color/usdt.svg",
-    badge: 'ETH'
-}
+// const usdtEthereum: Token = {
+//     name: 'usdterc20',
+//     icon: "https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.16.1/svg/color/usdt.svg",
+//     badge: 'ETH'
+// }
 
-const usdtOmni: Token = {
-    name: 'usdt',
-    icon: "https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.16.1/svg/color/usdt.svg",
-    badge: 'OMNI'
-}
+// const usdtOmni: Token = {
+//     name: 'usdt',
+//     icon: "https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.16.1/svg/color/usdt.svg",
+//     badge: 'OMNI'
+// }
 
-const usdcEthereum: Token = {
-    name: 'usdc',
-    icon: "https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.16.1/svg/color/usdc.svg",
-    badge: 'ETH',
-}
+// const usdcEthereum: Token = {
+//     name: 'usdc',
+//     icon: "https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.16.1/svg/color/usdc.svg",
+//     badge: 'ETH',
+// }
 
-const usdcSolana: Token = {
-    name: 'usdcsol',
-    icon: "https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.16.1/svg/color/usdc.svg",
-    badge: 'SOLANA',
-}
+// const usdcSolana: Token = {
+//     name: 'usdcsol',
+//     icon: "https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.16.1/svg/color/usdc.svg",
+//     badge: 'SOLANA',
+// }
 
-const usdcTron: Token = {
-    name: 'usdctrc20',
-    icon: "https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.16.1/svg/color/usdc.svg",
-    badge: 'TRON',
-}
+// const usdcTron: Token = {
+//     name: 'usdctrc20',
+//     icon: "https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.16.1/svg/color/usdc.svg",
+//     badge: 'TRON',
+// }
 
 const doge: Token = {
     name: 'doge',
@@ -65,4 +65,4 @@ const doge: Token = {
 }
 
 
-export const tokens: Token[] = [btc, eth, xmr, usdtTron, usdtEthereum, usdtOmni, usdcEthereum, usdcSolana, usdcTron, doge];
+export const tokens: Token[] = [xmr, usdtTron, doge];
