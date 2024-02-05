@@ -24,6 +24,7 @@
 	const redeemGiftcard = async (sessid: any, gc_id: string) => {
 		try {
 			let _ = await call_rpc('spend_giftcard', [
+				sessid,
 				{
 					gc_id,
 					promo
@@ -39,14 +40,14 @@
 	let days: number | null = null;
 	let giftcardError = '';
 
-	const peekGiftcard = debounce(async (sessid: any, giftcard_id: string, promo: string) => {
+	const peekGiftcard = debounce(async (sessid: any, gc_id: string, promo: string) => {
 		giftcardError = '';
 		days = null;
 		try {
 			days = await call_rpc('peek_giftcard', [
 				sessid,
 				{
-					gc_id: giftcard_id,
+					gc_id,
 					promo
 				}
 			]);
