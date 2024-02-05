@@ -5,7 +5,6 @@
 	import {
 		alipayBackend,
 		cryptoBackend,
-		paypalBackend,
 		stripeCardBackend,
 		stripePaypalBackend,
 		translateError,
