@@ -60,7 +60,7 @@ export function alipayBackend(): PaymentBackend {
   return {
     name: 'alipay',
     icons: ["/alipay.svg"],
-    markup: 9,
+    markup: 8,
     pay: async (days: number, promo: string, item: Item) => {
       let url = await call_rpc("start_aliwechat", [sessionStorage.getItem("sessid") || "RESELLER", {
         promo,
@@ -77,7 +77,7 @@ export function wxpayBackend(): PaymentBackend {
   return {
     name: 'wxpay',
     icons: ["/wxpay.png"],
-    markup: 9,
+    markup: 8,
     pay: async (days: number, promo: string, item: Item) => {
       let url = await call_rpc("start_aliwechat", [sessionStorage.getItem("sessid") || "RESELLER", {
         promo,
