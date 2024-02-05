@@ -78,9 +78,20 @@
 		method: payMethod
 	});
 
+	const change_days = () => {
+		days = Math.floor(
+			Math.min(10000, Math.max(variant == 'reseller' ? 1 : payMethod == 'crypto' ? 30 : 7, days))
+		);
+	};
+
 	const onDaysChange = (e: any) => {
 		if (e.target.value) {
-			days = Math.floor(Math.min(10000, Math.max(variant == 'reseller' ? 1 : 14, e.target.value)));
+			days = Math.floor(
+				Math.min(
+					10000,
+					Math.max(variant == 'reseller' ? 1 : payMethod == 'crypto' ? 30 : 7, e.target.value)
+				)
+			);
 			e.target.value = days;
 		}
 	};
@@ -292,6 +303,7 @@
 							class:selected={payMethod === backend.name}
 							on:click={() => {
 								payMethod = backend.name;
+								change_days();
 							}}
 						>
 							{#each backend.icons as icon}
