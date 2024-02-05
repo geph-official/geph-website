@@ -6,7 +6,7 @@
 	import { localize } from '../../../../../routes/l10n';
 	import { onDestroy } from 'svelte';
 	import axios from 'axios';
-	import { BINDER_ADDR } from '../../../../../routes/helpers';
+	import { BINDER_ADDR, call_rpc } from '../../../../../routes/helpers';
 
 	const lang = $page.params['lang'];
 	const info = atob($page.params['info']);
@@ -16,9 +16,13 @@
 	let status: string | null = null;
 	const refresh = async () => {
 		try {
-			let resp = await axios.get(BINDER_ADDR + '/check-crypto/' + paymentInfo.id);
-			if (resp.data !== status) {
-				status = resp.data;
+			let new_status = await call_rpc('check_crypto', [
+				{
+					encrypted_changenow_id: paymentInfo.id
+				}
+			]);
+			if (new_status !== status) {
+				status = new_status;
 			}
 		} catch (e) {
 			console.error(e);

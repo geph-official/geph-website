@@ -43,15 +43,13 @@
 		giftcardError = '';
 		days = null;
 		try {
-			let resp = await axios.post(BINDER_ADDR + '/peek-giftcard', {
+			days = await call_rpc('peek_giftcard', [
 				sessid,
-				giftcard_id,
-				promo
-			});
-			if (resp.status >= 400) {
-				throw resp.status;
-			}
-			days = +resp.data;
+				{
+					gc_id: giftcard_id,
+					promo
+				}
+			]);
 		} catch (e) {
 			giftcardError = translateError(String(e), lang);
 			days = null;

@@ -6,7 +6,7 @@
 	import { page } from '$app/stores';
 	import { tokens } from './SupportedCurrencies';
 	import axios from 'axios';
-	import { BINDER_ADDR } from '../../../../routes/helpers';
+	import { BINDER_ADDR, call_rpc } from '../../../../routes/helpers';
 	import { translateError } from '../billing';
 	import { goto } from '$app/navigation';
 
@@ -19,15 +19,17 @@
 		spinning = true;
 		let item = JSON.parse(sessionStorage.getItem('item') as string);
 		try {
-			const resp = await axios.post(BINDER_ADDR + '/new-crypto', {
-				sessid: sessionStorage.getItem('sessid') || 'RESELLER',
-				promo: sessionStorage.getItem('promo'),
-				days: +(sessionStorage.getItem('days') as any),
-				item,
-				token
-			});
+			let data = await call_rpc('start_crypto', [
+				sessionStorage.getItem('sessid') || 'RESELLER',
+				{
+					promo: sessionStorage.getItem('promo'),
+					days: +(sessionStorage.getItem('days') as any),
+					item,
+					token
+				}
+			]);
 
-			let info = btoa(JSON.stringify(resp.data));
+			let info = btoa(JSON.stringify(data));
 			goto(`./pay_crypto/${info}`);
 		} catch (e) {
 			spinning = false;
