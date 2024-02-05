@@ -41,6 +41,7 @@
 			return user_info;
 		} catch (e) {
 			alert(translateError(String(e), lang));
+			window.location.replace('./portal/login');
 		}
 	}
 
