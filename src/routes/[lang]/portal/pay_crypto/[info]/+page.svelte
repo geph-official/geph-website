@@ -16,11 +16,7 @@
 	let status: string | null = null;
 	const refresh = async () => {
 		try {
-			let new_status = await call_rpc('check_crypto', [
-				{
-					encrypted_changenow_id: paymentInfo.id
-				}
-			]);
+			let new_status = await call_rpc('check_crypto', [paymentInfo.id]);
 			if (new_status !== status) {
 				status = new_status;
 			}
