@@ -571,17 +571,16 @@ missing-days:
   fa: روز های خریداری شده در برنامه نمایش داده نمی‌شود؟ 
 
 click-refresh:
-  en: If you don't see newly purchased Plus in the app, click the refresh button on the first page!
-  zhs: 如果在软件中没有看到新买的 Plus 时长，请点击第一页的刷新按钮。
-  zht: 如果在軟件中沒有看到新購買的 Plus 時長，請點擊第一頁的刷新按鈕。
-  fa: اگر اشتراک پلاس تازه خریداری شده خود را در برنامه نمی‌بینید، روی دکمه تازه‌سازی در صفحه اول کلیک کنید!
+  en: After purchasing Plus time, wait 10 minutes for it to show up in the app!
+  zhs: 购买Plus后，请耐心等待10分钟即可在应用中看到！
+  zht: 購買Plus後，請耐心等待10分鐘即可在應用程式中看到！
+  fa: پس از خرید اشتراک پلاس، 10 دقیقه صبر کنید تا در برنامه نمایش داده شود!
 
 banner:
-  en: 'Read the announcement: <a href="https://community.geph.io/t/topic/11574">Geph 4.8 and our decentralization roadmap</a>'
-  zhs: '公告: <a href="https://community.geph.io/t/topic/11574">版本 4.8 以及迷雾通的去中心化愿景</a>'
-  zht: '公告: <a href="https://community.geph.io/t/topic/11574">版本 4.8 以及迷霧通的去中心化願景</a>'
-  fa: 'خواندن اطلاعیه: <a href="https://community.geph.io/t/topic/11574">نسخه 4.8 و برنامه ی ما برای خودمختار سازی</a>'
-
+  en: '🚧 The user portal and payments system is currently under scheduled maintenance. We will be back up swiftly! 🚧'
+  zhs: '🚧 账户管理界面及支付系统正在进行升级维护。将会在北京时间 6am 恢复！ 🚧'
+  zht: '🚧 帳戶管理介面及支付系統正在進行升級維護。 將會在北京時間 6am 恢復！ 🚧'
+  fa: '🚧 درگاه کاربران و سیستم پرداخت در حال حاضر تحت تعمیر و نگهداری برنامه ریزی شده است. ما به سرعت بر می گردیم! 🚧'
 
 bad-aliwechat:
   en: Alipay and WeChat Pay payments are not always reliable, and it costs us a lot to support them. <b>PayPal</b> has no added fee and is compatible with most Chinese bank cards.

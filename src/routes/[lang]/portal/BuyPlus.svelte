@@ -5,7 +5,9 @@
 	import {
 		alipayBackend,
 		cryptoBackend,
+		paypalBackend,
 		stripeCardBackend,
+		stripePaypalBackend,
 		translateError,
 		wxpayBackend,
 		type PaymentBackend
@@ -115,8 +117,10 @@
 	$: senderValid = sender.length > 0;
 	$: recipientValid = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/.test(recipientEmail);
 
-	let autorenew = false;
-	$: toggleAutorenew = () => (autorenew = !autorenew);
+	let autorenewChecked = item === 'plus';
+	$: toggleAutorenew = () => (autorenewChecked = !autorenewChecked);
+
+	$: autorenew = autorenewChecked && item === 'plus';
 
 	let checkingOut = false;
 </script>
@@ -319,7 +323,7 @@
 
 				{#if payMethod === 'bank-card' && item == 'plus'}
 					<div class="autorenew-checkbox" on:click={toggleAutorenew}>
-						{#if autorenew}
+						{#if autorenewChecked}
 							<CheckBoxMarked width="25" height="25" />
 						{:else}
 							<CheckBoxBlankOutline width="25" height="25" />
