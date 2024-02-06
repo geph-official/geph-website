@@ -576,11 +576,11 @@ click-refresh:
   zht: 購買Plus後，請耐心等待10分鐘即可在應用程式中看到！
   fa: پس از خرید اشتراک پلاس، 10 دقیقه صبر کنید تا در برنامه نمایش داده شود!
 
-banner:
-  en: '🚧 The user portal and payments system is currently under scheduled maintenance. We will be back up swiftly! 🚧'
-  zhs: '🚧 账户管理界面及支付系统正在进行升级维护。将会在北京时间 6am 恢复！ 🚧'
-  zht: '🚧 帳戶管理介面及支付系統正在進行升級維護。 將會在北京時間 6am 恢復！ 🚧'
-  fa: '🚧 درگاه کاربران و سیستم پرداخت در حال حاضر تحت تعمیر و نگهداری برنامه ریزی شده است. ما به سرعت بر می گردیم! 🚧'
+# banner:
+#   en: '🚧  🚧'
+#   zhs: '🚧 账户管理界面及支付系统正在进行升级维护。将会在北京时间 6am 恢复！ 🚧'
+#   zht: '🚧 帳戶管理介面及支付系統正在進行升級維護。 將會在北京時間 6am 恢復！ 🚧'
+#   fa: '🚧 درگاه کاربران و سیستم پرداخت در حال حاضر تحت تعمیر و نگهداری برنامه ریزی شده است. ما به سرعت بر می گردیم! 🚧'
 
 bad-aliwechat:
   en: Alipay and WeChat Pay payments are not always reliable, and it costs us a lot to support them. <b>PayPal</b> has no added fee and is compatible with most Chinese bank cards.
