@@ -7,13 +7,12 @@
 		cryptoBackend,
 		stripeCardBackend,
 		stripePaypalBackend,
-		translateError,
 		wxpayBackend,
 		type PaymentBackend
 	} from './billing';
 	import type { Item } from './billing';
 	import { localize } from '../../l10n';
-	import { BINDER_ADDR, call_rpc } from '../../../routes/helpers';
+	import { BINDER_ADDR, call_rpc, translateError } from '../../../routes/helpers';
 	import CheckBoxMarked from 'svelte-material-icons/CheckboxMarked.svelte';
 	import CheckBoxBlankOutline from 'svelte-material-icons/CheckboxBlankOutline.svelte';
 
