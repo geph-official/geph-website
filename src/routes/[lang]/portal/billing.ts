@@ -10,7 +10,7 @@ export function translateError(e: string, lang: string): string {
   } else if (e.includes('500')) {
     return localize(lang, 'internal-server-error');
   } else {
-    return localize(lang, 'unknown-error');
+    return 'Error: ' + e;
   }
 }
 

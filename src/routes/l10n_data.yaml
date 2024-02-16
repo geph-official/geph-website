@@ -174,11 +174,11 @@ internal-server-error:
   zht: 內部伺服器錯誤
   fa: خطای داخلی سرور
 
-unknown-error:
-  en: Unknown error
-  zhs: 未知错误
-  zht: 未知錯誤
-  fa: خطای ناشناخته
+error:
+  en: Error
+  zhs: 错误
+  zht: 錯誤
+  fa: خطا
 
 remaining-days:
   en: "Remaining days:"

@@ -11,25 +11,8 @@
 	import Footer from '../Footer.svelte';
 	import BuyPlus from './BuyPlus.svelte';
 	import RedeemGiftcard from './RedeemGiftcard.svelte';
-	import { BINDER_ADDR, call_rpc } from '../../../routes/helpers';
+	import { BINDER_ADDR, call_rpc, translateError } from '../../../routes/helpers';
 	const lang = $page.params['lang'];
-
-	const errL10n = {
-		400: { en: 'Bad request', zhs: '错误的请求', zht: '錯誤的請求' },
-		500: { en: 'Internal server error', zhs: '服务器内部错误', zht: '服務器內部錯誤' },
-		520: { en: 'Unknown error', zhs: '未知错误', zht: '未知錯誤' }
-	};
-
-	function translateError(e: string, lang: 'en' | 'zhs' | 'zht'): string {
-		console.log('billing page error: ' + e);
-		if (e.includes('400')) {
-			return errL10n[400][lang];
-		} else if (e.includes('500')) {
-			return errL10n[500][lang];
-		} else {
-			return errL10n[520][lang];
-		}
-	}
 
 	async function get_user_info() {
 		if (!sessionStorage.getItem('sessid')) {

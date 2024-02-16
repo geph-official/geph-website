@@ -9,16 +9,17 @@
 
 	$: l = (s: string) => localize(lang, s);
 
-	function translateError(e: string, lang: string): string {
-		console.log('login page error: ' + e);
-		if (e.includes('403')) {
-			return localize(lang, 'incorrect-giftcard');
+	function translateError(e: string, lang: 'en' | 'zhs' | 'zht'): string {
+		console.log('error: ' + e);
+		if (e.includes('400')) {
+			return localize(lang, 'bad-request');
 		} else if (e.includes('500')) {
 			return localize(lang, 'internal-server-error');
 		} else {
-			return localize(lang, 'unknown-error') + ': ' + e;
+			return localize(lang, 'error');
 		}
 	}
+
 	let gc_id = '';
 	let promo = '';
 	const redeemGiftcard = async (sessid: any, gc_id: string) => {
