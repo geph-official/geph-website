@@ -11,7 +11,7 @@
 
 	function translateRedeemGiftcardError(e: string, lang: 'en' | 'zhs' | 'zht'): string {
 		console.log('error: ' + e);
-		if (e.includes('403')) {
+		if (e.includes('no such giftcard')) {
 			return localize(lang, 'incorrect-giftcard');
 		}
 		if (e.includes('400')) {
