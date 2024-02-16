@@ -9,8 +9,11 @@
 
 	$: l = (s: string) => localize(lang, s);
 
-	function translateError(e: string, lang: 'en' | 'zhs' | 'zht'): string {
+	function translateRedeemGiftcardError(e: string, lang: 'en' | 'zhs' | 'zht'): string {
 		console.log('error: ' + e);
+		if (e.includes('403')) {
+			return localize(lang, 'incorrect-giftcard');
+		}
 		if (e.includes('400')) {
 			return localize(lang, 'bad-request');
 		} else if (e.includes('500')) {
@@ -34,7 +37,7 @@
 			alert(l('giftcard-applied'));
 			window.location.reload();
 		} catch (e) {
-			alert(translateError(String(e), lang));
+			alert(translateRedeemGiftcardError(String(e), lang));
 		}
 	};
 
@@ -53,7 +56,7 @@
 				}
 			]);
 		} catch (e) {
-			giftcardError = translateError(String(e), lang);
+			giftcardError = translateRedeemGiftcardError(String(e), lang);
 			days = null;
 		}
 	}, 500);

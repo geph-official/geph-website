@@ -3,17 +3,6 @@ import { BINDER_ADDR, call_rpc } from "../../helpers";
 import { goto } from "$app/navigation";
 import { localize } from '../../l10n';
 
-export function translateError(e: string, lang: string): string {
-  console.log('billing page error: ' + e);
-  if (e.includes('400')) {
-    return localize(lang, 'bad-request');
-  } else if (e.includes('500')) {
-    return localize(lang, 'internal-server-error');
-  } else {
-    return 'Error: ' + e;
-  }
-}
-
 
 export type Item = "Plus" | {
   "Giftcard": { recipient_email: string, sender: string, count: number }
