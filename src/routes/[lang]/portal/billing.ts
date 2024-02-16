@@ -3,17 +3,6 @@ import { BINDER_ADDR, call_rpc } from "../../helpers";
 import { goto } from "$app/navigation";
 import { localize } from '../../l10n';
 
-export function translateError(e: string, lang: string): string {
-  console.log('billing page error: ' + e);
-  if (e.includes('400')) {
-    return localize(lang, 'bad-request');
-  } else if (e.includes('500')) {
-    return localize(lang, 'internal-server-error');
-  } else {
-    return localize(lang, 'unknown-error');
-  }
-}
-
 
 export type Item = "Plus" | {
   "Giftcard": { recipient_email: string, sender: string, count: number }
@@ -35,8 +24,8 @@ export function stripePaypalBackend(): PaymentBackend {
 }
 
 function stripeBackendReal(name: string, payment_methods: string[]): PaymentBackend {
-  const STRIPEKEY = "pk_live_Wk781YzANKGuLBl2NzFkRu5n00YdYjObFY";
-  // const STRIPEKEY = "pk_test_O6w7losqr4Z0LrJvvhotXgBO00kog9HPMC";
+  // const STRIPEKEY = "pk_live_Wk781YzANKGuLBl2NzFkRu5n00YdYjObFY";
+  const STRIPEKEY = "pk_test_O6w7losqr4Z0LrJvvhotXgBO00kog9HPMC";
   return {
     name,
     icons: name == 'paypal' ? ['/paypal.svg', "/unionpay.svg"] : ["/visa.jpg", "/mastercard.svg"],

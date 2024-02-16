@@ -6,8 +6,7 @@
 	import { page } from '$app/stores';
 	import { tokens } from './SupportedCurrencies';
 	import axios from 'axios';
-	import { BINDER_ADDR, call_rpc } from '../../../../routes/helpers';
-	import { translateError } from '../billing';
+	import { BINDER_ADDR, call_rpc, translateError } from '../../../../routes/helpers';
 	import { goto } from '$app/navigation';
 
 	const lang = $page.params['lang'];
