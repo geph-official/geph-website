@@ -16,7 +16,7 @@ export interface PaymentBackend {
 }
 
 export function stripeCardBackend(): PaymentBackend {
-  return stripeBackendReal("bank-card", ["card"])
+  return stripeBackendReal("bank-card", ["card", "paypal"])
 }
 
 export function stripePaypalBackend(): PaymentBackend {
