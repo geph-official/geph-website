@@ -24,8 +24,8 @@ export function stripePaypalBackend(): PaymentBackend {
 }
 
 function stripeBackendReal(name: string, payment_methods: string[]): PaymentBackend {
-  // const STRIPEKEY = "pk_live_Wk781YzANKGuLBl2NzFkRu5n00YdYjObFY";
-  const STRIPEKEY = "pk_test_O6w7losqr4Z0LrJvvhotXgBO00kog9HPMC";
+  const STRIPEKEY = "pk_live_Wk781YzANKGuLBl2NzFkRu5n00YdYjObFY";
+  // const STRIPEKEY = "pk_test_O6w7losqr4Z0LrJvvhotXgBO00kog9HPMC";
   return {
     name,
     icons: name == 'paypal' ? ['/paypal.svg', "/unionpay.svg"] : ["/visa.jpg", "/mastercard.svg"],
