@@ -6,7 +6,7 @@
 	<div class="container">
 		<div class="copyright">© Gephyra OÜ</div>
 		<div class="address">Sakala 7-2<br /> Tallinn<br /> Estonia 10141</div>
-		<div class="email"><Email /> <a href="mailto:contact@geph.io">contact@geph.io</a></div>
+		<div class="email"><Email /> <a href="mailto:support@geph.io">support@geph.io</a></div>
 	</div>
 </footer>
 
