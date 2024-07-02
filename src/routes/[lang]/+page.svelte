@@ -89,6 +89,20 @@
 					</a>
 				</div>
 				<div class="col-lg col-6">
+					<a
+						class="download-box"
+						href="https://apps.apple.com/us/app/geph/id1638148282?platform=iphone"
+					>
+						<div class="download-box-icon">
+							<img src="/appstore.png" alt="linux logo" />
+						</div>
+						<div class="dl-desc">
+							<div>iOS</div>
+							<small>App Store</small>
+						</div>
+					</a>
+				</div>
+				<div class="col-lg col-6">
 					<a class="download-box" href={data.download.linux}>
 						<div class="download-box-icon">
 							<img src="/linux.png" alt="linux logo" />
