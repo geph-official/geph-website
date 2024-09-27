@@ -468,10 +468,10 @@
 
 	.aliwechat-warning {
 		border: 1px solid red;
-
 		padding: 1rem;
 		margin-top: 2rem;
 		margin-bottom: 1rem;
+		max-width: 41rem; /* Added max-width */
 	}
 
 	.buttons {

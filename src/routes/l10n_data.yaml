@@ -583,8 +583,8 @@ click-refresh:
 
 bad-aliwechat:
   en: ⚠️ Alipay and WeChat Pay payments are not always reliable. If you pay using these methods and do not receive Plus after 10 minutes, please email your username and payment screenshot to support@geph.io, and we will add your Plus time within 48 hours.
-  zhs: ⚠️ 支付宝和微信支付有时会不稳定。如果您使用这些方式支付后10分钟内未收到Plus，请将您的用户名和付款截图发送至support@geph.io，我们将在48小时内为您添加Plus时间。
-  zht: ⚠️ 支付宝和微信支付有时会不稳定。如果您使用這些方式支付後10分鐘內未收到Plus，請將您的用戶名和付款截圖發送至support@geph.io，我們將在48小時內為您添加Plus時間。
+  zhs: ⚠️ 支付宝和微信支付有时会不稳定。如果您使用这些方式支付后10分钟内未收到 Plus，请将您的用户名和付款截图发送至 support@geph.io，我们将在48小时内为您添加 Plus 时间。
+  zht: ⚠️ 支付宝和微信支付有时会不稳定。如果您使用這些方式支付後10分鐘內未收到 Plus，請將您的用戶名和付款截圖發送至 support@geph.io，我們將在48小時內為您添加 Plus 時間。
   fa: ⚠️ پرداخت‌های آلی‌پی و وی‌چت‌پی همیشه قابل اطمینان نیستند. اگر با استفاده از این روش‌ها پرداخت کردید و پس از 10 دقیقه Plus را دریافت نکردید، لطفاً نام کاربری و تصویر پرداخت خود را به support@geph.io ایمیل کنید، و ما ظرف 48 ساعت زمان Plus شما را اضافه خواهیم کرد.
 
 already-autorenew:
