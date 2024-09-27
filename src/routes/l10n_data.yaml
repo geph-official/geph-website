@@ -76,8 +76,8 @@ sub_hero:
     works.
   zhs: 其它软件都失灵时，用迷雾通连接自由的网络！
   zht: 其它軟件都失靈時，用迷霧通連接自由的網絡！
-  fa:  Geph شما را به اینترنت بدون سانسور متصل می کند، حتی وقتی هیچ چیز دیگری کار نمی‌کند
-  
+  fa: Geph شما را به اینترنت بدون سانسور متصل می کند، حتی وقتی هیچ چیز دیگری کار نمی‌کند
+
 footer:
   en: Client Portal
   zhs: 用户中心
@@ -137,18 +137,17 @@ download:
   zht: 下載
   fa: دانلود
 
-
 community:
   en: Community
   zhs: 社区
   zht: 社區
-  fa:  انجمن
+  fa: انجمن
 
 forum:
   en: Discourse forum
   zhs: Discourse 论坛
   zht: Discourse 論壇
-  fa:	تالار گفتمان
+  fa: تالار گفتمان
 
 incorrect-login:
   en: Incorrect username or password
@@ -160,7 +159,7 @@ loading:
   en: Loading...
   zhs: 加载中...
   zht: 加載中...
-  fa: بارگذاری... 
+  fa: بارگذاری...
 
 account-overview:
   en: Account overview
@@ -181,10 +180,10 @@ error:
   fa: خطا
 
 remaining-days:
-  en: "Remaining days:"
-  zhs: "剩余天数："
-  zht: "剩餘天數："
-  fa: ": روزهای باقی مانده"
+  en: 'Remaining days:'
+  zhs: '剩余天数：'
+  zht: '剩餘天數：'
+  fa: ': روزهای باقی مانده'
 
 buy-plus:
   en: Buy Plus
@@ -208,7 +207,7 @@ duplicate-payments:
   en: Duplicate payments
   zhs: 重复付款
   zht: 重複付款
-  fa:  پرداخت های تکراری  
+  fa: پرداخت های تکراری
 
 who-is-the-plus-for:
   en: Who is the Plus for?
@@ -291,7 +290,7 @@ alipay:
 paypal:
   en: PayPal
   zhs: PayPal / 银联
-  zht: PayPal 
+  zht: PayPal
   fa: PayPal
 
 wxpay:
@@ -301,10 +300,10 @@ wxpay:
   fa: WeChat Pay
 
 total:
-  en: "Total:"
+  en: 'Total:'
   zhs: 总计：
   zht: 總計：
-  fa: "هزینه کل:"
+  fa: 'هزینه کل:'
 
 pay:
   en: Check out
@@ -348,23 +347,23 @@ custom:
   zht: 自定義（天）
   fa: دلخواه (تعداد روز ها)
 
-10-off: 
+10-off:
   en: 10% OFF
   zhs: 9折
   zht: 9折
-  fa:  تخفیف 10%
+  fa: تخفیف 10%
 
-15-off: 
+15-off:
   en: 15% OFF
   zhs: 8.5折
   zht: 8.5折
-  fa:  تخفیف 15%
+  fa: تخفیف 15%
 
-17.5-off: 
+17.5-off:
   en: 17.5% OFF
   zhs: 8.25折
   zht: 8.25折
-  fa:  تخفیف 17.5%
+  fa: تخفیف 17.5%
 
 how-many-giftcards:
   en: How many giftcards?
@@ -378,13 +377,13 @@ how-many-days-in-each-giftcard:
   zht: 每張禮品卡充值多少天？
   fa: چند روز برای هر گیفت‌کارت؟
 
-crypto: 
+crypto:
   en: Cryptocurrency
   zhs: 加密货币
   zht: 加密貨幣
   fa: ارز دیجیتال
 
-crypto-payment: 
+crypto-payment:
   en: Cryptocurrency payment
   zhs: 加密货币支付
   zht: 加密貨幣支付
@@ -440,8 +439,8 @@ usdc:
 
 usdcsol:
   en: USDC
-  zhs: USDC 
-  zht: USDC 
+  zhs: USDC
+  zht: USDC
   fa: USDC
 
 usdctrc20:
@@ -475,10 +474,10 @@ incorrect-giftcard:
   fa: کارت هدیه‌ای یافت نشد
 
 giftcard-days:
-  en: "Days in giftcard: "
-  zhs: "礼品卡有效天数："
-  zht: "禮品卡有效天數："
-  fa: "روزها در کارت هدیه: "
+  en: 'Days in giftcard: '
+  zhs: '礼品卡有效天数：'
+  zht: '禮品卡有效天數：'
+  fa: 'روزها در کارت هدیه: '
 
 giftcard-applied:
   en: Giftcard applied
@@ -499,10 +498,10 @@ send-crypto:
   fa: ارسال ارز دیجیتال
 
 please-send-funds:
-  en: "Send cryptocurrency to the following address"
-  zhs: "请将加密货币发送至以下地址"
-  zht: "請將加密貨幣發送至以下地址"
-  fa: "ارز دیجیتال را به آدرس زیر بفرستید"
+  en: 'Send cryptocurrency to the following address'
+  zhs: '请将加密货币发送至以下地址'
+  zht: '請將加密貨幣發送至以下地址'
+  fa: 'ارز دیجیتال را به آدرس زیر بفرستید'
 
 amount:
   en: Amount
@@ -526,7 +525,7 @@ confirming:
   en: Confirming
   zhs: 确认中
   zht: 確認中
-  fa: در حال تأیید 
+  fa: در حال تأیید
 
 exchanging:
   en: Exchanging
@@ -568,7 +567,7 @@ missing-days:
   en: Missing days in the app?
   zhs: 软件中没有延长 Plus？
   zht: 軟件中沒有延長 Plus？
-  fa: روز های خریداری شده در برنامه نمایش داده نمی‌شود؟ 
+  fa: روز های خریداری شده در برنامه نمایش داده نمی‌شود؟
 
 click-refresh:
   en: After purchasing Plus time, wait 10 minutes for it to show up in the app!
@@ -583,10 +582,10 @@ click-refresh:
 #   fa: '🚧 درگاه کاربران و سیستم پرداخت در حال حاضر تحت تعمیر و نگهداری برنامه ریزی شده است. ما به سرعت بر می گردیم! 🚧'
 
 bad-aliwechat:
-  en: Alipay and WeChat Pay payments are not always reliable, and it costs us a lot to support them. <b>PayPal</b> has no added fee and is compatible with most Chinese bank cards.
-  zhs: ⚠️ 支付宝、微信支付的提供商并不稳定，而且有高额手续费。<br><br><b>PayPal</b> 不需要任何额外费用，并且兼容大部分中国银行卡。请尽量使用 PayPal！
-  zht: ⚠️ 支付寶、微信支付的提供商並不穩定，而且收費很高。<br><br> <b>PayPal</b> 則不需要額外費用，且能兼容大多數的中國銀行卡。請盡量使用 PayPal！
-  fa: پرداخت از طریق آلی پی و وی چت پی دائماً قابلِ اطمینان نیست و برای ما هزینه‌بر است. <b>پیپال</b> هیچ هزینه اضافی دریافت نمی‌کند و با بیشتر کارت‌های بانکی چینی سازگار است. به شدت توصیه می‌شود! 
+  en: ⚠️ Alipay and WeChat Pay payments are not always reliable. If you pay using these methods and do not receive Plus after 10 minutes, please email your username and payment screenshot to support@geph.io, and we will add your Plus time within 48 hours.
+  zhs: ⚠️ 支付宝和微信支付有时会不稳定。如果您使用这些方式支付后10分钟内未收到Plus，请将您的用户名和付款截图发送至support@geph.io，我们将在48小时内为您添加Plus时间。
+  zht: ⚠️ 支付宝和微信支付有时会不稳定。如果您使用這些方式支付後10分鐘內未收到Plus，請將您的用戶名和付款截圖發送至support@geph.io，我們將在48小時內為您添加Plus時間。
+  fa: ⚠️ پرداخت‌های آلی‌پی و وی‌چت‌پی همیشه قابل اطمینان نیستند. اگر با استفاده از این روش‌ها پرداخت کردید و پس از 10 دقیقه Plus را دریافت نکردید، لطفاً نام کاربری و تصویر پرداخت خود را به support@geph.io ایمیل کنید، و ما ظرف 48 ساعت زمان Plus شما را اضافه خواهیم کرد.
 
 already-autorenew:
   en: You already have auto-renewing Plus! Cancel your auto-renewing program first if you need to purchase a new plan.

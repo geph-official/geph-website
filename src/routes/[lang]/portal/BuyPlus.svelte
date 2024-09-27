@@ -367,13 +367,13 @@
 				</div>
 			{/if}
 
-			<!-- {#if payMethod == 'alipay' || payMethod == 'wxpay'}
+			{#if payMethod == 'alipay' || payMethod == 'wxpay'}
 				<div class="row">
 					<div class="col">
 						<div class="aliwechat-warning">{@html to_local('bad-aliwechat')}</div>
 					</div>
 				</div>
-			{/if} -->
+			{/if}
 
 			<div class="row mt-3">
 				<div class="col">
