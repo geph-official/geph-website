@@ -25,8 +25,8 @@
 	paymentBackends.set('bank-card', stripeCardBackend());
 	paymentBackends.set('crypto', cryptoBackend());
 	if (variant !== 'reseller') {
-		paymentBackends.set('alipay', alipayBackend());
-		// paymentBackends.set('wxpay', wxpayBackend());
+		// paymentBackends.set('alipay', alipayBackend());
+		paymentBackends.set('wxpay', wxpayBackend());
 	}
 
 	let days = 30;
