@@ -23,10 +23,11 @@
 
 	const paymentBackends: Map<string, PaymentBackend> = new Map();
 	paymentBackends.set('bank-card', stripeCardBackend());
-	paymentBackends.set('crypto', cryptoBackend());
 	if (variant !== 'reseller') {
 		// paymentBackends.set('alipay', alipayBackend());
 		paymentBackends.set('wxpay', wxpayBackend());
+	} else {
+		paymentBackends.set('crypto', cryptoBackend());
 	}
 
 	let days = 30;
