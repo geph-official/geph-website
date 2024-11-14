@@ -73,7 +73,7 @@
 						</div>
 						<div class="dl-desc">
 							<div>Windows</div>
-							<small>7+ (exe)</small>
+							<small>10+ (exe)</small>
 						</div>
 					</a>
 				</div>
