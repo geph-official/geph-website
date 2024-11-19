@@ -62,6 +62,7 @@
 			try {
 				cost = null;
 				const response = await call_rpc('calculate_price', [
+					obj['sessid'],
 					obj['method'],
 					obj['promo'],
 					obj['days']
@@ -74,6 +75,7 @@
 		}
 	}, 100);
 	$: recalcCost({
+		sessid: sessionStorage.getItem('sessid'),
 		promo: item === 'giftcard' && variant != 'reseller' ? '' : promo,
 		days: item === 'giftcard' ? days * giftcards_number : days,
 		method: payMethod
