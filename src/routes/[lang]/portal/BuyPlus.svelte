@@ -83,7 +83,7 @@
 
 	const change_days = () => {
 		days = Math.floor(
-			Math.min(10000, Math.max(variant == 'reseller' ? 1 : payMethod == 'crypto' ? 60 : 30, days))
+			Math.min(10000, Math.max(variant == 'reseller' ? 1 : payMethod == 'crypto' ? 90 : 30, days))
 		);
 	};
 
@@ -92,7 +92,7 @@
 			days = Math.floor(
 				Math.min(
 					10000,
-					Math.max(variant == 'reseller' ? 1 : payMethod == 'crypto' ? 60 : 30, e.target.value)
+					Math.max(variant == 'reseller' ? 1 : payMethod == 'crypto' ? 90 : 30, e.target.value)
 				)
 			);
 			e.target.value = days;
