@@ -26,6 +26,7 @@
 	paymentBackends.set('crypto', cryptoBackend());
 	if (variant !== 'reseller') {
 		// paymentBackends.set('alipay', alipayBackend());
+		paymentBackends.set('crypto', cryptoBackend());
 		paymentBackends.set('wxpay', wxpayBackend());
 	}
 
