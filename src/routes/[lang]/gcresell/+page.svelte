@@ -22,7 +22,7 @@
 				</div>
 			</div>
 		</div>
-		<BuyPlus variant="reseller" />
+		<BuyPlus variant="reseller" is_recurring={false} />
 	</div>
 	<Footer />
 </div>
