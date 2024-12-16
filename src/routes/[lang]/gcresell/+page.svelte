@@ -5,6 +5,7 @@
 	import Navbar from '../Navbar.svelte';
 	import Footer from '../Footer.svelte';
 	const lang = $page.params['lang'];
+
 </script>
 
 <svelte:head>
