@@ -147,6 +147,16 @@
 			</div>
 			<div class="row mt-4">
 				<div class="col-lg">
+					<a class="download-box" href="https://x.com/GephOfficial">
+						<div class="download-box-icon">
+							<img src="/twitter.png" alt="twitter logo" />
+						</div>
+						<div class="dl-desc">
+							<div>{"X"}</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-lg">
 					<a class="download-box" href="https://t.me/gephannounce">
 						<div class="download-box-icon">
 							<img src="/telegram.svg" alt="telegram logo" />
