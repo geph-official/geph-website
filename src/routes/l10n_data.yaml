@@ -575,11 +575,11 @@ click-refresh:
   zht: 購買Plus後，請耐心等待10分鐘即可在應用程式中看到！
   fa: پس از خرید اشتراک پلاس، 10 دقیقه صبر کنید تا در برنامه نمایش داده شود!
 
-# banner:
-#   en: '🚧  🚧'
-#   zhs: '🚧 账户管理界面及支付系统正在进行升级维护。将会在北京时间 6am 恢复！ 🚧'
-#   zht: '🚧 帳戶管理介面及支付系統正在進行升級維護。 將會在北京時間 6am 恢復！ 🚧'
-#   fa: '🚧 درگاه کاربران و سیستم پرداخت در حال حاضر تحت تعمیر و نگهداری برنامه ریزی شده است. ما به سرعت بر می گردیم! 🚧'
+banner:
+  en: '📢 Follow <a href="https://x.com/GephOfficial">Geph&#39s X account</a> for the latest news, events, and Plus giftcard airdrops! 🎁 ✨'
+  zhs: '📢 关注<a href="https://x.com/GephOfficial">迷雾通的 X 账号</a>，获取最新新闻、活动信息、Plus 礼品卡空投！🎁 ✨'
+  zht: '📢 關注<a href="https://x.com/GephOfficial">迷霧通的 X 帳號</a>，獲取最新新聞、活動信息、Plus 禮品卡空投！🎁 ✨'
+  fa: '📢 برای دریافت آخرین اخبار، رویدادها و ایردراپ‌های کارت هدیه Plus، <a href="https://x.com/GephOfficial">حساب X جف</a> را دنبال کنید! 🎁 ✨'
 
 bad-aliwechat:
   en: ⚠️ Alipay and WeChat Pay payments are not always reliable. If you pay using these methods and do not receive Plus after 10 minutes, please email your username and payment screenshot to support@geph.io, and we will add your Plus time within 48 hours.
