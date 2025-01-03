@@ -157,7 +157,7 @@
 					</a>
 				</div>
 				<div class="col-lg">
-					<a class="download-box" href="https://t.me/gephannounce">
+					<a class="download-box" href="https://t.me/gephusers">
 						<div class="download-box-icon">
 							<img src="/telegram.svg" alt="telegram logo" />
 						</div>
