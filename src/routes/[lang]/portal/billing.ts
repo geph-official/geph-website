@@ -72,12 +72,40 @@ export function wxpayBackend(): PaymentBackend {
         promo,
         days,
         method: 'wxpay',
-        item
+        item,
+        mobile: await isMobile()
       }]);
       goto(url);
     }
   }
 }
+
+async function isMobile() {
+  // 1. Check if User-Agent Client Hints are supported
+  if (navigator.userAgentData && 'getHighEntropyValues' in navigator.userAgentData) {
+    try {
+      // getHighEntropyValues returns a promise with more detailed info
+      const uaData = await navigator.userAgentData.getHighEntropyValues(['mobile']);
+      return uaData.mobile;
+    } catch (error) {
+      // if there's any error, fallback to user agent string
+      console.error(error);
+      return fallbackIsMobile();
+    }
+  } else {
+    // 2. Fallback to user agent string detection
+    const isMobile = fallbackIsMobile();
+    console.log(isMobile);
+    return isMobile;
+  }
+}
+
+function fallbackIsMobile() {
+  console.log("fallback!")
+  // Common approach: simple regex for known mobile user agents
+  return /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
 
 export function cryptoBackend(): PaymentBackend {
   return {

@@ -5,9 +5,9 @@ import { browser } from '$app/environment';
 
 
 
-// export const BINDER_ADDR = 'http://localhost:28081';
+export const BINDER_ADDR = 'http://localhost:28081';
 // export const BINDER_ADDR = 'https://staging.web-backend.geph.io';
-export const BINDER_ADDR = 'https://web-backend.geph.io';
+// export const BINDER_ADDR = 'https://web-backend.geph.io';
 
 export function translateError(e: string, lang: string): string {
     console.log('login page error: ' + e);
