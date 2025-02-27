@@ -65,18 +65,32 @@ geph:
   fa: Geph
 
 hero:
-  en: Blast through censorship.
-  zhs: 冲破网络封锁
-  zht: 衝破網絡封鎖
-  fa: فیلترینگ را منفجر کنید
+  en: "The world's most resilient VPN"
+  zhs: "不怕封锁的 VPN"
+  zht: "不怕封鎖的 VPN"
+  fa: "وی‌پی‌ان متوقف‌نشدنی"
 
 sub_hero:
   en: >-
-    Geph connects you with the censorship-free Internet, even when nothing else
-    works.
-  zhs: 其它软件都失灵时，用迷雾通连接自由的网络！
-  zht: 其它軟件都失靈時，用迷霧通連接自由的網絡！
-  fa: Geph شما را به اینترنت بدون سانسور متصل می کند، حتی وقتی هیچ چیز دیگری کار نمی‌کند
+    <p>Geph is a VPN built from the ground up to resist ISP-level censorship. Unlike traditional VPNs that rely on security through obscurity, Geph's architecture and protocols are specifically engineered to be nearly invisible against ISPs and network adversaries. </p>
+    <p>Over the past 5 years, we have connected millions of users behind strict national firewalls, consistently achieving our <a href="https://github.com/geph-official/geph4-client/wiki/Service-SLA-(%E5%B0%81%E4%B8%80%E5%A4%A9%E8%B3%A0%E4%B8%80%E5%A4%A9%E6%94%BF%E7%AD%96)">service SLA</a> despite targeted attacks by national censorship systems in China and Iran.</p>
+    <p>We also have a  <a href="https://github.com/geph-official/geph4-libs/tree/master/mizaru">blind signature authentication system</a> that cryptographically guarantees servers can never associate browsing activity with user identities, even if fully compromised.</p>
+
+  zhs: >-
+    <p>迷雾通是一款从零设计，能抵御运营商级别审查的 VPN。与所有传统VPN不同，迷雾通的架构和协议经过专门设计，可以在运营商和网络对手面前几乎实现「隐身」。</p>
+    <p>在过去的五年里，我们帮助数百万身处严苛防火墙后的用户成功连网，并在中国、伊朗等国家级审查系统的针对性打击下，依旧稳定地达成我们的<a href="https://github.com/geph-official/geph4-client/wiki/Service-SLA-(%E5%B0%81%E4%B8%80%E5%A4%A9%E8%B3%A0%E4%B8%80%E5%A4%A9%E6%94%BF%E7%AD%96)">服务SLA</a>。</p>
+    <p>我们还使用<a href="https://github.com/geph-official/geph4-libs/tree/master/mizaru">盲签名验证系统</a>，确保服务器即使在完全被攻破的情况下，也无法将用户的浏览活动与其身份关联。</p>
+
+  zht: >-
+    <p>迷霧通是一款從零設計，能抵禦營運商級別審查的 VPN。與所有傳統VPN不同，迷霧通的架構和協議經過專門設計，可以在營運商和網路對手面前幾乎實現「隱形」。</p>
+    <p>在過去的五年裡，我們幫助數百萬位身處嚴苛防火牆後的用戶成功連網，並在中國和伊朗等國家級審查系統的針對性打擊下，依舊穩定地達成我們的<a href="https://github.com/geph-official/geph4-client/wiki/Service-SLA-(%E5%B0%81%E4%B8%80%E5%A4%A9%E8%B3%A0%E4%B8%80%E5%A4%A9%E6%94%BF%E7%AD%96)">服務SLA</a>。</p>
+    <p>我們還使用<a href="https://github.com/geph-official/geph4-libs/tree/master/mizaru">盲簽名驗證系統</a>，確保伺服器即使在完全被攻破的情況下，也無法將使用者的瀏覽活動與其身分關聯。</p>
+
+  fa: >-
+    <p>Geph (گِف) یک VPN است که از پایه برای مقاومت در برابر سانسور در سطح ISP طراحی شده است. برخلاف VPNهای سنتی که بر «امنیت از راه پنهان‌کاری» تکیه می‌کنند، معماری و پروتکل‌های Geph به گونه‌ای ویژه طراحی شده‌اند تا برای ISPها و عوامل نظارتی شبکه تقریباً نامشهود باشند.</p>
+    <p>در طول ۵ سال گذشته، ما میلیون‌ها کاربر را که پشت دیوارهای ملی محدودکننده قرار دارند، متصل کرده‌ایم و با وجود حملات هدفمند از سوی سیستم‌های سانسور ملی در چین و ایران، همچنان به تحقق <a href="https://github.com/geph-official/geph4-client/wiki/Service-SLA-(%E5%B0%81%E4%B8%80%E5%A4%A9%E8%B3%A0%E4%B8%80%E5%A4%A9%E6%94%BF%E7%AD%96)">SLA خدمات</a> خود پایبند بوده‌ایم.</p>
+    <p>همچنین ما از یک <a href="https://github.com/geph-official/geph4-libs/tree/master/mizaru">سامانه احراز هویت امضای کور</a> برخورداریم که با استفاده از روش‌های رمزنگاری تضمین می‌کند سرورها هرگز قادر نیستند فعالیت مرور کاربران را حتی در صورت نفوذ کامل، به هویت آنان پیوند دهند.</p>
+
 
 footer:
   en: Client Portal

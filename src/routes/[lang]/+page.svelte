@@ -18,11 +18,11 @@
 	<Navbar />
 	<div class="container hero my-5 py-5 pb-4">
 		<h1>🚀 {localize(lang, 'hero')}</h1>
-		<p>{localize(lang, 'sub_hero')}</p>
+		{@html localize(lang, 'sub_hero')}
 	</div>
 
 	<div class="container">
-		<div class="row">
+		<!-- <div class="row">
 			<div class="col-lg">
 				<div class="blurb">
 					<h3>🔒 {localize(lang, 'robust-zk-privacy')}</h3>
@@ -57,7 +57,7 @@
 					</p>
 				</div>
 			</div>
-		</div>
+		</div> -->
 
 		<div class="container my-5">
 			<div class="row pt-3">
@@ -152,7 +152,7 @@
 							<img src="/twitter.png" alt="twitter logo" />
 						</div>
 						<div class="dl-desc">
-							<div>{"X"}</div>
+							<div>{'X'}</div>
 						</div>
 					</a>
 				</div>
@@ -214,9 +214,10 @@
 		font-weight: 500;
 		letter-spacing: -0.03rem;
 		opacity: 0.8;
+		margin-bottom: 2rem;
 	}
 
-	.hero p {
+	:global(.hero p) {
 		font-size: 120%;
 	}
 
