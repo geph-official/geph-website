@@ -14,44 +14,62 @@
 
 	%sveltekit.head%
 
-	<style>
-		a {
-			font-weight: 500;
-			color: var(--bs-body-color);
-			text-decoration: none;
-		}
 
-		a:hover {
-			text-decoration: underline;
-		}
-
-	</style>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
 	<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 	<style>
 		:root {
 			font-family: var(--bs-body-font-family);
 			--bs-body-font-family: 'Inter', "Noto Color Emoji", "Vazirmatn", sans-serif;
+			font-feature-settings: 'liga' 1, 'calt' 1, 'cv10' 1, 'ss07' 1;
+
+			--bs-body-bg: #fdf6e3;
+			--bs-body-rgb: 253, 246, 227;
+
+			--bs-light: #fdf6e3;
+			--bs-light-rgb: 253, 246, 227;
+
+			/* --bs-light: #eee8d5;
+			--bs-light-rgb: 238, 232, 213; */
+
+			--bs-body-color: #002b36;
+			--bs-body-color-rgb: 0, 43, 54;
+
+			--bs-primary: #268bd2;
+			--bs-primary-rgb: 38, 139, 210;
+		}
 
 
-			/* --bs-body-bg: #fbffff;
-			--bs-light-rgb: 243, 249, 250; */
+
+		a {
+			color: var(--bs-body-color);
+			text-decoration: underline;
+		}
+
+		a:hover {
+			color: var(--bs-primary)
 		}
 
 		@supports (font-variation-settings: normal) {
 			:root {
-				--bs-body-font-family: 'Inter var', "Noto Color Emoji", "Vazirmatn", sans-serif;
+				--bs-body-font-family: 'InterVariable', "Noto Color Emoji", "Vazirmatn", sans-serif;
 			}
 		}
 
 		:lang(zh-CN) {
-			--bs-body-font-family: "Inter var", "Inter", "Noto Sans SC", "Noto Color Emoji", sans-serif;
-			font-family: "Inter var", "Inter", "Noto Sans SC", "Noto Color Emoji", sans-serif;
+			--bs-body-font-family: "InterVariable", "Inter", "Noto Sans SC", "Noto Color Emoji", sans-serif;
+			font-family: "InterVariable", "Inter", "Noto Sans SC", "Noto Color Emoji", sans-serif;
 		}
 
 		:lang(zh-TW) {
-			--bs-body-font-family: "Inter var", "Inter", "Chiron Hei HK WS", "Noto Color Emoji", sans-serif;
-			font-family: "Inter var", "Inter", "Chiron Hei HK WS", "Noto Color Emoji", sans-serif;
+			--bs-body-font-family: "InterVariable", "Inter", "Chiron Hei HK WS", "Noto Color Emoji", sans-serif;
+			font-family: "InterVariable", "Inter", "Chiron Hei HK WS", "Noto Color Emoji", sans-serif;
+		}
+
+		.container {
+			max-width: 720px;
+			margin-right: auto;
+			margin-left: auto
 		}
 
 	</style>

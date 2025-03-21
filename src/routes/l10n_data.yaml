@@ -648,3 +648,189 @@ no:
   zhs: 否
   zht: 否
   fa: نه
+
+faq_content:
+  en: |
+    <div class="faq-container mt-4">
+      <div class="faq-item">
+        <h3 class="faq-question">Is your code open source?</h3>
+        <p class="faq-answer">
+          Everything, including this website, is open source <a
+            href="https://github.com/geph-official">on GitHub</a
+          >.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">How does the blind signature authentication work?</h3>
+        <p class="faq-answer">
+          When connecting, users present a cryptographic proof of valid Plus or Free subscription
+          rather than identifying credentials. This ensures servers can verify authorization while
+          remaining completely blind to user identity. Learn more about the protocol <a
+            href="https://link-to-mizaru-wiki">here</a
+          >!
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">Can't the censor just download Geph and block all the servers?</h3>
+        <p class="faq-answer">
+          Yes and no &mdash; Geph uses a two-hop architecture where users connect to <em>exit</em>
+          nodes through <em>bridge</em> relays. Censors can and do block all the exits servers, but blocking
+          bridges is much harder.
+        </p>
+        <p class="faq-answer">
+          This is because a hard-to-block bootstrap protocol assigns <em
+            >different bridges to different users</em
+          >
+          and continuously rotates them, making enumeration infeasible. Since 2019, we've observed automated
+          enumeration attempts by China's GFW, but they have consistently failed to disrupt service.
+          Read our architectural overview
+          <a href="https://github.com/geph-official/geph5/wiki/How-Geph-works">on GitHub</a> to learn
+          more!
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">Isn't this centralized?</h3>
+        <p class="faq-answer">
+          Yes, but not for long! We are actively developing integration with <a
+            href="https://earendil.network">Earendil</a
+          > by achieving full protocol decentralization. This will completely eliminate our infrastructure
+          as a central point of failure.
+        </p>
+      </div>
+    </div>
+
+  zhs: |
+    <div class="faq-container mt-4">
+      <div class="faq-item">
+        <h3 class="faq-question">代码是开源的吗？</h3>
+        <p class="faq-answer">
+          我们的所有代码（包括本网站）都在<a href="https://github.com/geph-official">GitHub</a>上开源。
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">盲签名认证是什么？</h3>
+        <p class="faq-answer">
+          用户连接时会提交一份密码学证明，证明是<b>某一个</b> Plus 或免费用户，但并不提供任何关于是<b>哪一个</b>用户的信息。
+          这样服务器能验证用户，却完全无法识别用户身份。
+        </p>
+
+        <p class="faq-answer">
+          点此查看<a href="https://link-to-mizaru-wiki">相关协议详情</a>！
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">审查者不是可以直接下载迷雾通然后封锁所有服务器吗？</h3>
+        <p class="faq-answer">
+          迷雾通采用双跳架构：用户通过<strong>桥接</strong>中继连接到<strong>出口</strong>节点。
+          审查者确实可以封锁所有出口服务器，但想同时封锁所有桥接就困难得多。
+        </p>
+        <p class="faq-answer">
+          因为我们使用的协议为<strong>不同用户分配不同桥接</strong>并不断轮换，几乎无法全面枚举。
+          自 2019 年以来，中国防火长城（GFW）虽曾尝试自动化枚举，但一直没能成功干扰我们的服务。
+          点此查看<a href="https://github.com/geph-official/geph5/wiki/How-Geph-works">架构概览</a>！
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">这不是中心化的吗？</h3>
+        <p class="faq-answer">
+          是的，但不会永远如此！我们正积极与 <a href="https://earendil.network">Earendil</a> 集成，
+          以实现完全的协议去中心化，彻底消除我们的基础设施成为单点故障的风险。
+        </p>
+      </div>
+    </div>
+
+  zht: |
+    <div class="faq-container mt-4">
+    <div class="faq-item">
+    <h3 class="faq-question">程式碼是開源的嗎？ </h3>
+    <p class="faq-answer">
+    我們的所有程式碼（包括本網站）都在<a href="https://github.com/geph-official">GitHub</a>上開源。
+    </p>
+    </div>
+
+    <div class="faq-item">
+    <h3 class="faq-question">盲簽名認證是什麼？ </h3>
+    <p class="faq-answer">
+    用戶連線時會提交一份密碼學證明，證明是<b>某一個</b> Plus 或免費用戶，但並不提供任何關於是<b>哪一個</b>用戶的資訊。
+    這樣伺服器能驗證用戶，卻完全無法辨識用戶身分。
+    </p>
+
+    <p class="faq-answer">
+    點此查看<a href="https://link-to-mizaru-wiki">相關協議詳情</a>！
+    </p>
+    </div>
+
+    <div class="faq-item">
+    <h3 class="faq-question">審查者不是可以直接下載迷霧通然後封鎖所有伺服器嗎？ </h3>
+    <p class="faq-answer">
+    迷霧通採用雙跳架構：使用者透過<strong>橋接</strong>中繼連接到<strong>出口</strong>節點。
+    審查者確實可以封鎖所有出口伺服器，但要同時封鎖所有橋接就困難得多。
+    </p>
+    <p class="faq-answer">
+    因為我們使用的協定為<strong>不同使用者分配不同橋接</strong>並不斷輪換，幾乎無法全面枚舉。
+    自 2019 年以來，中國防火長城（GFW）雖曾嘗試自動化枚舉，但一直無法成功幹擾我們的服務。
+    點此看<a href="https://github.com/geph-official/geph5/wiki/How-Geph-works">架構概覽</a>！
+    </p>
+    </div>
+
+    <div class="faq-item">
+    <h3 class="faq-question">這不是中心化的嗎？ </h3>
+    <p class="faq-answer">
+    是的，但不會永遠如此！我們正積極與 <a href="https://earendil.network">Earendil</a> 集成，
+    以實現完全的協議去中心化，徹底消除我們的基礎設施成為單點故障的風險。
+    </p>
+    </div>
+    </div>
+  fa: |
+    <div class="faq-container mt-4">
+      <div class="faq-item">
+        <h3 class="faq-question">آیا کد شما متن‌باز است؟</h3>
+        <p class="faq-answer">
+          همه چیز، از جمله همین وبسایت، در
+          <a href="https://github.com/geph-official">GitHub</a>
+          به‌صورت متن‌باز منتشر شده است.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">امضای کور چطور کار می‌کند؟</h3>
+        <p class="faq-answer">
+          هنگام اتصال، کاربر یک اثبات رمزنگاری ارائه می‌کند که اشتراک Plus یا رایگان او را تأیید می‌کند،
+          بدون نیاز به ارائه اطلاعات هویتی. در نتیجه، سرورها می‌توانند مجوز را بررسی کنند اما
+          کاملاً از هویت کاربر بی‌اطلاع می‌مانند.
+          برای جزئیات بیشتر درمورد این پروتکل، <a href="https://link-to-mizaru-wiki">اینجا</a> را ببینید!
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">آیا سانسورچی نمی‌تواند به‌سادگی برنامهٔ Geph را دانلود و تمام سرورها را مسدود کند؟</h3>
+        <p class="faq-answer">
+          بله، اما نه به‌طور Geph از معماری دوهاپه استفاده می‌کند، به این ترتیب کاربر
+          از طریق رله‌های <em>پل</em> به گره‌های <em>خروجی</em> وصل می‌شود.
+          سانسورچی ممکن است همهٔ سرورهای خروجی را مسدود کند، اما مسدودسازی همهٔ پل‌ها بسیار دشوارتر است.
+        </p>
+        <p class="faq-answer">
+          دلیلش استفاده از پروتکل راه‌اندازی‌ای است که به <em>هر کاربر پل‌های متفاوتی اختصاص می‌دهد</em>
+          و مرتباً آنها را تغییر می‌دهد؛ بنابراین شناسایی و فهرست‌کردن کامل آنها تقریباً ناممکن است.
+          از سال ۲۰۱۹ تاکنون، دیوار آتش بزرگ چین (GFW) بارها در تلاش بوده‌ است تا این پل‌ها را پیدا کند،
+          اما تا کنون موفق به مختل کردن سرویس ما نشده است.
+          برای آشنایی بیشتر با معماری ما، <a href="https://github.com/geph-official/geph5/wiki/How-Geph-works">این صفحه</a> را ببینید!
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">آیا این راهکار متمرکز نیست؟</h3>
+        <p class="faq-answer">
+          در حال حاضر بله، اما این وضعیت پایدار نخواهد بود! ما در حال ادغام با
+          <a href="https://earendil.network">Earendil</a>
+          برای غیرمتمرکزسازی کامل پروتکل هستیم. به این ترتیب زیرساخت ما دیگر نقطه‌ضعف متمرکز نخواهد داشت.
+        </p>
+      </div>
+    </div>
+

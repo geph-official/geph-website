@@ -1,13 +1,12 @@
-<script lang="ts">
+<script>
 	import { page } from '$app/stores';
-	import { xlink_attr } from 'svelte/internal';
 	import { localize } from '../l10n';
 	import Navbar from './Navbar.svelte';
 	import Footer from './Footer.svelte';
 
 	const lang = $page.params['lang'];
 
-	export let data: any;
+	export let data;
 </script>
 
 <svelte:head>
@@ -16,262 +15,233 @@
 
 <div lang={localize(lang, 'langcode')} dir="auto">
 	<Navbar />
-	<div class="container hero my-5 py-5 pb-4">
-		<h1>🚀 {localize(lang, 'hero')}</h1>
+	<div class="container hero my-5 py-5">
+		<h1>{localize(lang, 'hero')}</h1>
 		{@html localize(lang, 'sub_hero')}
 	</div>
 
 	<div class="container">
-		<!-- <div class="row">
-			<div class="col-lg">
-				<div class="blurb">
-					<h3>🔒 {localize(lang, 'robust-zk-privacy')}</h3>
-					<p>
-						{@html localize(lang, 'robust-zk-privacy-blurb')}
-					</p>
-				</div>
-			</div>
-			<div class="col-lg">
-				<div class="blurb">
-					<h3>🏛️ {localize(lang, 'resilient-anti-censorship')}</h3>
-					<p>
-						{@html localize(lang, 'resilient-anti-censorship-blurb')}
-					</p>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg">
-				<div class="blurb">
-					<h3>😊 {localize(lang, 'accessible-to-all')}</h3>
-					<p>
-						{@html localize(lang, 'accessible-to-all-blurb')}
-					</p>
-				</div>
-			</div>
-			<div class="col-lg">
-				<div class="blurb">
-					<h3>🔍 {localize(lang, 'transparent-and-accountable')}</h3>
-					<p>
-						{@html localize(lang, 'transparent-and-accountable-blurb')}
-					</p>
-				</div>
-			</div>
-		</div> -->
-
-		<div class="container my-5">
-			<div class="row pt-3">
-				<div class="col">
-					<h3>📥 {localize(lang, 'download')}</h3>
-				</div>
-			</div>
-			<div class="row mt-4">
-				<div class="col-lg col-6">
-					<a class="download-box" href={data.download.windows}>
-						<div class="download-box-icon">
-							<img src="/windows.png" alt="windows logo" />
-						</div>
-						<div class="dl-desc">
-							<div>Windows</div>
-							<small>10+ (exe)</small>
-						</div>
-					</a>
-				</div>
-				<div class="col-lg col-6">
-					<a class="download-box" href={data.download.mac}>
-						<div class="download-box-icon">
-							<img src="/macos.png" alt="mac logo" />
-						</div>
-						<div class="dl-desc">
-							<div>macOS</div>
-							<small>10.10+ (dmg)</small>
-						</div>
-					</a>
-				</div>
-				<div class="col-lg col-6">
-					<a
-						class="download-box"
-						href="https://apps.apple.com/us/app/geph/id1638148282?platform=iphone"
+		<div class="divider">{localize(lang, 'download')}</div>
+		<div class="download-links-container mt-4">
+			<div class="download-link">
+				<img src="/windows.png" alt="windows logo" class="download-icon" />
+				<div class="download-text">
+					<a href={data.download.windows}>Windows <span class="download-subtext">10+ (exe)</span></a
 					>
-						<div class="download-box-icon">
-							<img src="/appstore.png" alt="linux logo" />
-						</div>
-						<div class="dl-desc">
-							<div>iOS</div>
-							<small>App Store</small>
-						</div>
-					</a>
 				</div>
-				<div class="col-lg col-6">
-					<a class="download-box" href={data.download.linux}>
-						<div class="download-box-icon">
-							<img src="/linux.png" alt="linux logo" />
-						</div>
-						<div class="dl-desc">
-							<div>Linux</div>
-							<small>amd64 (flatpak)</small>
-						</div>
-					</a>
-				</div>
-				<div class="col-lg col-6">
-					<a class="download-box" href={data.download.android_apk}>
-						<div class="download-box-icon">
-							<img src="/android.png" alt="android logo" />
-						</div>
-						<div class="dl-desc">
-							<div>Android</div>
-							<small>5.0+ (APK)</small>
-						</div>
-					</a>
-				</div>
+			</div>
 
-				<div class="col-lg col-6">
-					<a class="download-box" href={data.download.android_gplay}>
-						<div class="download-box-icon">
-							<img src="/googleplay.png" alt="play logo" />
-						</div>
-						<div class="dl-desc">
-							<div>Android</div>
-							<small>5.0+ (Play)</small>
-						</div>
-					</a>
+			<div class="download-link">
+				<img src="/macos.png" alt="mac logo" class="download-icon" />
+				<div class="download-text">
+					<a href={data.download.mac}>macOS <span class="download-subtext">10.10+ (dmg)</span></a>
+				</div>
+			</div>
+
+			<div class="download-link">
+				<img src="/appstore.png" alt="app store logo" class="download-icon" />
+				<div class="download-text">
+					<a href="https://apps.apple.com/us/app/geph/id1638148282?platform=iphone"
+						>iOS <span class="download-subtext">App Store</span></a
+					>
+				</div>
+			</div>
+
+			<div class="download-link">
+				<img src="/linux.png" alt="linux logo" class="download-icon" />
+				<div class="download-text">
+					<a href={data.download.linux}
+						>Linux <span class="download-subtext">amd64 (flatpak)</span></a
+					>
+				</div>
+			</div>
+
+			<div class="download-link">
+				<img src="/android.png" alt="android logo" class="download-icon" />
+				<div class="download-text">
+					<a href={data.download.android_apk}
+						>Android <span class="download-subtext">5.0+ (APK)</span></a
+					>
+				</div>
+			</div>
+
+			<div class="download-link">
+				<img src="/googleplay.png" alt="play logo" class="download-icon" />
+				<div class="download-text">
+					<a href={data.download.android_gplay}
+						>Android <span class="download-subtext">5.0+ (Play)</span></a
+					>
 				</div>
 			</div>
 		</div>
+	</div>
 
-		<div class="container my-5">
-			<div class="row pt-4">
-				<div class="col">
-					<h3>🌎 {localize(lang, 'community')}</h3>
+	<div class="container">
+		<div class="divider">{localize(lang, 'community')}</div>
+
+		<div class="community-links-container mt-4">
+			<div class="community-link">
+				<img src="/twitter.png" alt="twitter logo" class="community-icon" />
+				<div class="community-text">
+					<a href="https://x.com/GephOfficial">X</a>
 				</div>
 			</div>
-			<div class="row mt-4">
-				<div class="col-lg">
-					<a class="download-box" href="https://x.com/GephOfficial">
-						<div class="download-box-icon">
-							<img src="/twitter.png" alt="twitter logo" />
-						</div>
-						<div class="dl-desc">
-							<div>{'X'}</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-lg">
-					<a class="download-box" href="https://t.me/gephusers">
-						<div class="download-box-icon">
-							<img src="/telegram.svg" alt="telegram logo" />
-						</div>
-						<div class="dl-desc">
-							<div>Telegram</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-lg">
-					<a class="download-box" href="https://community.geph.io">
-						<div class="download-box-icon">
-							<img src="/forum.png" alt="forum logo" />
-						</div>
-						<div class="dl-desc">
-							<div>{localize(lang, 'forum')}</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-lg">
-					<a class="download-box" href="https://github.com/geph-official">
-						<div class="download-box-icon">
-							<img src="/github.svg" alt="github logo" />
-						</div>
-						<div class="dl-desc">
-							<div>GitHub</div>
-						</div>
-					</a>
+
+			<div class="community-link">
+				<img src="/telegram.svg" alt="telegram logo" class="community-icon" />
+				<div class="community-text">
+					<a href="https://t.me/gephusers">Telegram</a>
 				</div>
 			</div>
+
+			<div class="community-link">
+				<img src="/forum.png" alt="forum logo" class="community-icon" />
+				<div class="community-text">
+					<a href="https://community.geph.io">{localize(lang, 'forum')}</a>
+				</div>
+			</div>
+
+			<!-- <div class="community-link">
+				<img src="/github.svg" alt="github logo" class="community-icon" />
+				<div class="community-text">
+					<a href="https://github.com/geph-official">GitHub</a>
+				</div>
+			</div> -->
 		</div>
+	</div>
+	<div class="container">
+		<div class="divider">FAQ</div>
+		{@html localize(lang, 'faq_content')}
 	</div>
 </div>
 
 <Footer />
 
 <style>
-	.navbar-brand {
-		font-weight: 550;
-		letter-spacing: -0.02rem;
-	}
-
-	.navbar-brand img {
-		margin-inline-end: 0.3rem;
-	}
-
-	.hero {
-		/* background-color: rgba(0, 0, 0, 0.05); */
-		/* border-radius: 0.5rem; */
-
-		padding-inline-start: 2rem;
-	}
-
 	.hero h1 {
-		font-weight: 500;
+		font-size: min(4rem, 13vw);
 		letter-spacing: -0.03rem;
-		opacity: 0.8;
+		text-align: right;
 		margin-bottom: 2rem;
+		font-weight: 450;
 	}
 
 	:global(.hero p) {
-		font-size: 120%;
+		font-size: min(1.5rem, 6vw);
 	}
 
-	.blurb {
-		border: 1px solid #ddd;
-		border-radius: 0.5rem;
-		background-color: rgba(var(--bs-light-rgb), 0.5);
-		padding: 1.5rem;
-		padding-bottom: 3rem;
-		height: calc(100% - 1.6rem);
-
-		font-size: 95%;
-	}
-
-	.blurb h3 {
-		font-size: 1.3rem;
-		font-weight: 500;
-		letter-spacing: -0.02rem;
-		opacity: 0.8;
-	}
-
-	.download-box {
-		border: 1px solid #ddd;
-		border-radius: 0.5rem;
-		background-color: rgba(var(--bs-light-rgb), 0.5);
-
-		padding: 0.8rem;
-		margin-bottom: 0.5rem;
-
+	.divider {
 		display: flex;
-		flex-direction: row;
 		align-items: center;
+		text-transform: uppercase;
+		font-weight: 600;
+		letter-spacing: 0.2em;
+		font-style: italic;
+		color: var(--bs-primary);
 
-		text-decoration: none;
-		color: var(--bs-body-color);
-		font-size: 95%;
+		margin-top: 5rem;
+		margin-bottom: 3rem;
 	}
 
-	.download-box small {
-		font-size: 70%;
-		font-weight: 500;
-		opacity: 0.8;
+	.divider::before {
+		content: '';
+		background-color: var(--bs-primary);
+		height: 1px;
+		width: 5rem;
+		margin-right: 1rem;
 	}
 
-	.download-box img {
+	.divider::after {
+		content: '';
+		background-color: var(--bs-primary);
+		height: 1px;
+		width: 5rem;
+		margin-left: 1rem;
+	}
+
+	.download-links-container,
+	.community-links-container {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+		gap: 1.5rem;
+		padding: 1rem 0;
+	}
+
+	.download-link,
+	.community-link {
+		display: flex;
+		align-items: center;
+		padding: 0.5rem;
+	}
+
+	.download-icon,
+	.community-icon {
 		height: 2rem;
+		margin-right: 1rem;
 	}
 
-	.download-box-icon {
-		margin-inline-end: 1rem;
-	}
-
-	.dl-desc {
+	.download-text,
+	.community-text {
 		display: flex;
 		flex-direction: column;
+	}
+
+	.download-text a,
+	.community-text a {
+		text-decoration: none;
+		color: var(--bs-body-color);
+		font-weight: 500;
+		transition: color 0.2s;
+	}
+
+	.download-text a:hover,
+	.community-text a:hover {
+		color: var(--bs-primary);
+		text-decoration: underline;
+	}
+
+	.download-subtext {
+		font-size: 0.75rem;
+		color: #666;
+		font-weight: 400;
+	}
+
+	:global(.faq-item) {
+		margin-bottom: 2.5rem;
+	}
+
+	:global(.faq-item:last-child) {
+		border-bottom: none;
+	}
+
+	:global(.faq-question) {
+		font-size: 1.12rem;
+		font-weight: 500;
+		margin-bottom: 0.5rem;
+		letter-spacing: -0.01em;
+	}
+
+	:global(.faq-answer) {
+		font-size: 1rem;
+		line-height: 1.6;
+		color: var(--bs-body-color);
+		max-width: 95%;
+		font-weight: 400;
+	}
+
+	@media (max-width: 768px) {
+		.download-links-container,
+		.community-links-container {
+			grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+			gap: 1rem;
+		}
+
+		:global(.faq-question) {
+			font-size: 1.2rem;
+		}
+
+		:global(.faq-answer) {
+			font-size: 0.95rem;
+		}
 	}
 </style>

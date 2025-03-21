@@ -12,7 +12,6 @@
 
 <style>
 	footer {
-		padding-left: 2rem;
 		background-color: rgba(var(--bs-light-rgb), 1);
 		padding-top: 2rem;
 		padding-bottom: 3rem;
