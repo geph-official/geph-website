@@ -72,7 +72,7 @@ hero:
 
 sub_hero:
   en: >-
-    <p>Geph is a VPN built from the ground up to resist ISP-level censorship. Unlike traditional VPNs that rely on security through obscurity, Geph's architecture and protocols are specifically engineered to be nearly invisible against ISPs and network adversaries. </p>
+    <p>Geph is a VPN built from the ground up to resist ISP-level censorship. Unlike VPNs that at best play unsustainable cat-and-mouse games with censors, Geph's architecture and protocols are specifically engineered to be nearly invisible against ISPs and network adversaries. </p>
     <p>Over the past 5 years, we have connected millions of users behind strict national firewalls, consistently achieving our <a href="https://github.com/geph-official/geph4-client/wiki/Service-SLA-(%E5%B0%81%E4%B8%80%E5%A4%A9%E8%B3%A0%E4%B8%80%E5%A4%A9%E6%94%BF%E7%AD%96)">service SLA</a> despite targeted attacks by national censorship systems in China and Iran.</p>
     <p>We also have a  <a href="https://github.com/geph-official/geph4-libs/tree/master/mizaru">blind signature authentication system</a> that cryptographically guarantees servers can never associate browsing activity with user identities, even if fully compromised.</p>
 

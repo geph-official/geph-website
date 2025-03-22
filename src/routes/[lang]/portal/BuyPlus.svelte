@@ -209,7 +209,7 @@
 				{:else}
 					<h2>{to_local('how-many-days-in-each-giftcard')}</h2>
 				{/if}
-				<div class="buttons">
+				<div class="buttons mb-2 mt-3">
 					<button
 						class="btn btn-outline-dark me-2"
 						class:selected={days == 30}
@@ -254,25 +254,11 @@
 					</button>
 				</div>
 				<div class="buttons">
-					<button
-						class="btn btn-outline-dark me-2"
-						class:selected={days === 1095}
-						on:click={() => {
-							days = 1095;
-						}}
-					>
-						{to_local('3-year')}
-						{#if variant !== 'reseller'}
-							<span class="badge rounded-pill bg-success">{to_local('17.5-off')}</span>
-						{/if}
-					</button>
 					<input
 						type="number"
 						class="form-control small-form-control"
 						id="length"
-						value={days == 30 || days == 90 || days == 365 || days == 730 || days == 1095
-							? ''
-							: days}
+						value={days == 30 || days == 90 || days == 365 ? '' : days}
 						on:change={onDaysChange}
 						placeholder={to_local('custom')}
 					/>
