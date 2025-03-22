@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 	import axios from 'axios';
 	import { page } from '$app/stores';
 
@@ -20,49 +20,43 @@
 
 <div lang={localize(lang, 'langcode')} dir="auto">
 	<Navbar />
-	<div class="container mt-lg-5 pt-5">
-		<div class="row mb-3">
-			<div class="col-lg" />
-			<div class="col-lg">
-				<h2>{localize(lang, 'login')}</h2>
-			</div>
-			<div class="col-lg" />
-		</div>
-		<form class="row">
-			<div class="col-lg" />
-			<div class="col-lg">
-				<input
-					type="username"
-					class="form-control"
-					id="username"
-					bind:value={username}
-					placeholder={localize(lang, 'username')}
-				/>
+	<div class="container mt-lg-5">
+		<h2>{localize(lang, 'login')}</h2>
 
-				<input
-					type="password"
-					class="form-control"
-					id="password"
-					bind:value={password}
-					placeholder={localize(lang, 'password')}
-				/>
+		<input
+			type="username"
+			id="username"
+			class="form-control"
+			bind:value={username}
+			placeholder={localize(lang, 'username')}
+		/>
 
-				<button
-					type="submit"
-					class="btn btn-primary"
-					on:click={() => handleLoginClick(lang, username, password)}
-				>
-					{localize(lang, 'login')}
-				</button>
-			</div>
-			<div class="col-lg" />
-		</form>
+		<input
+			type="password"
+			id="password"
+			class="form-control"
+			bind:value={password}
+			placeholder={localize(lang, 'password')}
+		/>
+
+		<button type="submit" class="btn" on:click={() => handleLoginClick(lang, username, password)}>
+			{localize(lang, 'login')}
+		</button>
 	</div>
 	<Footer />
 </div>
 
 <style>
+	.container {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
 	input {
-		margin-bottom: 0.7rem;
+		height: 2.5rem;
+	}
+	.btn {
+		background-color: var(--bs-primary);
+		color: var(--bs-light);
 	}
 </style>

@@ -12,9 +12,6 @@
 	$: replaceLanguage = (path: string, toLang: string) => path.replace('/' + lang, '/' + toLang);
 </script>
 
-{#if bannerContent !== '' && bannerContent !== '!!MISSING!!'}
-	<div class="alert alert-primary" role="alert">{@html bannerContent}</div>
-{/if}
 <nav class="navbar navbar-expand-lg bg-light">
 	<div class="container">
 		<a href={`/${lang}/`} class="navbar-brand">
@@ -81,6 +78,9 @@
 		</div>
 	</div>
 </nav>
+{#if bannerContent !== '' && bannerContent !== '!!MISSING!!'}
+	<div class="top-alert container">{@html bannerContent}</div>
+{/if}
 
 <style>
 	.navbar-brand {
@@ -91,16 +91,12 @@
 		text-decoration: none !important;
 	}
 
-	.active {
+	.top-alert {
 		font-weight: 500;
-	}
-	.alert-primary {
-		margin: 0rem;
-		padding: 0.1rem;
-		border: 0rem;
-		border-radius: 0;
-		opacity: 1;
-		font-weight: 600;
+		background-color: rgba(var(--bs-primary-rgb), 0.3);
+		padding: 0.7rem;
+		margin-top: 0.2rem;
+		border-radius: 0.3rem;
 		text-align: center;
 	}
 </style>

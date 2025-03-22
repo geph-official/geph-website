@@ -16,13 +16,13 @@
 <div lang={localize(lang, 'langcode')} dir="auto">
 	<Navbar />
 	<div class="container hero my-5 py-5">
-		<h1>{localize(lang, 'hero')}</h1>
+		<h1>{@html localize(lang, 'hero')}</h1>
 		{@html localize(lang, 'sub_hero')}
 	</div>
 
 	<div class="container">
 		<div class="divider">{localize(lang, 'download')}</div>
-		<div class="download-links-container mt-4">
+		<div class="download-links-container">
 			<div class="download-link">
 				<img src="/windows.png" alt="windows logo" class="download-icon" />
 				<div class="download-text">
@@ -139,8 +139,8 @@
 		font-style: italic;
 		color: var(--bs-primary);
 
-		margin-top: 5rem;
-		margin-bottom: 3rem;
+		margin-top: 4rem;
+		margin-bottom: 4rem;
 	}
 
 	.divider::before {
