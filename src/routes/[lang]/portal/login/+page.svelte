@@ -2,7 +2,7 @@
 	import axios from 'axios';
 	import { page } from '$app/stores';
 
-	import { BINDER_ADDR, handleLoginClick } from '../../../helpers';
+	import { call_rpc, translateError } from '../../../helpers';
 	import { localize } from '../../../l10n';
 	import Navbar from '../../Navbar.svelte';
 	import Footer from '../../Footer.svelte';
@@ -10,8 +10,20 @@
 
 	const lang = $page.params['lang'];
 
-	let username = '';
+	let secret = '';
 	let password = '';
+	let redirecting = false;
+
+	async function handleLoginClick() {
+		try {
+			let session_id = await call_rpc('login_secret', [secret]);
+			console.log(session_id);
+			sessionStorage.setItem('sessid', session_id);
+			goto(`/${lang}/portal`);
+		} catch (e) {
+			alert(translateError(String(e), lang));
+		}
+	}
 </script>
 
 <svelte:head>
@@ -27,19 +39,23 @@
 			type="username"
 			id="username"
 			class="form-control"
-			bind:value={username}
-			placeholder={localize(lang, 'username')}
+			bind:value={secret}
+			placeholder={localize(lang, 'account-secret')}
 		/>
 
-		<input
-			type="password"
-			id="password"
-			class="form-control"
-			bind:value={password}
-			placeholder={localize(lang, 'password')}
-		/>
-
-		<button type="submit" class="btn" on:click={() => handleLoginClick(lang, username, password)}>
+		<button
+			disabled={redirecting}
+			type="submit"
+			class="btn"
+			on:click={async () => {
+				redirecting = true;
+				try {
+					await handleLoginClick();
+				} finally {
+					redirecting = false;
+				}
+			}}
+		>
 			{localize(lang, 'login')}
 		</button>
 	</div>

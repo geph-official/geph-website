@@ -78,7 +78,7 @@
 						<div class="col">
 							<div class="icon-badge">
 								<div class="icon"><AccountCircle width="26" height="22" /></div>
-								{user_info['username']}
+								{user_info['username'].replace('!!secret!!-', '')}
 							</div>
 							{#if user_info['plan']['type'] === 'plus'}
 								<div class="icon-badge">

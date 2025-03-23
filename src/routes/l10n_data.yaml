@@ -74,22 +74,22 @@ sub_hero:
   en: >-
     <p>Geph is a VPN built from the ground up to resist ISP-level censorship. Unlike VPNs that at best play unsustainable cat-and-mouse games with censors, Geph's architecture and protocols are specifically engineered to be nearly invisible against ISPs and network adversaries. </p>
     <p>Over the past 5 years, we have connected millions of users behind strict national firewalls, consistently achieving our <a href="https://github.com/geph-official/geph4-client/wiki/Service-SLA-(%E5%B0%81%E4%B8%80%E5%A4%A9%E8%B3%A0%E4%B8%80%E5%A4%A9%E6%94%BF%E7%AD%96)">service SLA</a> despite targeted attacks by national censorship systems in China and Iran.</p>
-    <p>We also have a  <a href="https://github.com/geph-official/geph4-libs/tree/master/mizaru">blind signature authentication system</a> that cryptographically guarantees servers can never associate browsing activity with user identities, even if fully compromised.</p>
+    <p>We also have a  <a href="https://github.com/geph-official/geph5/blob/master/libraries/mizaru2/README.md">blind signature authentication system</a> that cryptographically guarantees servers can never associate browsing activity with user identities, even if fully compromised.</p>
 
   zhs: >-
     <p>迷雾通是一款从零设计，能抵御运营商级别审查的 VPN。与所有传统VPN不同，迷雾通的架构和协议经过专门设计，可以在运营商和网络对手面前几乎实现「隐身」。</p>
     <p>在过去的五年里，我们帮助数百万身处严苛防火墙后的用户成功连网，并在中国、伊朗等国家级审查系统的针对性打击下，依旧稳定地达成我们的<a href="https://github.com/geph-official/geph4-client/wiki/Service-SLA-(%E5%B0%81%E4%B8%80%E5%A4%A9%E8%B3%A0%E4%B8%80%E5%A4%A9%E6%94%BF%E7%AD%96)">服务SLA</a>。</p>
-    <p>我们还使用<a href="https://github.com/geph-official/geph4-libs/tree/master/mizaru">盲签名验证系统</a>，确保服务器即使在完全被攻破的情况下，也无法将用户的浏览活动与其身份关联。</p>
+    <p>我们还使用<a href="https://github.com/geph-official/geph5/blob/master/libraries/mizaru2/README.md">盲签名验证系统</a>，确保服务器即使在完全被攻破的情况下，也无法将用户的浏览活动与其身份关联。</p>
 
   zht: >-
     <p>迷霧通是一款從零設計，能抵禦營運商級別審查的 VPN。與所有傳統VPN不同，迷霧通的架構和協議經過專門設計，可以在營運商和網路對手面前幾乎實現「隱形」。</p>
     <p>在過去的五年裡，我們幫助數百萬位身處嚴苛防火牆後的用戶成功連網，並在中國和伊朗等國家級審查系統的針對性打擊下，依舊穩定地達成我們的<a href="https://github.com/geph-official/geph4-client/wiki/Service-SLA-(%E5%B0%81%E4%B8%80%E5%A4%A9%E8%B3%A0%E4%B8%80%E5%A4%A9%E6%94%BF%E7%AD%96)">服務SLA</a>。</p>
-    <p>我們還使用<a href="https://github.com/geph-official/geph4-libs/tree/master/mizaru">盲簽名驗證系統</a>，確保伺服器即使在完全被攻破的情況下，也無法將使用者的瀏覽活動與其身分關聯。</p>
+    <p>我們還使用<a href="https://github.com/geph-official/geph5/blob/master/libraries/mizaru2/README.md">盲簽名驗證系統</a>，確保伺服器即使在完全被攻破的情況下，也無法將使用者的瀏覽活動與其身分關聯。</p>
 
   fa: >-
     <p>Geph (گِف) یک VPN است که از پایه برای مقاومت در برابر سانسور در سطح ISP طراحی شده است. برخلاف VPNهای سنتی که بر «امنیت از راه پنهان‌کاری» تکیه می‌کنند، معماری و پروتکل‌های Geph به گونه‌ای ویژه طراحی شده‌اند تا برای ISPها و عوامل نظارتی شبکه تقریباً نامشهود باشند.</p>
     <p>در طول ۵ سال گذشته، ما میلیون‌ها کاربر را که پشت دیوارهای ملی محدودکننده قرار دارند، متصل کرده‌ایم و با وجود حملات هدفمند از سوی سیستم‌های سانسور ملی در چین و ایران، همچنان به تحقق <a href="https://github.com/geph-official/geph4-client/wiki/Service-SLA-(%E5%B0%81%E4%B8%80%E5%A4%A9%E8%B3%A0%E4%B8%80%E5%A4%A9%E6%94%BF%E7%AD%96)">SLA خدمات</a> خود پایبند بوده‌ایم.</p>
-    <p>همچنین ما از یک <a href="https://github.com/geph-official/geph4-libs/tree/master/mizaru">سامانه احراز هویت امضای کور</a> برخورداریم که با استفاده از روش‌های رمزنگاری تضمین می‌کند سرورها هرگز قادر نیستند فعالیت مرور کاربران را حتی در صورت نفوذ کامل، به هویت آنان پیوند دهند.</p>
+    <p>همچنین ما از یک <a href="https://github.com/geph-official/geph5/blob/master/libraries/mizaru2/README.md">سامانه احراز هویت امضای کور</a> برخورداریم که با استفاده از روش‌های رمزنگاری تضمین می‌کند سرورها هرگز قادر نیستند فعالیت مرور کاربران را حتی در صورت نفوذ کامل، به هویت آنان پیوند دهند.</p>
 
 
 footer:
@@ -105,10 +105,10 @@ robust-zk-privacy:
   fa: حریم خصوصی قدرت مند بدون دانش اطلاعات کاربر
 
 robust-zk-privacy-blurb:
-  en: We don't log you — because we can't. We use <a href="https://github.com/geph-official/geph4-libs/tree/master/mizaru">zero-knowledge authentication</a> so that we can never associate your browsing activity with your identity.
-  zhs: 我们无法记录您的浏览信息，因为我们使用先进的密码学开发了 <a href="https://github.com/geph-official/geph4-libs/tree/master/mizaru">Mizaru 零知识认证协议</a>。这确保我们永远无法将您的浏览活动与您的身份联系起来。
-  zht: 我們無法記錄您的瀏覽信息，因為我們使用先進的密碼學開發了 <a href="https://github.com/geph-official/geph4-libs/tree/master/mizaru">Mizaru 零知識認證協議</a>。這確保我們永遠無法將您的瀏覽活動與您的身份聯繫起來。
-  fa: ما اعمال شما را ثبت نمی‌کنیم چرا که نمی‌توانیم. ما از <a href="https://github.com/geph-official/geph4-libs/tree/master/mizaru">شناسایی بدون دانش</a> استفاده می‌کنیم تا هیچوقت نتوانیم اعمال اینترنتی شما را با هویت شما تطبیق دهیم.
+  en: We don't log you — because we can't. We use <a href="https://github.com/geph-official/geph5/blob/master/libraries/mizaru2/README.md">zero-knowledge authentication</a> so that we can never associate your browsing activity with your identity.
+  zhs: 我们无法记录您的浏览信息，因为我们使用先进的密码学开发了 <a href="https://github.com/geph-official/geph5/blob/master/libraries/mizaru2/README.md">Mizaru 零知识认证协议</a>。这确保我们永远无法将您的浏览活动与您的身份联系起来。
+  zht: 我們無法記錄您的瀏覽信息，因為我們使用先進的密碼學開發了 <a href="https://github.com/geph-official/geph5/blob/master/libraries/mizaru2/README.md">Mizaru 零知識認證協議</a>。這確保我們永遠無法將您的瀏覽活動與您的身份聯繫起來。
+  fa: ما اعمال شما را ثبت نمی‌کنیم چرا که نمی‌توانیم. ما از <a href="https://github.com/geph-official/geph5/blob/master/libraries/mizaru2/README.md">شناسایی بدون دانش</a> استفاده می‌کنیم تا هیچوقت نتوانیم اعمال اینترنتی شما را با هویت شما تطبیق دهیم.
 
 resilient-anti-censorship:
   en: Resilient anti-censorship
@@ -667,7 +667,7 @@ faq_content:
           When connecting, users present a cryptographic proof of valid Plus or Free subscription
           rather than identifying credentials. This ensures servers can verify authorization while
           remaining completely blind to user identity. Learn more about the protocol <a
-            href="https://link-to-mizaru-wiki">here</a
+            href="https://github.com/geph-official/geph5/blob/master/libraries/mizaru2/README.md">here</a
           >!
         </p>
       </div>
@@ -719,7 +719,7 @@ faq_content:
         </p>
 
         <p class="faq-answer">
-          点此查看<a href="https://link-to-mizaru-wiki">相关协议详情</a>！
+          点此查看<a href="https://github.com/geph-official/geph5/blob/master/libraries/mizaru2/README.md">相关协议详情</a>！
         </p>
       </div>
 
@@ -762,7 +762,7 @@ faq_content:
     </p>
 
     <p class="faq-answer">
-    點此查看<a href="https://link-to-mizaru-wiki">相關協議詳情</a>！
+    點此查看<a href="https://github.com/geph-official/geph5/blob/master/libraries/mizaru2/README.md">相關協議詳情</a>！
     </p>
     </div>
 
@@ -804,7 +804,7 @@ faq_content:
           هنگام اتصال، کاربر یک اثبات رمزنگاری ارائه می‌کند که اشتراک Plus یا رایگان او را تأیید می‌کند،
           بدون نیاز به ارائه اطلاعات هویتی. در نتیجه، سرورها می‌توانند مجوز را بررسی کنند اما
           کاملاً از هویت کاربر بی‌اطلاع می‌مانند.
-          برای جزئیات بیشتر درمورد این پروتکل، <a href="https://link-to-mizaru-wiki">اینجا</a> را ببینید!
+          برای جزئیات بیشتر درمورد این پروتکل، <a href="https://github.com/geph-official/geph5/blob/master/libraries/mizaru2/README.md">اینجا</a> را ببینید!
         </p>
       </div>
 
@@ -834,3 +834,8 @@ faq_content:
       </div>
     </div>
 
+account-secret:
+  en: Account secret
+  zhs: 账户密钥
+  zht: 賬戶密鑰
+  fa: کلید حساب
