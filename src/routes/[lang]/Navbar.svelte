@@ -45,8 +45,9 @@
 					<a
 						class="nav-link"
 						class:active={isPolicies}
-						href="https://github.com/geph-official/geph4-client/wiki/Policies-and-terms"
+						href="https://github.com/geph-official/geph5/blob/master/PRIVACY.md"
 						target="_blank"
+						rel="noopener"
 					>
 						{localize(lang, 'policies')}
 					</a>

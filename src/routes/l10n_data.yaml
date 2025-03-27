@@ -72,7 +72,7 @@ hero:
 
 sub_hero:
   en: >-
-    <p>Geph is a VPN built from the ground up to resist ISP-level censorship. Unlike VPNs that at best play unsustainable cat-and-mouse games with censors, Geph's architecture and protocols are specifically engineered to be nearly invisible against ISPs and network adversaries. </p>
+    <p>Geph is a VPN built from the ground up to resist ISP-level censorship. Unlike VPNs that at best play unsustainable cat-and-mouse games with censors, Geph’s architecture and protocols are specifically engineered to be nearly invisible against ISPs and network adversaries. </p>
     <p>Over the past 5 years, we have connected millions of users behind strict national firewalls, consistently achieving our <a href="https://github.com/geph-official/geph4-client/wiki/Service-SLA-(%E5%B0%81%E4%B8%80%E5%A4%A9%E8%B3%A0%E4%B8%80%E5%A4%A9%E6%94%BF%E7%AD%96)">service SLA</a> despite targeted attacks by national censorship systems in China and Iran.</p>
     <p>We also have a  <a href="https://github.com/geph-official/geph5/blob/master/libraries/mizaru2/README.md">blind signature authentication system</a> that cryptographically guarantees servers can never associate browsing activity with user identities, even if fully compromised.</p>
 
@@ -105,7 +105,7 @@ robust-zk-privacy:
   fa: حریم خصوصی قدرت مند بدون دانش اطلاعات کاربر
 
 robust-zk-privacy-blurb:
-  en: We don't log you — because we can't. We use <a href="https://github.com/geph-official/geph5/blob/master/libraries/mizaru2/README.md">zero-knowledge authentication</a> so that we can never associate your browsing activity with your identity.
+  en: We don’t log you — because we can’t. We use <a href="https://github.com/geph-official/geph5/blob/master/libraries/mizaru2/README.md">zero-knowledge authentication</a> so that we can never associate your browsing activity with your identity.
   zhs: 我们无法记录您的浏览信息，因为我们使用先进的密码学开发了 <a href="https://github.com/geph-official/geph5/blob/master/libraries/mizaru2/README.md">Mizaru 零知识认证协议</a>。这确保我们永远无法将您的浏览活动与您的身份联系起来。
   zht: 我們無法記錄您的瀏覽信息，因為我們使用先進的密碼學開發了 <a href="https://github.com/geph-official/geph5/blob/master/libraries/mizaru2/README.md">Mizaru 零知識認證協議</a>。這確保我們永遠無法將您的瀏覽活動與您的身份聯繫起來。
   fa: ما اعمال شما را ثبت نمی‌کنیم چرا که نمی‌توانیم. ما از <a href="https://github.com/geph-official/geph5/blob/master/libraries/mizaru2/README.md">شناسایی بدون دانش</a> استفاده می‌کنیم تا هیچوقت نتوانیم اعمال اینترنتی شما را با هویت شما تطبیق دهیم.
@@ -117,7 +117,7 @@ resilient-anti-censorship:
   fa: تکنولوژی ضد-سانسور مقاوم
 
 resilient-anti-censorship-blurb:
-  en: Geph is on the cutting edge of censorship circumvention research. We have overcome numerous targeted attacks by China's Great Firewall, the world's most sophisticated national internet filter.
+  en: Geph is on the cutting edge of censorship circumvention research. We have overcome numerous targeted attacks by China’s Great Firewall, the world’s most sophisticated national internet filter.
   zhs: 迷雾通一直在反封锁研究的最前沿。在过去的三年中，我们多次遭到GFW的针对攻击，并且屡战屡胜。迷雾通更是目前市面上唯一提供<a href="https://github.com/geph-official/geph4-client/wiki/Service-SLA-(%E5%B0%81%E4%B8%80%E5%A4%A9%E8%B3%A0%E4%B8%80%E5%A4%A9%E6%94%BF%E7%AD%96)">封几天赔几天</a>的翻墙软件。
   zht: 迷霧通一直在反封鎖研究的最前沿。在過去的三年中，我們多次遭到GFW的針對攻擊，並且屢戰屢勝。迷霧通更是目前市面上唯一提供<a href="https://github.com/geph-official/geph4-client/wiki/Service-SLA-(%E5%B0%81%E4%B8%80%E5%A4%A9%E8%B3%A0%E4%B8%80%E5%A4%A9%E6%94%BF%E7%AD%96)">封幾天賠幾天</a>的翻牆軟件。
   fa: Geph از جدیدترین تکنولوژی های دور زدن سانسور استفاده می‌کند. ما از چندین حمله هدفمند از سمت فایروال قدرتمند چین، پیچیده‌ترین فیلتر اینترنت ملی جهان، سربلند بیرون آمده‌ایم.
@@ -141,7 +141,7 @@ transparent-and-accountable:
   fa: شفاف و مسئولیت‌پذیر
 
 transparent-and-accountable-blurb:
-  en: Geph's entire software stack is open source and available on <a href="https://github.com/geph-official/">GitHub</a>. Our managing organization is registered in Estonia, an EU jurisdiction with strong privacy laws.
+  en: Geph’s entire software stack is open source and available on <a href="https://github.com/geph-official/">GitHub</a>. Our managing organization is registered in Estonia, an EU jurisdiction with strong privacy laws.
   zhs: 迷雾通的整个软件架构全部是开源的，可以在 <a href="https://github.com/geph-official/">GitHub</a> 上浏览。迷雾通公司注册在爱沙尼亚，受欧盟严格的隐私法保护。
   zht: 迷霧通的整個軟件架構全部是開源的，可以在 <a href="https://github.com/geph-official/">GitHub</a> 上瀏覽。迷霧通公司註冊在愛沙尼亞，受歐盟嚴格的隱私法保護。
   fa: تمام پشته نرم افزاری Geph متن باز است و از طریق گیت‌هاب قابل دسترسی است.
@@ -673,10 +673,10 @@ faq_content:
       </div>
 
       <div class="faq-item">
-        <h3 class="faq-question">Can't the censor just download Geph and block all the servers?</h3>
+        <h3 class="faq-question">Can’t the censor just download Geph and block all the servers?</h3>
         <p class="faq-answer">
           Yes and no &mdash; Geph uses a two-hop architecture where users connect to <em>exit</em>
-          nodes through <em>bridge</em> relays. Censors can and do block all the exits servers, but blocking
+          nodes through <em>bridge</em> relays. Censors can and do block all the exit servers, but blocking
           bridges is much harder.
         </p>
         <p class="faq-answer">
@@ -684,7 +684,7 @@ faq_content:
             >different bridges to different users</em
           >
           and continuously rotates them, making enumeration infeasible. Since 2019, we've observed automated
-          enumeration attempts by China's GFW, but they have consistently failed to disrupt service.
+          enumeration attempts by China’s GFW, but they have consistently failed to disrupt service.
           Read our architectural overview
           <a href="https://github.com/geph-official/geph5/wiki/How-Geph-works">on GitHub</a> to learn
           more!
@@ -692,7 +692,7 @@ faq_content:
       </div>
 
       <div class="faq-item">
-        <h3 class="faq-question">Isn't this centralized?</h3>
+        <h3 class="faq-question">Isn’t this centralized?</h3>
         <p class="faq-answer">
           Yes, but not for long! We are actively developing integration with <a
             href="https://earendil.network">Earendil</a
