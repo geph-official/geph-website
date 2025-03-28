@@ -91,7 +91,6 @@ sub_hero:
     <p>در طول ۵ سال گذشته، ما میلیون‌ها کاربر را که پشت دیوارهای ملی محدودکننده قرار دارند، متصل کرده‌ایم و با وجود حملات هدفمند از سوی سیستم‌های سانسور ملی در چین و ایران، همچنان به تحقق <a href="https://github.com/geph-official/geph4-client/wiki/Service-SLA-(%E5%B0%81%E4%B8%80%E5%A4%A9%E8%B3%A0%E4%B8%80%E5%A4%A9%E6%94%BF%E7%AD%96)">SLA خدمات</a> خود پایبند بوده‌ایم.</p>
     <p>همچنین ما از یک <a href="https://github.com/geph-official/geph5/blob/master/libraries/mizaru2/README.md">سامانه احراز هویت امضای کور</a> برخورداریم که با استفاده از روش‌های رمزنگاری تضمین می‌کند سرورها هرگز قادر نیستند فعالیت مرور کاربران را حتی در صورت نفوذ کامل، به هویت آنان پیوند دهند.</p>
 
-
 footer:
   en: Client Portal
   zhs: 用户中心
@@ -194,10 +193,10 @@ error:
   fa: خطا
 
 remaining-days:
-  en: 'Remaining days:'
-  zhs: '剩余天数：'
-  zht: '剩餘天數：'
-  fa: ': روزهای باقی مانده'
+  en: "Remaining days:"
+  zhs: "剩余天数："
+  zht: "剩餘天數："
+  fa: ": روزهای باقی مانده"
 
 buy-plus:
   en: Buy Plus
@@ -314,10 +313,10 @@ wxpay:
   fa: WeChat Pay
 
 total:
-  en: 'Total:'
+  en: "Total:"
   zhs: 总计：
   zht: 總計：
-  fa: 'هزینه کل:'
+  fa: "هزینه کل:"
 
 pay:
   en: Check out
@@ -488,10 +487,10 @@ incorrect-giftcard:
   fa: کارت هدیه‌ای یافت نشد
 
 giftcard-days:
-  en: 'Days in giftcard: '
-  zhs: '礼品卡有效天数：'
-  zht: '禮品卡有效天數：'
-  fa: 'روزها در کارت هدیه: '
+  en: "Days in giftcard: "
+  zhs: "礼品卡有效天数："
+  zht: "禮品卡有效天數："
+  fa: "روزها در کارت هدیه: "
 
 giftcard-applied:
   en: Giftcard applied
@@ -512,10 +511,10 @@ send-crypto:
   fa: ارسال ارز دیجیتال
 
 please-send-funds:
-  en: 'Send cryptocurrency to the following address'
-  zhs: '请将加密货币发送至以下地址'
-  zht: '請將加密貨幣發送至以下地址'
-  fa: 'ارز دیجیتال را به آدرس زیر بفرستید'
+  en: "Send cryptocurrency to the following address"
+  zhs: "请将加密货币发送至以下地址"
+  zht: "請將加密貨幣發送至以下地址"
+  fa: "ارز دیجیتال را به آدرس زیر بفرستید"
 
 amount:
   en: Amount
@@ -691,7 +690,7 @@ faq_content:
         </p>
       </div>
 
-      <div class="faq-item">
+      <div  class="faq-item">
         <h3 class="faq-question">Isn’t this centralized?</h3>
         <p class="faq-answer">
           Yes, but not for long! We are actively developing integration with <a
