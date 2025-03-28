@@ -43,7 +43,19 @@ export async function handleLoginClick(lang: string, uname: string, pwd: string)
 		let session_id = await call_rpc('login', [uname, pwd]);
 		console.log(session_id);
 		sessionStorage.setItem('sessid', session_id);
-		goto(`/${lang}/portal`);
+		window.location.replace(`/${lang}/portal`);
+	} catch (e) {
+		browser && alert(translateError(String(e), lang));
+	}
+}
+
+export async function handleSecretLoginClick(lang: string, secret: string) {
+	try {
+		// Call the login_secret RPC method instead of login
+		let session_id = await call_rpc('login_secret', [secret]);
+		console.log(session_id);
+		sessionStorage.setItem('sessid', session_id);
+		window.location.replace(`/${lang}/portal`);
 	} catch (e) {
 		browser && alert(translateError(String(e), lang));
 	}
