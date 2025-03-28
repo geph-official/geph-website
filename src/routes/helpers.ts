@@ -37,3 +37,14 @@ export async function call_rpc(method: string, params: any[]): Promise<any> {
 	// If no error, return the result
 	return resp.data.result;
 }
+
+export async function handleLoginClick(lang: string, uname: string, pwd: string) {
+    try {
+        let session_id = await call_rpc("login", [uname, pwd]);
+        console.log(session_id);
+        sessionStorage.setItem('sessid', session_id);
+        goto(`/${lang}/portal`);
+
+    } catch (e) {
+        browser && alert(translateError(String(e), lang));
+    }
