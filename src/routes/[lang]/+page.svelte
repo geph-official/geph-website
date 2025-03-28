@@ -100,13 +100,6 @@
 					<a href="https://community.geph.io">{localize(lang, 'forum')}</a>
 				</div>
 			</div>
-
-			<!-- <div class="community-link">
-				<img src="/github.svg" alt="github logo" class="community-icon" />
-				<div class="community-text">
-					<a href="https://github.com/geph-official">GitHub</a>
-				</div>
-			</div> -->
 		</div>
 	</div>
 	<div class="container">
@@ -176,7 +169,7 @@
 
 	.download-icon,
 	.community-icon {
-		height: 2rem;
+		width: 1.9rem;
 		margin-right: 1rem;
 	}
 
