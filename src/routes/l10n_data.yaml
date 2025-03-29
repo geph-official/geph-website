@@ -703,7 +703,7 @@ faq_content:
       <div class="faq-item">
         <h3 class="faq-question">How is Geph funded?</h3>
         <p class="faq-answer">
-          Geph is <em>entirely supported by our Plus users</em>. We generally don’t accept funding from NGOs and the like &mdash; this ensures our independence and long-term sustainability.
+          Geph is <em>entirely supported by our Plus users</em>, rather than NGOs and the like, ensuring our long-term independence and sustainability.
         </p>
       </div>
 
@@ -753,8 +753,8 @@ faq_content:
 
       <div class="faq-item">
         <h3 class="faq-question">迷雾通的资金来自哪里？</h3>
-        <p class="faq-answer">
-          迷雾通<b>完全由我们的 Plus 用户支持</b>。我们通常不接受外来机构的资助——这确保了我们的独立与长期可持续性。
+        <p class="faq-answer">迷雾通<b>完全由我们的 Plus 用户</b>，而非外来机构资助——这确保了我们的独立与长期可持续性。
+          
         </p>
       </div>
 
@@ -805,7 +805,7 @@ faq_content:
     <div class="faq-item">
     <h3 class="faq-question">迷霧通的經費來自哪裡？ </h3>
     <p class="faq-answer">
-    迷霧通<b>完全由我們的 Plus 用戶支援</b>。我們通常不接受外來機構的資助——這確保了我們的獨立與長期可持續性。
+    迷霧通<b>完全由我們的 Plus 用戶</b>，而非外來機構資助——這確保了我們的獨立與長期可持續性。
     </p>
     </div>
   fa: |
