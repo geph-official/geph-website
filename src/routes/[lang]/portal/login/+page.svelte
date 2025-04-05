@@ -11,12 +11,12 @@
 	const lang = $page.params['lang'];
 
 	let secret = '';
-	let password = '';
+
 	let redirecting = false;
 
 	async function handleLoginClick() {
 		try {
-			let session_id = await call_rpc('login_secret', [secret]);
+			let session_id = await call_rpc('login_secret', [secret.replaceAll(' ', '')]);
 			console.log(session_id);
 			sessionStorage.setItem('sessid', session_id);
 			goto(`/${lang}/portal`);
@@ -39,6 +39,7 @@
 			type="username"
 			id="username"
 			class="form-control"
+			inputmode="numeric"
 			bind:value={secret}
 			placeholder={localize(lang, 'account-secret')}
 		/>
