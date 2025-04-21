@@ -36,7 +36,7 @@
 
 	let recipientEmail = '';
 	let sender = variant === 'reseller' ? 'Reseller' : '';
-	let giftcards_number = variant === 'reseller' ? 50 : 1;
+	let giftcards_number = variant === 'reseller' ? 20 : 1;
 	let payMethod: string = 'bank-card';
 
 	const toQueryString = (params: any) => {
@@ -101,7 +101,7 @@
 
 	const onGiftcardsNumberChange = (e: any) => {
 		if (e.target.value) {
-			giftcards_number = Math.floor(Math.max(variant == 'reseller' ? 50 : 1, e.target.value));
+			giftcards_number = Math.floor(Math.max(variant == 'reseller' ? 20 : 1, e.target.value));
 			e.target.value = giftcards_number;
 		}
 	};
