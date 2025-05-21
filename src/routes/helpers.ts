@@ -19,7 +19,7 @@ export function translateError(e: string, lang: string): string {
 }
 
 export async function call_rpc(method: string, params: any[]): Promise<any> {
-	let resp = await axios.post(BINDER_ADDR + '/rpc', {
+	let resp = await axios.post(BINDER_ADDR + '/rpc/', {
 		jsonrpc: '2.0',
 		id: 1,
 		method: method,
