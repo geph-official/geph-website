@@ -30,9 +30,10 @@
 		paymentBackends.set('wxpay', wxpayBackend());
 	}
 
-	let days = 30;
-	let promo = '';
-	let item: 'plus' | 'giftcard' = variant === 'reseller' ? 'giftcard' : 'plus';
+        let days = 30;
+        let promo = '';
+        let item: 'plus' | 'giftcard' = variant === 'reseller' ? 'giftcard' : 'plus';
+        let plan: 'basic' | 'unlimited' = 'unlimited';
 
 	let recipientEmail = '';
 	let sender = variant === 'reseller' ? 'Reseller' : '';
@@ -46,27 +47,35 @@
 			.join('&');
 	};
 
-	const makeItem = (item: 'plus' | 'giftcard', email: string, sender: string, count: number) => {
-		var enum_item: Item = 'Plus';
-		if (item == 'giftcard') {
-			enum_item = {
-				Giftcard: { recipient_email: email, sender: sender, count: count }
-			};
-		}
-		return enum_item;
-	};
+        const makeItem = (
+                item: 'plus' | 'giftcard',
+                email: string,
+                sender: string,
+                count: number
+        ) => {
+                let enum_item: Item;
+                if (item == 'giftcard') {
+                        enum_item = {
+                                Giftcard: { recipient_email: email, sender: sender, count: count }
+                        };
+                } else {
+                        enum_item = plan === 'basic' ? 'Basic' : 'Plus';
+                }
+                return enum_item;
+        };
 
 	let cost: number | null = null;
-	const recalcCost = debounce(async (obj: any) => {
-		for (;;) {
-			try {
-				cost = null;
-				const response = await call_rpc('calculate_price', [
-					obj['sessid'],
-					obj['method'],
-					obj['promo'],
-					obj['days']
-				]);
+        const recalcCost = debounce(async (obj: any) => {
+                for (;;) {
+                        try {
+                                cost = null;
+                                const rpc = plan === 'basic' ? 'calculate_basic_price' : 'calculate_price';
+                                const response = await call_rpc(rpc, [
+                                        obj['sessid'],
+                                        obj['method'],
+                                        obj['promo'],
+                                        obj['days']
+                                ]);
 				cost = response / 100;
 				return;
 			} catch (e) {
@@ -74,12 +83,13 @@
 			}
 		}
 	}, 100);
-	$: recalcCost({
-		sessid: sessionStorage.getItem('sessid'),
-		promo: item === 'giftcard' && variant != 'reseller' ? '' : promo,
-		days: item === 'giftcard' ? days * giftcards_number : days,
-		method: payMethod
-	});
+        $: recalcCost({
+                sessid: sessionStorage.getItem('sessid'),
+                promo: item === 'giftcard' && variant != 'reseller' ? '' : promo,
+                days: item === 'giftcard' ? days * giftcards_number : days,
+                method: payMethod,
+                plan
+        });
 
 	const change_days = () => {
 		days = Math.floor(
@@ -154,8 +164,35 @@
 				</div>
 			</div>
 		</div>
-	{/if}
-	{#if item == 'giftcard'}
+        {/if}
+        {#if item != 'giftcard'}
+                <div class="row mt-3">
+                        <div class="col">
+                                <h2>{to_local('what-plan-buying')}</h2>
+                                <div class="d-flex">
+                                        <button
+                                                class="btn btn-outline-dark me-2"
+                                                on:click={() => {
+                                                        plan = 'basic';
+                                                }}
+                                                class:selected={plan === 'basic'}
+                                        >
+                                                {to_local('basic')}
+                                        </button>
+                                        <button
+                                                class="btn btn-outline-dark"
+                                                on:click={() => {
+                                                        plan = 'unlimited';
+                                                }}
+                                                class:selected={plan === 'unlimited'}
+                                        >
+                                                {to_local('unlimited')}
+                                        </button>
+                                </div>
+                        </div>
+                </div>
+        {/if}
+        {#if item == 'giftcard'}
 		<div class="row mt-3">
 			{#if variant !== 'reseller'}
 				<div class="col-lg">

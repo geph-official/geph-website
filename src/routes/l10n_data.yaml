@@ -65,10 +65,10 @@ geph:
   fa: Geph
 
 hero:
-  en: "The world&rsquo;s <b>most resilient</b> VPN"
-  zhs: "不怕封锁的 VPN"
-  zht: "不怕封鎖的 VPN"
-  fa: "وی‌پی‌ان متوقف‌نشدنی"
+  en: 'The world&rsquo;s <b>most resilient</b> VPN'
+  zhs: '不怕封锁的 VPN'
+  zht: '不怕封鎖的 VPN'
+  fa: 'وی‌پی‌ان متوقف‌نشدنی'
 
 sub_hero:
   en: >-
@@ -193,10 +193,10 @@ error:
   fa: خطا
 
 remaining-days:
-  en: "Remaining days:"
-  zhs: "剩余天数："
-  zht: "剩餘天數："
-  fa: ": روزهای باقی مانده"
+  en: 'Remaining days:'
+  zhs: '剩余天数：'
+  zht: '剩餘天數：'
+  fa: ': روزهای باقی مانده'
 
 buy-plus:
   en: Buy Plus
@@ -239,6 +239,24 @@ someone-else:
   zhs: 其他人
   zht: 其他人
   fa: کسی دیگر
+
+what-plan-buying:
+  en: What plan are you buying?
+  zhs: 您购买哪个套餐？
+  zht: 您購買哪個套餐？
+  fa: کدام طرح را می‌خواهید بخرید؟
+
+basic:
+  en: Basic
+  zhs: 基础版
+  zht: 基礎版
+  fa: پایه
+
+unlimited:
+  en: Unlimited
+  zhs: 无限版
+  zht: 無限版
+  fa: نامحدود
 
 sender:
   en: Sender
@@ -313,10 +331,10 @@ wxpay:
   fa: WeChat Pay
 
 total:
-  en: "Total:"
+  en: 'Total:'
   zhs: 总计：
   zht: 總計：
-  fa: "هزینه کل:"
+  fa: 'هزینه کل:'
 
 pay:
   en: Check out
@@ -487,10 +505,10 @@ incorrect-giftcard:
   fa: کارت هدیه‌ای یافت نشد
 
 giftcard-days:
-  en: "Days in giftcard: "
-  zhs: "礼品卡有效天数："
-  zht: "禮品卡有效天數："
-  fa: "روزها در کارت هدیه: "
+  en: 'Days in giftcard: '
+  zhs: '礼品卡有效天数：'
+  zht: '禮品卡有效天數：'
+  fa: 'روزها در کارت هدیه: '
 
 giftcard-applied:
   en: Giftcard applied
@@ -511,10 +529,10 @@ send-crypto:
   fa: ارسال ارز دیجیتال
 
 please-send-funds:
-  en: "Send cryptocurrency to the following address"
-  zhs: "请将加密货币发送至以下地址"
-  zht: "請將加密貨幣發送至以下地址"
-  fa: "ارز دیجیتال را به آدرس زیر بفرستید"
+  en: 'Send cryptocurrency to the following address'
+  zhs: '请将加密货币发送至以下地址'
+  zht: '請將加密貨幣發送至以下地址'
+  fa: 'ارز دیجیتال را به آدرس زیر بفرستید'
 
 amount:
   en: Amount
