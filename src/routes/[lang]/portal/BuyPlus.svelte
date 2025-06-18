@@ -12,9 +12,10 @@
 	} from './billing';
 	import type { Item } from './billing';
 	import { localize } from '../../l10n';
-	import { BINDER_ADDR, call_rpc, translateError } from '../../../routes/helpers';
-	import CheckBoxMarked from 'svelte-material-icons/CheckboxMarked.svelte';
-	import CheckBoxBlankOutline from 'svelte-material-icons/CheckboxBlankOutline.svelte';
+import { BINDER_ADDR, call_rpc, translateError } from '../../../routes/helpers';
+import CheckBoxMarked from 'svelte-material-icons/CheckboxMarked.svelte';
+import CheckBoxBlankOutline from 'svelte-material-icons/CheckboxBlankOutline.svelte';
+import { onMount } from 'svelte';
 
 	export let is_recurring: boolean;
 	export let variant: 'all' | 'reseller';
@@ -34,11 +35,26 @@
         let promo = '';
         let item: 'plus' | 'giftcard' = variant === 'reseller' ? 'giftcard' : 'plus';
         let plan: 'basic' | 'unlimited' = 'unlimited';
+        let basicAvailable = false;
 
 	let recipientEmail = '';
 	let sender = variant === 'reseller' ? 'Reseller' : '';
 	let giftcards_number = variant === 'reseller' ? 20 : 1;
-	let payMethod: string = 'bank-card';
+        let payMethod: string = 'bank-card';
+
+        onMount(async () => {
+                try {
+                        await call_rpc('calculate_basic_price', [
+                                sessionStorage.getItem('sessid'),
+                                'bank-card',
+                                '',
+                                30
+                        ]);
+                        basicAvailable = true;
+                } catch (e) {
+                        basicAvailable = false;
+                }
+        });
 
 	const toQueryString = (params: any) => {
 		const esc = encodeURIComponent;
@@ -173,22 +189,27 @@
                                         <button
                                                 class="btn btn-outline-dark me-2"
                                                 on:click={() => {
-                                                        plan = 'basic';
+                                                        plan = 'unlimited';
                                                 }}
-                                                class:selected={plan === 'basic'}
+                                                class:selected={plan === 'unlimited'}
+                                                disabled={!basicAvailable}
                                         >
-                                                {to_local('basic')}
+                                                {to_local('unlimited')}
                                         </button>
                                         <button
                                                 class="btn btn-outline-dark"
                                                 on:click={() => {
-                                                        plan = 'unlimited';
+                                                        plan = 'basic';
                                                 }}
-                                                class:selected={plan === 'unlimited'}
+                                                class:selected={plan === 'basic'}
+                                                disabled={!basicAvailable}
                                         >
-                                                {to_local('unlimited')}
+                                                {to_local('basic')}<span class="badge bg-danger ms-1">{to_local('beta')}</span>
                                         </button>
                                 </div>
+                                {#if basicAvailable}
+                                        <small class="text-muted">{to_local('basic-beta-blurb')}</small>
+                                {/if}
                         </div>
                 </div>
         {/if}

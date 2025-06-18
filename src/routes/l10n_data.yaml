@@ -258,6 +258,18 @@ unlimited:
   zht: 無限版
   fa: نامحدود
 
+beta:
+  en: BETA
+  zhs: BETA
+  zht: BETA
+  fa: BETA
+
+basic-beta-blurb:
+  en: Basic plan limited to 5 GB per month
+  zhs: 基础版每月限量 5 GB
+  zht: 基礎版每月限量 5 GB
+  fa: طرح پایه هر ماه به ۵ گیگابایت محدود است
+
 sender:
   en: Sender
   zhs: 发送者
