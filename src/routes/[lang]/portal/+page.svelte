@@ -33,13 +33,7 @@
 		if (!sessionStorage.getItem('sessid')) {
 			window.location.replace('./portal/login');
 		}
-		try {
-			let resp = await call_rpc('cancel_recurring', [sessionStorage.getItem('sessid')]);
-			console.log('success response: ', resp);
-			window.location.replace('./portal/login');
-		} catch (e) {
-			alert(translateError(String(e), lang));
-		}
+		return call_rpc('cancel_recurring', [sessionStorage.getItem('sessid')]);
 	}
 
 	let activeTab: 'buy-plus' | 'redeem-giftcard' = 'buy-plus';
@@ -47,8 +41,20 @@
 	let showCancellationModal = false;
 	$: toggleCancellationModal = () => (showCancellationModal = !showCancellationModal);
 	$: confirmCancellation = async () => {
-		await cancel_autorenew();
 		toggleCancellationModal();
+		try {
+			await cancel_autorenew();
+			cancellationResult = localize(lang, 'cancel-recurring-success');
+		} catch (e) {
+			cancellationResult = translateError(String(e), lang);
+		}
+		showResultModal = true;
+	};
+
+	let showResultModal = false;
+	let cancellationResult = '';
+	$: closeResultModal = () => {
+		showResultModal = false;
 		location.reload();
 	};
 </script>
@@ -122,6 +128,14 @@
 											<p>{localize(lang, 'are-you-sure')}</p>
 											<button on:click={confirmCancellation}>{localize(lang, 'yes')}</button>
 											<button on:click={toggleCancellationModal}>{localize(lang, 'no')}</button>
+										</div>
+									</div>
+								{/if}
+								{#if showResultModal}
+									<div class="cancel-modal-background" transition:fade>
+										<div class="cancel-modal">
+											<p>{cancellationResult}</p>
+											<button on:click={closeResultModal}>{localize(lang, 'ok')}</button>
 										</div>
 									</div>
 								{/if}
