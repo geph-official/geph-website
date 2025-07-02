@@ -40,7 +40,21 @@
 	let recipientEmail = '';
 	let sender = variant === 'reseller' ? 'Reseller' : '';
 	let giftcards_number = variant === 'reseller' ? 20 : 1;
-	let payMethod: string = 'bank-card';
+        let payMethod: string = 'bank-card';
+
+        onMount(async () => {
+                try {
+                        await call_rpc('calculate_basic_price', [
+                                sessionStorage.getItem('sessid'),
+                                'bank-card',
+                                '',
+                                30
+                        ]);
+                        basicAvailable = true;
+                } catch (e) {
+                        basicAvailable = false;
+                }
+        });
 
 	onMount(async () => {
 		try {
@@ -62,7 +76,7 @@
 			.map((k) => esc(k) + '=' + esc(params[k]))
 			.join('&');
 	};
-
+  
 	const makeItem = (item: 'plus' | 'giftcard', email: string, sender: string, count: number) => {
 		let enum_item: Item;
 		if (item == 'giftcard') {
@@ -94,6 +108,7 @@
 			}
 		}
 	}, 100);
+  
 	$: recalcCost({
 		sessid: sessionStorage.getItem('sessid'),
 		promo: item === 'giftcard' && variant != 'reseller' ? '' : promo,
@@ -175,40 +190,40 @@
 				</div>
 			</div>
 		</div>
-	{/if}
-	{#if item != 'giftcard'}
-		<div class="row mt-3">
-			<div class="col">
-				<h2>{to_local('what-plan-buying')}</h2>
-				<div class="d-flex">
-					<button
-						class="btn btn-outline-dark me-2"
-						on:click={() => {
-							plan = 'unlimited';
-						}}
-						class:selected={plan === 'unlimited'}
-						disabled={!basicAvailable}
-					>
-						{to_local('unlimited')}
-					</button>
-					<button
-						class="btn btn-outline-dark"
-						on:click={() => {
-							plan = 'basic';
-						}}
-						class:selected={plan === 'basic'}
-						disabled={!basicAvailable}
-					>
-						{to_local('basic')}<span class="badge bg-danger ms-1">{to_local('beta')}</span>
-					</button>
-				</div>
-				{#if basicAvailable}
-					<small class="text-muted">{to_local('basic-beta-blurb')}</small>
-				{/if}
-			</div>
-		</div>
-	{/if}
-	{#if item == 'giftcard'}
+        {/if}
+        {#if item != 'giftcard'}
+                <div class="row mt-3">
+                        <div class="col">
+                                <h2>{to_local('what-plan-buying')}</h2>
+                                <div class="d-flex">
+                                        <button
+                                                class="btn btn-outline-dark me-2"
+                                                on:click={() => {
+                                                        plan = 'unlimited';
+                                                }}
+                                                class:selected={plan === 'unlimited'}
+                                                disabled={!basicAvailable}
+                                        >
+                                                {to_local('unlimited')}
+                                        </button>
+                                        <button
+                                                class="btn btn-outline-dark"
+                                                on:click={() => {
+                                                        plan = 'basic';
+                                                }}
+                                                class:selected={plan === 'basic'}
+                                                disabled={!basicAvailable}
+                                        >
+                                                {to_local('basic')}<span class="badge bg-danger ms-1">{to_local('beta')}</span>
+                                        </button>
+                                </div>
+                                {#if basicAvailable}
+                                        <small class="text-muted">{to_local('basic-beta-blurb')}</small>
+                                {/if}
+                        </div>
+                </div>
+        {/if}
+        {#if item == 'giftcard'}
 		<div class="row mt-3">
 			{#if variant !== 'reseller'}
 				<div class="col-lg">
