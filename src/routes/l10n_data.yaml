@@ -677,6 +677,17 @@ no:
   zhs: 否
   zht: 否
   fa: نه
+cancel-recurring-success:
+  en: Auto-renew cancelled
+  zhs: 自动续订已取消
+  zht: 自動續訂已取消
+  fa: لغو تجدید خودکار با موفقیت انجام شد
+
+ok:
+  en: OK
+  zhs: 好的
+  zht: 好的
+  fa: باشه
 
 faq_content:
   en: |

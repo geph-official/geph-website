@@ -12,10 +12,10 @@
 	} from './billing';
 	import type { Item } from './billing';
 	import { localize } from '../../l10n';
-import { BINDER_ADDR, call_rpc, translateError } from '../../../routes/helpers';
-import CheckBoxMarked from 'svelte-material-icons/CheckboxMarked.svelte';
-import CheckBoxBlankOutline from 'svelte-material-icons/CheckboxBlankOutline.svelte';
-import { onMount } from 'svelte';
+	import { BINDER_ADDR, call_rpc, translateError } from '../../../routes/helpers';
+	import CheckBoxMarked from 'svelte-material-icons/CheckboxMarked.svelte';
+	import CheckBoxBlankOutline from 'svelte-material-icons/CheckboxBlankOutline.svelte';
+	import { onMount } from 'svelte';
 
 	export let is_recurring: boolean;
 	export let variant: 'all' | 'reseller';
@@ -31,11 +31,11 @@ import { onMount } from 'svelte';
 		paymentBackends.set('wxpay', wxpayBackend());
 	}
 
-        let days = 30;
-        let promo = '';
-        let item: 'plus' | 'giftcard' = variant === 'reseller' ? 'giftcard' : 'plus';
-        let plan: 'basic' | 'unlimited' = 'unlimited';
-        let basicAvailable = false;
+	let days = 30;
+	let promo = '';
+	let item: 'plus' | 'giftcard' = variant === 'reseller' ? 'giftcard' : 'plus';
+	let plan: 'basic' | 'unlimited' = 'unlimited';
+	let basicAvailable = false;
 
 	let recipientEmail = '';
 	let sender = variant === 'reseller' ? 'Reseller' : '';
@@ -56,42 +56,51 @@ import { onMount } from 'svelte';
                 }
         });
 
+	onMount(async () => {
+		try {
+			await call_rpc('calculate_basic_price', [
+				sessionStorage.getItem('sessid'),
+				'bank-card',
+				'',
+				30
+			]);
+			basicAvailable = true;
+		} catch (e) {
+			basicAvailable = false;
+		}
+	});
+
 	const toQueryString = (params: any) => {
 		const esc = encodeURIComponent;
 		return Object.keys(params)
 			.map((k) => esc(k) + '=' + esc(params[k]))
 			.join('&');
 	};
-
-        const makeItem = (
-                item: 'plus' | 'giftcard',
-                email: string,
-                sender: string,
-                count: number
-        ) => {
-                let enum_item: Item;
-                if (item == 'giftcard') {
-                        enum_item = {
-                                Giftcard: { recipient_email: email, sender: sender, count: count }
-                        };
-                } else {
-                        enum_item = plan === 'basic' ? 'Basic' : 'Plus';
-                }
-                return enum_item;
-        };
+  
+	const makeItem = (item: 'plus' | 'giftcard', email: string, sender: string, count: number) => {
+		let enum_item: Item;
+		if (item == 'giftcard') {
+			enum_item = {
+				Giftcard: { recipient_email: email, sender: sender, count: count }
+			};
+		} else {
+			enum_item = plan === 'basic' ? 'Basic' : 'Plus';
+		}
+		return enum_item;
+	};
 
 	let cost: number | null = null;
-        const recalcCost = debounce(async (obj: any) => {
-                for (;;) {
-                        try {
-                                cost = null;
-                                const rpc = plan === 'basic' ? 'calculate_basic_price' : 'calculate_price';
-                                const response = await call_rpc(rpc, [
-                                        obj['sessid'],
-                                        obj['method'],
-                                        obj['promo'],
-                                        obj['days']
-                                ]);
+	const recalcCost = debounce(async (obj: any) => {
+		for (;;) {
+			try {
+				cost = null;
+				const rpc = plan === 'basic' ? 'calculate_basic_price' : 'calculate_price';
+				const response = await call_rpc(rpc, [
+					obj['sessid'],
+					obj['method'],
+					obj['promo'],
+					obj['days']
+				]);
 				cost = response / 100;
 				return;
 			} catch (e) {
@@ -99,13 +108,14 @@ import { onMount } from 'svelte';
 			}
 		}
 	}, 100);
-        $: recalcCost({
-                sessid: sessionStorage.getItem('sessid'),
-                promo: item === 'giftcard' && variant != 'reseller' ? '' : promo,
-                days: item === 'giftcard' ? days * giftcards_number : days,
-                method: payMethod,
-                plan
-        });
+  
+	$: recalcCost({
+		sessid: sessionStorage.getItem('sessid'),
+		promo: item === 'giftcard' && variant != 'reseller' ? '' : promo,
+		days: item === 'giftcard' ? days * giftcards_number : days,
+		method: payMethod,
+		plan
+	});
 
 	const change_days = () => {
 		days = Math.floor(

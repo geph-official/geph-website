@@ -4,11 +4,11 @@ import { goto } from '$app/navigation';
 import { localize } from '../../l10n';
 
 export type Item =
-        | 'Plus'
-        | 'Basic'
-        | {
-                        Giftcard: { recipient_email: string; sender: string; count: number };
-          };
+	| 'Plus'
+	| 'Basic'
+	| {
+			Giftcard: { recipient_email: string; sender: string; count: number };
+	  };
 
 export interface PaymentBackend {
 	name: string;
