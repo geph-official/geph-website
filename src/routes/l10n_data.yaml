@@ -618,11 +618,11 @@ click-refresh:
   zht: 購買Plus後，請耐心等待10分鐘即可在應用程式中看到！
   fa: پس از خرید اشتراک پلاس، 10 دقیقه صبر کنید تا در برنامه نمایش داده شود!
 
-banner:
-  en: '📢 <a href="https://community.geph.io/t/topic/17305">Largest ever Plus giveaway</a> to celebrate Geph 5.0 release! 🎁 ✨'
-  zhs: '📢 <a href="https://community.geph.io/t/topic/17305">庆祝迷雾通 5.0 发布，史上最大规模 Plus 奖励活动！</a> 🎁 ✨'
-  zht: '📢 <a href="https://community.geph.io/t/topic/17305">慶祝迷霧通 5.0 發布，史上最大規模 Plus 贈送活動！</a> 🎁 ✨'
-  fa: '📢 <a href="https://community.geph.io/t/topic/17305">بزرگ‌ترین قرعه‌کشی پلاس</a> به مناسبت انتشار نسخه ۵.۰ Geph! 🎁 ✨'
+# banner:
+#   en: '📢 <a href="https://community.geph.io/t/topic/17305">Largest ever Plus giveaway</a> to celebrate Geph 5.0 release! 🎁 ✨'
+#   zhs: '📢 <a href="https://community.geph.io/t/topic/17305">庆祝迷雾通 5.0 发布，史上最大规模 Plus 奖励活动！</a> 🎁 ✨'
+#   zht: '📢 <a href="https://community.geph.io/t/topic/17305">慶祝迷霧通 5.0 發布，史上最大規模 Plus 贈送活動！</a> 🎁 ✨'
+#   fa: '📢 <a href="https://community.geph.io/t/topic/17305">بزرگ‌ترین قرعه‌کشی پلاس</a> به مناسبت انتشار نسخه ۵.۰ Geph! 🎁 ✨'
 
 bad-aliwechat:
   en: ⚠️ Alipay and WeChat Pay payments are not always reliable. If you pay using these methods and do not receive Plus after 10 minutes, please email your username and payment screenshot to support@geph.io, and we will add your Plus time within 48 hours.
