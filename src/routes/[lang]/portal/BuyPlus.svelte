@@ -117,9 +117,9 @@
 		plan
 	});
 
-	const change_days = () => {
+	const change_days = (d: number) => {
 		days = Math.floor(
-			Math.min(10000, Math.max(variant == 'reseller' ? 1 : payMethod == 'crypto' ? 90 : 30, days))
+			Math.min(10000, Math.max(variant == 'reseller' ? 1 : payMethod == 'crypto' ? 90 : 7, d))
 		);
 	};
 
@@ -128,7 +128,7 @@
 			days = Math.floor(
 				Math.min(
 					10000,
-					Math.max(variant == 'reseller' ? 1 : payMethod == 'crypto' ? 90 : 30, e.target.value)
+					Math.max(variant == 'reseller' ? 1 : payMethod == 'crypto' ? 90 : 7, e.target.value)
 				)
 			);
 			e.target.value = days;
@@ -282,7 +282,7 @@
 						class="btn btn-outline-dark me-2"
 						class:selected={days == 30}
 						on:click={() => {
-							days = 30;
+							change_days(30);
 						}}
 					>
 						{to_local('1-month')}
@@ -291,7 +291,7 @@
 						class="btn btn-outline-dark me-2"
 						class:selected={days === 90}
 						on:click={() => {
-							days = 90;
+							change_days(90);
 						}}
 					>
 						{to_local('3-months')}
@@ -300,7 +300,7 @@
 						class="btn btn-outline-dark me-2"
 						class:selected={days === 365}
 						on:click={() => {
-							days = 365;
+							change_days(365);
 						}}
 					>
 						{to_local('1-year')}
@@ -312,7 +312,7 @@
 						class="btn btn-outline-dark me-2"
 						class:selected={days === 730}
 						on:click={() => {
-							days = 730;
+							change_days(730);
 						}}
 					>
 						{to_local('2-year')}
@@ -326,7 +326,7 @@
 						type="number"
 						class="form-control small-form-control"
 						id="length"
-						value={days == 30 || days == 90 || days == 365 ? '' : days}
+						value={days}
 						on:change={onDaysChange}
 						placeholder={to_local('custom')}
 					/>
@@ -362,7 +362,7 @@
 							class:selected={payMethod === backend.name}
 							on:click={() => {
 								payMethod = backend.name;
-								change_days();
+								change_days(days);
 							}}
 						>
 							{#each backend.icons as icon}
