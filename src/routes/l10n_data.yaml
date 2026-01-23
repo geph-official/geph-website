@@ -354,6 +354,12 @@ pay:
   zht: 結賬
   fa: پرداخت
 
+crypto-minimum-total:
+  en: Crypto payments require a minimum total of €20.00.
+  zhs: 加密货币支付最低总额为€20.00。
+  zht: 加密貨幣支付最低總額為€20.00。
+  fa: پرداخت‌های رمزارزی حداقل مبلغ کل €20.00 دارند.
+
 1-month:
   en: 1 month (30 days)
   zhs: 1 个月（30 天）
@@ -437,6 +443,54 @@ choose-a-currency:
   zhs: 请选择货币
   zht: 請選擇貨幣
   fa: یک ارز را انتخاب کنید
+
+send-only-on-network:
+  en: Send only on
+  zhs: 仅在以下网络发送
+  zht: 僅在以下網路發送
+  fa: فقط روی این شبکه ارسال کنید
+
+crypto-irreversible-warning:
+  en: Double-check the address, network, and amount before sending. Funds sent to the wrong address, on the wrong network, or with the wrong amount <strong>cannot be recovered</strong>.
+  zhs: 请在发送前反复确认收款地址、网络和金额。发送到错误地址、错误网络或金额不正确的资金<strong>无法追回</strong>。
+  zht: 請在發送前反覆確認收款地址、網路和金額。發送到錯誤地址、錯誤網路或金額不正確的資金<strong>無法追回</strong>。
+  fa: قبل از ارسال، آدرس، شبکه و مبلغ را چندبار بررسی کنید. وجوهی که به آدرس اشتباه، روی شبکه اشتباه، یا با مبلغ اشتباه ارسال شوند <strong>قابل بازیابی نیستند</strong>.
+
+bitcoin-mainnet:
+  en: Bitcoin mainnet
+  zhs: 比特币主网
+  zht: 比特幣主網
+  fa: شبکه اصلی بیت‌کوین
+
+ethereum-mainnet:
+  en: Ethereum mainnet
+  zhs: 以太坊主网
+  zht: 以太坊主網
+  fa: شبکه اصلی اتریوم
+
+monero-mainnet:
+  en: Monero mainnet
+  zhs: 门罗币主网
+  zht: 門羅幣主網
+  fa: شبکه اصلی مونرو
+
+tron-trc20:
+  en: Tron (TRC20)
+  zhs: 波场（TRC20）
+  zht: 波場（TRC20）
+  fa: ترون (TRC20)
+
+dogecoin-mainnet:
+  en: Dogecoin mainnet
+  zhs: 狗狗币主网
+  zht: 狗狗幣主網
+  fa: شبکه اصلی دوج‌کوین
+
+crypto-network-unknown:
+  en: the correct network
+  zhs: 正确的网络
+  zht: 正確的網路
+  fa: شبکه صحیح
 
 btc:
   en: Bitcoin

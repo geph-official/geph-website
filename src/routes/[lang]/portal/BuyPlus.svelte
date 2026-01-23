@@ -41,6 +41,7 @@
 	let sender = variant === 'reseller' ? 'Reseller' : '';
 	let giftcards_number = variant === 'reseller' ? 20 : 1;
         let payMethod: string = 'bank-card';
+	const MIN_CRYPTO_TOTAL_EUR = 20;
 
         onMount(async () => {
                 try {
@@ -119,7 +120,7 @@
 
 	const change_days = (d: number) => {
 		days = Math.floor(
-			Math.min(10000, Math.max(variant == 'reseller' ? 1 : payMethod == 'crypto' ? 90 : 7, d))
+			Math.min(10000, Math.max(variant == 'reseller' ? 1 : 7, d))
 		);
 	};
 
@@ -128,7 +129,7 @@
 			days = Math.floor(
 				Math.min(
 					10000,
-					Math.max(variant == 'reseller' ? 1 : payMethod == 'crypto' ? 90 : 7, e.target.value)
+					Math.max(variant == 'reseller' ? 1 : 7, e.target.value)
 				)
 			);
 			e.target.value = days;
@@ -158,6 +159,8 @@
 	$: toggleAutorenew = () => (autorenewChecked = !autorenewChecked);
 
 	$: autorenew = autorenewChecked && item === 'plus';
+	$: cryptoTotalTooSmall =
+		payMethod === 'crypto' && cost !== null && cost <= MIN_CRYPTO_TOTAL_EUR;
 
 	let checkingOut = false;
 </script>
@@ -434,6 +437,11 @@
 
 			<div class="row mt-3">
 				<div class="col">
+					{#if cryptoTotalTooSmall}
+						<div class="alert alert-warning" role="alert">
+							{to_local('crypto-minimum-total')}
+						</div>
+					{/if}
 					<button
 						class="btn btn-success btn-lg"
 						on:click={async () => {
@@ -463,7 +471,8 @@
 						}}
 						disabled={checkingOut ||
 							cost == null ||
-							(item == 'giftcard' && (!senderValid || !recipientValid))}
+							(item == 'giftcard' && (!senderValid || !recipientValid)) ||
+							cryptoTotalTooSmall}
 					>
 						{to_local('pay')}
 					</button>

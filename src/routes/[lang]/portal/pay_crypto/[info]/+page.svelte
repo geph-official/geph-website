@@ -11,8 +11,18 @@
 	const lang = $page.params['lang'];
 	const info = atob($page.params['info']);
 	const paymentInfo = JSON.parse(info);
+	const networkKeyByToken: Record<string, string> = {
+		btc: 'bitcoin-mainnet',
+		eth: 'ethereum-mainnet',
+		xmr: 'monero-mainnet',
+		usdttrc20: 'tron-trc20',
+		doge: 'dogecoin-mainnet'
+	};
+	const networkKeyForToken = (token: string) =>
+		networkKeyByToken[token] || 'crypto-network-unknown';
 
 	$: l = (s: string) => localize(lang, s);
+	$: networkKey = networkKeyForToken(String(paymentInfo.ticker || '').toLowerCase());
 	let status: string | null = null;
 	const refresh = async () => {
 		try {
@@ -59,6 +69,20 @@
 							<img src={qrcode} alt="" height="200" />
 						{/await}
 					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row mt-4">
+			<div class="col-lg">
+				<div class="alert alert-warning" role="alert">
+					{l('send-only-on-network')} <strong>{l(networkKey)}</strong>.<br />
+				</div>
+			</div>
+		</div>
+		<div class="row mt-3">
+			<div class="col-lg">
+				<div class="alert alert-danger" role="alert">
+					{@html l('crypto-irreversible-warning')}
 				</div>
 			</div>
 		</div>

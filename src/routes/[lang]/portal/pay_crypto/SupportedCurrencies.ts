@@ -4,17 +4,17 @@ export interface Token {
     badge: string | null,
 }
 
-// const btc: Token = {
-//     name: 'btc',
-//     icon: "https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.16.1/svg/color/btc.svg",
-//     badge: null,
-// }
+const btc: Token = {
+    name: 'btc',
+    icon: "https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.16.1/svg/color/btc.svg",
+    badge: null,
+}
 
-// const eth: Token = {
-//     name: 'eth',
-//     icon: "https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.16.1/svg/color/eth.svg",
-//     badge: "ETH ⚠️NOT BSC⚠️",
-// }
+const eth: Token = {
+    name: 'eth',
+    icon: "https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.16.1/svg/color/eth.svg",
+    badge: null,
+}
 
 const xmr: Token = {
     name: 'xmr',
@@ -65,4 +65,4 @@ const doge: Token = {
 }
 
 
-export const tokens: Token[] = [xmr, usdtTron, doge];
+export const tokens: Token[] = [btc, eth, xmr, usdtTron, doge];
