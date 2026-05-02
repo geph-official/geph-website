@@ -7,7 +7,7 @@ import detectNearestLocale from "detect-nearest-locale"
 
 const getLang = (locale: string[]) => {
     try {
-        const lang = detectNearestLocale(['en-US', 'zh-CN', 'zh-TW', 'fa-IR'], locale);
+        const lang = detectNearestLocale(['en-US', 'zh-CN', 'zh-TW', 'fa-IR', 'ru-RU'], locale);
         if (lang === 'zh-CN') {
             return 'zhs';
         }
@@ -16,6 +16,9 @@ const getLang = (locale: string[]) => {
         }
         if (lang === 'fa-IR') {
             return 'fa';
+        }
+        if (lang === 'ru-RU') {
+            return 'ru';
         }
         return 'en';
     } catch (e) {

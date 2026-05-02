@@ -13,7 +13,7 @@ export const localize = (lang: string, s: string) => {
 
 export const getLang = () => {
     try {
-        const lang = detectNearestBrowserLocale(['en-US', 'zh-CN', 'zh-TW', 'fa-IR']);
+        const lang = detectNearestBrowserLocale(['en-US', 'zh-CN', 'zh-TW', 'fa-IR', 'ru-RU']);
         if (lang === 'zh-CN') {
             return 'zhs';
         }
@@ -22,6 +22,9 @@ export const getLang = () => {
         }
         if (lang === 'fa-IR') {
             return 'fa';
+        }
+        if (lang === 'ru-RU') {
+            return 'ru';
         }
         return 'en';
     } catch (e) {

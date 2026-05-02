@@ -3,72 +3,84 @@ langname:
   zhs: 简体中文
   zht: 繁體中文
   fa: فارسی
+  ru: Русский
 
 langcode:
   en: en-US
   zhs: zh-CN
   zht: zh-TW
   fa: fa-IR
+  ru: ru-RU
 
 username:
   en: Username
   zhs: 用户名
   zht: 用戶名
   fa: نام کاربری
+  ru: Имя пользователя
 
 password:
   en: Password
   zhs: 密码
   zht: 密碼
   fa: کلمه عبور
+  ru: Пароль
 
 home:
   en: Home
   zhs: 主页
   zht: 主頁
   fa: خانه
+  ru: Главная
 
 user-portal:
   en: User portal
   zhs: 账户管理
   zht: 賬戶管理
   fa: ورودی کاربران
+  ru: Личный кабинет
 
 policies:
   en: Policies
   zhs: 条款
   zht: 條款
   fa: سیاست ها
+  ru: Правила
 
 login:
   en: Log in
   zhs: 登录
   zht: 登錄
   fa: ورود
+  ru: Войти
 
 email_required:
   en: Giftcard recipient email field is required
   zhs: 请填写收礼品卡的邮件
   zht: 請填寫收禮品卡的郵件
   fa: فیلد ایمیل گیرنده گیفت کارت باید پر شود
+  ru: Укажите email получателя подарочной карты
 
 sender_required:
   en: Giftcard sender field is required
   zhs: 请填写礼品卡赠送人
   zht: 請填寫禮品卡贈送人
   fa: فیلد فرستنده گیفت کارت باید پر شود
+  ru: Укажите отправителя подарочной карты
 
 geph:
   en: Geph
   zhs: 迷雾通
   zht: 迷霧通
   fa: Geph
+  ru: Geph
 
 hero:
   en: 'The world&rsquo;s <b>most resilient</b> VPN'
   zhs: '不怕封锁的 VPN'
   zht: '不怕封鎖的 VPN'
   fa: 'وی‌پی‌ان متوقف‌نشدنی'
+  ru: 'Самый <b>стойкий к блокировкам</b> VPN в мире'
 
 sub_hero:
   en: >-
@@ -90,587 +102,688 @@ sub_hero:
     <p>Geph (گِف) یک VPN است که از پایه برای مقاومت در برابر سانسور در سطح ISP طراحی شده است. برخلاف VPNهای سنتی که بر «امنیت از راه پنهان‌کاری» تکیه می‌کنند، معماری و پروتکل‌های Geph به گونه‌ای ویژه طراحی شده‌اند تا برای ISPها و عوامل نظارتی شبکه تقریباً نامشهود باشند.</p>
     <p>در طول ۷ سال گذشته، ما میلیون‌ها کاربر را که پشت دیوارهای ملی محدودکننده قرار دارند، متصل کرده‌ایم و با وجود حملات هدفمند از سوی سیستم‌های سانسور ملی در چین و ایران، همچنان به تحقق <a href="https://github.com/geph-official/geph4-client/wiki/Service-SLA-(%E5%B0%81%E4%B8%80%E5%A4%A9%E8%B3%A0%E4%B8%80%E5%A4%A9%E6%94%BF%E7%AD%96)">SLA خدمات</a> خود پایبند بوده‌ایم.</p>
     <p>همچنین ما از یک <a href="https://github.com/geph-official/geph5/blob/master/libraries/mizaru2/README.md">سامانه احراز هویت امضای کور</a> برخورداریم که با استفاده از روش‌های رمزنگاری تضمین می‌کند سرورها هرگز قادر نیستند فعالیت مرور کاربران را حتی در صورت نفوذ کامل، به هویت آنان پیوند دهند.</p>
+  ru: >-
+    <p>Geph — это VPN, изначально спроектированный для противодействия цензуре на уровне интернет-провайдера. В отличие от VPN, которые в лучшем случае ведут с цензорами неустойчивую игру в догонялки, архитектура и протоколы Geph специально разработаны так, чтобы быть почти незаметными для провайдеров и сетевых противников.</p>
+    <p>За последние 7 лет мы подключили миллионы пользователей за строгими национальными файрволами и стабильно выполняли наше <a href="https://github.com/geph-official/geph4-client/wiki/Service-SLA-(%E5%B0%81%E4%B8%80%E5%A4%A9%E8%B3%A0%E4%B8%80%E5%A4%A9%E6%94%BF%E7%AD%96)">сервисное SLA</a>, несмотря на целевые атаки национальных систем цензуры в Китае и Иране.</p>
+    <p>Мы также используем <a href="https://github.com/geph-official/geph5/blob/master/libraries/mizaru2/README.md">систему аутентификации со слепыми подписями</a>, которая криптографически гарантирует, что серверы никогда не смогут связать активность пользователя в браузере с его личностью, даже если серверы будут полностью скомпрометированы.</p>
 
 footer:
   en: Client Portal
   zhs: 用户中心
   zht: 用户中心
   fa: ورودی مشتری
+  ru: Клиентский портал
 
 robust-zk-privacy:
   en: Robust zero-knowledge privacy
   zhs: 隐私至上
   zht: 隱私至上
   fa: حریم خصوصی قدرت مند بدون دانش اطلاعات کاربر
+  ru: Надежная приватность с нулевым разглашением
 
 robust-zk-privacy-blurb:
   en: We don’t log you — because we can’t. We use <a href="https://github.com/geph-official/geph5/blob/master/libraries/mizaru2/README.md">zero-knowledge authentication</a> so that we can never associate your browsing activity with your identity.
   zhs: 我们无法记录您的浏览信息，因为我们使用先进的密码学开发了 <a href="https://github.com/geph-official/geph5/blob/master/libraries/mizaru2/README.md">Mizaru 零知识认证协议</a>。这确保我们永远无法将您的浏览活动与您的身份联系起来。
   zht: 我們無法記錄您的瀏覽信息，因為我們使用先進的密碼學開發了 <a href="https://github.com/geph-official/geph5/blob/master/libraries/mizaru2/README.md">Mizaru 零知識認證協議</a>。這確保我們永遠無法將您的瀏覽活動與您的身份聯繫起來。
   fa: ما اعمال شما را ثبت نمی‌کنیم چرا که نمی‌توانیم. ما از <a href="https://github.com/geph-official/geph5/blob/master/libraries/mizaru2/README.md">شناسایی بدون دانش</a> استفاده می‌کنیم تا هیچوقت نتوانیم اعمال اینترنتی شما را با هویت شما تطبیق دهیم.
+  ru: Мы не ведем журналы вашей активности — потому что не можем. Мы используем <a href="https://github.com/geph-official/geph5/blob/master/libraries/mizaru2/README.md">аутентификацию с нулевым разглашением</a>, поэтому никогда не можем связать вашу активность в браузере с вашей личностью.
 
 resilient-anti-censorship:
   en: Resilient anti-censorship
   zhs: 不怕封锁
   zht: 不怕封鎖
   fa: تکنولوژی ضد-سانسور مقاوم
+  ru: Устойчивое обходное подключение
 
 resilient-anti-censorship-blurb:
   en: Geph is on the cutting edge of censorship circumvention research. We have overcome numerous targeted attacks by China’s Great Firewall, the world’s most sophisticated national internet filter.
   zhs: 迷雾通一直在反封锁研究的最前沿。在过去的三年中，我们多次遭到GFW的针对攻击，并且屡战屡胜。迷雾通更是目前市面上唯一提供<a href="https://github.com/geph-official/geph4-client/wiki/Service-SLA-(%E5%B0%81%E4%B8%80%E5%A4%A9%E8%B3%A0%E4%B8%80%E5%A4%A9%E6%94%BF%E7%AD%96)">封几天赔几天</a>的翻墙软件。
   zht: 迷霧通一直在反封鎖研究的最前沿。在過去的三年中，我們多次遭到GFW的針對攻擊，並且屢戰屢勝。迷霧通更是目前市面上唯一提供<a href="https://github.com/geph-official/geph4-client/wiki/Service-SLA-(%E5%B0%81%E4%B8%80%E5%A4%A9%E8%B3%A0%E4%B8%80%E5%A4%A9%E6%94%BF%E7%AD%96)">封幾天賠幾天</a>的翻牆軟件。
   fa: Geph از جدیدترین تکنولوژی های دور زدن سانسور استفاده می‌کند. ما از چندین حمله هدفمند از سمت فایروال قدرتمند چین، پیچیده‌ترین فیلتر اینترنت ملی جهان، سربلند بیرون آمده‌ایم.
+  ru: Geph находится на переднем крае исследований обхода цензуры. Мы выдержали многочисленные целевые атаки Великого китайского файрвола, самого сложного национального интернет-фильтра в мире.
 
 accessible-to-all:
   en: Accessible to all
   zhs: 人人可用
   zht: 人人可用
   fa: در دسترس برای همه
+  ru: Доступно всем
 
 accessible-to-all-blurb:
   en: We believe that everyone has the right to internet freedom and privacy. So we offer entirely free medium-speed browsing for everyone. Greatly enhanced speed can be purchased for just €5/month.
   zhs: 我们坚信互联网隐私和信息自由是人的基本权利。因此，我们为所有用户提供完全免费的中速浏览。超快速度的付费Plus账号仅需€5/月。
   zht: 我們堅信互聯網隱私和信息自由是人的基本權利。因此，我們為所有用戶提供完全免費的中速瀏覽。超快速度的付費Plus賬號僅需€5/月。
   fa: ما اعتقاد داریم که همه حق دسترسی به اینترنت آزاد و امن را دارند. برای همین ما قابلیت مرور اینترنت با سرعت متوسط را بدون هیچ هزینه ای ارائه می‌دهیم. سرعت بسیار بالاتر تنها با 5€ در ماه قابل خریداری است.
+  ru: Мы считаем, что каждый имеет право на свободу и приватность в интернете. Поэтому мы предлагаем всем полностью бесплатный доступ на средней скорости. Значительно более высокую скорость можно приобрести всего за €5 в месяц.
 
 transparent-and-accountable:
   en: Transparent and accountable
   zhs: 透明负责
   zht: 透明負責
   fa: شفاف و مسئولیت‌پذیر
+  ru: Прозрачность и ответственность
 
 transparent-and-accountable-blurb:
   en: Geph’s entire software stack is open source and available on <a href="https://github.com/geph-official/">GitHub</a>. Our managing organization is registered in Estonia, an EU jurisdiction with strong privacy laws.
   zhs: 迷雾通的整个软件架构全部是开源的，可以在 <a href="https://github.com/geph-official/">GitHub</a> 上浏览。迷雾通公司注册在爱沙尼亚，受欧盟严格的隐私法保护。
   zht: 迷霧通的整個軟件架構全部是開源的，可以在 <a href="https://github.com/geph-official/">GitHub</a> 上瀏覽。迷霧通公司註冊在愛沙尼亞，受歐盟嚴格的隱私法保護。
   fa: تمام پشته نرم افزاری Geph متن باز است و از طریق گیت‌هاب قابل دسترسی است.
+  ru: Весь программный стек Geph открыт и доступен на <a href="https://github.com/geph-official/">GitHub</a>. Наша управляющая организация зарегистрирована в Эстонии, юрисдикции ЕС с сильными законами о приватности.
 download:
   en: Download
   zhs: 下载
   zht: 下載
   fa: دانلود
+  ru: Скачать
 
 community:
   en: Community
   zhs: 社区
   zht: 社區
   fa: انجمن
+  ru: Сообщество
 
 forum:
   en: Discourse forum
   zhs: Discourse 论坛
   zht: Discourse 論壇
   fa: تالار گفتمان
+  ru: Форум Discourse
 
 incorrect-login:
   en: Incorrect username or password
   zhs: 用户名或密码错误
   zht: 用戶名或密碼錯誤
   fa: نام کاربری یا کلمه عبور اشتباه است
+  ru: Неверное имя пользователя или пароль
 
 loading:
   en: Loading...
   zhs: 加载中...
   zht: 加載中...
   fa: بارگذاری...
+  ru: Загрузка...
 
 account-overview:
   en: Account overview
   zhs: 帐户概览
   zht: 帳戶概覽
   fa: پنل کاربری
+  ru: Обзор аккаунта
 
 internal-server-error:
   en: Internal server error
   zhs: 内部服务器错误
   zht: 內部伺服器錯誤
   fa: خطای داخلی سرور
+  ru: Внутренняя ошибка сервера
 
 error:
   en: Error
   zhs: 错误
   zht: 錯誤
   fa: خطا
+  ru: Ошибка
 
 remaining-days:
   en: 'Remaining days:'
   zhs: '剩余天数：'
   zht: '剩餘天數：'
   fa: ': روزهای باقی مانده'
+  ru: 'Осталось дней:'
 
 buy-plus:
   en: Buy Plus
   zhs: 购买 Plus
   zht: 購買 Plus
   fa: خرید پلاس
+  ru: Купить Plus
 
 redeem-giftcard:
   en: Redeem giftcard
   zhs: 兑换礼品卡
   zht: 兌換禮品卡
   fa: استفاده از گیفت کارت
+  ru: Активировать подарочную карту
 
 bad-request:
   en: Bad request
   zhs: 错误请求
   zht: 錯誤請求
   fa: درخواست نادرست
+  ru: Неверный запрос
 
 duplicate-payments:
   en: Duplicate payments
   zhs: 重复付款
   zht: 重複付款
   fa: پرداخت های تکراری
+  ru: Повторный платеж
 
 who-is-the-plus-for:
   en: Who is the Plus for?
   zhs: 给谁买 Plus？
   zht: 給誰買 Plus？
   fa: اشتراک پلاس برای چه کسی است؟
+  ru: Для кого Plus?
 
 myself:
   en: Myself
   zhs: 我自己
   zht: 我自己
   fa: خودم
+  ru: Для меня
 
 someone-else:
   en: Someone else
   zhs: 其他人
   zht: 其他人
   fa: کسی دیگر
+  ru: Для другого человека
 
 what-plan-buying:
   en: What plan are you buying?
   zhs: 您购买哪个套餐？
   zht: 您購買哪個套餐？
   fa: کدام طرح را می‌خواهید بخرید؟
+  ru: Какой тариф Вы покупаете?
 
 basic:
   en: Basic
   zhs: 基础版
   zht: 基礎版
   fa: پایه
+  ru: Basic
 
 unlimited:
   en: Unlimited
   zhs: 无限版
   zht: 無限版
   fa: نامحدود
+  ru: Unlimited
 
 beta:
   en: BETA
   zhs: BETA
   zht: BETA
   fa: BETA
+  ru: BETA
 
 basic-beta-blurb:
   en: Basic plan limited to 5 GB per month
   zhs: 基础版每月限量 5 GB
   zht: 基礎版每月限量 5 GB
   fa: طرح پایه هر ماه به ۵ گیگابایت محدود است
+  ru: Тариф Basic ограничен 5 ГБ в месяц
 
 sender:
   en: Sender
   zhs: 发送者
   zht: 發送者
   fa: فرستنده
+  ru: Отправитель
 
 sender-invalid-blurb:
   en: Sender is required
   zhs: 必须要有发送者
   zht: 必須要有發送者
   fa: فرستنده مورد‌نیاز است
+  ru: Необходимо указать отправителя
 
 recipient-email:
   en: Recipient email
   zhs: 收件者的电子邮件
   zht: 收件者的電子郵件
   fa: ایمیل گیرنده
+  ru: Email получателя
 
 recipient-invalid-blurb:
   en: You must specify someone to receive the gift card
   zhs: 您必须指定某人来收取礼品卡
   zht: 您必須指定某人來收取禮品卡
   fa: شما باید شخصی را برای دریافت گیفت کارت مشخص کنید
+  ru: Укажите получателя подарочной карты
 
 choose-a-plan-length:
   en: Choose a plan length
   zhs: 订阅时长
   zht: 訂閱時長
   fa: مدت زمان اشتراک را انتخاب کنید
+  ru: Выберите срок тарифа
 
 got-a-promo-code:
   en: Got a promo code?
   zhs: 优惠码
   zht: 優惠碼
   fa: کد تخفیف دارید؟
+  ru: Есть промокод?
 
 promo-code:
   en: Promo code
   zhs: 优惠码
   zht: 優惠碼
   fa: کد تخفیف
+  ru: Промокод
 
 choose-a-payment-method:
   en: Choose a payment method
   zhs: 付款方式
   zht: 付款方式
   fa: یک روش پرداخت انتخاب کنید
+  ru: Выберите способ оплаты
 
 bank-card:
   en: Bank card
   zhs: 银行卡
   zht: 銀行卡
   fa: کارت بانکی
+  ru: Банковская карта
 
 alipay:
   en: Alipay
   zhs: 支付宝
   zht: 支付寶
   fa: Alipay
+  ru: Alipay
 
 paypal:
   en: PayPal
   zhs: PayPal / 银联
   zht: PayPal
   fa: PayPal
+  ru: PayPal
 
 wxpay:
   en: WeChat Pay
   zhs: 微信支付
   zht: 微信支付
   fa: WeChat Pay
+  ru: WeChat Pay
 
 total:
   en: 'Total:'
   zhs: 总计：
   zht: 總計：
   fa: 'هزینه کل:'
+  ru: 'Итого:'
 
 pay:
   en: Check out
   zhs: 结账
   zht: 結賬
   fa: پرداخت
+  ru: Перейти к оплате
 
 crypto-minimum-total:
   en: Crypto payments require a minimum total of €20.00.
   zhs: 加密货币支付最低总额为€20.00。
   zht: 加密貨幣支付最低總額為€20.00。
   fa: پرداخت‌های رمزارزی حداقل مبلغ کل €20.00 دارند.
+  ru: Для оплаты криптовалютой минимальная сумма составляет €20.00.
 
 1-month:
   en: 1 month (30 days)
   zhs: 1 个月（30 天）
   zht: 1 個月（30 天）
   fa: یک ماه (30 روز)
+  ru: 1 месяц (30 дней)
 
 3-months:
   en: 3 months (90 days)
   zhs: 3 个月（90 天）
   zht: 3 個月（90 天）
   fa: سه ماه (90 روز)
+  ru: 3 месяца (90 дней)
 
 1-year:
   en: 1 year (365 days)
   zhs: 1年（365 天）
   zht: 1年（365 天）
   fa: یک سال (365 روز)
+  ru: 1 год (365 дней)
 
 2-year:
   en: 2 years (730 days)
   zhs: 2年（730 天）
   zht: 2年（730 天）
   fa: دو سال (730 روز)
+  ru: 2 года (730 дней)
 
 3-year:
   en: 3 years (1095 days)
   zhs: 3年（1095 天）
   zht: 3年（1095 天）
   fa: سه سال (1095 روز)
+  ru: 3 года (1095 дней)
 
 custom:
   en: Custom (days)
   zhs: 自定义（天）
   zht: 自定義（天）
   fa: دلخواه (تعداد روز ها)
+  ru: Свой срок (дни)
 
 10-off:
   en: 10% OFF
   zhs: 9折
   zht: 9折
   fa: تخفیف 10%
+  ru: Скидка 10%
 
 15-off:
   en: 15% OFF
   zhs: 8.5折
   zht: 8.5折
   fa: تخفیف 15%
+  ru: Скидка 15%
 
 17.5-off:
   en: 17.5% OFF
   zhs: 8.25折
   zht: 8.25折
   fa: تخفیف 17.5%
+  ru: Скидка 17.5%
 
 how-many-giftcards:
   en: How many giftcards?
   zhs: 买多少张礼品卡？
   zht: 買多少張禮品卡？
   fa: چه تعداد گیفت‌کارت؟
+  ru: Сколько подарочных карт?
 
 how-many-days-in-each-giftcard:
   en: How many days for each giftcard?
   zhs: 每张礼品卡充值多少天？
   zht: 每張禮品卡充值多少天？
   fa: چند روز برای هر گیفت‌کارت؟
+  ru: Сколько дней на каждой подарочной карте?
 
 crypto:
   en: Cryptocurrency
   zhs: 加密货币
   zht: 加密貨幣
   fa: ارز دیجیتال
+  ru: Криптовалюта
 
 crypto-payment:
   en: Cryptocurrency payment
   zhs: 加密货币支付
   zht: 加密貨幣支付
   fa: پرداخت با ارز دیجیتال
+  ru: Оплата криптовалютой
 
 choose-a-currency:
   en: Choose a currency
   zhs: 请选择货币
   zht: 請選擇貨幣
   fa: یک ارز را انتخاب کنید
+  ru: Выберите валюту
 
 send-only-on-network:
   en: Send only on
   zhs: 仅在以下网络发送
   zht: 僅在以下網路發送
   fa: فقط روی این شبکه ارسال کنید
+  ru: Отправляйте только в сети
 
 crypto-irreversible-warning:
   en: Double-check the address, network, and amount before sending. Funds sent to the wrong address, on the wrong network, or with the wrong amount <strong>cannot be recovered</strong>.
   zhs: 请在发送前反复确认收款地址、网络和金额。发送到错误地址、错误网络或金额不正确的资金<strong>无法追回</strong>。
   zht: 請在發送前反覆確認收款地址、網路和金額。發送到錯誤地址、錯誤網路或金額不正確的資金<strong>無法追回</strong>。
   fa: قبل از ارسال، آدرس، شبکه و مبلغ را چندبار بررسی کنید. وجوهی که به آدرس اشتباه، روی شبکه اشتباه، یا با مبلغ اشتباه ارسال شوند <strong>قابل بازیابی نیستند</strong>.
+  ru: Перед отправкой внимательно проверьте адрес, сеть и сумму. Средства, отправленные на неверный адрес, в неверной сети или в неверной сумме, <strong>невозможно вернуть</strong>.
 
 bitcoin-mainnet:
   en: Bitcoin mainnet
   zhs: 比特币主网
   zht: 比特幣主網
   fa: شبکه اصلی بیت‌کوین
+  ru: Основная сеть Bitcoin
 
 ethereum-mainnet:
   en: Ethereum mainnet
   zhs: 以太坊主网
   zht: 以太坊主網
   fa: شبکه اصلی اتریوم
+  ru: Основная сеть Ethereum
 
 monero-mainnet:
   en: Monero mainnet
   zhs: 门罗币主网
   zht: 門羅幣主網
   fa: شبکه اصلی مونرو
+  ru: Основная сеть Monero
 
 tron-trc20:
   en: Tron (TRC20)
   zhs: 波场（TRC20）
   zht: 波場（TRC20）
   fa: ترون (TRC20)
+  ru: Tron (TRC20)
 
 dogecoin-mainnet:
   en: Dogecoin mainnet
   zhs: 狗狗币主网
   zht: 狗狗幣主網
   fa: شبکه اصلی دوج‌کوین
+  ru: Основная сеть Dogecoin
 
 crypto-network-unknown:
   en: the correct network
   zhs: 正确的网络
   zht: 正確的網路
   fa: شبکه صحیح
+  ru: правильной сети
 
 btc:
   en: Bitcoin
   zhs: 比特币
   zht: 比特幣
   fa: Bitcoin
+  ru: Bitcoin
 
 eth:
   en: Ethereum
   zhs: 以太坊
   zht: 以太坊
   fa: Ethereum
+  ru: Ethereum
 
 xmr:
   en: Monero
   zhs: 门罗币
   zht: 門羅幣
   fa: Monero
+  ru: Monero
 
 usdttrc20:
   en: USDT
   zhs: USDT
   zht: USDT
   fa: USDT
+  ru: USDT
 
 usdterc20:
   en: USDT
   zhs: USDT
   zht: USDT
   fa: USDT
+  ru: USDT
 
 usdt:
   en: USDT
   zhs: USDT
   zht: USDT
   fa: USDT
+  ru: USDT
 
 usdc:
   en: USDC
   zhs: USDC
   zht: USDC
   fa: USDC
+  ru: USDC
 
 usdcsol:
   en: USDC
   zhs: USDC
   zht: USDC
   fa: USDC
+  ru: USDC
 
 usdctrc20:
   en: USDC
   zhs: USDC
   zht: USDC
   fa: USDC
+  ru: USDC
 
 doge:
   en: Dogecoin
   zhs: 狗狗币
   zht: 狗狗幣
   fa: Dogecoin
+  ru: Dogecoin
 
 giftcard-id:
   en: Giftcard ID
   zhs: 礼品卡号
   zht: 禮品卡號
   fa: کد گیفت کارت
+  ru: ID подарочной карты
 
 redeem:
   en: Redeem
   zhs: 兑换
   zht: 兌換
   fa: استفاده
+  ru: Активировать
 
 incorrect-giftcard:
   en: No such giftcard
   zhs: 无此礼品卡
   zht: 無此禮品卡
   fa: کارت هدیه‌ای یافت نشد
+  ru: Такой подарочной карты нет
 
 giftcard-days:
   en: 'Days in giftcard: '
   zhs: '礼品卡有效天数：'
   zht: '禮品卡有效天數：'
   fa: 'روزها در کارت هدیه: '
+  ru: 'Дней на подарочной карте: '
 
 giftcard-applied:
   en: Giftcard applied
   zhs: 礼品卡已应用
   zht: 禮品卡已應用
   fa: کارت هدیه ثبت شد
+  ru: Подарочная карта активирована
 
 giftcard-promotion:
   en: Promotions can be applied while redeeming giftcards
   zhs: 任何优惠码可在兑换礼品卡时使用
   zht: 任何優惠碼可在兌換禮品卡時使用
   fa: تخفیف ها زمان اعمال گیفت کارت می‌توانند استفاده شوند
+  ru: Промокоды можно применить при активации подарочных карт
 
 send-crypto:
   en: Send cryptocurrency
   zhs: 发送加密货币
   zht: 發送加密貨幣
   fa: ارسال ارز دیجیتال
+  ru: Отправить криптовалюту
 
 please-send-funds:
   en: 'Send cryptocurrency to the following address'
   zhs: '请将加密货币发送至以下地址'
   zht: '請將加密貨幣發送至以下地址'
   fa: 'ارز دیجیتال را به آدرس زیر بفرستید'
+  ru: 'Отправьте криптовалюту на следующий адрес'
 
 amount:
   en: Amount
   zhs: 数量
   zht: 數量
   fa: مقدار
+  ru: Сумма
 
 to-this-address:
   en: To this address
   zhs: 到这个地址
   zht: 到這個地址
   fa: به این آدرس
+  ru: На этот адрес
 
 waiting:
   en: Awaiting deposit
   zhs: 等待存款
   zht: 等待存款
   fa: منتظر واریز
+  ru: Ожидается депозит
 
 confirming:
   en: Confirming
   zhs: 确认中
   zht: 確認中
   fa: در حال تأیید
+  ru: Подтверждение
 
 exchanging:
   en: Exchanging
   zhs: 交换中
   zht: 交換中
   fa: در حال مبادله
+  ru: Обмен
 
 finished:
   en: Finished
   zhs: 已完成
   zht: 已完成
   fa: اتمام
+  ru: Завершено
 
 failed:
   en: Failed
   zhs: 失败
   zht: 失敗
   fa: نا‌موفق
+  ru: Не удалось
 
 refunded:
   en: Refunded
   zhs: 已退款
   zht: 已退款
   fa: بازگشت شد
+  ru: Возвращено
 
 verifying:
   en: Verifying
   zhs: 验证中
   zht: 驗證中
   fa: در حال تایید
+  ru: Проверка
 
 return-to-portal:
   en: Return to user portal
   zhs: 返回账户管理
   zht: 返回賬戶管理
   fa: بازگشت به ورودی کاربران
+  ru: Вернуться в личный кабинет
 
 missing-days:
   en: Missing days in the app?
   zhs: 软件中没有延长 Plus？
   zht: 軟件中沒有延長 Plus？
   fa: روز های خریداری شده در برنامه نمایش داده نمی‌شود؟
+  ru: Дни не появились в приложении?
 
 click-refresh:
   en: After purchasing Plus time, wait 10 minutes for it to show up in the app!
   zhs: 购买Plus后，请耐心等待10分钟即可在应用中看到！
   zht: 購買Plus後，請耐心等待10分鐘即可在應用程式中看到！
   fa: پس از خرید اشتراک پلاس، 10 دقیقه صبر کنید تا در برنامه نمایش داده شود!
+  ru: После покупки времени Plus подождите 10 минут, чтобы оно появилось в приложении!
 
 # banner:
 #   en: '📢 <a href="https://community.geph.io/t/topic/17305">Largest ever Plus giveaway</a> to celebrate Geph 5.0 release! 🎁 ✨'
@@ -683,65 +796,76 @@ bad-aliwechat:
   zhs: ⚠️ 支付宝和微信支付有时会不稳定。如果您使用这些方式支付后10分钟内未收到 Plus，请将您的用户名和付款截图发送至 support@geph.io，我们将在48小时内为您添加 Plus 时间。
   zht: ⚠️ 支付宝和微信支付有时会不稳定。如果您使用這些方式支付後10分鐘內未收到 Plus，請將您的用戶名和付款截圖發送至 support@geph.io，我們將在48小時內為您添加 Plus 時間。
   fa: ⚠️ پرداخت‌های آلی‌پی و وی‌چت‌پی همیشه قابل اطمینان نیستند. اگر با استفاده از این روش‌ها پرداخت کردید و پس از 10 دقیقه Plus را دریافت نکردید، لطفاً نام کاربری و تصویر پرداخت خود را به support@geph.io ایمیل کنید، و ما ظرف 48 ساعت زمان Plus شما را اضافه خواهیم کرد.
+  ru: ⚠️ Платежи через Alipay и WeChat Pay не всегда надежны. Если Вы оплатили одним из этих способов и не получили Plus через 10 минут, отправьте имя пользователя и скриншот платежа на support@geph.io, и мы добавим Ваше время Plus в течение 48 часов.
 
 already-autorenew:
   en: You already have auto-renewing Plus! Cancel your auto-renewing program first if you need to purchase a new plan.
   zhs: 您已经自动续订了 Plus！如需购买新的套餐，请您先取消自动续订。
   zht: 您已經自動續訂了 Plus！如需購買新的套餐，請您先取消自動續訂。
   fa: شما در حال حاضر Plus با تجدید خودکار دارید! اگر نیاز به خرید برنامه جدید دارید، برنامه تجدید خودکار خود را لغو کنید.
+  ru: У Вас уже есть Plus с автопродлением. Чтобы купить новый тариф, сначала отмените автопродление.
 
 autorenew:
   en: Auto-renew
   zhs: 自动续订
   zht: 自動續訂
   fa: تجدید خودکار
+  ru: Автопродление
 
 auto-renewing:
   en: Auto-renewing
   zhs: 自动续订中
   zht: 自動續訂中
   fa: در حال تجدید خودکار
+  ru: Автопродление включено
 
 cancel:
   en: cancel
   zhs: 取消
   zht: 取消
   fa: لغو
+  ru: отменить
 
 experimental_feature_warning:
   en: this is an experimental feature
   zhs: 此功能目前处于实验阶段
   zht: 此功能目前處於實驗階段
   fa: این ویژگی در حال حاضر آزمایشی است
+  ru: это экспериментальная функция
 
 are-you-sure:
   en: Are you sure you want to cancel auto-renewing Plus?
   zhs: 您确定要取消自动续订 Plus 吗？
   zht: 您確定要取消自動續訂 Plus 嗎？
   fa: آیا مطمئن هستید که می خواهید تجدید خودکار Plus را لغو کنید؟
+  ru: Вы уверены, что хотите отменить автопродление Plus?
 
 yes:
   en: Yes
   zhs: 是
   zht: 是
   fa: آره
+  ru: Да
 
 no:
   en: No
   zhs: 否
   zht: 否
   fa: نه
+  ru: Нет
 cancel-recurring-success:
   en: Auto-renew cancelled
   zhs: 自动续订已取消
   zht: 自動續訂已取消
   fa: لغو تجدید خودکار با موفقیت انجام شد
+  ru: Автопродление отменено
 
 ok:
   en: OK
   zhs: 好的
   zht: 好的
   fa: باشه
+  ru: OK
 
 faq_content:
   en: |
@@ -957,9 +1081,66 @@ faq_content:
       </div>
 
     </div>
+  ru: |
+    <div class="faq-container mt-4">
+      <div class="faq-item">
+        <h3 class="faq-question">Ваш код открыт?</h3>
+        <p class="faq-answer">
+          Все, включая этот сайт, опубликовано с открытым исходным кодом
+          <a href="https://github.com/geph-official">на GitHub</a>.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">Как работает аутентификация со слепыми подписями?</h3>
+        <p class="faq-answer">
+          При подключении пользователь предъявляет криптографическое доказательство действующей
+          подписки Plus или Free, а не идентифицирующие учетные данные. Благодаря этому серверы
+          могут проверить право доступа, оставаясь полностью слепыми к личности пользователя.
+          Подробнее о протоколе можно прочитать
+          <a href="https://github.com/geph-official/geph5/blob/master/libraries/mizaru2/README.md">здесь</a>.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">Разве цензор не может просто скачать Geph и заблокировать все серверы?</h3>
+        <p class="faq-answer">
+          И да, и нет. Geph использует двухпереходную архитектуру: пользователи подключаются к
+          <em>выходным</em> узлам через ретрансляторы-<em>мосты</em>. Цензоры могут блокировать
+          все выходные серверы и действительно делают это, но заблокировать мосты намного сложнее.
+        </p>
+        <p class="faq-answer">
+          Причина в том, что трудно блокируемый bootstrap-протокол назначает
+          <em>разным пользователям разные мосты</em> и постоянно ротирует их, поэтому полный
+          перебор практически невозможен. С 2019 года мы наблюдали автоматизированные попытки
+          перебора со стороны китайского GFW, но они стабильно не могли нарушить работу сервиса.
+          Подробнее об архитектуре можно прочитать
+          <a href="https://github.com/geph-official/geph5/wiki/How-Geph-works">на GitHub</a>.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">Разве это не централизованная система?</h3>
+        <p class="faq-answer">
+          Да, но не навсегда. Мы активно работаем над интеграцией с
+          <a href="https://earendil.network">Earendil</a>, чтобы добиться полной децентрализации
+          протокола. Это полностью устранит нашу инфраструктуру как единую точку отказа.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">Как финансируется Geph?</h3>
+        <p class="faq-answer">
+          Geph <em>полностью финансируется сообществом через подписки Plus</em>, что обеспечивает
+          нашу долгосрочную независимость и устойчивость.
+        </p>
+      </div>
+
+    </div>
 
 account-secret:
   en: Account secret
   zhs: 账户密钥
   zht: 賬戶密鑰
   fa: کلید حساب
+  ru: Секрет аккаунта
