@@ -1,7 +1,7 @@
 import { error } from '@sveltejs/kit';
 import type { LayoutServerLoad } from './$types';
 
-const supportedLanguages = new Set(['en', 'zhs', 'zht', 'fa', 'ru']);
+const supportedLanguages = new Set(['en', 'zhs', 'zht', 'fa', 'ar', 'ru']);
 
 export const load: LayoutServerLoad = ({ params }) => {
 	if (!supportedLanguages.has(params.lang)) {

@@ -3,6 +3,7 @@ langname:
   zhs: 简体中文
   zht: 繁體中文
   fa: فارسی
+  ar: العربية
   ru: Русский
 
 langcode:
@@ -10,13 +11,23 @@ langcode:
   zhs: zh-CN
   zht: zh-TW
   fa: fa-IR
+  ar: ar
   ru: ru-RU
+
+dir:
+  en: ltr
+  zhs: ltr
+  zht: ltr
+  fa: rtl
+  ar: rtl
+  ru: ltr
 
 username:
   en: Username
   zhs: 用户名
   zht: 用戶名
   fa: نام کاربری
+  ar: اسم المستخدم
   ru: Имя пользователя
 
 password:
@@ -24,6 +35,7 @@ password:
   zhs: 密码
   zht: 密碼
   fa: کلمه عبور
+  ar: كلمة المرور
   ru: Пароль
 
 home:
@@ -31,6 +43,7 @@ home:
   zhs: 主页
   zht: 主頁
   fa: خانه
+  ar: الرئيسية
   ru: Главная
 
 user-portal:
@@ -38,6 +51,7 @@ user-portal:
   zhs: 账户管理
   zht: 賬戶管理
   fa: ورودی کاربران
+  ar: بوابة المستخدم
   ru: Личный кабинет
 
 policies:
@@ -45,6 +59,7 @@ policies:
   zhs: 条款
   zht: 條款
   fa: سیاست ها
+  ar: السياسات
   ru: Правила
 
 login:
@@ -52,6 +67,7 @@ login:
   zhs: 登录
   zht: 登錄
   fa: ورود
+  ar: تسجيل الدخول
   ru: Войти
 
 email_required:
@@ -59,6 +75,7 @@ email_required:
   zhs: 请填写收礼品卡的邮件
   zht: 請填寫收禮品卡的郵件
   fa: فیلد ایمیل گیرنده گیفت کارت باید پر شود
+  ar: حقل بريد مستلم بطاقة الهدية مطلوب
   ru: Укажите email получателя подарочной карты
 
 sender_required:
@@ -66,6 +83,7 @@ sender_required:
   zhs: 请填写礼品卡赠送人
   zht: 請填寫禮品卡贈送人
   fa: فیلد فرستنده گیفت کارت باید پر شود
+  ar: حقل مرسل بطاقة الهدية مطلوب
   ru: Укажите отправителя подарочной карты
 
 geph:
@@ -73,6 +91,7 @@ geph:
   zhs: 迷雾通
   zht: 迷霧通
   fa: Geph
+  ar: Geph
   ru: Geph
 
 hero:
@@ -80,6 +99,7 @@ hero:
   zhs: '不怕封锁的 VPN'
   zht: '不怕封鎖的 VPN'
   fa: 'وی‌پی‌ان متوقف‌نشدنی'
+  ar: 'شبكة VPN <b>الأكثر صمودًا</b> في العالم'
   ru: 'Самый <b>стойкий к блокировкам</b> VPN в мире'
 
 sub_hero:
@@ -102,6 +122,10 @@ sub_hero:
     <p>Geph (گِف) یک VPN است که از پایه برای مقاومت در برابر سانسور در سطح ISP طراحی شده است. برخلاف VPNهای سنتی که بر «امنیت از راه پنهان‌کاری» تکیه می‌کنند، معماری و پروتکل‌های Geph به گونه‌ای ویژه طراحی شده‌اند تا برای ISPها و عوامل نظارتی شبکه تقریباً نامشهود باشند.</p>
     <p>در طول ۷ سال گذشته، ما میلیون‌ها کاربر را که پشت دیوارهای ملی محدودکننده قرار دارند، متصل کرده‌ایم و با وجود حملات هدفمند از سوی سیستم‌های سانسور ملی در چین و ایران، همچنان به تحقق <a href="https://github.com/geph-official/geph4-client/wiki/Service-SLA-(%E5%B0%81%E4%B8%80%E5%A4%A9%E8%B3%A0%E4%B8%80%E5%A4%A9%E6%94%BF%E7%AD%96)">SLA خدمات</a> خود پایبند بوده‌ایم.</p>
     <p>همچنین ما از یک <a href="https://github.com/geph-official/geph5/blob/master/libraries/mizaru2/README.md">سامانه احراز هویت امضای کور</a> برخورداریم که با استفاده از روش‌های رمزنگاری تضمین می‌کند سرورها هرگز قادر نیستند فعالیت مرور کاربران را حتی در صورت نفوذ کامل، به هویت آنان پیوند دهند.</p>
+  ar: >-
+    <p>Geph هي شبكة VPN صُممت من الأساس لمقاومة الرقابة على مستوى مزودي خدمة الإنترنت. وعلى عكس شبكات VPN التي تلعب في أفضل الأحوال لعبة غير مستدامة مع جهات الرقابة، صُممت بنية Geph وبروتوكولاتها خصيصًا لتكون شبه غير مرئية أمام مزودي الخدمة والخصوم على الشبكة.</p>
+    <p>خلال السنوات السبع الماضية، وصلنا ملايين المستخدمين الموجودين خلف جدران نارية وطنية صارمة، وحققنا باستمرار <a href="https://github.com/geph-official/geph4-client/wiki/Service-SLA-(%E5%B0%81%E4%B8%80%E5%A4%A9%E8%B3%A0%E4%B8%80%E5%A4%A9%E6%94%BF%E7%AD%96)">اتفاقية مستوى الخدمة</a> الخاصة بنا رغم الهجمات الموجهة من أنظمة الرقابة الوطنية في الصين وإيران.</p>
+    <p>كما نستخدم <a href="https://github.com/geph-official/geph5/blob/master/libraries/mizaru2/README.md">نظام مصادقة بالتوقيعات العمياء</a> يضمن تشفيريًا أن الخوادم لا تستطيع أبدًا ربط نشاط التصفح بهويات المستخدمين، حتى إذا اختُرقت بالكامل.</p>
   ru: >-
     <p>Geph — это VPN, изначально спроектированный для противодействия цензуре на уровне интернет-провайдера. В отличие от VPN, которые в лучшем случае ведут с цензорами неустойчивую игру в догонялки, архитектура и протоколы Geph специально разработаны так, чтобы быть почти незаметными для провайдеров и сетевых противников.</p>
     <p>За последние 7 лет мы подключили миллионы пользователей за строгими национальными файрволами и стабильно выполняли наше <a href="https://github.com/geph-official/geph4-client/wiki/Service-SLA-(%E5%B0%81%E4%B8%80%E5%A4%A9%E8%B3%A0%E4%B8%80%E5%A4%A9%E6%94%BF%E7%AD%96)">сервисное SLA</a>, несмотря на целевые атаки национальных систем цензуры в Китае и Иране.</p>
@@ -112,6 +136,7 @@ footer:
   zhs: 用户中心
   zht: 用户中心
   fa: ورودی مشتری
+  ar: بوابة العميل
   ru: Клиентский портал
 
 robust-zk-privacy:
@@ -119,6 +144,7 @@ robust-zk-privacy:
   zhs: 隐私至上
   zht: 隱私至上
   fa: حریم خصوصی قدرت مند بدون دانش اطلاعات کاربر
+  ar: خصوصية قوية دون كشف معرفة
   ru: Надежная приватность с нулевым разглашением
 
 robust-zk-privacy-blurb:
@@ -126,6 +152,7 @@ robust-zk-privacy-blurb:
   zhs: 我们无法记录您的浏览信息，因为我们使用先进的密码学开发了 <a href="https://github.com/geph-official/geph5/blob/master/libraries/mizaru2/README.md">Mizaru 零知识认证协议</a>。这确保我们永远无法将您的浏览活动与您的身份联系起来。
   zht: 我們無法記錄您的瀏覽信息，因為我們使用先進的密碼學開發了 <a href="https://github.com/geph-official/geph5/blob/master/libraries/mizaru2/README.md">Mizaru 零知識認證協議</a>。這確保我們永遠無法將您的瀏覽活動與您的身份聯繫起來。
   fa: ما اعمال شما را ثبت نمی‌کنیم چرا که نمی‌توانیم. ما از <a href="https://github.com/geph-official/geph5/blob/master/libraries/mizaru2/README.md">شناسایی بدون دانش</a> استفاده می‌کنیم تا هیچوقت نتوانیم اعمال اینترنتی شما را با هویت شما تطبیق دهیم.
+  ar: نحن لا نسجل نشاطك، لأننا لا نستطيع ذلك. نستخدم <a href="https://github.com/geph-official/geph5/blob/master/libraries/mizaru2/README.md">مصادقة عديمة المعرفة</a> حتى لا نتمكن أبدًا من ربط نشاط تصفحك بهويتك.
   ru: Мы не ведем журналы вашей активности — потому что не можем. Мы используем <a href="https://github.com/geph-official/geph5/blob/master/libraries/mizaru2/README.md">аутентификацию с нулевым разглашением</a>, поэтому никогда не можем связать вашу активность в браузере с вашей личностью.
 
 resilient-anti-censorship:
@@ -133,6 +160,7 @@ resilient-anti-censorship:
   zhs: 不怕封锁
   zht: 不怕封鎖
   fa: تکنولوژی ضد-سانسور مقاوم
+  ar: مقاومة قوية للرقابة
   ru: Устойчивое обходное подключение
 
 resilient-anti-censorship-blurb:
@@ -140,6 +168,7 @@ resilient-anti-censorship-blurb:
   zhs: 迷雾通一直在反封锁研究的最前沿。在过去的三年中，我们多次遭到GFW的针对攻击，并且屡战屡胜。迷雾通更是目前市面上唯一提供<a href="https://github.com/geph-official/geph4-client/wiki/Service-SLA-(%E5%B0%81%E4%B8%80%E5%A4%A9%E8%B3%A0%E4%B8%80%E5%A4%A9%E6%94%BF%E7%AD%96)">封几天赔几天</a>的翻墙软件。
   zht: 迷霧通一直在反封鎖研究的最前沿。在過去的三年中，我們多次遭到GFW的針對攻擊，並且屢戰屢勝。迷霧通更是目前市面上唯一提供<a href="https://github.com/geph-official/geph4-client/wiki/Service-SLA-(%E5%B0%81%E4%B8%80%E5%A4%A9%E8%B3%A0%E4%B8%80%E5%A4%A9%E6%94%BF%E7%AD%96)">封幾天賠幾天</a>的翻牆軟件。
   fa: Geph از جدیدترین تکنولوژی های دور زدن سانسور استفاده می‌کند. ما از چندین حمله هدفمند از سمت فایروال قدرتمند چین، پیچیده‌ترین فیلتر اینترنت ملی جهان، سربلند بیرون آمده‌ایم.
+  ar: يقع Geph في طليعة أبحاث تجاوز الرقابة. لقد تجاوزنا العديد من الهجمات الموجهة من جدار الحماية العظيم في الصين، وهو أحد أكثر مرشحات الإنترنت الوطنية تعقيدًا في العالم.
   ru: Geph находится на переднем крае исследований обхода цензуры. Мы выдержали многочисленные целевые атаки Великого китайского файрвола, самого сложного национального интернет-фильтра в мире.
 
 accessible-to-all:
@@ -147,6 +176,7 @@ accessible-to-all:
   zhs: 人人可用
   zht: 人人可用
   fa: در دسترس برای همه
+  ar: متاح للجميع
   ru: Доступно всем
 
 accessible-to-all-blurb:
@@ -154,6 +184,7 @@ accessible-to-all-blurb:
   zhs: 我们坚信互联网隐私和信息自由是人的基本权利。因此，我们为所有用户提供完全免费的中速浏览。超快速度的付费Plus账号仅需€5/月。
   zht: 我們堅信互聯網隱私和信息自由是人的基本權利。因此，我們為所有用戶提供完全免費的中速瀏覽。超快速度的付費Plus賬號僅需€5/月。
   fa: ما اعتقاد داریم که همه حق دسترسی به اینترنت آزاد و امن را دارند. برای همین ما قابلیت مرور اینترنت با سرعت متوسط را بدون هیچ هزینه ای ارائه می‌دهیم. سرعت بسیار بالاتر تنها با 5€ در ماه قابل خریداری است.
+  ar: نؤمن بأن لكل شخص الحق في حرية الإنترنت والخصوصية. لذلك نوفر تصفحًا مجانيًا بالكامل بسرعة متوسطة للجميع. ويمكن شراء سرعة أعلى بكثير مقابل 5€ فقط شهريًا.
   ru: Мы считаем, что каждый имеет право на свободу и приватность в интернете. Поэтому мы предлагаем всем полностью бесплатный доступ на средней скорости. Значительно более высокую скорость можно приобрести всего за €5 в месяц.
 
 transparent-and-accountable:
@@ -161,6 +192,7 @@ transparent-and-accountable:
   zhs: 透明负责
   zht: 透明負責
   fa: شفاف و مسئولیت‌پذیر
+  ar: شفاف وخاضع للمساءلة
   ru: Прозрачность и ответственность
 
 transparent-and-accountable-blurb:
@@ -168,12 +200,14 @@ transparent-and-accountable-blurb:
   zhs: 迷雾通的整个软件架构全部是开源的，可以在 <a href="https://github.com/geph-official/">GitHub</a> 上浏览。迷雾通公司注册在爱沙尼亚，受欧盟严格的隐私法保护。
   zht: 迷霧通的整個軟件架構全部是開源的，可以在 <a href="https://github.com/geph-official/">GitHub</a> 上瀏覽。迷霧通公司註冊在愛沙尼亞，受歐盟嚴格的隱私法保護。
   fa: تمام پشته نرم افزاری Geph متن باز است و از طریق گیت‌هاب قابل دسترسی است.
+  ar: حزمة برمجيات Geph بالكامل مفتوحة المصدر ومتاحة على <a href="https://github.com/geph-official/">GitHub</a>. المنظمة التي تديرنا مسجلة في إستونيا، وهي ولاية قضائية ضمن الاتحاد الأوروبي ذات قوانين خصوصية قوية.
   ru: Весь программный стек Geph открыт и доступен на <a href="https://github.com/geph-official/">GitHub</a>. Наша управляющая организация зарегистрирована в Эстонии, юрисдикции ЕС с сильными законами о приватности.
 download:
   en: Download
   zhs: 下载
   zht: 下載
   fa: دانلود
+  ar: تنزيل
   ru: Скачать
 
 community:
@@ -181,6 +215,7 @@ community:
   zhs: 社区
   zht: 社區
   fa: انجمن
+  ar: المجتمع
   ru: Сообщество
 
 forum:
@@ -188,6 +223,7 @@ forum:
   zhs: Discourse 论坛
   zht: Discourse 論壇
   fa: تالار گفتمان
+  ar: منتدى Discourse
   ru: Форум Discourse
 
 incorrect-login:
@@ -195,6 +231,7 @@ incorrect-login:
   zhs: 用户名或密码错误
   zht: 用戶名或密碼錯誤
   fa: نام کاربری یا کلمه عبور اشتباه است
+  ar: اسم المستخدم أو كلمة المرور غير صحيحين
   ru: Неверное имя пользователя или пароль
 
 loading:
@@ -202,6 +239,7 @@ loading:
   zhs: 加载中...
   zht: 加載中...
   fa: بارگذاری...
+  ar: جار التحميل...
   ru: Загрузка...
 
 account-overview:
@@ -209,6 +247,7 @@ account-overview:
   zhs: 帐户概览
   zht: 帳戶概覽
   fa: پنل کاربری
+  ar: نظرة عامة على الحساب
   ru: Обзор аккаунта
 
 internal-server-error:
@@ -216,6 +255,7 @@ internal-server-error:
   zhs: 内部服务器错误
   zht: 內部伺服器錯誤
   fa: خطای داخلی سرور
+  ar: خطأ داخلي في الخادم
   ru: Внутренняя ошибка сервера
 
 error:
@@ -223,6 +263,7 @@ error:
   zhs: 错误
   zht: 錯誤
   fa: خطا
+  ar: خطأ
   ru: Ошибка
 
 remaining-days:
@@ -230,6 +271,7 @@ remaining-days:
   zhs: '剩余天数：'
   zht: '剩餘天數：'
   fa: ': روزهای باقی مانده'
+  ar: 'الأيام المتبقية:'
   ru: 'Осталось дней:'
 
 buy-plus:
@@ -237,6 +279,7 @@ buy-plus:
   zhs: 购买 Plus
   zht: 購買 Plus
   fa: خرید پلاس
+  ar: شراء Plus
   ru: Купить Plus
 
 redeem-giftcard:
@@ -244,6 +287,7 @@ redeem-giftcard:
   zhs: 兑换礼品卡
   zht: 兌換禮品卡
   fa: استفاده از گیفت کارت
+  ar: استرداد بطاقة هدية
   ru: Активировать подарочную карту
 
 bad-request:
@@ -251,6 +295,7 @@ bad-request:
   zhs: 错误请求
   zht: 錯誤請求
   fa: درخواست نادرست
+  ar: طلب غير صالح
   ru: Неверный запрос
 
 duplicate-payments:
@@ -258,6 +303,7 @@ duplicate-payments:
   zhs: 重复付款
   zht: 重複付款
   fa: پرداخت های تکراری
+  ar: مدفوعات مكررة
   ru: Повторный платеж
 
 who-is-the-plus-for:
@@ -265,6 +311,7 @@ who-is-the-plus-for:
   zhs: 给谁买 Plus？
   zht: 給誰買 Plus？
   fa: اشتراک پلاس برای چه کسی است؟
+  ar: لمن تريد شراء Plus؟
   ru: Для кого Plus?
 
 myself:
@@ -272,6 +319,7 @@ myself:
   zhs: 我自己
   zht: 我自己
   fa: خودم
+  ar: لنفسي
   ru: Для меня
 
 someone-else:
@@ -279,6 +327,7 @@ someone-else:
   zhs: 其他人
   zht: 其他人
   fa: کسی دیگر
+  ar: لشخص آخر
   ru: Для другого человека
 
 what-plan-buying:
@@ -286,6 +335,7 @@ what-plan-buying:
   zhs: 您购买哪个套餐？
   zht: 您購買哪個套餐？
   fa: کدام طرح را می‌خواهید بخرید؟
+  ar: ما الخطة التي تريد شراءها؟
   ru: Какой тариф Вы покупаете?
 
 basic:
@@ -293,6 +343,7 @@ basic:
   zhs: 基础版
   zht: 基礎版
   fa: پایه
+  ar: أساسية
   ru: Basic
 
 unlimited:
@@ -300,6 +351,7 @@ unlimited:
   zhs: 无限版
   zht: 無限版
   fa: نامحدود
+  ar: غير محدودة
   ru: Unlimited
 
 beta:
@@ -307,6 +359,7 @@ beta:
   zhs: BETA
   zht: BETA
   fa: BETA
+  ar: تجريبي
   ru: BETA
 
 basic-beta-blurb:
@@ -314,6 +367,7 @@ basic-beta-blurb:
   zhs: 基础版每月限量 5 GB
   zht: 基礎版每月限量 5 GB
   fa: طرح پایه هر ماه به ۵ گیگابایت محدود است
+  ar: الخطة الأساسية محدودة بـ 5 غيغابايت شهريًا
   ru: Тариф Basic ограничен 5 ГБ в месяц
 
 sender:
@@ -321,6 +375,7 @@ sender:
   zhs: 发送者
   zht: 發送者
   fa: فرستنده
+  ar: المرسل
   ru: Отправитель
 
 sender-invalid-blurb:
@@ -328,6 +383,7 @@ sender-invalid-blurb:
   zhs: 必须要有发送者
   zht: 必須要有發送者
   fa: فرستنده مورد‌نیاز است
+  ar: المرسل مطلوب
   ru: Необходимо указать отправителя
 
 recipient-email:
@@ -335,6 +391,7 @@ recipient-email:
   zhs: 收件者的电子邮件
   zht: 收件者的電子郵件
   fa: ایمیل گیرنده
+  ar: بريد المستلم الإلكتروني
   ru: Email получателя
 
 recipient-invalid-blurb:
@@ -342,6 +399,7 @@ recipient-invalid-blurb:
   zhs: 您必须指定某人来收取礼品卡
   zht: 您必須指定某人來收取禮品卡
   fa: شما باید شخصی را برای دریافت گیفت کارت مشخص کنید
+  ar: يجب تحديد شخص يستلم بطاقة الهدية
   ru: Укажите получателя подарочной карты
 
 choose-a-plan-length:
@@ -349,6 +407,7 @@ choose-a-plan-length:
   zhs: 订阅时长
   zht: 訂閱時長
   fa: مدت زمان اشتراک را انتخاب کنید
+  ar: اختر مدة الخطة
   ru: Выберите срок тарифа
 
 got-a-promo-code:
@@ -356,6 +415,7 @@ got-a-promo-code:
   zhs: 优惠码
   zht: 優惠碼
   fa: کد تخفیف دارید؟
+  ar: هل لديك رمز ترويجي؟
   ru: Есть промокод?
 
 promo-code:
@@ -363,6 +423,7 @@ promo-code:
   zhs: 优惠码
   zht: 優惠碼
   fa: کد تخفیف
+  ar: رمز ترويجي
   ru: Промокод
 
 choose-a-payment-method:
@@ -370,6 +431,7 @@ choose-a-payment-method:
   zhs: 付款方式
   zht: 付款方式
   fa: یک روش پرداخت انتخاب کنید
+  ar: اختر طريقة دفع
   ru: Выберите способ оплаты
 
 bank-card:
@@ -377,6 +439,7 @@ bank-card:
   zhs: 银行卡
   zht: 銀行卡
   fa: کارت بانکی
+  ar: بطاقة مصرفية
   ru: Банковская карта
 
 alipay:
@@ -384,6 +447,7 @@ alipay:
   zhs: 支付宝
   zht: 支付寶
   fa: Alipay
+  ar: Alipay
   ru: Alipay
 
 paypal:
@@ -391,6 +455,7 @@ paypal:
   zhs: PayPal / 银联
   zht: PayPal
   fa: PayPal
+  ar: PayPal
   ru: PayPal
 
 wxpay:
@@ -398,6 +463,7 @@ wxpay:
   zhs: 微信支付
   zht: 微信支付
   fa: WeChat Pay
+  ar: WeChat Pay
   ru: WeChat Pay
 
 total:
@@ -405,6 +471,7 @@ total:
   zhs: 总计：
   zht: 總計：
   fa: 'هزینه کل:'
+  ar: 'الإجمالي:'
   ru: 'Итого:'
 
 pay:
@@ -412,6 +479,7 @@ pay:
   zhs: 结账
   zht: 結賬
   fa: پرداخت
+  ar: الدفع
   ru: Перейти к оплате
 
 crypto-minimum-total:
@@ -419,6 +487,7 @@ crypto-minimum-total:
   zhs: 加密货币支付最低总额为€20.00。
   zht: 加密貨幣支付最低總額為€20.00。
   fa: پرداخت‌های رمزارزی حداقل مبلغ کل €20.00 دارند.
+  ar: تتطلب مدفوعات العملات المشفرة حدًا أدنى للإجمالي قدره €20.00.
   ru: Для оплаты криптовалютой минимальная сумма составляет €20.00.
 
 1-month:
@@ -426,6 +495,7 @@ crypto-minimum-total:
   zhs: 1 个月（30 天）
   zht: 1 個月（30 天）
   fa: یک ماه (30 روز)
+  ar: شهر واحد (30 يومًا)
   ru: 1 месяц (30 дней)
 
 3-months:
@@ -433,6 +503,7 @@ crypto-minimum-total:
   zhs: 3 个月（90 天）
   zht: 3 個月（90 天）
   fa: سه ماه (90 روز)
+  ar: 3 أشهر (90 يومًا)
   ru: 3 месяца (90 дней)
 
 1-year:
@@ -440,6 +511,7 @@ crypto-minimum-total:
   zhs: 1年（365 天）
   zht: 1年（365 天）
   fa: یک سال (365 روز)
+  ar: سنة واحدة (365 يومًا)
   ru: 1 год (365 дней)
 
 2-year:
@@ -447,6 +519,7 @@ crypto-minimum-total:
   zhs: 2年（730 天）
   zht: 2年（730 天）
   fa: دو سال (730 روز)
+  ar: سنتان (730 يومًا)
   ru: 2 года (730 дней)
 
 3-year:
@@ -454,6 +527,7 @@ crypto-minimum-total:
   zhs: 3年（1095 天）
   zht: 3年（1095 天）
   fa: سه سال (1095 روز)
+  ar: 3 سنوات (1095 يومًا)
   ru: 3 года (1095 дней)
 
 custom:
@@ -461,6 +535,7 @@ custom:
   zhs: 自定义（天）
   zht: 自定義（天）
   fa: دلخواه (تعداد روز ها)
+  ar: مخصص (أيام)
   ru: Свой срок (дни)
 
 10-off:
@@ -468,6 +543,7 @@ custom:
   zhs: 9折
   zht: 9折
   fa: تخفیف 10%
+  ar: خصم 10%
   ru: Скидка 10%
 
 15-off:
@@ -475,6 +551,7 @@ custom:
   zhs: 8.5折
   zht: 8.5折
   fa: تخفیف 15%
+  ar: خصم 15%
   ru: Скидка 15%
 
 17.5-off:
@@ -482,6 +559,7 @@ custom:
   zhs: 8.25折
   zht: 8.25折
   fa: تخفیف 17.5%
+  ar: خصم 17.5%
   ru: Скидка 17.5%
 
 how-many-giftcards:
@@ -489,6 +567,7 @@ how-many-giftcards:
   zhs: 买多少张礼品卡？
   zht: 買多少張禮品卡？
   fa: چه تعداد گیفت‌کارت؟
+  ar: كم عدد بطاقات الهدايا؟
   ru: Сколько подарочных карт?
 
 how-many-days-in-each-giftcard:
@@ -496,6 +575,7 @@ how-many-days-in-each-giftcard:
   zhs: 每张礼品卡充值多少天？
   zht: 每張禮品卡充值多少天？
   fa: چند روز برای هر گیفت‌کارت؟
+  ar: كم يومًا في كل بطاقة هدية؟
   ru: Сколько дней на каждой подарочной карте?
 
 crypto:
@@ -503,6 +583,7 @@ crypto:
   zhs: 加密货币
   zht: 加密貨幣
   fa: ارز دیجیتال
+  ar: عملة مشفرة
   ru: Криптовалюта
 
 crypto-payment:
@@ -510,6 +591,7 @@ crypto-payment:
   zhs: 加密货币支付
   zht: 加密貨幣支付
   fa: پرداخت با ارز دیجیتال
+  ar: الدفع بالعملة المشفرة
   ru: Оплата криптовалютой
 
 choose-a-currency:
@@ -517,6 +599,7 @@ choose-a-currency:
   zhs: 请选择货币
   zht: 請選擇貨幣
   fa: یک ارز را انتخاب کنید
+  ar: اختر عملة
   ru: Выберите валюту
 
 send-only-on-network:
@@ -524,6 +607,7 @@ send-only-on-network:
   zhs: 仅在以下网络发送
   zht: 僅在以下網路發送
   fa: فقط روی این شبکه ارسال کنید
+  ar: أرسل فقط على
   ru: Отправляйте только в сети
 
 crypto-irreversible-warning:
@@ -531,6 +615,7 @@ crypto-irreversible-warning:
   zhs: 请在发送前反复确认收款地址、网络和金额。发送到错误地址、错误网络或金额不正确的资金<strong>无法追回</strong>。
   zht: 請在發送前反覆確認收款地址、網路和金額。發送到錯誤地址、錯誤網路或金額不正確的資金<strong>無法追回</strong>。
   fa: قبل از ارسال، آدرس، شبکه و مبلغ را چندبار بررسی کنید. وجوهی که به آدرس اشتباه، روی شبکه اشتباه، یا با مبلغ اشتباه ارسال شوند <strong>قابل بازیابی نیستند</strong>.
+  ar: تحقق جيدًا من العنوان والشبكة والمبلغ قبل الإرسال. الأموال المرسلة إلى عنوان خاطئ أو على شبكة خاطئة أو بمبلغ خاطئ <strong>لا يمكن استردادها</strong>.
   ru: Перед отправкой внимательно проверьте адрес, сеть и сумму. Средства, отправленные на неверный адрес, в неверной сети или в неверной сумме, <strong>невозможно вернуть</strong>.
 
 bitcoin-mainnet:
@@ -538,6 +623,7 @@ bitcoin-mainnet:
   zhs: 比特币主网
   zht: 比特幣主網
   fa: شبکه اصلی بیت‌کوین
+  ar: شبكة Bitcoin الرئيسية
   ru: Основная сеть Bitcoin
 
 ethereum-mainnet:
@@ -545,6 +631,7 @@ ethereum-mainnet:
   zhs: 以太坊主网
   zht: 以太坊主網
   fa: شبکه اصلی اتریوم
+  ar: شبكة Ethereum الرئيسية
   ru: Основная сеть Ethereum
 
 monero-mainnet:
@@ -552,6 +639,7 @@ monero-mainnet:
   zhs: 门罗币主网
   zht: 門羅幣主網
   fa: شبکه اصلی مونرو
+  ar: شبكة Monero الرئيسية
   ru: Основная сеть Monero
 
 tron-trc20:
@@ -559,6 +647,7 @@ tron-trc20:
   zhs: 波场（TRC20）
   zht: 波場（TRC20）
   fa: ترون (TRC20)
+  ar: Tron (TRC20)
   ru: Tron (TRC20)
 
 dogecoin-mainnet:
@@ -566,6 +655,7 @@ dogecoin-mainnet:
   zhs: 狗狗币主网
   zht: 狗狗幣主網
   fa: شبکه اصلی دوج‌کوین
+  ar: شبكة Dogecoin الرئيسية
   ru: Основная сеть Dogecoin
 
 crypto-network-unknown:
@@ -573,6 +663,7 @@ crypto-network-unknown:
   zhs: 正确的网络
   zht: 正確的網路
   fa: شبکه صحیح
+  ar: الشبكة الصحيحة
   ru: правильной сети
 
 btc:
@@ -580,6 +671,7 @@ btc:
   zhs: 比特币
   zht: 比特幣
   fa: Bitcoin
+  ar: Bitcoin
   ru: Bitcoin
 
 eth:
@@ -587,6 +679,7 @@ eth:
   zhs: 以太坊
   zht: 以太坊
   fa: Ethereum
+  ar: Ethereum
   ru: Ethereum
 
 xmr:
@@ -594,6 +687,7 @@ xmr:
   zhs: 门罗币
   zht: 門羅幣
   fa: Monero
+  ar: Monero
   ru: Monero
 
 usdttrc20:
@@ -601,6 +695,7 @@ usdttrc20:
   zhs: USDT
   zht: USDT
   fa: USDT
+  ar: USDT
   ru: USDT
 
 usdterc20:
@@ -608,6 +703,7 @@ usdterc20:
   zhs: USDT
   zht: USDT
   fa: USDT
+  ar: USDT
   ru: USDT
 
 usdt:
@@ -615,6 +711,7 @@ usdt:
   zhs: USDT
   zht: USDT
   fa: USDT
+  ar: USDT
   ru: USDT
 
 usdc:
@@ -622,6 +719,7 @@ usdc:
   zhs: USDC
   zht: USDC
   fa: USDC
+  ar: USDC
   ru: USDC
 
 usdcsol:
@@ -629,6 +727,7 @@ usdcsol:
   zhs: USDC
   zht: USDC
   fa: USDC
+  ar: USDC
   ru: USDC
 
 usdctrc20:
@@ -636,6 +735,7 @@ usdctrc20:
   zhs: USDC
   zht: USDC
   fa: USDC
+  ar: USDC
   ru: USDC
 
 doge:
@@ -643,6 +743,7 @@ doge:
   zhs: 狗狗币
   zht: 狗狗幣
   fa: Dogecoin
+  ar: Dogecoin
   ru: Dogecoin
 
 giftcard-id:
@@ -650,6 +751,7 @@ giftcard-id:
   zhs: 礼品卡号
   zht: 禮品卡號
   fa: کد گیفت کارت
+  ar: معرف بطاقة الهدية
   ru: ID подарочной карты
 
 redeem:
@@ -657,6 +759,7 @@ redeem:
   zhs: 兑换
   zht: 兌換
   fa: استفاده
+  ar: استرداد
   ru: Активировать
 
 incorrect-giftcard:
@@ -664,6 +767,7 @@ incorrect-giftcard:
   zhs: 无此礼品卡
   zht: 無此禮品卡
   fa: کارت هدیه‌ای یافت نشد
+  ar: لا توجد بطاقة هدية بهذا المعرف
   ru: Такой подарочной карты нет
 
 giftcard-days:
@@ -671,6 +775,7 @@ giftcard-days:
   zhs: '礼品卡有效天数：'
   zht: '禮品卡有效天數：'
   fa: 'روزها در کارت هدیه: '
+  ar: 'الأيام في بطاقة الهدية: '
   ru: 'Дней на подарочной карте: '
 
 giftcard-applied:
@@ -678,6 +783,7 @@ giftcard-applied:
   zhs: 礼品卡已应用
   zht: 禮品卡已應用
   fa: کارت هدیه ثبت شد
+  ar: تم تطبيق بطاقة الهدية
   ru: Подарочная карта активирована
 
 giftcard-promotion:
@@ -685,6 +791,7 @@ giftcard-promotion:
   zhs: 任何优惠码可在兑换礼品卡时使用
   zht: 任何優惠碼可在兌換禮品卡時使用
   fa: تخفیف ها زمان اعمال گیفت کارت می‌توانند استفاده شوند
+  ar: يمكن تطبيق العروض الترويجية أثناء استرداد بطاقات الهدايا
   ru: Промокоды можно применить при активации подарочных карт
 
 send-crypto:
@@ -692,6 +799,7 @@ send-crypto:
   zhs: 发送加密货币
   zht: 發送加密貨幣
   fa: ارسال ارز دیجیتال
+  ar: إرسال عملة مشفرة
   ru: Отправить криптовалюту
 
 please-send-funds:
@@ -699,6 +807,7 @@ please-send-funds:
   zhs: '请将加密货币发送至以下地址'
   zht: '請將加密貨幣發送至以下地址'
   fa: 'ارز دیجیتال را به آدرس زیر بفرستید'
+  ar: 'أرسل العملة المشفرة إلى العنوان التالي'
   ru: 'Отправьте криптовалюту на следующий адрес'
 
 amount:
@@ -706,6 +815,7 @@ amount:
   zhs: 数量
   zht: 數量
   fa: مقدار
+  ar: المبلغ
   ru: Сумма
 
 to-this-address:
@@ -713,6 +823,7 @@ to-this-address:
   zhs: 到这个地址
   zht: 到這個地址
   fa: به این آدرس
+  ar: إلى هذا العنوان
   ru: На этот адрес
 
 waiting:
@@ -720,6 +831,7 @@ waiting:
   zhs: 等待存款
   zht: 等待存款
   fa: منتظر واریز
+  ar: في انتظار الإيداع
   ru: Ожидается депозит
 
 confirming:
@@ -727,6 +839,7 @@ confirming:
   zhs: 确认中
   zht: 確認中
   fa: در حال تأیید
+  ar: جار التأكيد
   ru: Подтверждение
 
 exchanging:
@@ -734,6 +847,7 @@ exchanging:
   zhs: 交换中
   zht: 交換中
   fa: در حال مبادله
+  ar: جار التبادل
   ru: Обмен
 
 finished:
@@ -741,6 +855,7 @@ finished:
   zhs: 已完成
   zht: 已完成
   fa: اتمام
+  ar: اكتمل
   ru: Завершено
 
 failed:
@@ -748,6 +863,7 @@ failed:
   zhs: 失败
   zht: 失敗
   fa: نا‌موفق
+  ar: فشل
   ru: Не удалось
 
 refunded:
@@ -755,6 +871,7 @@ refunded:
   zhs: 已退款
   zht: 已退款
   fa: بازگشت شد
+  ar: تم رد المبلغ
   ru: Возвращено
 
 verifying:
@@ -762,6 +879,7 @@ verifying:
   zhs: 验证中
   zht: 驗證中
   fa: در حال تایید
+  ar: جار التحقق
   ru: Проверка
 
 return-to-portal:
@@ -769,6 +887,7 @@ return-to-portal:
   zhs: 返回账户管理
   zht: 返回賬戶管理
   fa: بازگشت به ورودی کاربران
+  ar: العودة إلى بوابة المستخدم
   ru: Вернуться в личный кабинет
 
 missing-days:
@@ -776,6 +895,7 @@ missing-days:
   zhs: 软件中没有延长 Plus？
   zht: 軟件中沒有延長 Plus？
   fa: روز های خریداری شده در برنامه نمایش داده نمی‌شود؟
+  ar: لا تظهر الأيام في التطبيق؟
   ru: Дни не появились в приложении?
 
 click-refresh:
@@ -783,6 +903,7 @@ click-refresh:
   zhs: 购买Plus后，请耐心等待10分钟即可在应用中看到！
   zht: 購買Plus後，請耐心等待10分鐘即可在應用程式中看到！
   fa: پس از خرید اشتراک پلاس، 10 دقیقه صبر کنید تا در برنامه نمایش داده شود!
+  ar: بعد شراء وقت Plus، انتظر 10 دقائق حتى يظهر في التطبيق!
   ru: После покупки времени Plus подождите 10 минут, чтобы оно появилось в приложении!
 
 # banner:
@@ -796,6 +917,7 @@ bad-aliwechat:
   zhs: ⚠️ 支付宝和微信支付有时会不稳定。如果您使用这些方式支付后10分钟内未收到 Plus，请将您的用户名和付款截图发送至 support@geph.io，我们将在48小时内为您添加 Plus 时间。
   zht: ⚠️ 支付宝和微信支付有时会不稳定。如果您使用這些方式支付後10分鐘內未收到 Plus，請將您的用戶名和付款截圖發送至 support@geph.io，我們將在48小時內為您添加 Plus 時間。
   fa: ⚠️ پرداخت‌های آلی‌پی و وی‌چت‌پی همیشه قابل اطمینان نیستند. اگر با استفاده از این روش‌ها پرداخت کردید و پس از 10 دقیقه Plus را دریافت نکردید، لطفاً نام کاربری و تصویر پرداخت خود را به support@geph.io ایمیل کنید، و ما ظرف 48 ساعت زمان Plus شما را اضافه خواهیم کرد.
+  ar: ⚠️ مدفوعات Alipay وWeChat Pay ليست موثوقة دائمًا. إذا دفعت باستخدام هذه الطرق ولم تحصل على Plus بعد 10 دقائق، يرجى إرسال اسم المستخدم ولقطة شاشة الدفع إلى support@geph.io، وسنضيف وقت Plus الخاص بك خلال 48 ساعة.
   ru: ⚠️ Платежи через Alipay и WeChat Pay не всегда надежны. Если Вы оплатили одним из этих способов и не получили Plus через 10 минут, отправьте имя пользователя и скриншот платежа на support@geph.io, и мы добавим Ваше время Plus в течение 48 часов.
 
 already-autorenew:
@@ -803,6 +925,7 @@ already-autorenew:
   zhs: 您已经自动续订了 Plus！如需购买新的套餐，请您先取消自动续订。
   zht: 您已經自動續訂了 Plus！如需購買新的套餐，請您先取消自動續訂。
   fa: شما در حال حاضر Plus با تجدید خودکار دارید! اگر نیاز به خرید برنامه جدید دارید، برنامه تجدید خودکار خود را لغو کنید.
+  ar: لديك بالفعل Plus بتجديد تلقائي! ألغ برنامج التجديد التلقائي أولًا إذا كنت تريد شراء خطة جديدة.
   ru: У Вас уже есть Plus с автопродлением. Чтобы купить новый тариф, сначала отмените автопродление.
 
 autorenew:
@@ -810,6 +933,7 @@ autorenew:
   zhs: 自动续订
   zht: 自動續訂
   fa: تجدید خودکار
+  ar: تجديد تلقائي
   ru: Автопродление
 
 auto-renewing:
@@ -817,6 +941,7 @@ auto-renewing:
   zhs: 自动续订中
   zht: 自動續訂中
   fa: در حال تجدید خودکار
+  ar: التجديد التلقائي مفعل
   ru: Автопродление включено
 
 cancel:
@@ -824,6 +949,7 @@ cancel:
   zhs: 取消
   zht: 取消
   fa: لغو
+  ar: إلغاء
   ru: отменить
 
 experimental_feature_warning:
@@ -831,6 +957,7 @@ experimental_feature_warning:
   zhs: 此功能目前处于实验阶段
   zht: 此功能目前處於實驗階段
   fa: این ویژگی در حال حاضر آزمایشی است
+  ar: هذه ميزة تجريبية
   ru: это экспериментальная функция
 
 are-you-sure:
@@ -838,6 +965,7 @@ are-you-sure:
   zhs: 您确定要取消自动续订 Plus 吗？
   zht: 您確定要取消自動續訂 Plus 嗎？
   fa: آیا مطمئن هستید که می خواهید تجدید خودکار Plus را لغو کنید؟
+  ar: هل أنت متأكد أنك تريد إلغاء التجديد التلقائي لـ Plus؟
   ru: Вы уверены, что хотите отменить автопродление Plus?
 
 yes:
@@ -845,6 +973,7 @@ yes:
   zhs: 是
   zht: 是
   fa: آره
+  ar: نعم
   ru: Да
 
 no:
@@ -852,12 +981,14 @@ no:
   zhs: 否
   zht: 否
   fa: نه
+  ar: لا
   ru: Нет
 cancel-recurring-success:
   en: Auto-renew cancelled
   zhs: 自动续订已取消
   zht: 自動續訂已取消
   fa: لغو تجدید خودکار با موفقیت انجام شد
+  ar: تم إلغاء التجديد التلقائي
   ru: Автопродление отменено
 
 ok:
@@ -865,6 +996,7 @@ ok:
   zhs: 好的
   zht: 好的
   fa: باشه
+  ar: حسنًا
   ru: OK
 
 faq_content:
@@ -1081,6 +1213,60 @@ faq_content:
       </div>
 
     </div>
+  ar: |
+    <div class="faq-container mt-4">
+      <div class="faq-item">
+        <h3 class="faq-question">هل الشفرة المصدرية مفتوحة؟</h3>
+        <p class="faq-answer">
+          كل شيء، بما في ذلك هذا الموقع، مفتوح المصدر
+          <a href="https://github.com/geph-official">على GitHub</a>.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">كيف تعمل مصادقة التوقيعات العمياء؟</h3>
+        <p class="faq-answer">
+          عند الاتصال، يقدم المستخدمون إثباتًا تشفيريًا لاشتراك Plus أو Free صالح بدلًا من بيانات اعتماد تعريفية.
+          يتيح ذلك للخوادم التحقق من صلاحية الوصول مع بقائها غير قادرة تمامًا على معرفة هوية المستخدم.
+          يمكنك معرفة المزيد عن البروتوكول
+          <a href="https://github.com/geph-official/geph5/blob/master/libraries/mizaru2/README.md">هنا</a>.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">ألا يستطيع الرقيب تنزيل Geph وحظر كل الخوادم؟</h3>
+        <p class="faq-answer">
+          نعم ولا. يستخدم Geph بنية ذات قفزتين حيث يتصل المستخدمون بعُقد <em>الخروج</em>
+          عبر مرحلات <em>الجسر</em>. يستطيع الرقباء حظر كل خوادم الخروج، ويفعلون ذلك بالفعل،
+          لكن حظر الجسور أصعب بكثير.
+        </p>
+        <p class="faq-answer">
+          السبب هو أن بروتوكول bootstrap الصعب الحظر يخصص <em>جسورًا مختلفة لمستخدمين مختلفين</em>
+          ويدورها باستمرار، مما يجعل تعدادها بالكامل غير عملي. منذ عام 2019، لاحظنا محاولات تعداد آلية
+          من جدار الحماية العظيم في الصين، لكنها فشلت باستمرار في تعطيل الخدمة.
+          اقرأ نظرتنا العامة على البنية
+          <a href="https://github.com/geph-official/geph5/wiki/How-Geph-works">على GitHub</a>
+          لمعرفة المزيد.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">أليس هذا نظامًا مركزيًا؟</h3>
+        <p class="faq-answer">
+          نعم، لكن ليس إلى الأبد. نحن نعمل بنشاط على التكامل مع
+          <a href="https://earendil.network">Earendil</a>
+          لتحقيق لامركزية كاملة للبروتوكول. سيزيل ذلك بنيتنا التحتية كنقطة فشل مركزية.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-question">كيف يُمول Geph؟</h3>
+        <p class="faq-answer">
+          يُمول Geph <em>بالكامل من المجتمع من خلال اشتراكات Plus</em>، مما يضمن استقلالنا واستدامتنا على المدى الطويل.
+        </p>
+      </div>
+
+    </div>
   ru: |
     <div class="faq-container mt-4">
       <div class="faq-item">
@@ -1143,4 +1329,5 @@ account-secret:
   zhs: 账户密钥
   zht: 賬戶密鑰
   fa: کلید حساب
+  ar: سر الحساب
   ru: Секрет аккаунта

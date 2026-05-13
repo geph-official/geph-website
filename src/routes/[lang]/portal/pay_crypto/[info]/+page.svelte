@@ -43,7 +43,7 @@
 	<title>{l('send-crypto')}</title>
 </svelte:head>
 
-<div lang={localize(lang, 'langcode')} dir="auto">
+<div lang={localize(lang, 'langcode')} dir={localize(lang, 'dir')}>
 	<Navbar />
 	<div class="container mt-lg-5 pt-5">
 		<div class="row">

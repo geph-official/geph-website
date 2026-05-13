@@ -41,7 +41,7 @@
 	<title>{l('choose-a-currency')}</title>
 </svelte:head>
 
-<div lang={localize(lang, 'langcode')} dir="auto">
+<div lang={localize(lang, 'langcode')} dir={localize(lang, 'dir')}>
 	<Navbar />
 	<div class="container mt-5 pt-3" in:fade>
 		<div class="row">

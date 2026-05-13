@@ -62,7 +62,7 @@
 						{localize(lang, 'langname')}
 					</a>
 					<ul class="dropdown-menu">
-						{#each ['en', 'zhs', 'zht', 'fa', 'ru'] as l}
+						{#each ['en', 'zhs', 'zht', 'fa', 'ar', 'ru'] as l}
 							<li>
 								<a
 									data-sveltekit-reload

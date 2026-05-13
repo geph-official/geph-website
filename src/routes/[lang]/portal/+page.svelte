@@ -64,7 +64,7 @@
 	<title>{localize(lang, 'user-portal')}</title>
 </svelte:head>
 
-<div lang={localize(lang, 'langcode')} dir="auto">
+<div lang={localize(lang, 'langcode')} dir={localize(lang, 'dir')}>
 	<Navbar />
 	{#await get_user_info()}
 		<div class="loading-wrapper">

@@ -13,7 +13,7 @@
 	<title>{localize(lang, 'user-portal')}</title>
 </svelte:head>
 
-<div lang={localize(lang, 'langcode')} dir="auto">
+<div lang={localize(lang, 'langcode')} dir={localize(lang, 'dir')}>
 	<Navbar />
 	<div class="container">
 		<div class="row my-5">

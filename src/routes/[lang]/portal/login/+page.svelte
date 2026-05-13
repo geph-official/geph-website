@@ -30,7 +30,7 @@
 	<title>{localize(lang, 'login')}</title>
 </svelte:head>
 
-<div lang={localize(lang, 'langcode')} dir="auto">
+<div lang={localize(lang, 'langcode')} dir={localize(lang, 'dir')}>
 	<Navbar />
 	<div class="container mt-lg-5">
 		<h2>{localize(lang, 'login')}</h2>

@@ -13,7 +13,7 @@
 	<title>{localize(lang, 'geph')}</title>
 </svelte:head>
 
-<div lang={localize(lang, 'langcode')} dir="auto">
+<div lang={localize(lang, 'langcode')} dir={localize(lang, 'dir')}>
 	<Navbar />
 	<div class="container hero my-5 py-5">
 		<h1>{@html localize(lang, 'hero')}</h1>
