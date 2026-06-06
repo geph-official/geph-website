@@ -650,6 +650,14 @@ tron-trc20:
   ar: Tron (TRC20)
   ru: Tron (TRC20)
 
+tron-mainnet:
+  en: Tron mainnet
+  zhs: 波场主网
+  zht: 波場主網
+  fa: شبکه اصلی ترون
+  ar: شبكة Tron الرئيسية
+  ru: Основная сеть Tron
+
 dogecoin-mainnet:
   en: Dogecoin mainnet
   zhs: 狗狗币主网
@@ -745,6 +753,14 @@ doge:
   fa: Dogecoin
   ar: Dogecoin
   ru: Dogecoin
+
+trx:
+  en: Tron
+  zhs: 波场
+  zht: 波場
+  fa: Tron
+  ar: Tron
+  ru: Tron
 
 giftcard-id:
   en: Giftcard ID

@@ -16,7 +16,8 @@
 		eth: 'ethereum-mainnet',
 		xmr: 'monero-mainnet',
 		usdttrc20: 'tron-trc20',
-		doge: 'dogecoin-mainnet'
+		doge: 'dogecoin-mainnet',
+		trx: 'tron-mainnet'
 	};
 	const networkKeyForToken = (token: string) =>
 		networkKeyByToken[token] || 'crypto-network-unknown';

@@ -64,5 +64,11 @@ const doge: Token = {
     badge: null,
 }
 
+const trx: Token = {
+    name: 'trx',
+    icon: "https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.16.1/svg/color/trx.svg",
+    badge: null,
+}
 
-export const tokens: Token[] = [btc, eth, xmr, usdtTron, doge];
+
+export const tokens: Token[] = [btc, eth, xmr, usdtTron, doge, trx];
