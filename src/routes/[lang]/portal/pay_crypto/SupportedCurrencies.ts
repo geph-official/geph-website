@@ -25,7 +25,7 @@ const xmr: Token = {
 const usdtTron: Token = {
     name: 'usdttrc20',
     icon: "https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.16.1/svg/color/usdt.svg",
-    badge: 'TRON'
+    badge: 'TRC20'
 }
 
 // const usdtEthereum: Token = {
