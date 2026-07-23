@@ -1,5 +1,3 @@
 export interface PaymentBackend {
-    icon: String // path to image
-
+	icon: String; // path to image
 }
-

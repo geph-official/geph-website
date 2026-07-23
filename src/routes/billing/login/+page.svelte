@@ -10,21 +10,7 @@
 
 <title>{localize(lang, 'user-portal')}</title>
 
-<div class="loading-wrapper">
-	<div class="spinner-border" role="status" />
+<div class="flex h-[80vh] items-center justify-center gap-4">
+	<div class="spinner" role="status"></div>
 	{localize(lang, 'loading')}
 </div>
-
-<style>
-	.loading-wrapper {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		justify-content: center;
-		height: 80vh;
-	}
-
-	.loading-wrapper div {
-		margin-right: 1rem;
-	}
-</style>

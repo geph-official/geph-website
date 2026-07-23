@@ -1,18 +1,15 @@
 <script lang="ts">
-	import Navbar from '../../Navbar.svelte';
-	import Footer from '../../Footer.svelte';
 	import { fade } from 'svelte/transition';
 	import { localize } from '../../../../routes/l10n';
 	import { page } from '$app/stores';
 	import { tokens } from './SupportedCurrencies';
-	import axios from 'axios';
-	import { BINDER_ADDR, call_rpc, translateError } from '../../../../routes/helpers';
+	import { call_rpc, translateError } from '../../../../routes/helpers';
 	import { goto } from '$app/navigation';
 
 	const lang = $page.params['lang'];
-	$: l = (s: string) => localize(lang, s);
+	const l = (s: string) => localize(lang, s);
 
-	let spinning = false;
+	let spinning = $state(false);
 
 	const selectToken = async (token: string) => {
 		spinning = true;
@@ -41,68 +38,23 @@
 	<title>{l('choose-a-currency')}</title>
 </svelte:head>
 
-<div lang={localize(lang, 'langcode')} dir={localize(lang, 'dir')}>
-	<Navbar />
-	<div class="container mt-5 pt-3" in:fade>
-		<div class="row">
-			<div class="col">
-				<h2>{l('choose-a-currency')}</h2>
-			</div>
-		</div>
-		<div class="row mt-5">
-			<div class="col">
-				<div class="buttons">
-					{#each tokens as token}
-						<button
-							class="btn btn-outline-dark me-2 btn-lg"
-							on:click={() => {
-								selectToken(token.name);
-							}}
-							disabled={spinning}
-						>
-							<img src={token.icon} alt="" />
-							{l(token.name)}
-							{#if token.badge}
-								<span class="badge bg-secondary">{token.badge}</span>
-							{/if}
-						</button>
-					{/each}
-				</div>
-			</div>
-		</div>
+<div class="mt-12 pt-4" in:fade>
+	<h2 class="h3">{l('choose-a-currency')}</h2>
+	<div class="mt-8 flex flex-col items-stretch gap-2 lg:items-start">
+		{#each tokens as token}
+			<button
+				class="btn btn-lg variant-ringed-surface justify-start gap-2"
+				onclick={() => {
+					selectToken(token.name);
+				}}
+				disabled={spinning}
+			>
+				<img src={token.icon} alt="" class="h-8" />
+				{l(token.name)}
+				{#if token.badge}
+					<span class="badge variant-filled-surface">{token.badge}</span>
+				{/if}
+			</button>
+		{/each}
 	</div>
-	<Footer />
 </div>
-
-<style>
-	.btn {
-		border: 1px solid gray;
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-	}
-
-	.btn img {
-		height: 2rem;
-		margin-right: 0.4rem;
-	}
-
-	.btn .badge {
-		margin-inline-start: 0.4rem;
-	}
-
-	.buttons {
-		display: flex;
-		flex-direction: column;
-	}
-
-	.buttons .btn {
-		margin-bottom: 0.5rem;
-	}
-
-	.btn:hover {
-		background-color: rgba(0, 0, 255, 0.03);
-
-		color: var(--bs-body-color);
-	}
-</style>

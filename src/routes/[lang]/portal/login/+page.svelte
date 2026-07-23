@@ -1,23 +1,18 @@
 <script>
-	import axios from 'axios';
 	import { page } from '$app/stores';
 
 	import { call_rpc, translateError } from '../../../helpers';
 	import { localize } from '../../../l10n';
-	import Navbar from '../../Navbar.svelte';
-	import Footer from '../../Footer.svelte';
 	import { goto } from '$app/navigation';
 
 	const lang = $page.params['lang'];
 
-	let secret = '';
-
-	let redirecting = false;
+	let secret = $state('');
+	let redirecting = $state(false);
 
 	async function handleLoginClick() {
 		try {
 			let session_id = await call_rpc('login_secret', [secret.replaceAll(' ', '')]);
-			console.log(session_id);
 			sessionStorage.setItem('sessid', session_id);
 			goto(`/${lang}/portal`);
 		} catch (e) {
@@ -30,50 +25,30 @@
 	<title>{localize(lang, 'login')}</title>
 </svelte:head>
 
-<div lang={localize(lang, 'langcode')} dir={localize(lang, 'dir')}>
-	<Navbar />
-	<div class="container mt-lg-5">
-		<h2>{localize(lang, 'login')}</h2>
+<div class="flex flex-col items-start gap-4 lg:mt-12">
+	<h2 class="h2">{localize(lang, 'login')}</h2>
 
-		<input
-			type="username"
-			id="username"
-			class="form-control"
-			inputmode="numeric"
-			bind:value={secret}
-			placeholder={localize(lang, 'account-secret')}
-		/>
+	<input
+		type="text"
+		class="input"
+		inputmode="numeric"
+		bind:value={secret}
+		placeholder={localize(lang, 'account-secret')}
+	/>
 
-		<button
-			disabled={redirecting}
-			type="submit"
-			class="btn"
-			on:click={async () => {
-				redirecting = true;
-				try {
-					await handleLoginClick();
-				} finally {
-					redirecting = false;
-				}
-			}}
-		>
-			{localize(lang, 'login')}
-		</button>
-	</div>
-	<Footer />
+	<button
+		disabled={redirecting}
+		type="submit"
+		class="btn variant-filled-primary"
+		onclick={async () => {
+			redirecting = true;
+			try {
+				await handleLoginClick();
+			} finally {
+				redirecting = false;
+			}
+		}}
+	>
+		{localize(lang, 'login')}
+	</button>
 </div>
-
-<style>
-	.container {
-		display: flex;
-		flex-direction: column;
-		gap: 1rem;
-	}
-	input {
-		height: 2.5rem;
-	}
-	.btn {
-		background-color: var(--bs-primary);
-		color: var(--bs-light);
-	}
-</style>

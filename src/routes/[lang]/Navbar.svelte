@@ -1,103 +1,70 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-
 	import { localize } from '../l10n';
 
 	const lang = $page.params['lang'];
+	const langs = ['en', 'zhs', 'zht', 'fa', 'ar', 'ru'];
 
 	const isUserPortal = $page.url.toString().includes('portal');
 	const isPolicies = $page.url.toString().includes('policies');
 	const isHome = !isUserPortal && !isPolicies;
 	const bannerContent = localize(lang, 'banner');
-	$: replaceLanguage = (path: string, toLang: string) => path.replace('/' + lang, '/' + toLang);
+
+	const switchLang = (e: Event) => {
+		const toLang = (e.currentTarget as HTMLSelectElement).value;
+		location.assign($page.url.toString().replace('/' + lang, '/' + toLang));
+	};
 </script>
 
-<nav class="navbar navbar-expand-lg bg-light">
-	<div class="container">
-		<a href={`/${lang}/`} class="navbar-brand">
-			<img src="/gephlogo.png" height="32" alt="Geph logo" class="me-1" />
+<header class="py-3">
+	<div class="frame flex flex-wrap items-center gap-x-5 gap-y-2">
+		<a href={`/${lang}/`} class="flex items-center gap-2 font-medium no-underline">
+			<img src="/gephlogo.png" alt="Geph logo" class="h-8" />
 			{localize(lang, 'geph')}
 		</a>
-		<button
-			class="navbar-toggler"
-			type="button"
-			data-bs-toggle="collapse"
-			data-bs-target="#navbarSupportedContent"
-			aria-controls="navbarSupportedContent"
-			aria-expanded="false"
-			aria-label="Toggle navigation"
-		>
-			<span class="navbar-toggler-icon" />
-		</button>
-		<div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-			<ul class="navbar-nav mb-2 mb-lg-0">
-				<li class="nav-item">
-					<a class="nav-link" class:active={isHome} href={`/${lang}/`}>
-						{localize(lang, 'home')}
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" class:active={isUserPortal} href={`/${lang}/portal`}>
-						{localize(lang, 'user-portal')}
-					</a>
-				</li>
-				<li class="nav-item">
-					<a
-						class="nav-link"
-						class:active={isPolicies}
-						href="https://github.com/geph-official/geph5/blob/master/PRIVACY.md"
-						target="_blank"
-						rel="noopener"
-					>
-						{localize(lang, 'policies')}
-					</a>
-				</li>
-				<li class="nav-item dropdown">
-					<a
-						class="nav-link dropdown-toggle"
-						role="button"
-						data-bs-toggle="dropdown"
-						aria-expanded="false"
-					>
-						{localize(lang, 'langname')}
-					</a>
-					<ul class="dropdown-menu">
-						{#each ['en', 'zhs', 'zht', 'fa', 'ar', 'ru'] as l}
-							<li>
-								<a
-									data-sveltekit-reload
-									class="dropdown-item"
-									href={replaceLanguage($page.url.toString(), l)}
-								>
-									{localize(l, 'langname')}
-								</a>
-							</li>
-						{/each}
-					</ul>
-				</li>
-			</ul>
-		</div>
+		<nav class="ms-auto flex flex-wrap items-center gap-x-5 gap-y-2">
+			<a
+				href={`/${lang}/`}
+				class="no-underline hover:underline {isHome
+					? 'font-semibold'
+					: 'opacity-60 hover:opacity-100'}"
+			>
+				{localize(lang, 'home')}
+			</a>
+			<a
+				href={`/${lang}/portal`}
+				class="no-underline hover:underline {isUserPortal
+					? 'font-semibold'
+					: 'opacity-60 hover:opacity-100'}"
+			>
+				{localize(lang, 'user-portal')}
+			</a>
+			<a
+				href="https://github.com/geph-official/geph5/blob/master/PRIVACY.md"
+				target="_blank"
+				rel="noopener"
+				class="no-underline opacity-60 hover:underline hover:opacity-100"
+			>
+				{localize(lang, 'policies')}
+			</a>
+			<select
+				class="select w-auto border-0 bg-transparent py-1 opacity-60 hover:opacity-100"
+				value={lang}
+				onchange={switchLang}
+				aria-label="Language"
+			>
+				{#each langs as l}
+					<option value={l}>{localize(l, 'langname')}</option>
+				{/each}
+			</select>
+		</nav>
 	</div>
-</nav>
+</header>
+
 {#if bannerContent !== '' && bannerContent !== '!!MISSING!!'}
-	<div class="top-alert container">{@html bannerContent}</div>
+	<div class="frame mt-1">
+		<aside class="alert variant-soft-primary justify-center font-medium">
+			{@html bannerContent}
+		</aside>
+	</div>
 {/if}
-
-<style>
-	.navbar-brand {
-		font-weight: 500;
-	}
-
-	.navbar-brand {
-		text-decoration: none !important;
-	}
-
-	.top-alert {
-		font-weight: 500;
-		background-color: rgba(var(--bs-primary-rgb), 0.3);
-		padding: 0.7rem;
-		margin-top: 0.2rem;
-		border-radius: 0.3rem;
-		text-align: center;
-	}
-</style>

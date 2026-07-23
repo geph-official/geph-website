@@ -1,32 +1,32 @@
 export interface Token {
-    name: string,
-    icon: string,
-    badge: string | null,
+	name: string;
+	icon: string;
+	badge: string | null;
 }
 
 const btc: Token = {
-    name: 'btc',
-    icon: "https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.16.1/svg/color/btc.svg",
-    badge: null,
-}
+	name: 'btc',
+	icon: 'https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.16.1/svg/color/btc.svg',
+	badge: null
+};
 
 const eth: Token = {
-    name: 'eth',
-    icon: "https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.16.1/svg/color/eth.svg",
-    badge: null,
-}
+	name: 'eth',
+	icon: 'https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.16.1/svg/color/eth.svg',
+	badge: null
+};
 
 const xmr: Token = {
-    name: 'xmr',
-    icon: "https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.16.1/svg/color/xmr.svg",
-    badge: null,
-}
+	name: 'xmr',
+	icon: 'https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.16.1/svg/color/xmr.svg',
+	badge: null
+};
 
 const usdtTron: Token = {
-    name: 'usdttrc20',
-    icon: "https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.16.1/svg/color/usdt.svg",
-    badge: 'TRC20'
-}
+	name: 'usdttrc20',
+	icon: 'https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.16.1/svg/color/usdt.svg',
+	badge: 'TRC20'
+};
 
 // const usdtEthereum: Token = {
 //     name: 'usdterc20',
@@ -59,16 +59,15 @@ const usdtTron: Token = {
 // }
 
 const doge: Token = {
-    name: 'doge',
-    icon: "https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.16.1/svg/color/doge.svg",
-    badge: null,
-}
+	name: 'doge',
+	icon: 'https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.16.1/svg/color/doge.svg',
+	badge: null
+};
 
 const trx: Token = {
-    name: 'trx',
-    icon: "https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.16.1/svg/color/trx.svg",
-    badge: null,
-}
-
+	name: 'trx',
+	icon: 'https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.16.1/svg/color/trx.svg',
+	badge: null
+};
 
 export const tokens: Token[] = [btc, eth, xmr, usdtTron, doge, trx];

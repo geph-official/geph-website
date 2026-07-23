@@ -93,10 +93,11 @@ export function wxpayBackend(): PaymentBackend {
 
 async function isMobile() {
 	// 1. Check if User-Agent Client Hints are supported
-	if (navigator.userAgentData && 'getHighEntropyValues' in navigator.userAgentData) {
+	const userAgentData = (navigator as any).userAgentData;
+	if (userAgentData && 'getHighEntropyValues' in userAgentData) {
 		try {
 			// getHighEntropyValues returns a promise with more detailed info
-			const uaData = await navigator.userAgentData.getHighEntropyValues(['mobile']);
+			const uaData = await userAgentData.getHighEntropyValues(['mobile']);
 			return uaData.mobile;
 		} catch (error) {
 			// if there's any error, fallback to user agent string

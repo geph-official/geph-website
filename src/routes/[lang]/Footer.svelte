@@ -1,34 +1,13 @@
 <script>
-	import Email from 'svelte-material-icons/Email.svelte';
+	import Envelope from 'phosphor-svelte/lib/Envelope';
 </script>
 
-<footer>
-	<div class="container">
-		<div class="copyright">© Gephyra OÜ</div>
-		<div class="address">Sakala 7-2<br /> Tallinn<br /> Estonia 10141</div>
-		<div class="email"><Email /> <a href="mailto:support@geph.io">support@geph.io</a></div>
+<footer class="mt-28 pb-12 pt-8">
+	<div class="frame space-y-2 text-sm font-medium">
+		<div>© Gephyra OÜ</div>
+		<div class="opacity-80">Sakala 7-2<br /> Tallinn<br /> Estonia 10141</div>
+		<div class="flex items-center gap-2 opacity-80">
+			<Envelope /> <a href="mailto:support@geph.io">support@geph.io</a>
+		</div>
 	</div>
 </footer>
-
-<style>
-	footer {
-		background-color: rgba(var(--bs-light-rgb), 1);
-		padding-top: 2rem;
-		padding-bottom: 3rem;
-		margin-top: 7rem;
-	}
-	div {
-		padding: 0.3rem;
-		font-size: 95%;
-		font-weight: 500;
-	}
-
-	.address {
-		opacity: 0.8;
-	}
-
-	.email a {
-		color: var(--bs-body-color);
-		opacity: 0.8;
-	}
-</style>

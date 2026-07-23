@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Font stacks; the faces themselves are loaded from CDNs in app.html.
+   Declared after the Tailwind layers so they out-rank the theme's system-ui. */
+body {
+	font-family: 'InterVariable', 'Inter', 'Noto Color Emoji', 'Vazirmatn', sans-serif;
+	font-feature-settings:
+		'liga' 1,
+		'calt' 1,
+		'cv10' 1,
+		'ss07' 1,
+		'cv08' 1,
+		'dlig' 1;
+	/* Skeleton's base sets a fixed 1.5rem line-height; make it scale with font size */
+	line-height: 1.5;
+}
+:lang(zh-CN) {
+	font-family: 'InterVariable', 'Inter', 'Noto Sans SC', 'Noto Color Emoji', sans-serif;
+}
+:lang(zh-TW) {
+	font-family: 'InterVariable', 'Inter', 'Chiron Hei HK WS', 'Noto Color Emoji', sans-serif;
+}
+
+/* Skeleton's .h1–.h6 classes set the theme's heading font (system-ui) directly,
+   which would override the inherited stack above; put headings back on it */
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+	font-family: inherit;
+}
+
+a {
+	color: inherit;
+	text-decoration: underline;
+}
+a:hover {
+	color: rgb(var(--color-primary-600));
+}
+
+/* The site's signature palette: Solarized base3 background with base03 text,
+   exactly as in the pre-Tailwind design. The shared theme files (copied verbatim
+   from gephgui-html) use a close-but-not-identical tan ramp, so pin the page-level
+   colors here rather than forking the themes. Inputs were white in the old design. */
+body[data-theme='light-theme'] {
+	background-color: #fdf6e3;
+	color: #002b36;
+}
+body[data-theme='light-theme'] .input {
+	background-color: white;
+}
+
+/* Monochrome logos that would vanish on the dark theme */
+[data-theme='dark-theme'] .dark-invert {
+	filter: invert(1);
+}
+
+@layer components {
+	/* Page column, replacing the overridden Bootstrap .container */
+	.frame {
+		width: 100%;
+		max-width: 45rem;
+		margin-inline: auto;
+		padding-inline: 1rem;
+	}
+	@media (min-width: 1280px) {
+		.frame {
+			max-width: 53rem;
+		}
+	}
+
+	/* The site's signature section header: uppercase italic teal with flanking rules */
+	.divider {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		text-transform: uppercase;
+		font-weight: 600;
+		letter-spacing: 0.2em;
+		font-style: italic;
+		color: rgb(var(--color-primary-600));
+		margin-block: 4rem;
+	}
+	.divider::before,
+	.divider::after {
+		content: '';
+		background-color: rgb(var(--color-primary-600));
+		height: 1px;
+		width: 5rem;
+	}
+
+	/* Loading indicator; resize at the call site with h-* w-* */
+	.spinner {
+		display: inline-block;
+		flex: none;
+		width: 1.5rem;
+		height: 1.5rem;
+		border-radius: 9999px;
+		border: 3px solid rgb(var(--color-primary-500) / 0.25);
+		border-top-color: rgb(var(--color-primary-600));
+		animation: spinner-rotate 0.8s linear infinite;
+	}
+}
+
+@keyframes spinner-rotate {
+	to {
+		transform: rotate(360deg);
+	}
+}

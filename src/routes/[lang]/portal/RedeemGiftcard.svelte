@@ -1,16 +1,13 @@
 <script lang="ts">
-	import axios from 'axios';
-	import { BINDER_ADDR, call_rpc } from '../../helpers';
+	import { call_rpc } from '../../helpers';
 	import { page } from '$app/stores';
 	import { localize } from '../../../routes/l10n';
 	import debounce from 'debounce';
-	import { goto } from '$app/navigation';
 	const lang = $page.params['lang'];
 
-	$: l = (s: string) => localize(lang, s);
+	const l = (s: string) => localize(lang, s);
 
-	function translateRedeemGiftcardError(e: string, lang: 'en' | 'zhs' | 'zht'): string {
-		console.log('error: ' + e);
+	function translateRedeemGiftcardError(e: string, lang: string): string {
 		if (e.includes('no such giftcard')) {
 			return localize(lang, 'incorrect-giftcard');
 		}
@@ -23,11 +20,11 @@
 		}
 	}
 
-	let gc_id = '';
-	let promo = '';
+	let gc_id = $state('');
+	let promo = $state('');
 	const redeemGiftcard = async (sessid: any, gc_id: string) => {
 		try {
-			let _ = await call_rpc('spend_giftcard', [
+			await call_rpc('spend_giftcard', [
 				sessid,
 				{
 					gc_id,
@@ -41,8 +38,8 @@
 		}
 	};
 
-	let days: number | null = null;
-	let giftcardError = '';
+	let days: number | null = $state(null);
+	let giftcardError = $state('');
 
 	const peekGiftcard = debounce(async (sessid: any, gc_id: string, promo: string) => {
 		giftcardError = '';
@@ -61,69 +58,47 @@
 		}
 	}, 500);
 
-	$: peekGiftcard(sessionStorage.getItem('sessid'), gc_id, promo);
+	$effect(() => {
+		peekGiftcard(sessionStorage.getItem('sessid'), gc_id, promo);
+	});
 </script>
 
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-lg">
+<div class="space-y-8">
+	<div class="grid gap-6 lg:grid-cols-2">
+		<div>
 			<h2>{l('redeem-giftcard')}</h2>
-			<input
-				type="text"
-				class="form-control mb-2"
-				bind:value={gc_id}
-				placeholder={l('giftcard-id')}
-			/>
+			<input type="text" class="input mb-2" bind:value={gc_id} placeholder={l('giftcard-id')} />
 			{#if giftcardError != ''}
-				<small class="error">{giftcardError}</small>
+				<small class="font-medium text-error-600">{giftcardError}</small>
 			{:else if days != null}
-				<small class="days">{l('giftcard-days')}<b>{days}</b></small>
+				<small>{l('giftcard-days')}<b>{days}</b></small>
 			{:else}
-				<small>
-					<div class="spinner-border spinner-border-sm" role="status" />
-				</small>
+				<span class="spinner h-4 w-4" role="status"></span>
 			{/if}
 		</div>
-		<div class="col-lg">
+		<div>
 			<h2>{l('got-a-promo-code')}</h2>
-			<div class="buttons">
-				<input
-					type="promo"
-					class="form-control small-form-control"
-					id="promo"
-					bind:value={promo}
-					placeholder={l('promo-code')}
-				/>
-			</div>
+			<input type="text" class="input w-auto" bind:value={promo} placeholder={l('promo-code')} />
 		</div>
 	</div>
 
-	<div class="row mt-3">
-		<div class="col">
-			<button
-				class="btn btn-success"
-				on:click={() => {
-					redeemGiftcard(sessionStorage.getItem('sessid'), gc_id);
-				}}
-				disabled={days == null}
-			>
-				{l('redeem')}
-			</button>
-		</div>
-	</div>
+	<button
+		class="btn variant-filled-success"
+		onclick={() => {
+			redeemGiftcard(sessionStorage.getItem('sessid'), gc_id);
+		}}
+		disabled={days == null}
+	>
+		{l('redeem')}
+	</button>
 </div>
 
-<!-- make the data flow in one direction: from the state to the layout. Mutate only the state from the UI. -->
 <style>
 	h2 {
 		font-size: 1.4rem;
 		letter-spacing: -0.02rem;
 		font-weight: 550;
 		opacity: 0.8;
-	}
-
-	.error {
-		font-weight: 500;
-		color: var(--bs-danger);
+		margin-bottom: 0.75rem;
 	}
 </style>
