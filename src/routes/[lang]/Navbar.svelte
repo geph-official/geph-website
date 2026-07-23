@@ -20,7 +20,7 @@
 	<div class="frame flex flex-wrap items-center gap-x-5 gap-y-2">
 		<a href={`/${lang}/`} class="flex items-center gap-2 font-medium no-underline">
 			<img src="/gephlogo.png" alt="Geph logo" class="h-8" />
-			{localize(lang, 'geph')}
+			<span class="text-[1.2em]">{localize(lang, 'geph')}</span>
 		</a>
 		<nav class="ms-auto flex flex-wrap items-center gap-x-5 gap-y-2">
 			<a
