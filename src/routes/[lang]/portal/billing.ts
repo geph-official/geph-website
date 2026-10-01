@@ -65,7 +65,7 @@ export function alipayBackend(): PaymentBackend {
 					item
 				}
 			]);
-			goto(url);
+			window.location.assign(url);
 		}
 	};
 }
@@ -86,7 +86,7 @@ export function wxpayBackend(): PaymentBackend {
 					mobile: await isMobile()
 				}
 			]);
-			goto(url);
+			window.location.assign(url);
 		}
 	};
 }

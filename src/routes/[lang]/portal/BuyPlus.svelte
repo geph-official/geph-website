@@ -1,7 +1,13 @@
 <script lang="ts">
 	import debounce from 'debounce';
 	import { page } from '$app/stores';
-	import { cryptoBackend, stripeCardBackend, wxpayBackend, type PaymentBackend } from './billing';
+	import {
+		alipayBackend,
+		cryptoBackend,
+		stripeCardBackend,
+		wxpayBackend,
+		type PaymentBackend
+	} from './billing';
 	import type { Item } from './billing';
 	import { localize } from '../../l10n';
 	import { call_rpc, translateError } from '../../../routes/helpers';
@@ -19,6 +25,7 @@
 	paymentBackends.set('bank-card', stripeCardBackend());
 	paymentBackends.set('crypto', cryptoBackend());
 	if (!isReseller) {
+		paymentBackends.set('alipay', alipayBackend());
 		paymentBackends.set('wxpay', wxpayBackend());
 	}
 
