@@ -62,7 +62,8 @@ export function alipayBackend(): PaymentBackend {
 					promo,
 					days,
 					method: 'alipay',
-					item
+					item,
+					mobile: await isMobile()
 				}
 			]);
 			window.location.assign(url);
