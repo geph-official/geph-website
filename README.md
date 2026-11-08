@@ -11,6 +11,7 @@ npm run dev
 
 Cloudflare Pages uses the `geph-official/geph-website` GitHub repository:
 
+- Project: `geph-website` (`https://geph-website.pages.dev`)
 - Production branch: `master`
 - Build command: `npm run build:pages`
 - Build output directory: `.svelte-kit/cloudflare`
