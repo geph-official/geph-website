@@ -105,30 +105,30 @@ hero:
 sub_hero:
   en: >-
     <p>Geph is a VPN built from the ground up to resist ISP-level censorship. Unlike VPNs that at best play unsustainable cat-and-mouse games with censors, Geph’s architecture and protocols are specifically engineered to be nearly invisible against ISPs and network adversaries. </p>
-    <p>Over the past 7 years, we have connected millions of users behind strict national firewalls, consistently achieving our <a href="https://github.com/geph-official/geph4-client/wiki/Service-SLA-(%E5%B0%81%E4%B8%80%E5%A4%A9%E8%B3%A0%E4%B8%80%E5%A4%A9%E6%94%BF%E7%AD%96)">service SLA</a> despite targeted attacks by national censorship systems in China and Iran.</p>
+    <p>Over the past 7 years, we have connected millions of users behind strict national firewalls, consistently achieving our <a href="https://github.com/geph-official/geph4-client/wiki/Service-SLA-(%E5%B0%81%E4%B8%80%E5%A4%A9%E8%B3%A0%E4%B8%80%E5%A4%A9%E6%94%BF%E7%AD%96)">service SLA</a> despite targeted attacks by national censorship systems.</p>
     <p>We also have a  <a href="https://github.com/geph-official/geph5/blob/master/libraries/mizaru2/README.md">blind signature authentication system</a> that cryptographically guarantees servers can never associate browsing activity with user identities, even if fully compromised.</p>
 
   zhs: >-
     <p>迷雾通是一款从零设计，能抵御运营商级别审查的 VPN。与所有传统VPN不同，迷雾通的架构和协议经过专门设计，可以在运营商和网络对手面前几乎实现「隐身」。</p>
-    <p>在过去的七年里，我们帮助数百万身处严苛防火墙后的用户成功连网，并在中国、伊朗等国家级审查系统的针对性打击下，依旧稳定地达成我们的<a href="https://github.com/geph-official/geph4-client/wiki/Service-SLA-(%E5%B0%81%E4%B8%80%E5%A4%A9%E8%B3%A0%E4%B8%80%E5%A4%A9%E6%94%BF%E7%AD%96)">服务SLA</a>。</p>
+    <p>在过去的七年里，我们帮助数百万身处严苛防火墙后的用户成功连网，并在国家级审查系统的针对性打击下，依旧稳定地达成我们的<a href="https://github.com/geph-official/geph4-client/wiki/Service-SLA-(%E5%B0%81%E4%B8%80%E5%A4%A9%E8%B3%A0%E4%B8%80%E5%A4%A9%E6%94%BF%E7%AD%96)">服务SLA</a>。</p>
     <p>我们还使用<a href="https://github.com/geph-official/geph5/blob/master/libraries/mizaru2/README.md">盲签名验证系统</a>，确保服务器即使在完全被攻破的情况下，也无法将用户的浏览活动与其身份关联。</p>
 
   zht: >-
     <p>迷霧通是一款從零設計，能抵禦營運商級別審查的 VPN。與所有傳統VPN不同，迷霧通的架構和協議經過專門設計，可以在營運商和網路對手面前幾乎實現「隱形」。</p>
-    <p>在過去的七年裡，我們幫助數百萬位身處嚴苛防火牆後的用戶成功連網，並在中國和伊朗等國家級審查系統的針對性打擊下，依舊穩定地達成我們的<a href="https://github.com/geph-official/geph4-client/wiki/Service-SLA-(%E5%B0%81%E4%B8%80%E5%A4%A9%E8%B3%A0%E4%B8%80%E5%A4%A9%E6%94%BF%E7%AD%96)">服務SLA</a>。</p>
+    <p>在過去的七年裡，我們幫助數百萬位身處嚴苛防火牆後的用戶成功連網，並在國家級審查系統的針對性打擊下，依舊穩定地達成我們的<a href="https://github.com/geph-official/geph4-client/wiki/Service-SLA-(%E5%B0%81%E4%B8%80%E5%A4%A9%E8%B3%A0%E4%B8%80%E5%A4%A9%E6%94%BF%E7%AD%96)">服務SLA</a>。</p>
     <p>我們還使用<a href="https://github.com/geph-official/geph5/blob/master/libraries/mizaru2/README.md">盲簽名驗證系統</a>，確保伺服器即使在完全被攻破的情況下，也無法將使用者的瀏覽活動與其身分關聯。</p>
 
   fa: >-
     <p>Geph (گِف) یک VPN است که از پایه برای مقاومت در برابر سانسور در سطح ISP طراحی شده است. برخلاف VPNهای سنتی که بر «امنیت از راه پنهان‌کاری» تکیه می‌کنند، معماری و پروتکل‌های Geph به گونه‌ای ویژه طراحی شده‌اند تا برای ISPها و عوامل نظارتی شبکه تقریباً نامشهود باشند.</p>
-    <p>در طول ۷ سال گذشته، ما میلیون‌ها کاربر را که پشت دیوارهای ملی محدودکننده قرار دارند، متصل کرده‌ایم و با وجود حملات هدفمند از سوی سیستم‌های سانسور ملی در چین و ایران، همچنان به تحقق <a href="https://github.com/geph-official/geph4-client/wiki/Service-SLA-(%E5%B0%81%E4%B8%80%E5%A4%A9%E8%B3%A0%E4%B8%80%E5%A4%A9%E6%94%BF%E7%AD%96)">SLA خدمات</a> خود پایبند بوده‌ایم.</p>
+    <p>در طول ۷ سال گذشته، ما میلیون‌ها کاربر را که پشت دیوارهای ملی محدودکننده قرار دارند، متصل کرده‌ایم و با وجود حملات هدفمند از سوی سیستم‌های سانسور ملی، همچنان به تحقق <a href="https://github.com/geph-official/geph4-client/wiki/Service-SLA-(%E5%B0%81%E4%B8%80%E5%A4%A9%E8%B3%A0%E4%B8%80%E5%A4%A9%E6%94%BF%E7%AD%96)">SLA خدمات</a> خود پایبند بوده‌ایم.</p>
     <p>همچنین ما از یک <a href="https://github.com/geph-official/geph5/blob/master/libraries/mizaru2/README.md">سامانه احراز هویت امضای کور</a> برخورداریم که با استفاده از روش‌های رمزنگاری تضمین می‌کند سرورها هرگز قادر نیستند فعالیت مرور کاربران را حتی در صورت نفوذ کامل، به هویت آنان پیوند دهند.</p>
   ar: >-
     <p>Geph هي شبكة VPN صُممت من الأساس لمقاومة الرقابة على مستوى مزودي خدمة الإنترنت. وعلى عكس شبكات VPN التي تلعب في أفضل الأحوال لعبة غير مستدامة مع جهات الرقابة، صُممت بنية Geph وبروتوكولاتها خصيصًا لتكون شبه غير مرئية أمام مزودي الخدمة والخصوم على الشبكة.</p>
-    <p>خلال السنوات السبع الماضية، وصلنا ملايين المستخدمين الموجودين خلف جدران نارية وطنية صارمة، وحققنا باستمرار <a href="https://github.com/geph-official/geph4-client/wiki/Service-SLA-(%E5%B0%81%E4%B8%80%E5%A4%A9%E8%B3%A0%E4%B8%80%E5%A4%A9%E6%94%BF%E7%AD%96)">اتفاقية مستوى الخدمة</a> الخاصة بنا رغم الهجمات الموجهة من أنظمة الرقابة الوطنية في الصين وإيران.</p>
+    <p>خلال السنوات السبع الماضية، وصلنا ملايين المستخدمين الموجودين خلف جدران نارية وطنية صارمة، وحققنا باستمرار <a href="https://github.com/geph-official/geph4-client/wiki/Service-SLA-(%E5%B0%81%E4%B8%80%E5%A4%A9%E8%B3%A0%E4%B8%80%E5%A4%A9%E6%94%BF%E7%AD%96)">اتفاقية مستوى الخدمة</a> الخاصة بنا رغم الهجمات الموجهة من أنظمة الرقابة الوطنية.</p>
     <p>كما نستخدم <a href="https://github.com/geph-official/geph5/blob/master/libraries/mizaru2/README.md">نظام مصادقة بالتوقيعات العمياء</a> يضمن تشفيريًا أن الخوادم لا تستطيع أبدًا ربط نشاط التصفح بهويات المستخدمين، حتى إذا اختُرقت بالكامل.</p>
   ru: >-
     <p>Geph — это VPN, изначально спроектированный для противодействия цензуре на уровне интернет-провайдера. В отличие от VPN, которые в лучшем случае ведут с цензорами неустойчивую игру в догонялки, архитектура и протоколы Geph специально разработаны так, чтобы быть почти незаметными для провайдеров и сетевых противников.</p>
-    <p>За последние 7 лет мы подключили миллионы пользователей за строгими национальными файрволами и стабильно выполняли наше <a href="https://github.com/geph-official/geph4-client/wiki/Service-SLA-(%E5%B0%81%E4%B8%80%E5%A4%A9%E8%B3%A0%E4%B8%80%E5%A4%A9%E6%94%BF%E7%AD%96)">сервисное SLA</a>, несмотря на целевые атаки национальных систем цензуры в Китае и Иране.</p>
+    <p>За последние 7 лет мы подключили миллионы пользователей за строгими национальными файрволами и стабильно выполняли наше <a href="https://github.com/geph-official/geph4-client/wiki/Service-SLA-(%E5%B0%81%E4%B8%80%E5%A4%A9%E8%B3%A0%E4%B8%80%E5%A4%A9%E6%94%BF%E7%AD%96)">сервисное SLA</a>, несмотря на целевые атаки национальных систем цензуры.</p>
     <p>Мы также используем <a href="https://github.com/geph-official/geph5/blob/master/libraries/mizaru2/README.md">систему аутентификации со слепыми подписями</a>, которая криптографически гарантирует, что серверы никогда не смогут связать активность пользователя в браузере с его личностью, даже если серверы будут полностью скомпрометированы.</p>
 
 footer:
@@ -164,12 +164,12 @@ resilient-anti-censorship:
   ru: Устойчивое обходное подключение
 
 resilient-anti-censorship-blurb:
-  en: Geph is on the cutting edge of censorship circumvention research. We have overcome numerous targeted attacks by China’s Great Firewall, the world’s most sophisticated national internet filter.
-  zhs: 迷雾通一直在反封锁研究的最前沿。在过去的三年中，我们多次遭到GFW的针对攻击，并且屡战屡胜。迷雾通更是目前市面上唯一提供<a href="https://github.com/geph-official/geph4-client/wiki/Service-SLA-(%E5%B0%81%E4%B8%80%E5%A4%A9%E8%B3%A0%E4%B8%80%E5%A4%A9%E6%94%BF%E7%AD%96)">封几天赔几天</a>的翻墙软件。
-  zht: 迷霧通一直在反封鎖研究的最前沿。在過去的三年中，我們多次遭到GFW的針對攻擊，並且屢戰屢勝。迷霧通更是目前市面上唯一提供<a href="https://github.com/geph-official/geph4-client/wiki/Service-SLA-(%E5%B0%81%E4%B8%80%E5%A4%A9%E8%B3%A0%E4%B8%80%E5%A4%A9%E6%94%BF%E7%AD%96)">封幾天賠幾天</a>的翻牆軟件。
-  fa: Geph از جدیدترین تکنولوژی های دور زدن سانسور استفاده می‌کند. ما از چندین حمله هدفمند از سمت فایروال قدرتمند چین، پیچیده‌ترین فیلتر اینترنت ملی جهان، سربلند بیرون آمده‌ایم.
-  ar: يقع Geph في طليعة أبحاث تجاوز الرقابة. لقد تجاوزنا العديد من الهجمات الموجهة من جدار الحماية العظيم في الصين، وهو أحد أكثر مرشحات الإنترنت الوطنية تعقيدًا في العالم.
-  ru: Geph находится на переднем крае исследований обхода цензуры. Мы выдержали многочисленные целевые атаки Великого китайского файрвола, самого сложного национального интернет-фильтра в мире.
+  en: Geph is on the cutting edge of censorship circumvention research. We have overcome numerous targeted attacks by highly sophisticated national censorship systems.
+  zhs: 迷雾通一直在反封锁研究的最前沿。在过去的三年中，我们多次遭到国家级审查系统的针对攻击，并且屡战屡胜。迷雾通更是目前市面上唯一提供<a href="https://github.com/geph-official/geph4-client/wiki/Service-SLA-(%E5%B0%81%E4%B8%80%E5%A4%A9%E8%B3%A0%E4%B8%80%E5%A4%A9%E6%94%BF%E7%AD%96)">封几天赔几天</a>的翻墙软件。
+  zht: 迷霧通一直在反封鎖研究的最前沿。在過去的三年中，我們多次遭到國家級審查系統的針對攻擊，並且屢戰屢勝。迷霧通更是目前市面上唯一提供<a href="https://github.com/geph-official/geph4-client/wiki/Service-SLA-(%E5%B0%81%E4%B8%80%E5%A4%A9%E8%B3%A0%E4%B8%80%E5%A4%A9%E6%94%BF%E7%AD%96)">封幾天賠幾天</a>的翻牆軟件。
+  fa: Geph از جدیدترین تکنولوژی های دور زدن سانسور استفاده می‌کند. ما از چندین حمله هدفمند از سمت سیستم‌های پیشرفتهٔ سانسور ملی سربلند بیرون آمده‌ایم.
+  ar: يقع Geph في طليعة أبحاث تجاوز الرقابة. لقد تجاوزنا العديد من الهجمات الموجهة من أنظمة الرقابة الوطنية المتطورة.
+  ru: Geph находится на переднем крае исследований обхода цензуры. Мы выдержали многочисленные целевые атаки высокотехнологичных национальных систем интернет-цензуры.
 
 accessible-to-all:
   en: Accessible to all
@@ -1050,7 +1050,7 @@ faq_content:
             >different bridges to different users</em
           >
           and continuously rotates them, making enumeration infeasible. Since 2019, we've observed automated
-          enumeration attempts by China’s GFW, but they have consistently failed to disrupt service.
+          enumeration attempts by national censorship systems, but they have consistently failed to disrupt service.
           Read our architectural overview
           <a href="https://github.com/geph-official/geph5/wiki/How-Geph-works">on GitHub</a> to learn
           more!
@@ -1105,7 +1105,7 @@ faq_content:
         </p>
         <p class="faq-answer">
           因为我们使用的协议为<strong>不同用户分配不同桥接</strong>并不断轮换，几乎无法全面枚举。
-          自 2019 年以来，中国防火长城（GFW）虽曾尝试自动化枚举，但一直没能成功干扰我们的服务。
+          自 2019 年以来，国家级审查系统虽曾尝试自动化枚举，但一直没能成功干扰我们的服务。
           点此查看<a href="https://github.com/geph-official/geph5/wiki/How-Geph-works">架构概览</a>！
         </p>
       </div>
@@ -1156,7 +1156,7 @@ faq_content:
     </p>
     <p class="faq-answer">
     因為我們使用的協定為<strong>不同使用者分配不同橋接</strong>並不斷輪換，幾乎無法全面枚舉。
-    自 2019 年以來，中國防火長城（GFW）雖曾嘗試自動化枚舉，但一直無法成功幹擾我們的服務。
+    自 2019 年以來，國家級審查系統雖曾嘗試自動化枚舉，但一直無法成功幹擾我們的服務。
     點此看<a href="https://github.com/geph-official/geph5/wiki/How-Geph-works">架構概覽</a>！
     </p>
     </div>
@@ -1206,8 +1206,8 @@ faq_content:
         <p class="faq-answer">
           دلیلش استفاده از پروتکل راه‌اندازی‌ای است که به <em>هر کاربر پل‌های متفاوتی اختصاص می‌دهد</em>
           و مرتباً آنها را تغییر می‌دهد؛ بنابراین شناسایی و فهرست‌کردن کامل آنها تقریباً ناممکن است.
-          از سال ۲۰۱۹ تاکنون، دیوار آتش بزرگ چین (GFW) بارها در تلاش بوده‌ است تا این پل‌ها را پیدا کند،
-          اما تا کنون موفق به مختل کردن سرویس ما نشده است.
+          از سال ۲۰۱۹ تاکنون، سیستم‌های سانسور ملی بارها در تلاش بوده‌اند تا این پل‌ها را پیدا کنند،
+          اما تا کنون موفق به مختل کردن سرویس ما نشده‌اند.
           برای آشنایی بیشتر با معماری ما، <a href="https://github.com/geph-official/geph5/wiki/How-Geph-works">این صفحه</a> را ببینید!
         </p>
       </div>
@@ -1259,7 +1259,7 @@ faq_content:
         <p class="faq-answer">
           السبب هو أن بروتوكول bootstrap الصعب الحظر يخصص <em>جسورًا مختلفة لمستخدمين مختلفين</em>
           ويدورها باستمرار، مما يجعل تعدادها بالكامل غير عملي. منذ عام 2019، لاحظنا محاولات تعداد آلية
-          من جدار الحماية العظيم في الصين، لكنها فشلت باستمرار في تعطيل الخدمة.
+          من أنظمة الرقابة الوطنية، لكنها فشلت باستمرار في تعطيل الخدمة.
           اقرأ نظرتنا العامة على البنية
           <a href="https://github.com/geph-official/geph5/wiki/How-Geph-works">على GitHub</a>
           لمعرفة المزيد.
@@ -1315,7 +1315,7 @@ faq_content:
           Причина в том, что трудно блокируемый bootstrap-протокол назначает
           <em>разным пользователям разные мосты</em> и постоянно ротирует их, поэтому полный
           перебор практически невозможен. С 2019 года мы наблюдали автоматизированные попытки
-          перебора со стороны китайского GFW, но они стабильно не могли нарушить работу сервиса.
+          перебора со стороны национальных систем цензуры, но они стабильно не могли нарушить работу сервиса.
           Подробнее об архитектуре можно прочитать
           <a href="https://github.com/geph-official/geph5/wiki/How-Geph-works">на GitHub</a>.
         </p>
