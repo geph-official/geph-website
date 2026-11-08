@@ -1,12 +1,12 @@
-import axios from 'axios';
 import YAML from 'yaml';
 import type { PageServerLoad } from './$types';
 
-export const load: PageServerLoad = async () => {
-	const y = await axios.get('https://dl.geph.io/geph-releases/metadata.yaml', {
-		responseType: 'text'
-	});
-	let obj = YAML.parse(y.data);
+export const load: PageServerLoad = async ({ fetch }) => {
+	const response = await fetch('https://dl.geph.io/geph-releases/metadata.yaml');
+	if (!response.ok) {
+		throw new Error(`Unable to fetch release metadata: ${response.status}`);
+	}
+	const obj = YAML.parse(await response.text());
 	return {
 		download: {
 			windows: `https://dl.geph.io/geph-releases/windows-stable/${obj['windows-stable'].version}/${obj['windows-stable'].filename}`,
