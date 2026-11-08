@@ -7,25 +7,11 @@ npm ci
 npm run dev
 ```
 
-`npm run check` checks Svelte and TypeScript.
+`npm run check` checks Svelte and TypeScript. `npm run build` produces a standalone
+Node server in `build/`. Run it with `node build`, with production dependencies
+installed and `HOST`, `PORT`, and proxy settings supplied by the host environment.
 
-Cloudflare Pages uses the `geph-official/geph-website` GitHub repository:
-
-- Project: `geph-website` (`https://geph-website.pages.dev`)
-- Production branch: `master`
-- Build command: `npm run build:pages`
-- Build output directory: `.svelte-kit/cloudflare`
-- Node.js version: `22`
-
-Pushes to the production branch build and deploy through the Cloudflare Workers
-and Pages GitHub app. Grant that app access to this repository in the
-`geph-official` organization. Other branches receive preview deployments.
-
-`npm run build:pages` uses the Cloudflare adapter. Preview the result with
-`npx wrangler pages dev .svelte-kit/cloudflare`. Language redirects and release
-metadata run in Pages Functions; release download links are fetched on each
-homepage request.
-
-`npm run build` produces a standalone Node server in `build/` when `CF_PAGES`
-is unset. Run it with `node build`, with production dependencies installed and
-`HOST`, `PORT`, and proxy settings supplied by the host environment.
+Production deployment is managed on the server. A systemd timer checks GitHub's
+`master` branch every two minutes, builds new commits, and restarts the website
+after a successful build. Failed health checks restore the previous release.
+Nginx handles HTTPS, with certificates automatically renewed by Certbot.
